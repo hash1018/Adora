@@ -31,6 +31,9 @@
     <Filter Include="Ui\Design">
       <UniqueIdentifier>{37dcf37c-17e0-4aa4-8dec-bccddce9f2d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{0fa983dc-8dc0-4c6c-a154-edcb5efcc156}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -57,6 +60,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_AdoraFrameWidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Base\SettingManager.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -81,6 +87,12 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_AdoraFrameWidget.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Singleton.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\SettingManager.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

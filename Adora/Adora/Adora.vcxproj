@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Base\SettingManager.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_Adora.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -228,6 +229,8 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base\SettingManager.h" />
+    <ClInclude Include="Base\Singleton.h" />
     <ClInclude Include="GeneratedFiles\ui_Adora.h" />
     <ClInclude Include="GeneratedFiles\ui_AdoraFrameWidget.h" />
     <CustomBuild Include="Ui\AdoraFrameWidget.h">

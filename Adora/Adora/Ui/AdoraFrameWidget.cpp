@@ -14,7 +14,6 @@ AdoraFrameWidget::AdoraFrameWidget(QWidget *parent)
 
 AdoraFrameWidget::~AdoraFrameWidget() {
 
-
 }
 
 #include <qpainter.h>
