@@ -93,6 +93,12 @@
     <ClCompile Include="Ui\AboutWidget.cpp">
       <Filter>Ui</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_LanguageSettingWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_LanguageSettingWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -109,6 +115,12 @@
     </CustomBuild>
     <CustomBuild Include="Ui\AdoraFrameWidget.h">
       <Filter>Ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Setting\LanguageSettingWidget.ui">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Setting\LanguageSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -142,14 +154,14 @@
     <ClInclude Include="Ui\Setting\WatermarkSettingWidget.h">
       <Filter>Ui\Setting</Filter>
     </ClInclude>
-    <ClInclude Include="Ui\Setting\LanguageSettingWidget.h">
-      <Filter>Ui\Setting</Filter>
-    </ClInclude>
     <ClInclude Include="Ui\LicenseWidget.h">
       <Filter>Ui</Filter>
     </ClInclude>
     <ClInclude Include="Ui\AboutWidget.h">
       <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_LanguageSettingWidget.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -21,6 +21,9 @@ class Adora : public QMainWindow {
 private:
 	Ui::Adora ui;
 
+public:	
+	bool restart;
+
 private:
 	bool mousePressed;
 	QPoint prev;
@@ -52,6 +55,7 @@ protected:
 	void minimizeButtonClicked();
 	void recordButtonClicked();
 	void menuListItemClicked(QListWidgetItem *item);
+	void requestRestart();
 
 
 private:

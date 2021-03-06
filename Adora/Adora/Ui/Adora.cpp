@@ -14,7 +14,7 @@
 #include "Ui/AboutWidget.h"
 
 Adora::Adora(QWidget *parent)
-	: QMainWindow(parent), mousePressed(false) {
+	: QMainWindow(parent), mousePressed(false),restart(false) {
 
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::FramelessWindowHint);
@@ -93,6 +93,12 @@ void Adora::menuListItemClicked(QListWidgetItem *item) {
 	ui.menuStackWidget->setCurrentIndex(index);
 }
 
+void Adora::requestRestart() {
+
+	this->restart = true;
+	this->close();
+}
+
 #include <qscreen.h>
 void Adora::initPosition() {
 
@@ -154,4 +160,6 @@ void Adora::initMenuStackWidget() {
 	ui.menuStackWidget->addWidget(this->aboutWidget);
 
 	ui.menuStackWidget->setCurrentIndex(0);
+
+	connect(this->languageSettingWidget, &LanguageSettingWidget::requestChangeLanguage, this, &Adora::requestRestart);
 }
