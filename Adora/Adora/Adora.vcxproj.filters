@@ -28,6 +28,9 @@
     <Filter Include="Ui">
       <UniqueIdentifier>{baadfeff-42f1-4aef-b483-fb4555286e74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ui\Design">
+      <UniqueIdentifier>{37dcf37c-17e0-4aa4-8dec-bccddce9f2d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -61,5 +64,34 @@
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Ui\Design\layout 1.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 2.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 3.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 4.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 5.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 6.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 7.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 8.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
+    <Image Include="Ui\Design\layout 9.jpg">
+      <Filter>Ui\Design</Filter>
+    </Image>
   </ItemGroup>
 </Project>

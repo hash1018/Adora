@@ -221,6 +221,17 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Ui\Design\layout 1.jpg" />
+    <Image Include="Ui\Design\layout 2.jpg" />
+    <Image Include="Ui\Design\layout 3.jpg" />
+    <Image Include="Ui\Design\layout 4.jpg" />
+    <Image Include="Ui\Design\layout 5.jpg" />
+    <Image Include="Ui\Design\layout 6.jpg" />
+    <Image Include="Ui\Design\layout 7.jpg" />
+    <Image Include="Ui\Design\layout 8.jpg" />
+    <Image Include="Ui\Design\layout 9.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
