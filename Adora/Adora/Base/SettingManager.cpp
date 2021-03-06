@@ -1,7 +1,7 @@
 
 #include "SettingManager.h"
 #include <qsettings.h>
-
+#include "LanguageManager.h"
 
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
@@ -21,6 +21,8 @@ void LanguageSetting::load() {
 
 	if (settings.contains("Language") == true)
 		this->language = (Language)(settings.value("Language").toInt());
+
+	LanguageManager::getInstance()->setLanguage((LanguageManager::Language)this->language);
 
 	settings.endGroup();
 }

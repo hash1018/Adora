@@ -13,6 +13,9 @@
 #include "Ui/LicenseWidget.h"
 #include "Ui/AboutWidget.h"
 
+
+#include "Base/LanguageManager.h"
+
 Adora::Adora(QWidget *parent)
 	: QMainWindow(parent), mousePressed(false),restart(false) {
 
@@ -123,15 +126,16 @@ void Adora::initPosition() {
 
 void Adora::initMenuListWidget() {
 
-	ui.menuListWidget->addItem("general");
-	ui.menuListWidget->addItem("video");
-	ui.menuListWidget->addItem("audio");
-	ui.menuListWidget->addItem("image");
-	ui.menuListWidget->addItem("timeLimit");
-	ui.menuListWidget->addItem("watermark");
-	ui.menuListWidget->addItem("language");
-	ui.menuListWidget->addItem("license");
-	ui.menuListWidget->addItem("about");
+	
+	ui.menuListWidget->addItem(getLanUiValue("Menu/General"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/Video"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/Audio"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/Image"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/Timelimit"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/Watermark"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/Language"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/License"));
+	ui.menuListWidget->addItem(getLanUiValue("Menu/About"));
 
 	ui.menuListWidget->setCurrentRow(0);
 }
