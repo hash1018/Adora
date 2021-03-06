@@ -1,4 +1,4 @@
-#include "Adora.h"
+#include "Ui/Adora.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
