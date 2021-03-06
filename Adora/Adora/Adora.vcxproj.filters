@@ -125,6 +125,9 @@
     <CustomBuild Include="Ui\Setting\LanguageSettingWidget.h">
       <Filter>Ui\Setting</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\Setting\GeneralSettingWidget.ui">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
@@ -168,6 +171,9 @@
     </ClInclude>
     <ClInclude Include="Base\LanguageManager.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_GeneralSettingWidget.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

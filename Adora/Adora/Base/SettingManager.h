@@ -5,8 +5,32 @@
 
 #include "Singleton.h"
 #include <qpoint.h>
+#include <qstring.h>
+
+class GeneralSetting {
+
+	friend class SettingManager;
+
+private:
+	QString savePath;
+
+private:
+	GeneralSetting();
+	~GeneralSetting();
+
+	void load();
+	void save();
+
+public:
+	void setSavePath(const QString &path) { this->savePath = path; }
+
+public:
+	inline const QString& getSavePath() const { return this->savePath; }
+
+};
 
 
+////////////////////////////////////////////////////////
 
 class LanguageSetting {
 
@@ -48,7 +72,9 @@ private:
 	QPoint adoraPosition;
 
 private:
+	GeneralSetting generalSetting;
 	LanguageSetting languageSetting;
+	
 
 public:
 	void load();
@@ -60,6 +86,8 @@ public:
 
 public:
 	inline const QPoint& getAdoraPosition() const { return this->adoraPosition; }
+
+	inline GeneralSetting* getGeneralSetting() { return &(this->generalSetting); }
 	inline LanguageSetting* getLanguageSetting() { return &(this->languageSetting); }
 	
 };

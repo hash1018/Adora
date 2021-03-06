@@ -2,6 +2,60 @@
 #include "SettingManager.h"
 #include <qsettings.h>
 #include "LanguageManager.h"
+#include <qdir.h>
+
+GeneralSetting::GeneralSetting() {
+
+}
+
+GeneralSetting::~GeneralSetting() {
+
+}
+
+void GeneralSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("General");
+
+	this->savePath = settings.value("SavePath").toString();
+
+	settings.endGroup();
+
+	QDir dir(this->savePath);
+	dir.mkdir(this->savePath);
+
+	if (dir.exists() == false)
+		this->savePath = "";
+
+	if (this->savePath == "") {
+	
+#ifdef Q_OS_WIN
+		QSettings settings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer", QSettings::NativeFormat);
+
+		settings.beginGroup("Shell Folders");
+		this->savePath = settings.value("Personal").toString() + QString::fromLocal8Bit("/Adora");
+		settings.endGroup();
+
+		this->savePath = this->savePath.replace("\\", "/");
+	
+#endif 
+	}
+
+	dir.mkdir(this->savePath);
+}
+
+void GeneralSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("General");
+	settings.setValue("SavePath", this->savePath);
+	settings.endGroup();
+}
+
+
+////////////////////////////////////////////////////////////////////
 
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
@@ -57,6 +111,7 @@ void SettingManager::load() {
 	if (settings.contains("AdoraPosition") == true)
 		this->adoraPosition = settings.value("AdoraPosition").toPoint();
 
+	this->generalSetting.load();
 	this->languageSetting.load();
 }
 
@@ -66,5 +121,6 @@ void SettingManager::save() {
 
 	settings.setValue("AdoraPosition", this->adoraPosition);
 
+	this->generalSetting.save();
 	this->languageSetting.save();
 }
