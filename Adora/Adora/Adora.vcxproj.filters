@@ -48,6 +48,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_Adora.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\AdoraFrameWidget.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AdoraFrameWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AdoraFrameWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -59,9 +68,18 @@
     <CustomBuild Include="Ui\Adora.ui">
       <Filter>Ui</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\AdoraFrameWidget.ui">
+      <Filter>Ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\AdoraFrameWidget.h">
+      <Filter>Ui</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_AdoraFrameWidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

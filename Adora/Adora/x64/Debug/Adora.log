@@ -1,3 +1,10 @@
-﻿  main.cpp
+﻿  Moc'ing Adora.h...
+  Moc'ing AdoraFrameWidget.h...
+  moc_Adora.cpp
+  moc_AdoraFrameWidget.cpp
+  main.cpp
+  Adora.cpp
+  AdoraFrameWidget.cpp
+  Generating Code...
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.exe
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.pdb (Full PDB)
