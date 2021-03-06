@@ -3,6 +3,16 @@
 #include <QMouseEvent>
 #include "Base/SettingManager.h"
 
+#include "Ui/Setting/GeneralSettingWidget.h"
+#include "Ui/Setting/VideoSettingWidget.h"
+#include "Ui/Setting/AudioSettingWidget.h"
+#include "Ui/Setting/ImageSettingWidget.h"
+#include "Ui/Setting/TimeLimitSettingWidget.h"
+#include "Ui/Setting/WatermarkSettingWidget.h"
+#include "Ui/Setting/LanguageSettingWidget.h"
+#include "Ui/LicenseWidget.h"
+#include "Ui/AboutWidget.h"
+
 Adora::Adora(QWidget *parent)
 	: QMainWindow(parent), mousePressed(false) {
 
@@ -15,6 +25,12 @@ Adora::Adora(QWidget *parent)
 	SettingManager::getInstance()->load();
 
 	this->initPosition();
+	this->initMenuListWidget();
+	this->initMenuStackWidget();
+
+	connect(ui.recordButton, &QPushButton::clicked, this, &Adora::recordButtonClicked);
+	connect(ui.menuListWidget, &QListWidget::itemClicked, this, &Adora::menuListItemClicked);
+
 }
 
 Adora::~Adora() {
@@ -66,6 +82,17 @@ void Adora::minimizeButtonClicked() {
 	this->showMinimized();
 }
 
+void Adora::recordButtonClicked() {
+
+
+}
+
+void Adora::menuListItemClicked(QListWidgetItem *item) {
+
+	int index = ui.menuListWidget->row(item);
+	ui.menuStackWidget->setCurrentIndex(index);
+}
+
 #include <qscreen.h>
 void Adora::initPosition() {
 
@@ -86,4 +113,45 @@ void Adora::initPosition() {
 	else {
 		this->setGeometry(0, 0, this->minimumWidth(), this->minimumHeight());
 	}
+}
+
+void Adora::initMenuListWidget() {
+
+	ui.menuListWidget->addItem("general");
+	ui.menuListWidget->addItem("video");
+	ui.menuListWidget->addItem("audio");
+	ui.menuListWidget->addItem("image");
+	ui.menuListWidget->addItem("timeLimit");
+	ui.menuListWidget->addItem("watermark");
+	ui.menuListWidget->addItem("language");
+	ui.menuListWidget->addItem("license");
+	ui.menuListWidget->addItem("about");
+
+	ui.menuListWidget->setCurrentRow(0);
+}
+
+void Adora::initMenuStackWidget() {
+
+	this->generalSettingWidget = new GeneralSettingWidget(ui.menuStackWidget);
+	this->videoSettingWidget = new VideoSettingWidget(ui.menuStackWidget);
+	this->audioSettingWidget = new AudioSettingWidget(ui.menuStackWidget);
+	this->imageSettingWidget = new ImageSettingWidget(ui.menuStackWidget);
+	this->timeLimitSettingWidget = new TimeLimitSettingWidget(ui.menuStackWidget);
+	this->watermarkSettingWidget = new WatermarkSettingWidget(ui.menuStackWidget);
+	this->languageSettingWidget = new LanguageSettingWidget(ui.menuStackWidget);
+	this->licenseWidget = new LicenseWidget(ui.menuStackWidget);
+	this->aboutWidget = new AboutWidget(ui.menuStackWidget);
+
+
+	ui.menuStackWidget->addWidget(this->generalSettingWidget);
+	ui.menuStackWidget->addWidget(this->videoSettingWidget);
+	ui.menuStackWidget->addWidget(this->audioSettingWidget);
+	ui.menuStackWidget->addWidget(this->imageSettingWidget);
+	ui.menuStackWidget->addWidget(this->timeLimitSettingWidget);
+	ui.menuStackWidget->addWidget(this->watermarkSettingWidget);
+	ui.menuStackWidget->addWidget(this->languageSettingWidget);
+	ui.menuStackWidget->addWidget(this->licenseWidget);
+	ui.menuStackWidget->addWidget(this->aboutWidget);
+
+	ui.menuStackWidget->setCurrentIndex(0);
 }

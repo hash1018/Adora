@@ -34,6 +34,9 @@
     <Filter Include="Base">
       <UniqueIdentifier>{0fa983dc-8dc0-4c6c-a154-edcb5efcc156}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ui\Setting">
+      <UniqueIdentifier>{56c0c52f-50c2-4e7e-adf0-d5d3c2b8c89b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,33 @@
     </ClCompile>
     <ClCompile Include="Base\SettingManager.cpp">
       <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\GeneralSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\VideoSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\AudioSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\ImageSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\TimeLimitSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\WatermarkSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Setting\LanguageSettingWidget.cpp">
+      <Filter>Ui\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\LicenseWidget.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\AboutWidget.cpp">
+      <Filter>Ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +123,33 @@
     </ClInclude>
     <ClInclude Include="Base\SettingManager.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\GeneralSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\VideoSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\AudioSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\ImageSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\TimeLimitSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\WatermarkSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Setting\LanguageSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\LicenseWidget.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\AboutWidget.h">
+      <Filter>Ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

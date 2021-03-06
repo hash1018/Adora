@@ -5,6 +5,16 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_Adora.h"
 
+class GeneralSettingWidget;
+class VideoSettingWidget;
+class AudioSettingWidget;
+class ImageSettingWidget;
+class TimeLimitSettingWidget;
+class WatermarkSettingWidget;
+class LanguageSettingWidget;
+class LicenseWidget;
+class AboutWidget;
+
 class Adora : public QMainWindow {
 	Q_OBJECT
 
@@ -14,6 +24,17 @@ private:
 private:
 	bool mousePressed;
 	QPoint prev;
+
+private:
+	GeneralSettingWidget *generalSettingWidget;
+	VideoSettingWidget *videoSettingWidget;
+	AudioSettingWidget *audioSettingWidget;
+	ImageSettingWidget *imageSettingWidget;
+	TimeLimitSettingWidget *timeLimitSettingWidget;
+	WatermarkSettingWidget *watermarkSettingWidget;
+	LanguageSettingWidget *languageSettingWidget;
+	LicenseWidget *licenseWidget;
+	AboutWidget *aboutWidget;
 
 public:
 	Adora(QWidget *parent = nullptr);
@@ -29,11 +50,14 @@ protected:
 	private slots :
 	void closeButtonClicked();
 	void minimizeButtonClicked();
+	void recordButtonClicked();
+	void menuListItemClicked(QListWidgetItem *item);
 
 
 private:
 	void initPosition();
-	
+	void initMenuListWidget();
+	void initMenuStackWidget();
 };
 
 #endif // ADORA_H
