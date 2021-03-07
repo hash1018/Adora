@@ -102,6 +102,12 @@
     <ClCompile Include="Base\LanguageManager.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_GeneralSettingWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_GeneralSettingWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -128,6 +134,9 @@
     <CustomBuild Include="Ui\Setting\GeneralSettingWidget.ui">
       <Filter>Ui\Setting</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\Setting\GeneralSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
@@ -141,9 +150,6 @@
     </ClInclude>
     <ClInclude Include="Base\SettingManager.h">
       <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Ui\Setting\GeneralSettingWidget.h">
-      <Filter>Ui\Setting</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Setting\VideoSettingWidget.h">
       <Filter>Ui\Setting</Filter>
