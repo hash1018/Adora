@@ -7,6 +7,7 @@
 #include <qstring.h>
 
 #define getLanUiValue(key) (LanguageManager::getInstance()->getValue(LanguageManager::Ui,key))
+#define getLanMessageValue(key) (LanguageManager::getInstance()->getValue(LanguageManager::Message,key))
 
 class QSettings;
 
@@ -24,6 +25,7 @@ public:
 	enum Type {
 
 		Ui,
+		Message,
 	};
 
 private:

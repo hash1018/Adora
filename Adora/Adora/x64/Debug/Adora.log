@@ -1,3 +1,7 @@
-﻿  GeneralSettingWidget.cpp
+﻿  LanguageManager.cpp
+  SettingManager.cpp
+  Adora.cpp
+  GeneralSettingWidget.cpp
+  Generating Code...
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.exe
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.pdb (Full PDB)

@@ -7,6 +7,7 @@
 #include <qcollator.h>
 #include <qfile.h>
 #include <qmessagebox.h>
+#include "Base/LanguageManager.h"
 
 GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	:QWidget(parent), listType(Video), orderBy(NameAsc) {
@@ -100,7 +101,9 @@ void GeneralSettingWidget::deleteButtonClicked() {
 	}
 	else {
 	
-		//QMessageBox;
+		QMessageBox box;
+		box.setText(getLanMessageValue("The file does not exist in the directory."));
+		box.exec();
 	}
 
 	this->updateItemList();
@@ -187,17 +190,17 @@ void GeneralSettingWidget::updateItemList() {
 
 OrderByMenu::OrderByMenu(QWidget *parent)
 	:QMenu(parent) {
-
-	this->orderByNameAction = new QAction(QString::fromLocal8Bit("이름"), this);
+	
+	this->orderByNameAction = new QAction(getLanUiValue("OrderBy/Name"), this);
 	this->orderByNameAction->setCheckable(true);
 
-	this->orderByDateAction = new QAction(QString::fromLocal8Bit("날짜"), this);
+	this->orderByDateAction = new QAction(getLanUiValue("OrderBy/Date"), this);
 	this->orderByDateAction->setCheckable(true);
 
-	this->orderByAscAction = new QAction(QString::fromLocal8Bit("오름차순"), this);
+	this->orderByAscAction = new QAction(getLanUiValue("OrderBy/Asc"), this);
 	this->orderByAscAction->setCheckable(true);
 
-	this->orderByDescAction = new QAction(QString::fromLocal8Bit("내림차순"), this);
+	this->orderByDescAction = new QAction(getLanUiValue("OrderBy/Desc"), this);
 	this->orderByDescAction->setCheckable(true);
 
 	this->addAction(this->orderByNameAction);

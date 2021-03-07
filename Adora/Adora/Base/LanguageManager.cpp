@@ -80,6 +80,8 @@ QString LanguageManager::convertFileName(Type type) {
 
 	if (type == Type::Ui)
 		return QString("ui.ini");
+	else if (type == Type::Message)
+		return QString("message.ini");
 
 	return QString("ui.ini");
 }
