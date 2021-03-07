@@ -16,7 +16,7 @@
   <widget class="QLineEdit" name="savePathLineEdit">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>70</y>
      <width>311</width>
      <height>31</height>
@@ -29,7 +29,7 @@
   <widget class="QPushButton" name="searchPathButton">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>330</x>
      <y>70</y>
      <width>93</width>
      <height>28</height>
@@ -42,7 +42,7 @@
   <widget class="QPushButton" name="openDirectoryButton">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>430</x>
      <y>70</y>
      <width>93</width>
      <height>28</height>
@@ -50,6 +50,94 @@
    </property>
    <property name="text">
     <string>Open</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="videoButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>120</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>video</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="imageButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>120</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>image</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="orderByButton">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>120</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>정렬</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="itemListWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>491</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="playButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>380</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>play</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="uploadButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>380</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>upload</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteButton">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>380</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>delete</string>
    </property>
   </widget>
  </widget>

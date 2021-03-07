@@ -8,8 +8,26 @@
 
 class GeneralSettingWidget : public QWidget {
 
+
+public:
+	enum ListType {
+		Video,
+		Image,
+	};
+
+	enum OrderBy {
+		NameAsc,
+		NameDes,
+		DateAsc,
+		DateDes,
+	};
+
 private:
 	Ui::GeneralSettingWidget ui;
+
+private:
+	ListType listType;
+	OrderBy orderBy;
 
 public:
 	GeneralSettingWidget(QWidget *parent = nullptr);
@@ -21,6 +39,13 @@ protected:
 	private slots:
 	void searchPathButtonClicked();
 	void openDirectoryButtonClicked();
+	void videoButtonClicked();
+	void imageButtonClicked();
+	void itemListDoubleClicked(QListWidgetItem *item);
+	void deleteButtonClicked();
+
+private:
+	void updateItemList();
 };
 
 #endif //_GENERALSETTINGWIDGET_H
