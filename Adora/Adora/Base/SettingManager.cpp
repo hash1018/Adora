@@ -115,6 +115,66 @@ void VideoSetting::save() {
 
 ////////////////////////////////////////////////////////////////////
 
+
+AudioSetting::AudioSetting()
+	:audioDevice(""), audioMuted(false), audioVolume(100), audioDevice2(""), audioMuted2(false), audioVolume2(100) {
+
+}
+
+AudioSetting::~AudioSetting() {
+
+}
+
+void AudioSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Audio");
+
+	if (settings.contains("audioDevice") == true)
+		this->audioDevice = settings.value("audioDevice").toString();
+
+	if (settings.contains("audioMuted") == true)
+		this->audioMuted = settings.value("audioMuted").toBool();
+
+	if (settings.contains("audioVolume") == true)
+		this->audioVolume = settings.value("audioVolume").toInt();
+
+	if (settings.contains("audioDevice2") == true)
+		this->audioDevice2 = settings.value("audioDevice2").toString();
+
+	if (settings.contains("audioMuted2") == true)
+		this->audioMuted2 = settings.value("audioMuted2").toBool();
+
+	if (settings.contains("audioVolume2") == true)
+		this->audioVolume2 = settings.value("audioVolume2").toInt();
+
+	settings.endGroup();
+}
+
+void AudioSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Audio");
+
+	settings.setValue("audioDevice", this->audioDevice);
+	settings.setValue("audioMuted", this->audioMuted);
+	settings.setValue("audioVolume", this->audioVolume);
+	
+	settings.setValue("audioDevice2", this->audioDevice2);
+	settings.setValue("audioMuted2", this->audioMuted2);
+	settings.setValue("audioVolume2", this->audioVolume2);
+
+	settings.endGroup();
+}
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
 
@@ -171,6 +231,7 @@ void SettingManager::load() {
 
 	this->generalSetting.load();
 	this->videoSetting.load();
+	this->audioSetting.load();
 	this->languageSetting.load();
 }
 
@@ -182,5 +243,6 @@ void SettingManager::save() {
 
 	this->generalSetting.save();
 	this->videoSetting.save();
+	this->audioSetting.save();
 	this->languageSetting.save();
 }

@@ -70,6 +70,49 @@ public:
 
 ////////////////////////////////////////////////////////
 
+class AudioSetting {
+
+	friend class SettingManager;
+
+private:
+	QString audioDevice;
+	bool audioMuted;
+	int audioVolume;
+
+	QString audioDevice2;
+	bool audioMuted2;
+	int audioVolume2;
+
+private:
+	AudioSetting();
+	~AudioSetting();
+
+	void load();
+	void save();
+
+public:
+	void setAudioDevice(const QString &audioDevice) { this->audioDevice = audioDevice; }
+	void setAudioMuted(bool audioMuted) { this->audioMuted = audioMuted; }
+	void setAudioVolume(int audioVolume) { this->audioVolume = audioVolume; }
+
+	void setAudioDevice2(const QString &audioDevice2) { this->audioDevice2 = audioDevice2; }
+	void setAudioMuted2(bool audioMuted2) { this->audioMuted2 = audioMuted2; }
+	void setAudioVolume2(int audioVolume2) { this->audioVolume2 = audioVolume2; }
+
+public:
+	inline const QString& getAudioDevice() const { return this->audioDevice; }
+	inline bool getAudioMuted() const { return this->audioMuted; }
+	inline int getAudioVolume() const { return this->audioVolume; }
+
+	inline const QString& getAudioDevice2() const { return this->audioDevice2; }
+	inline bool getAudioMuted2() const { return this->audioMuted2; }
+	inline int getAudioVolume2() const { return this->audioVolume2; }
+
+};
+
+////////////////////////////////////////////////////////
+
+
 class LanguageSetting {
 
 	friend class SettingManager;
@@ -112,6 +155,7 @@ private:
 private:
 	GeneralSetting generalSetting;
 	VideoSetting videoSetting;
+	AudioSetting audioSetting;
 	LanguageSetting languageSetting;
 	
 
@@ -128,6 +172,7 @@ public:
 
 	inline GeneralSetting* getGeneralSetting() { return &(this->generalSetting); }
 	inline VideoSetting* getVideoSetting() { return &(this->videoSetting); }
+	inline AudioSetting* getAudioSetting() { return &(this->audioSetting); }
 	inline LanguageSetting* getLanguageSetting() { return &(this->languageSetting); }
 
 	
