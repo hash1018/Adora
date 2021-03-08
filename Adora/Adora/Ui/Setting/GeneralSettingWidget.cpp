@@ -80,9 +80,27 @@ void GeneralSettingWidget::imageButtonClicked() {
 	this->updateItemList();
 }
 
+/*
+#ifdef Q_OS_WIN
+#include <wmp.h>
+#pragma comment(lib,"Winmm.lib")
+#endif 
+*/
 void GeneralSettingWidget::itemListDoubleClicked(QListWidgetItem *item) {
 
+	/*
+#ifdef Q_OS_WIN
+	IWMPPlayer4 *player;
+	CoCreateInstance(CLSID_WindowsMediaPlayer, NULL, CLSCTX_ALL, IID_IWMPPlayer4, (void**)&player);
+	
+	BSTR bstr = SysAllocStringLen(0, item->text().length());
+	item->text().toWCharArray(bstr);
 
+	player->openPlayer(bstr);
+
+#endif 
+	*/
+	
 }
 
 

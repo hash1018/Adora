@@ -57,6 +57,64 @@ void GeneralSetting::save() {
 
 ////////////////////////////////////////////////////////////////////
 
+VideoSetting::VideoSetting()
+	:useStartAndStopHotkey(false), usePauseAndResumeHotkey(false), includeCursor(false), 
+	useHwEncoder(false), fps(30), videoBitrate(1000000) {
+
+}
+
+VideoSetting::~VideoSetting() {
+
+
+}
+
+void VideoSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Video");
+
+	if (settings.contains("useStartAndStopHotkey") == true)
+		this->useStartAndStopHotkey = settings.value("useStartAndStopHotkey").toBool();
+
+	if (settings.contains("usePauseAndResumeHotkey") == true)
+		this->usePauseAndResumeHotkey = settings.value("usePauseAndResumeHotkey").toBool();
+
+	if (settings.contains("includeCursor") == true)
+		this->includeCursor = settings.value("includeCursor").toBool();
+
+	if (settings.contains("useHwEncoder") == true)
+		this->useHwEncoder = settings.value("useHwEncoder").toBool();
+
+	if (settings.contains("fps") == true)
+		this->fps = settings.value("fps").toInt();
+
+	if (settings.contains("videoBitrate") == true)
+		this->videoBitrate = settings.value("videoBitrate").toInt();
+	
+
+	settings.endGroup();
+}
+
+
+void VideoSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Video");
+
+	settings.setValue("useStartAndStopHotkey", this->useStartAndStopHotkey);
+	settings.setValue("usePauseAndResumeHotkey", this->usePauseAndResumeHotkey);
+	settings.setValue("includeCursor", this->includeCursor);
+	settings.setValue("useHwEncoder", this->useHwEncoder);
+	settings.setValue("fps", this->fps);
+	settings.setValue("videoBitrate", this->videoBitrate);
+
+	settings.endGroup();
+}
+
+////////////////////////////////////////////////////////////////////
+
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
 
@@ -112,6 +170,7 @@ void SettingManager::load() {
 		this->adoraPosition = settings.value("AdoraPosition").toPoint();
 
 	this->generalSetting.load();
+	this->videoSetting.load();
 	this->languageSetting.load();
 }
 
@@ -122,5 +181,6 @@ void SettingManager::save() {
 	settings.setValue("AdoraPosition", this->adoraPosition);
 
 	this->generalSetting.save();
+	this->videoSetting.save();
 	this->languageSetting.save();
 }
