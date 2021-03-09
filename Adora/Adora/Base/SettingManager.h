@@ -142,7 +142,40 @@ public:
 
 /////////////////////////////////////////////////////////
 
+class TimeLimitSetting {
 
+	friend class SettingManager;
+
+private:
+	bool useTimeLimit;
+
+	int hour;
+	int minute;
+	int second;
+
+private:
+	TimeLimitSetting();
+	~TimeLimitSetting();
+
+	void load();
+	void save();
+
+public:
+	void setUseTimeLimit(bool useTimeLimit) { this->useTimeLimit = useTimeLimit; }
+	void setHour(int hour) { this->hour = hour; }
+	void setMinute(int minute) { this->minute = minute; }
+	void setSecond(int second) { this->second = second; }
+
+public:
+	inline bool getUseTimeLimit() const { return this->useTimeLimit; }
+	inline int getHour() const { return this->hour; }
+	inline int getMinute() const { return this->minute; }
+	inline int getSecond() const { return this->second; }
+
+};
+
+
+//////////////////////////////////////////////////////////
 
 class LanguageSetting {
 
@@ -188,6 +221,7 @@ private:
 	VideoSetting videoSetting;
 	AudioSetting audioSetting;
 	ImageSetting imageSetting;
+	TimeLimitSetting timeLimitSetting;
 	LanguageSetting languageSetting;
 	
 
@@ -206,6 +240,7 @@ public:
 	inline VideoSetting* getVideoSetting() { return &(this->videoSetting); }
 	inline AudioSetting* getAudioSetting() { return &(this->audioSetting); }
 	inline ImageSetting* getImageSetting() { return &(this->imageSetting); }
+	inline TimeLimitSetting* getTimeLimitSetting() { return &(this->timeLimitSetting); }
 	inline LanguageSetting* getLanguageSetting() { return &(this->languageSetting); }
 
 	

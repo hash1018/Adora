@@ -216,6 +216,54 @@ void ImageSetting::save() {
 
 /////////////////////////////////////////////////////////////////////
 
+TimeLimitSetting::TimeLimitSetting()
+	:useTimeLimit(false), hour(0), minute(0), second(0) {
+
+}
+
+TimeLimitSetting::~TimeLimitSetting() {
+
+
+}
+
+void TimeLimitSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Image");
+
+	if (settings.contains("useTimeLimit") == true)
+		this->useTimeLimit = settings.value("useTimeLimit").toBool();
+
+	if (settings.contains("hour") == true)
+		this->hour = settings.value("hour").toInt();
+
+	if (settings.contains("minute") == true)
+		this->minute = settings.value("minute").toInt();
+
+	if (settings.contains("second") == true)
+		this->second = settings.value("second").toInt();
+
+	settings.endGroup();
+}
+
+void TimeLimitSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Image");
+
+
+	settings.setValue("useTimeLimit", this->useTimeLimit);
+	settings.setValue("hour", this->hour);
+	settings.setValue("minute", this->minute);
+	settings.setValue("second", this->second);
+
+	settings.endGroup();
+}
+
+/////////////////////////////////////////////////////////////////////
+
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
 
@@ -274,6 +322,7 @@ void SettingManager::load() {
 	this->videoSetting.load();
 	this->audioSetting.load();
 	this->imageSetting.load();
+	this->timeLimitSetting.load();
 	this->languageSetting.load();
 }
 
@@ -287,5 +336,6 @@ void SettingManager::save() {
 	this->videoSetting.save();
 	this->audioSetting.save();
 	this->imageSetting.save();
+	this->timeLimitSetting.save();
 	this->languageSetting.save();
 }

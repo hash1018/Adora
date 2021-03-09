@@ -114,6 +114,12 @@
     <ClCompile Include="GeneratedFiles\Release\moc_VideoSettingWidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TimeLimitSettingWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TimeLimitSettingWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -155,6 +161,12 @@
     <CustomBuild Include="Ui\Setting\ImageSettingWidget.ui">
       <Filter>Ui\Setting</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\Setting\TimeLimitSettingWidget.ui">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Setting\TimeLimitSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
@@ -173,9 +185,6 @@
       <Filter>Ui\Setting</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Setting\ImageSettingWidget.h">
-      <Filter>Ui\Setting</Filter>
-    </ClInclude>
-    <ClInclude Include="Ui\Setting\TimeLimitSettingWidget.h">
       <Filter>Ui\Setting</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Setting\WatermarkSettingWidget.h">
@@ -203,6 +212,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_ImageSettingWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TimeLimitSettingWidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
