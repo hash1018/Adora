@@ -175,6 +175,47 @@ void AudioSetting::save() {
 
 /////////////////////////////////////////////////////////////////////
 
+ImageSetting::ImageSetting()
+	:includeCursor(false), useImageCaptureHotkey(false) {
+
+}
+
+ImageSetting::~ImageSetting() {
+
+
+}
+
+void ImageSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Image");
+
+	if (settings.contains("includeCursor") == true)
+		this->includeCursor = settings.value("includeCursor").toBool();
+
+	if (settings.contains("useImageCaptureHotkey") == true)
+		this->useImageCaptureHotkey = settings.value("useImageCaptureHotkey").toBool();
+
+	settings.endGroup();
+}
+
+void ImageSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Image");
+
+	settings.setValue("includeCursor", this->includeCursor);
+	settings.setValue("useImageCaptureHotkey", this->useImageCaptureHotkey);
+
+	settings.endGroup();
+}
+
+
+
+/////////////////////////////////////////////////////////////////////
+
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
 
@@ -232,6 +273,7 @@ void SettingManager::load() {
 	this->generalSetting.load();
 	this->videoSetting.load();
 	this->audioSetting.load();
+	this->imageSetting.load();
 	this->languageSetting.load();
 }
 
@@ -244,5 +286,6 @@ void SettingManager::save() {
 	this->generalSetting.save();
 	this->videoSetting.save();
 	this->audioSetting.save();
+	this->imageSetting.save();
 	this->languageSetting.save();
 }

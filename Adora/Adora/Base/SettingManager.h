@@ -113,6 +113,37 @@ public:
 ////////////////////////////////////////////////////////
 
 
+class ImageSetting {
+
+	friend class SettingManager;
+
+private:
+	bool includeCursor;
+	bool useImageCaptureHotkey;
+
+private:
+	ImageSetting();
+	~ImageSetting();
+
+	void load();
+	void save();
+
+
+public:
+	void setIncludeCursor(bool includeCursor) { this->includeCursor = includeCursor; }
+	void setUseImageCaptureHotkey(bool useImageCaptureHotkey) { this->useImageCaptureHotkey = useImageCaptureHotkey; }
+
+public:
+	inline bool getIncludeCursor() const { return this->includeCursor; }
+	inline bool getUseImageCaptureHotkey() const { return this->useImageCaptureHotkey; }
+};
+
+
+
+/////////////////////////////////////////////////////////
+
+
+
 class LanguageSetting {
 
 	friend class SettingManager;
@@ -156,6 +187,7 @@ private:
 	GeneralSetting generalSetting;
 	VideoSetting videoSetting;
 	AudioSetting audioSetting;
+	ImageSetting imageSetting;
 	LanguageSetting languageSetting;
 	
 
@@ -173,6 +205,7 @@ public:
 	inline GeneralSetting* getGeneralSetting() { return &(this->generalSetting); }
 	inline VideoSetting* getVideoSetting() { return &(this->videoSetting); }
 	inline AudioSetting* getAudioSetting() { return &(this->audioSetting); }
+	inline ImageSetting* getImageSetting() { return &(this->imageSetting); }
 	inline LanguageSetting* getLanguageSetting() { return &(this->languageSetting); }
 
 	

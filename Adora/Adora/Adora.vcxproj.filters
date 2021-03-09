@@ -152,6 +152,9 @@
     <CustomBuild Include="Ui\Setting\AudioSettingWidget.ui">
       <Filter>Ui\Setting</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\Setting\ImageSettingWidget.ui">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
@@ -197,6 +200,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_AudioSettingWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ImageSettingWidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
