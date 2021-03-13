@@ -262,6 +262,53 @@ void TimeLimitSetting::save() {
 	settings.endGroup();
 }
 
+
+/////////////////////////////////////////////////////////////////////
+
+WatermarkSetting::WatermarkSetting()
+	:useWatermark(false), opacity(100), layout(Layout::TopCenter) {
+
+}
+
+WatermarkSetting::~WatermarkSetting() {
+
+}
+
+void WatermarkSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Watermark");
+
+	if (settings.contains("useWatermark") == true)
+		this->useWatermark = settings.value("useWatermark").toBool();
+
+	if (settings.contains("imagePath") == true)
+		this->imagePath = settings.value("imagePath").toString();
+
+	if (settings.contains("opacity") == true)
+		this->opacity = settings.value("opacity").toInt();
+
+	if (settings.contains("layout") == true)
+		this->layout = (Layout)settings.value("layout").toInt();
+
+	settings.endGroup();
+}
+
+void WatermarkSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Watermark");
+
+	settings.setValue("useWatermark", this->useWatermark);
+	settings.setValue("imagePath", this->imagePath);
+	settings.setValue("opacity", this->opacity);
+	settings.setValue("layout", (int)this->layout);
+
+	settings.endGroup();
+}
+
 /////////////////////////////////////////////////////////////////////
 
 LanguageSetting::LanguageSetting()
@@ -323,6 +370,7 @@ void SettingManager::load() {
 	this->audioSetting.load();
 	this->imageSetting.load();
 	this->timeLimitSetting.load();
+	this->watermarkSetting.load();
 	this->languageSetting.load();
 }
 
@@ -337,5 +385,6 @@ void SettingManager::save() {
 	this->audioSetting.save();
 	this->imageSetting.save();
 	this->timeLimitSetting.save();
+	this->watermarkSetting.save();
 	this->languageSetting.save();
 }

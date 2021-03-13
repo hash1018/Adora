@@ -177,6 +177,51 @@ public:
 
 //////////////////////////////////////////////////////////
 
+class WatermarkSetting {
+	
+	friend class SettingManager;
+
+public:
+	enum Layout {
+		TopLeft,
+		TopCenter,
+		TopRight,
+		CenterLeft,
+		CenterCenter,
+		CenterRight,
+		BottomLeft,
+		BottomCenter,
+		BottomRight,
+	};
+private:
+	bool useWatermark;
+	QString imagePath;
+	int opacity;
+	Layout layout;
+	
+private:
+	WatermarkSetting();
+	~WatermarkSetting();
+
+	void load();
+	void save();
+
+public:
+	void setUseWatermark(bool useWatermark) { this->useWatermark = useWatermark; }
+	void setImagePath(const QString &imagePath) { this->imagePath = imagePath; }
+	void setOpacity(int opacity) { this->opacity = opacity; }
+	void setLayout(Layout layout) { this->layout = layout; }
+
+public:
+	inline bool getUseWatermark() const { return this->useWatermark; }
+	inline const QString& getImagePath() const { return this->imagePath; }
+	inline int getOpacity() const { return this->opacity; }
+	inline Layout getLayout() const { return this->layout; }
+};
+
+
+//////////////////////////////////////////////////////////
+
 class LanguageSetting {
 
 	friend class SettingManager;
@@ -222,6 +267,7 @@ private:
 	AudioSetting audioSetting;
 	ImageSetting imageSetting;
 	TimeLimitSetting timeLimitSetting;
+	WatermarkSetting watermarkSetting;
 	LanguageSetting languageSetting;
 	
 
@@ -241,6 +287,7 @@ public:
 	inline AudioSetting* getAudioSetting() { return &(this->audioSetting); }
 	inline ImageSetting* getImageSetting() { return &(this->imageSetting); }
 	inline TimeLimitSetting* getTimeLimitSetting() { return &(this->timeLimitSetting); }
+	inline WatermarkSetting* getWatermarkSetting() { return &(this->watermarkSetting); }
 	inline LanguageSetting* getLanguageSetting() { return &(this->languageSetting); }
 
 	
