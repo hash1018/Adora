@@ -182,6 +182,9 @@
     <CustomBuild Include="Ui\LicenseWidget.ui">
       <Filter>Ui</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\AboutWidget.ui">
+      <Filter>Ui</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
@@ -233,6 +236,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_LicenseWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_AboutWidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
