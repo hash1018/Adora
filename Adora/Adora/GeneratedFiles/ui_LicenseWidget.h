@@ -27,13 +27,13 @@ public:
     {
         if (LicenseWidget->objectName().isEmpty())
             LicenseWidget->setObjectName(QStringLiteral("LicenseWidget"));
-        LicenseWidget->resize(400, 300);
+        LicenseWidget->resize(716, 300);
         licenseLabel = new QLabel(LicenseWidget);
         licenseLabel->setObjectName(QStringLiteral("licenseLabel"));
         licenseLabel->setGeometry(QRect(40, 10, 64, 15));
         licenseTextEdit = new QTextEdit(LicenseWidget);
         licenseTextEdit->setObjectName(QStringLiteral("licenseTextEdit"));
-        licenseTextEdit->setGeometry(QRect(20, 50, 361, 231));
+        licenseTextEdit->setGeometry(QRect(20, 50, 481, 231));
         licenseTextEdit->setReadOnly(true);
 
         retranslateUi(LicenseWidget);
