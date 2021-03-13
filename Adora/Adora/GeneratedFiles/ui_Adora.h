@@ -54,10 +54,10 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         adoraFrameWidget = new AdoraFrameWidget(centralWidget);
         adoraFrameWidget->setObjectName(QStringLiteral("adoraFrameWidget"));
-        adoraFrameWidget->setMinimumSize(QSize(0, 40));
-        adoraFrameWidget->setMaximumSize(QSize(16777215, 40));
+        adoraFrameWidget->setMinimumSize(QSize(700, 40));
+        adoraFrameWidget->setMaximumSize(QSize(700, 40));
 
-        verticalLayout->addWidget(adoraFrameWidget);
+        verticalLayout->addWidget(adoraFrameWidget, 0, Qt::AlignHCenter);
 
         backgroundWidget = new QWidget(centralWidget);
         backgroundWidget->setObjectName(QStringLiteral("backgroundWidget"));

@@ -21,6 +21,7 @@ Adora::Adora(QWidget *parent)
 
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::FramelessWindowHint);
+	this->setAttribute(Qt::WA_TranslucentBackground);
 
 	connect(ui.adoraFrameWidget, &AdoraFrameWidget::closeButtonClicked, this, &Adora::closeButtonClicked);
 	connect(ui.adoraFrameWidget, &AdoraFrameWidget::minimizeButtonClicked, this, &Adora::minimizeButtonClicked);
@@ -72,6 +73,27 @@ void Adora::mouseMoveEvent(QMouseEvent *event) {
 void Adora::mouseReleaseEvent(QMouseEvent *event) {
 
 	this->mousePressed = false;
+}
+
+#include <qpainter.h>
+void Adora::paintEvent(QPaintEvent *event) {
+
+	QPainter painter(this);
+	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
+	painter.setBrush(QBrush(Qt::red));
+	painter.setPen(Qt::transparent);
+	QRect rect = this->rect();
+	rect.setWidth(rect.width() - 1);
+	rect.setHeight(rect.height() - 1);
+	painter.drawRoundedRect(rect, 15, 15);
+	// You can also use QPainterPath to draw instead of painter.drawRoundedRect (rect, 15, 15);
+	{
+		QPainterPath painterPath;
+		painterPath.addRoundedRect(rect, 15, 15);
+		painter.drawPath(painterPath);
+	}
+	QWidget::paintEvent(event);
+
 }
 
 void Adora::closeButtonClicked() {
