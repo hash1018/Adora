@@ -5,6 +5,7 @@
 LicenseWidget::LicenseWidget(QWidget *parent)
 	:QWidget(parent) {
 
+	ui.setupUi(this);
 }
 
 LicenseWidget::~LicenseWidget() {
