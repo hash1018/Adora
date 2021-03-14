@@ -487,6 +487,18 @@ QPushButton#aboutButton:checked {
              </property>
              <item>
               <widget class="QPushButton" name="recordButton">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>73</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>73</height>
+                </size>
+               </property>
                <property name="text">
                 <string>record</string>
                </property>

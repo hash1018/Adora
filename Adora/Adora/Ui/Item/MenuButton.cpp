@@ -24,13 +24,23 @@ void MenuButton::setSelected(bool selected) {
 	this->update();
 }
 
+void MenuButton::setText(const QString &text) {
+
+	this->text = text;
+	this->update();
+
+}
+
 void MenuButton::paintEvent(QPaintEvent *event) {
 
 	QPushButton::paintEvent(event);
 
 	QPainter painter(this);
 
-	painter.drawPixmap(0, 0, 34, 34, this->icon.pixmap(34, 34));
+	painter.drawPixmap(10, 4, 34, 34, this->icon.pixmap(34, 34));
+	
+
+	painter.drawText(55, 0, this->width() - 55, this->height(), Qt::AlignVCenter, this->text);
 	
 	if (this->selected == true) {
 	

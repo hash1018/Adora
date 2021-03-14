@@ -77,6 +77,7 @@ protected:
 private:
 	void initPosition();
 	void initMenuStackWidget();
+	void initMenuButtons();
 };
 
 #endif // ADORA_H

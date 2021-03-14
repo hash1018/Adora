@@ -30,45 +30,12 @@ Adora::Adora(QWidget *parent)
 
 	this->initPosition();
 	this->initMenuStackWidget();
+	this->initMenuButtons();
 
 	connect(ui.recordButton, &QPushButton::clicked, this, &Adora::recordButtonClicked);
 
 
-	this->menuButtons.append(ui.generalButton);
-	this->menuButtons.append(ui.videoButton);
-	this->menuButtons.append(ui.audioButton);
-	this->menuButtons.append(ui.imageButton);
-	this->menuButtons.append(ui.timeLimitButton);
-	this->menuButtons.append(ui.watermarkButton);
-	this->menuButtons.append(ui.languageButton);
-	this->menuButtons.append(ui.licenseButton);
-	this->menuButtons.append(ui.aboutButton);
-
-
-	ui.generalButton->setIcon(QIcon(":/Menu/general"));
-	ui.generalButton->setSelected(true);
-
-
-	ui.videoButton->setIcon(QIcon(":/Menu/video"));
-	ui.audioButton->setIcon(QIcon(":/Menu/audio"));
-	ui.imageButton->setIcon(QIcon(":/Menu/image"));
-	ui.timeLimitButton->setIcon(QIcon(":/Menu/timeLimit"));
-	ui.watermarkButton->setIcon(QIcon(":/Menu/watermark"));
-	ui.languageButton->setIcon(QIcon(":/Menu/language"));
-	ui.licenseButton->setIcon(QIcon(":/Menu/license"));
-	ui.aboutButton->setIcon(QIcon(":/Menu/about"));
-
-
-	connect(ui.generalButton, &QPushButton::clicked, this, &Adora::generalButtonClicked);
-	connect(ui.videoButton, &QPushButton::clicked, this, &Adora::videoButtonClicked);
-	connect(ui.audioButton, &QPushButton::clicked, this, &Adora::audioButtonClicked);
-	connect(ui.imageButton, &QPushButton::clicked, this, &Adora::imageButtonClicked);
-	connect(ui.timeLimitButton, &QPushButton::clicked, this, &Adora::timeLimitButtonClicked);
-	connect(ui.watermarkButton, &QPushButton::clicked, this, &Adora::watermarkButtonClicked);
-	connect(ui.languageButton, &QPushButton::clicked, this, &Adora::languageButtonClicked);
-	connect(ui.licenseButton, &QPushButton::clicked, this, &Adora::licenseButtonClicked);
-	connect(ui.aboutButton, &QPushButton::clicked, this, &Adora::aboutButtonClicked);
-
+	
 }
 
 Adora::~Adora() {
@@ -289,4 +256,55 @@ void Adora::initMenuStackWidget() {
 	ui.menuStackWidget->setCurrentIndex(0);
 
 	connect(this->languageSettingWidget, &LanguageSettingWidget::requestChangeLanguage, this, &Adora::requestRestart);
+}
+
+void Adora::initMenuButtons() {
+
+	this->menuButtons.append(ui.generalButton);
+	this->menuButtons.append(ui.videoButton);
+	this->menuButtons.append(ui.audioButton);
+	this->menuButtons.append(ui.imageButton);
+	this->menuButtons.append(ui.timeLimitButton);
+	this->menuButtons.append(ui.watermarkButton);
+	this->menuButtons.append(ui.languageButton);
+	this->menuButtons.append(ui.licenseButton);
+	this->menuButtons.append(ui.aboutButton);
+
+
+	ui.generalButton->setIcon(QIcon(":/Menu/general"));
+	ui.generalButton->setSelected(true);
+
+
+	ui.videoButton->setIcon(QIcon(":/Menu/video"));
+	ui.audioButton->setIcon(QIcon(":/Menu/audio"));
+	ui.imageButton->setIcon(QIcon(":/Menu/image"));
+	ui.timeLimitButton->setIcon(QIcon(":/Menu/timeLimit"));
+	ui.watermarkButton->setIcon(QIcon(":/Menu/watermark"));
+	ui.languageButton->setIcon(QIcon(":/Menu/language"));
+	ui.licenseButton->setIcon(QIcon(":/Menu/license"));
+	ui.aboutButton->setIcon(QIcon(":/Menu/about"));
+
+	
+	ui.generalButton->setText(getLanUiValue("Menu/General"));
+	ui.videoButton->setText(getLanUiValue("Menu/Video"));
+	ui.audioButton->setText(getLanUiValue("Menu/Audio"));
+	ui.imageButton->setText(getLanUiValue("Menu/Image"));
+	ui.timeLimitButton->setText(getLanUiValue("Menu/Timelimit"));
+	ui.watermarkButton->setText(getLanUiValue("Menu/Watermark"));
+	ui.languageButton->setText(getLanUiValue("Menu/Language"));
+	ui.licenseButton->setText(getLanUiValue("Menu/License"));
+	ui.aboutButton->setText(getLanUiValue("Menu/About"));
+
+
+	connect(ui.generalButton, &QPushButton::clicked, this, &Adora::generalButtonClicked);
+	connect(ui.videoButton, &QPushButton::clicked, this, &Adora::videoButtonClicked);
+	connect(ui.audioButton, &QPushButton::clicked, this, &Adora::audioButtonClicked);
+	connect(ui.imageButton, &QPushButton::clicked, this, &Adora::imageButtonClicked);
+	connect(ui.timeLimitButton, &QPushButton::clicked, this, &Adora::timeLimitButtonClicked);
+	connect(ui.watermarkButton, &QPushButton::clicked, this, &Adora::watermarkButtonClicked);
+	connect(ui.languageButton, &QPushButton::clicked, this, &Adora::languageButtonClicked);
+	connect(ui.licenseButton, &QPushButton::clicked, this, &Adora::licenseButtonClicked);
+	connect(ui.aboutButton, &QPushButton::clicked, this, &Adora::aboutButtonClicked);
+
+
 }

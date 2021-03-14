@@ -10,6 +10,7 @@ class MenuButton : public QPushButton {
 private:
 	QIcon icon;
 	bool selected;
+	QString text;
 
 public:
 	MenuButton(QWidget *parent = nullptr);
@@ -17,6 +18,7 @@ public:
 
 	void setIcon(const QIcon &icon);
 	void setSelected(bool selected);
+	void setText(const QString &text);
 
 protected:
 	virtual void paintEvent(QPaintEvent *event);
