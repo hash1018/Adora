@@ -39,7 +39,7 @@ void MenuButton::paintEvent(QPaintEvent *event) {
 
 	painter.drawPixmap(10, 4, 34, 34, this->icon.pixmap(34, 34));
 	
-
+	painter.setPen(Qt::white);
 	painter.drawText(55, 0, this->width() - 55, this->height(), Qt::AlignVCenter, this->text);
 	
 	if (this->selected == true) {
