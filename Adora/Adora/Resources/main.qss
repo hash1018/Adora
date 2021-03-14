@@ -1,5 +1,15 @@
 
 
+QLineEdit {
+
+    background: #FFFFFF;
+    border: 1px solid #DEDEDE;
+    box-sizing: border-box;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+
+}
+
 QCheckBox::indicator {
     height: 24px;
 	width: 24px;
