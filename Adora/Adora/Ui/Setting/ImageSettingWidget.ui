@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>697</width>
     <height>300</height>
    </rect>
   </property>
@@ -16,11 +16,23 @@
   <widget class="QCheckBox" name="includeCursorCheckBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>161</width>
-     <height>19</height>
+     <x>48</x>
+     <y>84</y>
+     <width>136</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>136</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>136</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>includeCursor</string>
@@ -29,11 +41,23 @@
   <widget class="QLabel" name="imageFormatLabel">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
-     <width>101</width>
-     <height>16</height>
+     <x>48</x>
+     <y>130</y>
+     <width>136</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>136</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>136</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>imageFormat</string>
@@ -42,24 +66,95 @@
   <widget class="QComboBox" name="imageFormatComboBox">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>60</y>
-     <width>171</width>
-     <height>31</height>
+     <x>299</x>
+     <y>130</y>
+     <width>240</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
    </property>
   </widget>
   <widget class="QCheckBox" name="imageCaptureHotkeyCheckBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
-     <width>171</width>
-     <height>19</height>
+     <x>48</x>
+     <y>176</y>
+     <width>136</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>136</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>136</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>imageCaptureHotkey</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imageCpatureLabel">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>97</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>97</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>97</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>imageCapture</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="imageCaptureHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>177</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
    </property>
   </widget>
  </widget>

@@ -16,11 +16,23 @@
   <widget class="QCheckBox" name="startStopHotkeyCheckBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>161</width>
-     <height>19</height>
+     <x>48</x>
+     <y>84</y>
+     <width>143</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>startStopHotkey</string>
@@ -29,11 +41,23 @@
   <widget class="QCheckBox" name="pauseResumeHotkeyCheckBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>90</y>
-     <width>171</width>
-     <height>19</height>
+     <x>48</x>
+     <y>130</y>
+     <width>143</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>pauseResumeHotkey</string>
@@ -42,11 +66,23 @@
   <widget class="QCheckBox" name="includeCursorCheckBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>120</y>
-     <width>141</width>
-     <height>19</height>
+     <x>48</x>
+     <y>176</y>
+     <width>143</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>includeCursor</string>
@@ -55,11 +91,23 @@
   <widget class="QCheckBox" name="useHwEncoderCheckBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>160</y>
-     <width>151</width>
-     <height>19</height>
+     <x>48</x>
+     <y>223</y>
+     <width>143</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>useHwEncoder</string>
@@ -68,11 +116,23 @@
   <widget class="QLabel" name="fpsLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>190</y>
-     <width>64</width>
-     <height>15</height>
+     <x>48</x>
+     <y>269</y>
+     <width>143</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>fps</string>
@@ -81,21 +141,45 @@
   <widget class="QComboBox" name="fpsComboBox">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>190</y>
-     <width>121</width>
-     <height>22</height>
+     <x>299</x>
+     <y>269</y>
+     <width>240</width>
+     <height>36</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="videoBitrateLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>220</y>
-     <width>101</width>
-     <height>16</height>
+     <x>48</x>
+     <y>315</y>
+     <width>143</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>143</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>videoBitrate</string>
@@ -104,11 +188,23 @@
   <widget class="QSpinBox" name="videoBitrateSpinBox">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>220</y>
-     <width>121</width>
-     <height>22</height>
+     <x>299</x>
+     <y>315</y>
+     <width>240</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="suffix">
     <string>kbps</string>
@@ -121,6 +217,97 @@
    </property>
    <property name="singleStep">
     <number>50</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="screenRecordLabel">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>74</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>74</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>74</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="hwEncoderComboBox">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>223</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="pauseResumeHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>130</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="startStopHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>84</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
    </property>
   </widget>
  </widget>
