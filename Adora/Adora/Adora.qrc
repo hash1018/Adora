@@ -4,6 +4,8 @@
         <file alias="adora">Resources/Images/Main/adora.png</file>
         <file alias="checkBox_checked">Resources/Images/Main/checkBox_checked.png</file>
         <file alias="checkBox_unchecked">Resources/Images/Main/checkBox_unchecked.png</file>
+        <file alias="radioButton_checked">Resources/Images/Main/radioButton_checked.png</file>
+        <file alias="radioButton_unchecked">Resources/Images/Main/radioButton_unchecked.png</file>
     </qresource>
     <qresource prefix="/Qss">
         <file alias="main">Resources/main.qss</file>

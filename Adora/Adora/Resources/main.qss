@@ -14,6 +14,19 @@ QCheckBox::indicator::checked {
     image: url(":/Main/checkBox_checked");
 }
 
+QRadioButton::indicator {
+    height: 24px;
+	width: 24px;
+}
+
+QRadioButton::indicator::unchecked {
+
+    image: url(":/Main/radioButton_unchecked");
+}
+
+QRadioButton::indicator::checked {
+    image: url(":/Main/radioButton_checked");
+}
 
 
 
