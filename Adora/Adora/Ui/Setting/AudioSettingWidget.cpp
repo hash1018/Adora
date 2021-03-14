@@ -4,7 +4,7 @@
 #include "Base/SettingManager.h"
 
 AudioSettingWidget::AudioSettingWidget(QWidget *parent)
-	:QWidget(parent) {
+	:AbstractStackWidget(parent) {
 
 	ui.setupUi(this);
 
@@ -18,14 +18,6 @@ AudioSettingWidget::AudioSettingWidget(QWidget *parent)
 AudioSettingWidget::~AudioSettingWidget() {
 
 }
-
-//#include <qpainter.h>
-void AudioSettingWidget::paintEvent(QPaintEvent *event) {
-
-	//QPainter painter(this);
-	//painter.fillRect(this->rect(), QColor(25, 25, 100));
-}
-
 
 void AudioSettingWidget::audioVolumeSliderValueChanged(int value) {
 

@@ -3,10 +3,10 @@
 #ifndef _ABOUTWIDGET_H
 #define _ABOUTWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_AboutWidget.h"
 
-class AboutWidget : public QWidget {
+class AboutWidget : public AbstractStackWidget {
 
 private:
 	Ui::AboutWidget ui;
@@ -16,10 +16,7 @@ public:
 	~AboutWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
 
-
-	
 };
 
 

@@ -3,10 +3,10 @@
 #ifndef _TIMELIMITSETTINGWIDGET_H
 #define _TIMELIMITSETTINGWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_TimeLimitSettingWidget.h"
 
-class TimeLimitSettingWidget : public QWidget {
+class TimeLimitSettingWidget : public AbstractStackWidget {
 
 	Q_OBJECT
 
@@ -18,7 +18,6 @@ public:
 	~TimeLimitSettingWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
 
 	private slots:
 	void useTimeLimitCheckBoxToggled(bool checked);

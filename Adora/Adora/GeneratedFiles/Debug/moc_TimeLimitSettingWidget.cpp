@@ -93,7 +93,7 @@ void TimeLimitSettingWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _
 }
 
 QT_INIT_METAOBJECT const QMetaObject TimeLimitSettingWidget::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_TimeLimitSettingWidget.data,
+    { &AbstractStackWidget::staticMetaObject, qt_meta_stringdata_TimeLimitSettingWidget.data,
       qt_meta_data_TimeLimitSettingWidget,  qt_static_metacall, nullptr, nullptr}
 };
 
@@ -108,12 +108,12 @@ void *TimeLimitSettingWidget::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_TimeLimitSettingWidget.stringdata0))
         return static_cast<void*>(this);
-    return QWidget::qt_metacast(_clname);
+    return AbstractStackWidget::qt_metacast(_clname);
 }
 
 int TimeLimitSettingWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = AbstractStackWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

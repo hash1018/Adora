@@ -207,6 +207,7 @@
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ui\AboutWidget.cpp" />
+    <ClCompile Include="Ui\AbstractStackWidget.cpp" />
     <ClCompile Include="Ui\Adora.cpp" />
     <ClCompile Include="Ui\AdoraFrameWidget.cpp" />
     <ClCompile Include="Ui\LicenseWidget.cpp" />
@@ -294,6 +295,7 @@
     <ClInclude Include="GeneratedFiles\ui_VideoSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_WatermarkSettingWidget.h" />
     <ClInclude Include="Ui\AboutWidget.h" />
+    <ClInclude Include="Ui\AbstractStackWidget.h" />
     <ClInclude Include="Ui\LicenseWidget.h" />
     <ClInclude Include="Ui\Setting\AudioSettingWidget.h" />
     <CustomBuild Include="Ui\Setting\GeneralSettingWidget.h">

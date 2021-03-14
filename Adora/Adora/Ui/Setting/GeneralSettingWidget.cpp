@@ -10,7 +10,7 @@
 #include "Base/LanguageManager.h"
 
 GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
-	:QWidget(parent), listType(Video), orderBy(NameAsc) {
+	:AbstractStackWidget(parent), listType(Video), orderBy(NameAsc) {
 
 	ui.setupUi(this);
 
@@ -42,12 +42,6 @@ GeneralSettingWidget::~GeneralSettingWidget() {
 		delete this->orderByMenu;
 }
 
-#include <qpainter.h>
-void GeneralSettingWidget::paintEvent(QPaintEvent *event) {
-
-	//QPainter painter(this);
-	//painter.fillRect(this->rect(), QColor(12, 12, 12));
-}
 
 void GeneralSettingWidget::searchPathButtonClicked() {
 

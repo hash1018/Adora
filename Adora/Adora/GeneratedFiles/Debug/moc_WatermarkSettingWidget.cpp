@@ -92,7 +92,7 @@ void WatermarkSettingWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _
 }
 
 QT_INIT_METAOBJECT const QMetaObject WatermarkSettingWidget::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_WatermarkSettingWidget.data,
+    { &AbstractStackWidget::staticMetaObject, qt_meta_stringdata_WatermarkSettingWidget.data,
       qt_meta_data_WatermarkSettingWidget,  qt_static_metacall, nullptr, nullptr}
 };
 
@@ -107,12 +107,12 @@ void *WatermarkSettingWidget::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_WatermarkSettingWidget.stringdata0))
         return static_cast<void*>(this);
-    return QWidget::qt_metacast(_clname);
+    return AbstractStackWidget::qt_metacast(_clname);
 }
 
 int WatermarkSettingWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = AbstractStackWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

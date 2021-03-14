@@ -2,6 +2,8 @@
     <qresource prefix="/Main">
         <file alias="arrow_down">Resources/Images/Main/arrow_down.png</file>
         <file alias="adora">Resources/Images/Main/adora.png</file>
+        <file alias="checkBox_checked">Resources/Images/Main/checkBox_checked.png</file>
+        <file alias="checkBox_unchecked">Resources/Images/Main/checkBox_unchecked.png</file>
     </qresource>
     <qresource prefix="/Qss">
         <file alias="main">Resources/main.qss</file>

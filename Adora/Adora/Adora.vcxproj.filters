@@ -126,6 +126,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_WatermarkSettingWidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\AbstractStackWidget.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -240,6 +243,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_AboutWidget.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\AbstractStackWidget.h">
+      <Filter>Ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

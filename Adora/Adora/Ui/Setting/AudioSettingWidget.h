@@ -3,10 +3,10 @@
 #ifndef _AUDIOSETTINGWIDGET_H
 #define _AUDIOSETTINGWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_AudioSettingWidget.h"
 
-class AudioSettingWidget : public QWidget {
+class AudioSettingWidget : public AbstractStackWidget {
 
 private:
 	Ui::AudioSettingWidget ui;
@@ -16,7 +16,7 @@ public:
 	~AudioSettingWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
+	
 
 	private slots:
 	void audioVolumeSliderValueChanged(int value);

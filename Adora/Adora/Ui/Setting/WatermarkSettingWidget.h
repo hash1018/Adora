@@ -4,10 +4,10 @@
 #define _WATERMARKSETTINGWIDGET_H
 
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_WatermarkSettingWidget.h"
 
-class WatermarkSettingWidget : public QWidget {
+class WatermarkSettingWidget : public AbstractStackWidget {
 
 	Q_OBJECT
 
@@ -19,8 +19,6 @@ public:
 	~WatermarkSettingWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
-
 
 	private slots:
 	void useWatermarkCheckBoxClicked();

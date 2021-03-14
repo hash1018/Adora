@@ -1,9 +1,19 @@
-﻿  Uic'ing Ui\AdoraFrameWidget.ui...
-  moc_Adora.cpp
-  moc_AdoraFrameWidget.cpp
+﻿  Moc'ing LanguageSettingWidget.h...
+  Moc'ing TimeLimitSettingWidget.h...
+  Moc'ing VideoSettingWidget.h...
+  Moc'ing WatermarkSettingWidget.h...
+  moc_LanguageSettingWidget.cpp
+  moc_TimeLimitSettingWidget.cpp
+  moc_VideoSettingWidget.cpp
+  moc_WatermarkSettingWidget.cpp
+  AboutWidget.cpp
   Adora.cpp
-  AdoraFrameWidget.cpp
-  main.cpp
+  LicenseWidget.cpp
+  ImageSettingWidget.cpp
+  LanguageSettingWidget.cpp
+  TimeLimitSettingWidget.cpp
+  VideoSettingWidget.cpp
+  WatermarkSettingWidget.cpp
   Generating Code...
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.exe
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.pdb (Full PDB)

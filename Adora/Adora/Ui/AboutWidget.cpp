@@ -3,7 +3,7 @@
 #include "AboutWidget.h"
 
 AboutWidget::AboutWidget(QWidget *parent)
-	:QWidget(parent) {
+	:AbstractStackWidget(parent) {
 
 	ui.setupUi(this);
 
@@ -19,11 +19,4 @@ AboutWidget::AboutWidget(QWidget *parent)
 AboutWidget::~AboutWidget() {
 
 
-}
-
-#include <qpainter.h>
-void AboutWidget::paintEvent(QPaintEvent *event) {
-
-	QPainter painter(this);
-	painter.fillRect(this->rect(), QColor(222, 112, 211));
 }

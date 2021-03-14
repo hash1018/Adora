@@ -75,10 +75,13 @@ public:
 "\n"
 "QPushButton#closeButton:hover{\n"
 "   background-color: #FFCE64;\n"
+"   overflow: hidden;\n"
+"   \n"
 "}\n"
 "\n"
 "QPushButton#closeButton:pressed{\n"
 "   background-color: #FFD477;\n"
+"   overflow: hidden;\n"
 "}"));
         horizontalLayout = new QHBoxLayout(AdoraFrameWidget);
         horizontalLayout->setSpacing(0);

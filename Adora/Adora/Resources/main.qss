@@ -1,4 +1,22 @@
 
+
+QCheckBox::indicator {
+    height: 24px;
+	width: 24px;
+}
+
+QCheckBox::indicator::unchecked {
+
+    image: url(":/Main/checkBox_unchecked");
+}
+
+QCheckBox::indicator::checked {
+    image: url(":/Main/checkBox_checked");
+}
+
+
+
+
 QComboBox {
 
     background: #FFFFFF;
@@ -6,7 +24,7 @@ QComboBox {
     box-sizing: border-box;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
-	
+
 }
 
 QComboBox:hover {

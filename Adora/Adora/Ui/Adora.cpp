@@ -83,8 +83,8 @@ void Adora::paintEvent(QPaintEvent *event) {
 	painter.setBrush(QBrush(QColor("#FFC23D")));
 	painter.setPen(Qt::transparent);
 	QRect rect = this->rect();
-	rect.setWidth(rect.width() - 1);
-	rect.setHeight(rect.height() - 1);
+	rect.setWidth(rect.width());
+	rect.setHeight(rect.height());
 	painter.drawRoundedRect(rect, 15, 15);
 	// You can also use QPainterPath to draw instead of painter.drawRoundedRect (rect, 15, 15);
 	{

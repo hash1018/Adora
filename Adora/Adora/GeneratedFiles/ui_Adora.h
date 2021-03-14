@@ -45,6 +45,7 @@ public:
         Adora->resize(750, 650);
         Adora->setMinimumSize(QSize(750, 650));
         Adora->setMaximumSize(QSize(750, 650));
+        Adora->setStyleSheet(QStringLiteral(""));
         centralWidget = new QWidget(Adora);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -65,11 +66,11 @@ public:
         horizontalLayout->setSpacing(0);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(15, 15, 15, 15);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         menuAreaWidget = new QWidget(backgroundWidget);
         menuAreaWidget->setObjectName(QStringLiteral("menuAreaWidget"));
-        menuAreaWidget->setMinimumSize(QSize(200, 0));
-        menuAreaWidget->setMaximumSize(QSize(200, 16777215));
+        menuAreaWidget->setMinimumSize(QSize(157, 0));
+        menuAreaWidget->setMaximumSize(QSize(157, 16777215));
         verticalLayout_2 = new QVBoxLayout(menuAreaWidget);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -77,6 +78,8 @@ public:
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         menuListWidget = new QListWidget(menuAreaWidget);
         menuListWidget->setObjectName(QStringLiteral("menuListWidget"));
+        menuListWidget->setMinimumSize(QSize(100, 0));
+        menuListWidget->setMaximumSize(QSize(100, 16777215));
 
         verticalLayout_2->addWidget(menuListWidget);
 

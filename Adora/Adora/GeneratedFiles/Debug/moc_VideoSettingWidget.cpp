@@ -103,7 +103,7 @@ void VideoSettingWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
 }
 
 QT_INIT_METAOBJECT const QMetaObject VideoSettingWidget::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_VideoSettingWidget.data,
+    { &AbstractStackWidget::staticMetaObject, qt_meta_stringdata_VideoSettingWidget.data,
       qt_meta_data_VideoSettingWidget,  qt_static_metacall, nullptr, nullptr}
 };
 
@@ -118,12 +118,12 @@ void *VideoSettingWidget::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_VideoSettingWidget.stringdata0))
         return static_cast<void*>(this);
-    return QWidget::qt_metacast(_clname);
+    return AbstractStackWidget::qt_metacast(_clname);
 }
 
 int VideoSettingWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = AbstractStackWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

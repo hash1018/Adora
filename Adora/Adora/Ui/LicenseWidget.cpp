@@ -4,7 +4,7 @@
 #include <qfile.h>
 #include <qtextstream.h>
 LicenseWidget::LicenseWidget(QWidget *parent)
-	:QWidget(parent) {
+	:AbstractStackWidget(parent) {
 
 	ui.setupUi(this);
 
@@ -22,11 +22,4 @@ LicenseWidget::LicenseWidget(QWidget *parent)
 
 LicenseWidget::~LicenseWidget() {
 
-}
-
-#include <qpainter.h>
-void LicenseWidget::paintEvent(QPaintEvent *event) {
-
-	QPainter painter(this);
-	painter.fillRect(this->rect(), QColor(88, 99, 99));
 }

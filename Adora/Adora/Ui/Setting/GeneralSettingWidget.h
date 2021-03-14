@@ -3,7 +3,7 @@
 #ifndef _GENERALSETTINGWIDGET_H
 #define _GENERALSETTINGWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_GeneralSettingWidget.h"
 #include <qmenu.h>
 
@@ -11,7 +11,7 @@
 class QAction;
 class OrderByMenu;
 
-class GeneralSettingWidget : public QWidget {
+class GeneralSettingWidget : public AbstractStackWidget {
 
 	Q_OBJECT
 
@@ -43,7 +43,6 @@ public:
 	~GeneralSettingWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
 
 	private slots:
 	void searchPathButtonClicked();

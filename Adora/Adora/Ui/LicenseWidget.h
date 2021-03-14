@@ -3,10 +3,10 @@
 #ifndef _LICENSEWIDGET_H
 #define _LICENSEWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_LicenseWidget.h"
 
-class LicenseWidget : public QWidget {
+class LicenseWidget : public AbstractStackWidget {
 	
 private:
 	Ui::LicenseWidget ui;
@@ -16,7 +16,7 @@ public:
 	~LicenseWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
+
 };
 
 

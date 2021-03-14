@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Adora</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -65,28 +68,28 @@
         <number>0</number>
        </property>
        <property name="leftMargin">
-        <number>15</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
-        <number>15</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>15</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>15</number>
+        <number>0</number>
        </property>
        <item>
         <widget class="QWidget" name="menuAreaWidget" native="true">
          <property name="minimumSize">
           <size>
-           <width>200</width>
+           <width>157</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>200</width>
+           <width>157</width>
            <height>16777215</height>
           </size>
          </property>
@@ -107,7 +110,20 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QListWidget" name="menuListWidget"/>
+           <widget class="QListWidget" name="menuListWidget">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QWidget" name="buttonAreaWidget" native="true">

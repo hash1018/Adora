@@ -3,10 +3,10 @@
 #ifndef _LANGUAGESETTINGWIDGET_H
 #define _LANGUAGESETTINGWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_LanguageSettingWidget.h"
 
-class LanguageSettingWidget : public QWidget {
+class LanguageSettingWidget : public AbstractStackWidget {
 
 	Q_OBJECT
 
@@ -21,7 +21,7 @@ signals:
 	void requestChangeLanguage();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
+	
 
 	private slots:
 	void changeButtonClicked();

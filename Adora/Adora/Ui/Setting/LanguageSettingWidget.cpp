@@ -4,7 +4,7 @@
 #include "Base/SettingManager.h"
 
 LanguageSettingWidget::LanguageSettingWidget(QWidget *parent)
-	:QWidget(parent) {
+	:AbstractStackWidget(parent) {
 
 	ui.setupUi(this);
 
@@ -20,14 +20,6 @@ LanguageSettingWidget::~LanguageSettingWidget() {
 
 
 }
-
-#include <qpainter.h>
-void LanguageSettingWidget::paintEvent(QPaintEvent *event) {
-
-	QPainter painter(this);
-	painter.fillRect(this->rect(), QColor(55, 55, 23));
-}
-
 
 void LanguageSettingWidget::changeButtonClicked() {
 

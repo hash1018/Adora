@@ -3,10 +3,10 @@
 #ifndef _VIDEOSETTINGWIDGET_H
 #define _VIDEOSETTINGWIDGET_H
 
-#include <qwidget.h>
+#include "Ui/AbstractStackWidget.h"
 #include "ui_VideoSettingWidget.h"
 
-class VideoSettingWidget : public QWidget {
+class VideoSettingWidget : public AbstractStackWidget {
 
 	Q_OBJECT
 
@@ -18,7 +18,6 @@ public:
 	~VideoSettingWidget();
 
 protected:
-	virtual void paintEvent(QPaintEvent *event);
 
 	private slots:
 	void startStopCheckBoxToggled(bool checked);
