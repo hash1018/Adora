@@ -1,11 +1,3 @@
-﻿  Rcc'ing Adora.qrc...
-  Uic'ing Ui\AdoraFrameWidget.ui...
-  moc_Adora.cpp
-  moc_AdoraFrameWidget.cpp
-  Adora.cpp
-  AdoraFrameWidget.cpp
-  main.cpp
-  Generating Code...
-  qrc_Adora.cpp
+﻿  Adora.cpp
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.exe
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.pdb (Full PDB)

@@ -31,6 +31,12 @@ int main(int argc, char *argv[])
 	mainQss.open(QFile::ReadOnly);
 	QString styleSheet = QLatin1String(mainQss.readAll());
 	a.setStyleSheet(styleSheet);
+
+	QString family = "Malgun Gothic";
+	QFont font;
+	font.setFamily(family);
+	font.setPointSize(9);
+	a.setFont(font);
 	
 	adora(a);
 

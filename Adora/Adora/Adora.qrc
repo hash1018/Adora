@@ -6,6 +6,8 @@
         <file alias="checkBox_unchecked">Resources/Images/Main/checkBox_unchecked.png</file>
         <file alias="radioButton_checked">Resources/Images/Main/radioButton_checked.png</file>
         <file alias="radioButton_unchecked">Resources/Images/Main/radioButton_unchecked.png</file>
+        <file alias="spinBox_down_arrow">Resources/Images/Main/spinBox_down_arrow.png</file>
+        <file alias="spinBox_up_arrow">Resources/Images/Main/spinBox_up_arrow.png</file>
     </qresource>
     <qresource prefix="/Qss">
         <file alias="main">Resources/main.qss</file>
@@ -14,5 +16,9 @@
         <file alias="minimize">Resources/Images/Frame/minimize.png</file>
         <file alias="close">Resources/Images/Frame/close.png</file>
         <file alias="close_hover">Resources/Images/Frame/close_hover.png</file>
+    </qresource>
+    <qresource prefix="/Menu">
+        <file alias="general">Resources/Images/Menu/general.png</file>
+        <file alias="video">Resources/Images/Menu/video.png</file>
     </qresource>
 </RCC>

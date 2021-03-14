@@ -43,7 +43,7 @@ public:
         minuteSpinBox->setMaximum(59);
         secondSpinBox = new QSpinBox(TimeLimitSettingWidget);
         secondSpinBox->setObjectName(QStringLiteral("secondSpinBox"));
-        secondSpinBox->setGeometry(QRect(180, 70, 51, 22));
+        secondSpinBox->setGeometry(QRect(180, 70, 121, 41));
         secondSpinBox->setMaximum(59);
 
         retranslateUi(TimeLimitSettingWidget);

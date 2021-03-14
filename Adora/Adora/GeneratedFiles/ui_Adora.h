@@ -12,13 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <Ui/AdoraFrameWidget.h>
+#include <Ui/Item/MenuButton.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -32,7 +32,8 @@ public:
     QHBoxLayout *horizontalLayout;
     QWidget *menuAreaWidget;
     QVBoxLayout *verticalLayout_2;
-    QListWidget *menuListWidget;
+    MenuButton *generalButton;
+    MenuButton *videoButton;
     QWidget *buttonAreaWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *recordButton;
@@ -50,6 +51,30 @@ public:
 "   border-radius: 15px;\n"
 "   overflow: hidden;\n"
 "\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: 0px;\n"
+"}\n"
+"\n"
+"QPushButton#generalButton:hover {\n"
+"    background-color: #FFCE64;\n"
+"}\n"
+"\n"
+"QPushButton#generalButton:checked {\n"
+"    background-color: #FFD477;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"QPushButton#videoButton:hover {\n"
+"    background-color: #FFCE64;\n"
+"}\n"
+"\n"
+"QPushButton#videoButton:checked {\n"
+"    background-color: #FFD477;\n"
 "}"));
         centralWidget = new QWidget(Adora);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -81,12 +106,22 @@ public:
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        menuListWidget = new QListWidget(menuAreaWidget);
-        menuListWidget->setObjectName(QStringLiteral("menuListWidget"));
-        menuListWidget->setMinimumSize(QSize(100, 0));
-        menuListWidget->setMaximumSize(QSize(100, 16777215));
+        generalButton = new MenuButton(menuAreaWidget);
+        generalButton->setObjectName(QStringLiteral("generalButton"));
+        generalButton->setMinimumSize(QSize(157, 42));
+        generalButton->setMaximumSize(QSize(157, 42));
+        generalButton->setCheckable(true);
+        generalButton->setChecked(false);
 
-        verticalLayout_2->addWidget(menuListWidget);
+        verticalLayout_2->addWidget(generalButton);
+
+        videoButton = new MenuButton(menuAreaWidget);
+        videoButton->setObjectName(QStringLiteral("videoButton"));
+        videoButton->setMinimumSize(QSize(157, 42));
+        videoButton->setMaximumSize(QSize(157, 42));
+        videoButton->setCheckable(true);
+
+        verticalLayout_2->addWidget(videoButton);
 
         buttonAreaWidget = new QWidget(menuAreaWidget);
         buttonAreaWidget->setObjectName(QStringLiteral("buttonAreaWidget"));
@@ -125,6 +160,8 @@ public:
     void retranslateUi(QMainWindow *Adora)
     {
         Adora->setWindowTitle(QApplication::translate("Adora", "Adora", nullptr));
+        generalButton->setText(QApplication::translate("Adora", "general", nullptr));
+        videoButton->setText(QApplication::translate("Adora", "video", nullptr));
         recordButton->setText(QApplication::translate("Adora", "record", nullptr));
     } // retranslateUi
 

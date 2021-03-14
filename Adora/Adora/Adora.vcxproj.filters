@@ -37,6 +37,9 @@
     <Filter Include="Ui\Setting">
       <UniqueIdentifier>{56c0c52f-50c2-4e7e-adf0-d5d3c2b8c89b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ui\Item">
+      <UniqueIdentifier>{dd7a1c1e-2f90-4596-9f56-bd27929cad7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -128,6 +131,9 @@
     </ClCompile>
     <ClCompile Include="Ui\AbstractStackWidget.cpp">
       <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Item\MenuButton.cpp">
+      <Filter>Ui\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +252,9 @@
     </ClInclude>
     <ClInclude Include="Ui\AbstractStackWidget.h">
       <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Item\MenuButton.h">
+      <Filter>Ui\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

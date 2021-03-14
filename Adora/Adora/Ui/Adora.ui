@@ -31,6 +31,30 @@
    border-radius: 15px;
    overflow: hidden;
 
+}
+
+QPushButton {
+    background-color: transparent;
+    border: 0px;
+}
+
+QPushButton#generalButton:hover {
+    background-color: #FFCE64;
+}
+
+QPushButton#generalButton:checked {
+    background-color: #FFD477;
+}
+
+
+
+
+QPushButton#videoButton:hover {
+    background-color: #FFCE64;
+}
+
+QPushButton#videoButton:checked {
+    background-color: #FFD477;
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -115,18 +139,49 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QListWidget" name="menuListWidget">
+           <widget class="MenuButton" name="generalButton">
             <property name="minimumSize">
              <size>
-              <width>100</width>
-              <height>0</height>
+              <width>157</width>
+              <height>42</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>100</width>
-              <height>16777215</height>
+              <width>157</width>
+              <height>42</height>
              </size>
+            </property>
+            <property name="text">
+             <string>general</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="videoButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>video</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -174,6 +229,11 @@
    <extends>QWidget</extends>
    <header location="global">Ui/AdoraFrameWidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MenuButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">Ui/Item/MenuButton.h</header>
   </customwidget>
  </customwidgets>
  <resources>

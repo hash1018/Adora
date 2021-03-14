@@ -29,11 +29,25 @@ Adora::Adora(QWidget *parent)
 	SettingManager::getInstance()->load();
 
 	this->initPosition();
-	this->initMenuListWidget();
 	this->initMenuStackWidget();
 
 	connect(ui.recordButton, &QPushButton::clicked, this, &Adora::recordButtonClicked);
-	connect(ui.menuListWidget, &QListWidget::itemClicked, this, &Adora::menuListItemClicked);
+
+
+	this->menuButtons.append(ui.generalButton);
+	this->menuButtons.append(ui.videoButton);
+
+	ui.generalButton->setIcon(QIcon(":/Menu/general"));
+	ui.generalButton->setSelected(true);
+
+
+	ui.videoButton->setIcon(QIcon(":/Menu/video"));
+
+
+
+
+	connect(ui.generalButton, &QPushButton::clicked, this, &Adora::generalButtonClicked);
+	connect(ui.videoButton, &QPushButton::clicked, this, &Adora::videoButtonClicked);
 
 }
 
@@ -75,28 +89,6 @@ void Adora::mouseReleaseEvent(QMouseEvent *event) {
 	this->mousePressed = false;
 }
 
-#include <qpainter.h>
-void Adora::paintEvent(QPaintEvent *event) {
-
-	/*
-	QPainter painter(this);
-	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
-	painter.setBrush(QBrush(QColor("#FFC23D")));
-	painter.setPen(Qt::transparent);
-	QRect rect = this->rect();
-	rect.setWidth(rect.width());
-	rect.setHeight(rect.height());
-	painter.drawRoundedRect(rect, 15, 15);
-	// You can also use QPainterPath to draw instead of painter.drawRoundedRect (rect, 15, 15);
-	{
-		QPainterPath painterPath;
-		painterPath.addRoundedRect(rect, 15, 15);
-		painter.drawPath(painterPath);
-	}
-	*/
-	QWidget::paintEvent(event);
-
-}
 
 void Adora::closeButtonClicked() {
 
@@ -114,10 +106,24 @@ void Adora::recordButtonClicked() {
 
 }
 
-void Adora::menuListItemClicked(QListWidgetItem *item) {
+void Adora::generalButtonClicked() {
 
-	int index = ui.menuListWidget->row(item);
-	ui.menuStackWidget->setCurrentIndex(index);
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.generalButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->generalSettingWidget);
+}
+
+void Adora::videoButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.videoButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->videoSettingWidget);
 }
 
 void Adora::requestRestart() {
@@ -148,6 +154,7 @@ void Adora::initPosition() {
 	}
 }
 
+/*
 void Adora::initMenuListWidget() {
 
 	
@@ -163,6 +170,8 @@ void Adora::initMenuListWidget() {
 
 	ui.menuListWidget->setCurrentRow(0);
 }
+
+*/
 
 void Adora::initMenuStackWidget() {
 

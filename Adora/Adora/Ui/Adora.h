@@ -14,6 +14,9 @@ class WatermarkSettingWidget;
 class LanguageSettingWidget;
 class LicenseWidget;
 class AboutWidget;
+class MenuButton;
+
+#include <qlist.h>
 
 class Adora : public QMainWindow {
 	Q_OBJECT
@@ -39,6 +42,10 @@ private:
 	LicenseWidget *licenseWidget;
 	AboutWidget *aboutWidget;
 
+
+private:
+	QList<MenuButton*> menuButtons;
+
 public:
 	Adora(QWidget *parent = nullptr);
 	~Adora();
@@ -48,19 +55,20 @@ protected:
 	virtual void mousePressEvent(QMouseEvent *event);
 	virtual void mouseMoveEvent(QMouseEvent *event);
 	virtual void mouseReleaseEvent(QMouseEvent *event);
-	virtual void paintEvent(QPaintEvent *event);
 
 	private slots :
 	void closeButtonClicked();
 	void minimizeButtonClicked();
 	void recordButtonClicked();
-	void menuListItemClicked(QListWidgetItem *item);
 	void requestRestart();
+
+
+	void generalButtonClicked();
+	void videoButtonClicked();
 
 
 private:
 	void initPosition();
-	void initMenuListWidget();
 	void initMenuStackWidget();
 };
 
