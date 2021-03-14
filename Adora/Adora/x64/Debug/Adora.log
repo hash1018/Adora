@@ -1,7 +1,9 @@
-﻿  LanguageManager.cpp
-  SettingManager.cpp
+﻿  Uic'ing Ui\AdoraFrameWidget.ui...
+  moc_Adora.cpp
+  moc_AdoraFrameWidget.cpp
   Adora.cpp
-  GeneralSettingWidget.cpp
+  AdoraFrameWidget.cpp
+  main.cpp
   Generating Code...
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.exe
   Adora.vcxproj -> D:\Github\Adora\Adora\x64\Debug\Adora.pdb (Full PDB)

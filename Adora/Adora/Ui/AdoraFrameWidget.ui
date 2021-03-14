@@ -6,45 +6,135 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>778</width>
-    <height>40</height>
+    <width>750</width>
+    <height>66</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>40</height>
+    <width>750</width>
+    <height>66</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>16777215</width>
-    <height>40</height>
+    <width>750</width>
+    <height>66</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #FFC23D
+}
+
+QLabel#adoraLabel{
+   background-image: url(:/Main/adora);
+}
+
+QPushButton{
+    padding: 0px 0px 0px 0px;
+    border: 0px;
+	border-radius: 2px;
+}
+
+QPushButton#minimizeButton {
+ 
+    background-color: transparent;
+    background-image: url(:/Frame/minimize);
+    
+}
+
+QPushButton#minimizeButton:hover{
+   background-color: #FFCE64;
+}
+
+QPushButton#minimizeButton:pressed{
+   background-color: #FFD477;
+}
+
+
+
+
+QPushButton#closeButton {
+    background-color: transparent;
+    background-image: url(:/Frame/minimize);
+}
+
+QPushButton#closeButton:hover{
+   background-color: #FFCE64;
+}
+
+QPushButton#closeButton:pressed{
+   background-color: #FFD477;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0">
    <property name="spacing">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="leftMargin">
     <number>0</number>
    </property>
    <property name="topMargin">
-    <number>5</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>10</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>5</number>
+    <number>0</number>
    </property>
    <item>
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>325</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="adoraLabel">
+     <property name="minimumSize">
+      <size>
+       <width>101</width>
+       <height>26</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>101</width>
+       <height>26</height>
+      </size>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -54,46 +144,48 @@
      </property>
     </spacer>
    </item>
-   <item>
+   <item alignment="Qt::AlignRight">
     <widget class="QPushButton" name="minimizeButton">
      <property name="minimumSize">
       <size>
-       <width>30</width>
-       <height>30</height>
+       <width>50</width>
+       <height>66</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>30</width>
-       <height>30</height>
+       <width>50</width>
+       <height>66</height>
       </size>
      </property>
      <property name="text">
-      <string>_</string>
+      <string/>
      </property>
     </widget>
    </item>
-   <item>
+   <item alignment="Qt::AlignRight">
     <widget class="QPushButton" name="closeButton">
      <property name="minimumSize">
       <size>
-       <width>30</width>
-       <height>30</height>
+       <width>50</width>
+       <height>66</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>30</width>
-       <height>30</height>
+       <width>50</width>
+       <height>66</height>
       </size>
      </property>
      <property name="text">
-      <string>x</string>
+      <string/>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Adora.qrc"/>
+ </resources>
  <connections/>
 </ui>

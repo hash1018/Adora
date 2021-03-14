@@ -54,8 +54,8 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         adoraFrameWidget = new AdoraFrameWidget(centralWidget);
         adoraFrameWidget->setObjectName(QStringLiteral("adoraFrameWidget"));
-        adoraFrameWidget->setMinimumSize(QSize(700, 40));
-        adoraFrameWidget->setMaximumSize(QSize(700, 40));
+        adoraFrameWidget->setMinimumSize(QSize(750, 66));
+        adoraFrameWidget->setMaximumSize(QSize(750, 66));
 
         verticalLayout->addWidget(adoraFrameWidget, 0, Qt::AlignHCenter);
 

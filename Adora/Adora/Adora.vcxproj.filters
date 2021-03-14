@@ -271,4 +271,9 @@
       <Filter>Ui\Design</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

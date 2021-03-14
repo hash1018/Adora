@@ -46,14 +46,14 @@
      <widget class="AdoraFrameWidget" name="adoraFrameWidget" native="true">
       <property name="minimumSize">
        <size>
-        <width>700</width>
-        <height>40</height>
+        <width>750</width>
+        <height>66</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>700</width>
-        <height>40</height>
+        <width>750</width>
+        <height>66</height>
        </size>
       </property>
      </widget>

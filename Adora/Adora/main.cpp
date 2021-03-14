@@ -1,6 +1,7 @@
 #include "Ui/Adora.h"
 #include <QtWidgets/QApplication>
 #include <qsharedmemory.h>
+#include <qfile.h>
 
 void adora(QApplication &app) {
 
@@ -25,6 +26,11 @@ int main(int argc, char *argv[])
 
 		exit(0);
 	}
+
+	QFile mainQss(":/Qss/main");
+	mainQss.open(QFile::ReadOnly);
+	QString styleSheet = QLatin1String(mainQss.readAll());
+	a.setStyleSheet(styleSheet);
 	
 	adora(a);
 

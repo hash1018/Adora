@@ -23,9 +23,6 @@ public:
 		   void closeButtonClicked();
 		   void minimizeButtonClicked();
 
-
-protected:
-	virtual void paintEvent(QPaintEvent *event);
 };
 
 #endif //_ADORAFRAMEWIDGET_H

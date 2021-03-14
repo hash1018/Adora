@@ -80,7 +80,7 @@ void Adora::paintEvent(QPaintEvent *event) {
 
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
-	painter.setBrush(QBrush(Qt::red));
+	painter.setBrush(QBrush(QColor("#FFC23D")));
 	painter.setPen(Qt::transparent);
 	QRect rect = this->rect();
 	rect.setWidth(rect.width() - 1);
