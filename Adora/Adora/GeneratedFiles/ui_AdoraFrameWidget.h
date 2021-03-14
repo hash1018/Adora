@@ -37,7 +37,9 @@ public:
         AdoraFrameWidget->setMinimumSize(QSize(750, 66));
         AdoraFrameWidget->setMaximumSize(QSize(750, 66));
         AdoraFrameWidget->setStyleSheet(QLatin1String("QWidget {\n"
-"    background-color: #FFC23D\n"
+"    background-color: #FFC23D;\n"
+"/*    border-radius: 15px 15px 0 0;*/\n"
+"   overflow: hidden;\n"
 "}\n"
 "\n"
 "QLabel#adoraLabel{\n"
@@ -70,18 +72,16 @@ public:
 "\n"
 "QPushButton#closeButton {\n"
 "    background-color: transparent;\n"
-"    background-image: url(:/Frame/minimize);\n"
+"    background-image: url(:/Frame/close);\n"
 "}\n"
 "\n"
 "QPushButton#closeButton:hover{\n"
-"   background-color: #FFCE64;\n"
-"   overflow: hidden;\n"
-"   \n"
+"     background-color: transparent;\n"
+"    background-image: url(:/Frame/close_hover);\n"
 "}\n"
 "\n"
 "QPushButton#closeButton:pressed{\n"
 "   background-color: #FFD477;\n"
-"   overflow: hidden;\n"
 "}"));
         horizontalLayout = new QHBoxLayout(AdoraFrameWidget);
         horizontalLayout->setSpacing(0);

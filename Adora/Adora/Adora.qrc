@@ -12,5 +12,7 @@
     </qresource>
     <qresource prefix="/Frame">
         <file alias="minimize">Resources/Images/Frame/minimize.png</file>
+        <file alias="close">Resources/Images/Frame/close.png</file>
+        <file alias="close_hover">Resources/Images/Frame/close_hover.png</file>
     </qresource>
 </RCC>

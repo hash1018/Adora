@@ -26,7 +26,12 @@
    <string>Adora</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QWidget#centralWidget {
+   background-color: #FFC23D;
+   border-radius: 15px;
+   overflow: hidden;
+
+}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">

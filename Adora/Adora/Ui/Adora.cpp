@@ -78,6 +78,7 @@ void Adora::mouseReleaseEvent(QMouseEvent *event) {
 #include <qpainter.h>
 void Adora::paintEvent(QPaintEvent *event) {
 
+	/*
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
 	painter.setBrush(QBrush(QColor("#FFC23D")));
@@ -92,6 +93,7 @@ void Adora::paintEvent(QPaintEvent *event) {
 		painterPath.addRoundedRect(rect, 15, 15);
 		painter.drawPath(painterPath);
 	}
+	*/
 	QWidget::paintEvent(event);
 
 }

@@ -15,7 +15,7 @@ AbstractStackWidget::~AbstractStackWidget() {
 void AbstractStackWidget::paintEvent(QPaintEvent *event) {
 
 	QPainter painter(this);
-
+	
 	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
 	painter.setBrush(QBrush(QColor("#FFFFFF")));
 	painter.setPen(Qt::transparent);

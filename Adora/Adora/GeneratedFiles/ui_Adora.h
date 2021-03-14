@@ -45,7 +45,12 @@ public:
         Adora->resize(750, 650);
         Adora->setMinimumSize(QSize(750, 650));
         Adora->setMaximumSize(QSize(750, 650));
-        Adora->setStyleSheet(QStringLiteral(""));
+        Adora->setStyleSheet(QLatin1String("QWidget#centralWidget {\n"
+"   background-color: #FFC23D;\n"
+"   border-radius: 15px;\n"
+"   overflow: hidden;\n"
+"\n"
+"}"));
         centralWidget = new QWidget(Adora);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
