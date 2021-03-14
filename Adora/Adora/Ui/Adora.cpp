@@ -36,18 +36,38 @@ Adora::Adora(QWidget *parent)
 
 	this->menuButtons.append(ui.generalButton);
 	this->menuButtons.append(ui.videoButton);
+	this->menuButtons.append(ui.audioButton);
+	this->menuButtons.append(ui.imageButton);
+	this->menuButtons.append(ui.timeLimitButton);
+	this->menuButtons.append(ui.watermarkButton);
+	this->menuButtons.append(ui.languageButton);
+	this->menuButtons.append(ui.licenseButton);
+	this->menuButtons.append(ui.aboutButton);
+
 
 	ui.generalButton->setIcon(QIcon(":/Menu/general"));
 	ui.generalButton->setSelected(true);
 
 
 	ui.videoButton->setIcon(QIcon(":/Menu/video"));
-
-
+	ui.audioButton->setIcon(QIcon(":/Menu/audio"));
+	ui.imageButton->setIcon(QIcon(":/Menu/image"));
+	ui.timeLimitButton->setIcon(QIcon(":/Menu/timeLimit"));
+	ui.watermarkButton->setIcon(QIcon(":/Menu/watermark"));
+	ui.languageButton->setIcon(QIcon(":/Menu/language"));
+	ui.licenseButton->setIcon(QIcon(":/Menu/license"));
+	ui.aboutButton->setIcon(QIcon(":/Menu/about"));
 
 
 	connect(ui.generalButton, &QPushButton::clicked, this, &Adora::generalButtonClicked);
 	connect(ui.videoButton, &QPushButton::clicked, this, &Adora::videoButtonClicked);
+	connect(ui.audioButton, &QPushButton::clicked, this, &Adora::audioButtonClicked);
+	connect(ui.imageButton, &QPushButton::clicked, this, &Adora::imageButtonClicked);
+	connect(ui.timeLimitButton, &QPushButton::clicked, this, &Adora::timeLimitButtonClicked);
+	connect(ui.watermarkButton, &QPushButton::clicked, this, &Adora::watermarkButtonClicked);
+	connect(ui.languageButton, &QPushButton::clicked, this, &Adora::languageButtonClicked);
+	connect(ui.licenseButton, &QPushButton::clicked, this, &Adora::licenseButtonClicked);
+	connect(ui.aboutButton, &QPushButton::clicked, this, &Adora::aboutButtonClicked);
 
 }
 
@@ -124,6 +144,76 @@ void Adora::videoButtonClicked() {
 	ui.videoButton->setSelected(true);
 
 	ui.menuStackWidget->setCurrentWidget(this->videoSettingWidget);
+}
+
+void Adora::audioButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.audioButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->audioSettingWidget);
+}
+
+void Adora::imageButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.imageButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->imageSettingWidget);
+}
+
+void Adora::timeLimitButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.timeLimitButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->timeLimitSettingWidget);
+}
+
+void Adora::watermarkButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.watermarkButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->watermarkSettingWidget);
+}
+
+void Adora::languageButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.languageButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->languageSettingWidget);
+}
+
+void Adora::licenseButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.licenseButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->licenseWidget);
+}
+
+void Adora::aboutButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.aboutButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->aboutWidget);
 }
 
 void Adora::requestRestart() {

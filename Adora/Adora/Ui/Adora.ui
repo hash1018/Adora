@@ -33,27 +33,114 @@
 
 }
 
-QPushButton {
+QPushButton#generalButton {
     background-color: transparent;
     border: 0px;
 }
-
 QPushButton#generalButton:hover {
     background-color: #FFCE64;
 }
-
 QPushButton#generalButton:checked {
     background-color: #FFD477;
 }
 
 
 
-
+QPushButton#videoButton {
+    background-color: transparent;
+    border: 0px;
+}
 QPushButton#videoButton:hover {
     background-color: #FFCE64;
 }
-
 QPushButton#videoButton:checked {
+    background-color: #FFD477;
+}
+
+
+
+QPushButton#audioButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#audioButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#audioButton:checked {
+    background-color: #FFD477;
+}
+
+
+
+QPushButton#imageButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#imageButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#imageButton:checked {
+    background-color: #FFD477;
+}
+
+
+QPushButton#timeLimitButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#timeLimitButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#timeLimitButton:checked {
+    background-color: #FFD477;
+}
+
+
+QPushButton#watermarkButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#watermarkButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#watermarkButton:checked {
+    background-color: #FFD477;
+}
+
+
+QPushButton#languageButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#languageButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#languageButton:checked {
+    background-color: #FFD477;
+}
+
+
+QPushButton#licenseButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#licenseButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#licenseButton:checked {
+    background-color: #FFD477;
+}
+
+
+
+QPushButton#aboutButton {
+    background-color: transparent;
+    border: 0px;
+}
+QPushButton#aboutButton:hover {
+    background-color: #FFCE64;
+}
+QPushButton#aboutButton:checked {
     background-color: #FFD477;
 }</string>
   </property>
@@ -139,6 +226,22 @@ QPushButton#videoButton:checked {
            <number>0</number>
           </property>
           <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="MenuButton" name="generalButton">
             <property name="minimumSize">
              <size>
@@ -186,20 +289,202 @@ QPushButton#videoButton:checked {
            </widget>
           </item>
           <item>
+           <widget class="MenuButton" name="audioButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>audio</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="imageButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>image</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="timeLimitButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>timeLimit</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="watermarkButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>watermark</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="languageButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>language</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="licenseButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>license</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MenuButton" name="aboutButton">
+            <property name="minimumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>157</width>
+              <height>42</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>about</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::MinimumExpanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QWidget" name="buttonAreaWidget" native="true">
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>50</height>
+              <height>73</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>50</height>
+              <height>73</height>
              </size>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QPushButton" name="recordButton">
                <property name="text">
@@ -209,6 +494,22 @@ QPushButton#videoButton:checked {
              </item>
             </layout>
            </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>

@@ -20,5 +20,12 @@
     <qresource prefix="/Menu">
         <file alias="general">Resources/Images/Menu/general.png</file>
         <file alias="video">Resources/Images/Menu/video.png</file>
+        <file alias="audio">Resources/Images/Menu/audio.png</file>
+        <file alias="image">Resources/Images/Menu/image.png</file>
+        <file alias="about">Resources/Images/Menu/about.png</file>
+        <file alias="language">Resources/Images/Menu/language.png</file>
+        <file alias="license">Resources/Images/Menu/license.png</file>
+        <file alias="timeLimit">Resources/Images/Menu/timeLimit.png</file>
+        <file alias="watermark">Resources/Images/Menu/watermark.png</file>
     </qresource>
 </RCC>

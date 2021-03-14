@@ -65,6 +65,13 @@ protected:
 
 	void generalButtonClicked();
 	void videoButtonClicked();
+	void audioButtonClicked();
+	void imageButtonClicked();
+	void timeLimitButtonClicked();
+	void watermarkButtonClicked();
+	void languageButtonClicked();
+	void licenseButtonClicked();
+	void aboutButtonClicked();
 
 
 private:
