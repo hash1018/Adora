@@ -16,6 +16,8 @@
 
 #include "Base/LanguageManager.h"
 
+#include "Ui/Record/RecordVideoDialog.h"
+
 Adora::Adora(QWidget *parent)
 	: QMainWindow(parent), mousePressed(false),restart(false) {
 
@@ -91,6 +93,12 @@ void Adora::minimizeButtonClicked() {
 void Adora::recordButtonClicked() {
 
 
+	RecordVideoDialog dialog;
+
+	this->hide();
+	dialog.exec();
+
+	this->show();
 }
 
 void Adora::generalButtonClicked() {

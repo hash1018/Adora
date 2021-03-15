@@ -40,6 +40,9 @@
     <Filter Include="Ui\Item">
       <UniqueIdentifier>{dd7a1c1e-2f90-4596-9f56-bd27929cad7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ui\Record">
+      <UniqueIdentifier>{d0e913f9-577e-477c-ad2a-a2ba59b63ca2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -134,6 +137,9 @@
     </ClCompile>
     <ClCompile Include="Ui\Item\MenuButton.cpp">
       <Filter>Ui\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Record\RecordVideoDialog.cpp">
+      <Filter>Ui\Record</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +261,9 @@
     </ClInclude>
     <ClInclude Include="Ui\Item\MenuButton.h">
       <Filter>Ui\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\RecordVideoDialog.h">
+      <Filter>Ui\Record</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

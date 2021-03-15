@@ -39,6 +39,8 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	QString str = "<b>" + getLanUiValue("MenuGeneral/SavePath") + "</b>";
 	ui.savePathLabel->setTextFormat(Qt::RichText);
 	ui.savePathLabel->setText(str);
+
+	ui.openDirectoryButton->setText(getLanUiValue("MenuGeneral/Open"));
 }
 
 GeneralSettingWidget::~GeneralSettingWidget() {

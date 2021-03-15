@@ -212,6 +212,7 @@
     <ClCompile Include="Ui\AdoraFrameWidget.cpp" />
     <ClCompile Include="Ui\Item\MenuButton.cpp" />
     <ClCompile Include="Ui\LicenseWidget.cpp" />
+    <ClCompile Include="Ui\Record\RecordVideoDialog.cpp" />
     <ClCompile Include="Ui\Setting\AudioSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\GeneralSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\ImageSettingWidget.cpp" />
@@ -299,6 +300,7 @@
     <ClInclude Include="Ui\AbstractStackWidget.h" />
     <ClInclude Include="Ui\Item\MenuButton.h" />
     <ClInclude Include="Ui\LicenseWidget.h" />
+    <ClInclude Include="Ui\Record\RecordVideoDialog.h" />
     <ClInclude Include="Ui\Setting\AudioSettingWidget.h" />
     <CustomBuild Include="Ui\Setting\GeneralSettingWidget.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
