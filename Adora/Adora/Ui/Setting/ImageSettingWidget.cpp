@@ -1,6 +1,7 @@
 
 #include "ImageSettingWidget.h"
 #include "Base/SettingManager.h"
+#include "Base/LanguageManager.h"
 
 ImageSettingWidget::ImageSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
@@ -12,6 +13,10 @@ ImageSettingWidget::ImageSettingWidget(QWidget *parent)
 
 	connect(ui.includeCursorCheckBox, &QCheckBox::toggled, this, &ImageSettingWidget::includeCursorCheckBoxToggled);
 	connect(ui.imageCaptureHotkeyCheckBox, &QCheckBox::toggled, this, &ImageSettingWidget::useImageCaptureHotkeyCheckBoxToggled);
+
+	QString str = "<b>" + getLanUiValue("MenuImage/CaptureImage") + "</b>";
+	ui.imageCpatureLabel->setTextFormat(Qt::RichText);
+	ui.imageCpatureLabel->setText(str);
 }
 
 ImageSettingWidget::~ImageSettingWidget() {

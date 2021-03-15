@@ -25,6 +25,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton#searchPathButton {
+    background-image: url(&quot;:/General/search&quot;);
+
+}</string>
+  </property>
   <widget class="QLineEdit" name="savePathLineEdit">
    <property name="geometry">
     <rect>

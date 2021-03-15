@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>716</width>
-    <height>300</height>
+    <height>564</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,11 +16,23 @@
   <widget class="QLabel" name="licenseLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>10</y>
-     <width>64</width>
-     <height>15</height>
+     <x>48</x>
+     <y>45</y>
+     <width>74</width>
+     <height>23</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>74</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>74</width>
+     <height>23</height>
+    </size>
    </property>
    <property name="text">
     <string>license</string>
@@ -29,11 +41,23 @@
   <widget class="QTextEdit" name="licenseTextEdit">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>50</y>
-     <width>481</width>
-     <height>231</height>
+     <x>48</x>
+     <y>82</y>
+     <width>491</width>
+     <height>400</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>491</width>
+     <height>400</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>491</width>
+     <height>400</height>
+    </size>
    </property>
    <property name="readOnly">
     <bool>true</bool>

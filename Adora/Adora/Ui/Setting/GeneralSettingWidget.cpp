@@ -20,7 +20,7 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	connect(ui.videoButton, &QPushButton::clicked, this, &GeneralSettingWidget::videoButtonClicked);
 	connect(ui.imageButton, &QPushButton::clicked, this, &GeneralSettingWidget::imageButtonClicked);
 
-
+	
 	ui.savePathLineEdit->setText(SettingManager::getInstance()->getGeneralSetting()->getSavePath());
 	this->updateItemList();
 
@@ -34,6 +34,11 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 
 	connect(this->orderByMenu, &OrderByMenu::orderActionClicked, this, &GeneralSettingWidget::orderByMenuActionClicked);
 	connect(ui.orderByButton, &QPushButton::clicked, this, &GeneralSettingWidget::orderByButtonClicked);
+
+
+	QString str = "<b>" + getLanUiValue("MenuGeneral/SavePath") + "</b>";
+	ui.savePathLabel->setTextFormat(Qt::RichText);
+	ui.savePathLabel->setText(str);
 }
 
 GeneralSettingWidget::~GeneralSettingWidget() {

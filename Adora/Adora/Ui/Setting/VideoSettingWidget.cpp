@@ -2,6 +2,7 @@
 
 #include "VideoSettingWidget.h"
 #include "Base/SettingManager.h"
+#include "Base/LanguageManager.h"
 
 VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
@@ -23,6 +24,12 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	connect(ui.useHwEncoderCheckBox, &QCheckBox::toggled, this, &VideoSettingWidget::useHwEncoderCheckBoxToggled);
 	connect(ui.fpsComboBox, &QComboBox::currentTextChanged, this, &VideoSettingWidget::fpsComboBoxCurrentTextChanged);
 	connect(ui.videoBitrateSpinBox, SIGNAL(valueChanged(int)), this, SLOT(videoBitrateSpinBoxValueChanged(int)));
+
+
+	QString str = "<b>" + getLanUiValue("MenuVideo/RecordScreen") + "</b>";
+	ui.screenRecordLabel->setTextFormat(Qt::RichText);
+	ui.screenRecordLabel->setText(str);
+	
 }
 
 VideoSettingWidget::~VideoSettingWidget() {

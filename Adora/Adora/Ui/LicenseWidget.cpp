@@ -3,6 +3,8 @@
 #include "LicenseWidget.h"
 #include <qfile.h>
 #include <qtextstream.h>
+#include "Base/LanguageManager.h"
+
 LicenseWidget::LicenseWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
 
@@ -18,6 +20,11 @@ LicenseWidget::LicenseWidget(QWidget *parent)
 		ui.licenseTextEdit->setText(line);
 
 	}
+
+
+	QString str = "<b>" + getLanUiValue("MenuLicense/License") + "</b>";
+	ui.licenseLabel->setTextFormat(Qt::RichText);
+	ui.licenseLabel->setText(str);
 }
 
 LicenseWidget::~LicenseWidget() {
