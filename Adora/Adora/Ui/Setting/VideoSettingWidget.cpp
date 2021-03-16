@@ -39,6 +39,13 @@ VideoSettingWidget::~VideoSettingWidget() {
 void VideoSettingWidget::startStopCheckBoxToggled(bool checked) {
 
 	SettingManager::getInstance()->getVideoSetting()->setUseStartAndStopHotkey(checked);
+
+	if (checked == true) {
+		ui.startStopHotkeyLineEdit->setDisabled(false);
+	}
+	else {
+		ui.startStopHotkeyLineEdit->setDisabled(true);
+	}
 }
 
 void VideoSettingWidget::pauseResumeCheckBoxToggled(bool checked) {
