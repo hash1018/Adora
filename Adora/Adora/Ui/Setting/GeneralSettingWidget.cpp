@@ -41,6 +41,10 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	ui.savePathLabel->setText(str);
 
 	ui.openDirectoryButton->setText(getLanUiValue("MenuGeneral/Open"));
+
+	ui.deleteButton->setText("   " + getLanUiValue("MenuGeneral/Delete"));
+	ui.uploadButton->setText("   " + getLanUiValue("MenuGeneral/Upload"));
+	ui.playButton->setText("   " + getLanUiValue("MenuGeneral/Play"));
 }
 
 GeneralSettingWidget::~GeneralSettingWidget() {

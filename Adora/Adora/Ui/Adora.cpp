@@ -34,6 +34,8 @@ Adora::Adora(QWidget *parent)
 	this->initMenuStackWidget();
 	this->initMenuButtons();
 
+	
+	ui.recordButton->setText("    " + getLanUiValue("Menu/Record"));
 	connect(ui.recordButton, &QPushButton::clicked, this, &Adora::recordButtonClicked);
 
 

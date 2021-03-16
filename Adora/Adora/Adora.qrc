@@ -27,5 +27,11 @@
         <file alias="license">Resources/Images/Menu/license.png</file>
         <file alias="timeLimit">Resources/Images/Menu/timeLimit.png</file>
         <file alias="watermark">Resources/Images/Menu/watermark.png</file>
+        <file alias="record">Resources/Images/Menu/record.png</file>
+    </qresource>
+    <qresource prefix="/General_Menu">
+        <file alias="play">Resources/Images/Menu/General/play.png</file>
+        <file alias="upload">Resources/Images/Menu/General/upload.png</file>
+        <file alias="delete">Resources/Images/Menu/General/delete.png</file>
     </qresource>
 </RCC>

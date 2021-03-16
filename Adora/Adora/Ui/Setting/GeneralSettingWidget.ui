@@ -33,10 +33,54 @@
 
 }
 
+QPushButton#searchPathButton:hover{
+     background-color:#B5B5B5;
+}
+
 QPushButton#openDirectoryButton{
     border-radius:5px;
     background-color: #2E2E2E;
     color: #FFFFFF;
+}
+
+QPushButton#openDirectoryButton:hover{
+    background-color: #656565;
+}
+
+
+QPushButton#playButton{
+    border-radius:5px;
+    background-image: url(:/General_Menu/play);
+    background-color: #FFC23D;
+    color: #FFFFFF;
+}
+
+QPushButton#playButton:hover {
+    background-color: #FFCE64;
+}
+
+
+QPushButton#uploadButton{
+    border-radius:5px;
+    background-image: url(:/General_Menu/upload);
+    background-color: #FFC23D;
+    color: #FFFFFF;
+}
+
+QPushButton#uploadButton:hover {
+    background-color: #FFCE64;
+}
+
+
+QPushButton#deleteButton{
+    border-radius:5px;
+    background-image: url(:/General_Menu/delete);
+    background-color: #FFC23D;
+    color: #FFFFFF;
+}
+
+QPushButton#deleteButton:hover {
+    background-color: #FFCE64;
 }</string>
   </property>
   <widget class="QLineEdit" name="savePathLineEdit">
@@ -232,8 +276,11 @@ QPushButton#openDirectoryButton{
      <height>36</height>
     </size>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="text">
-    <string>play</string>
+    <string>  Play</string>
    </property>
   </widget>
   <widget class="QPushButton" name="uploadButton">
@@ -258,7 +305,7 @@ QPushButton#openDirectoryButton{
     </size>
    </property>
    <property name="text">
-    <string>upload</string>
+    <string>   Upload</string>
    </property>
   </widget>
   <widget class="QPushButton" name="deleteButton">
@@ -283,7 +330,7 @@ QPushButton#openDirectoryButton{
     </size>
    </property>
    <property name="text">
-    <string>delete</string>
+    <string>   Delete</string>
    </property>
   </widget>
   <widget class="QLabel" name="savePathLabel">
@@ -312,6 +359,8 @@ QPushButton#openDirectoryButton{
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Adora.qrc"/>
+ </resources>
  <connections/>
 </ui>

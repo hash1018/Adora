@@ -142,6 +142,19 @@ QPushButton#aboutButton:hover {
 }
 QPushButton#aboutButton:checked {
     background-color: #FFD477;
+}
+
+
+QPushButton#recordButton{
+    background-image: url(:/Menu/record);
+    background-color: transparent;
+    border:0px;
+    color:white;
+    font-weight:bold;
+}
+
+QPushButton#recordButton:hover {
+    background-color: #FFCE64;
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -489,13 +502,13 @@ QPushButton#aboutButton:checked {
               <widget class="QPushButton" name="recordButton">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
+                 <width>157</width>
                  <height>73</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>157</width>
                  <height>73</height>
                 </size>
                </property>
