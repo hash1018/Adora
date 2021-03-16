@@ -10,9 +10,16 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	ui.setupUi(this);
 
 	ui.startStopHotkeyCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey());
+	ui.startStopHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey());
+
 	ui.pauseResumeHotkeyCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey());
+	ui.pauseResumeHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey());
+
 	ui.includeCursorCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getIncludeCursor());
+
 	ui.useHwEncoderCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUseHwEncoder());
+	ui.hwEncoderComboBox->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUseHwEncoder());
+
 	ui.fpsComboBox->addItems(QStringList() << "10" << "15" << "20" << "25" << "30");
 	ui.fpsComboBox->setCurrentText(QString::number(SettingManager::getInstance()->getVideoSetting()->getFps()));
 	ui.videoBitrateSpinBox->setValue(SettingManager::getInstance()->getVideoSetting()->getVideoBitrate() / 1000);
@@ -40,17 +47,15 @@ void VideoSettingWidget::startStopCheckBoxToggled(bool checked) {
 
 	SettingManager::getInstance()->getVideoSetting()->setUseStartAndStopHotkey(checked);
 
-	if (checked == true) {
-		ui.startStopHotkeyLineEdit->setDisabled(false);
-	}
-	else {
-		ui.startStopHotkeyLineEdit->setDisabled(true);
-	}
+	
+	ui.startStopHotkeyLineEdit->setDisabled(!checked);
 }
 
 void VideoSettingWidget::pauseResumeCheckBoxToggled(bool checked) {
 
 	SettingManager::getInstance()->getVideoSetting()->setUsePauseAndResumeHotkey(checked);
+
+	ui.pauseResumeHotkeyLineEdit->setDisabled(!checked);
 }
 
 void VideoSettingWidget::includeCursorCheckBoxToggled(bool checked) {
@@ -61,6 +66,8 @@ void VideoSettingWidget::includeCursorCheckBoxToggled(bool checked) {
 void VideoSettingWidget::useHwEncoderCheckBoxToggled(bool checked) {
 
 	SettingManager::getInstance()->getVideoSetting()->setUseHwEncoder(checked);
+
+	ui.hwEncoderComboBox->setDisabled(!checked);
 }
 
 void VideoSettingWidget::fpsComboBoxCurrentTextChanged(const QString &text) {
