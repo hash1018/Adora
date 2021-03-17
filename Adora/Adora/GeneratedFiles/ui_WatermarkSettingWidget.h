@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -32,6 +33,7 @@ public:
     QLabel *opacityLabel;
     QSpinBox *opacitySpinBox;
     QGroupBox *watermarkLayoutGroupBox;
+    QGridLayout *gridLayout;
     QRadioButton *topLeftRadioButton;
     QRadioButton *topCenterRadioButton;
     QRadioButton *topRightRadioButton;
@@ -41,62 +43,130 @@ public:
     QRadioButton *bottomLeftRadioButton;
     QRadioButton *bottomCenterRadioButton;
     QRadioButton *bottomRightRadioButton;
+    QLabel *watermarkLabel;
 
     void setupUi(QWidget *WatermarkSettingWidget)
     {
         if (WatermarkSettingWidget->objectName().isEmpty())
             WatermarkSettingWidget->setObjectName(QStringLiteral("WatermarkSettingWidget"));
-        WatermarkSettingWidget->resize(492, 300);
+        WatermarkSettingWidget->resize(700, 756);
+        WatermarkSettingWidget->setStyleSheet(QLatin1String("QPushButton#openExplorerButton {\n"
+"    border-radius:5px;\n"
+"    background-color: #A0A0A0;\n"
+"    color: #FFFFFF;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#openExplorerButton:hover{\n"
+"     background-color:#B5B5B5;\n"
+"}"));
         useWatermarkCheckBox = new QCheckBox(WatermarkSettingWidget);
         useWatermarkCheckBox->setObjectName(QStringLiteral("useWatermarkCheckBox"));
-        useWatermarkCheckBox->setGeometry(QRect(30, 20, 131, 19));
+        useWatermarkCheckBox->setGeometry(QRect(48, 84, 150, 36));
+        useWatermarkCheckBox->setMinimumSize(QSize(150, 36));
+        useWatermarkCheckBox->setMaximumSize(QSize(150, 36));
         imagePathLabel = new QLabel(WatermarkSettingWidget);
         imagePathLabel->setObjectName(QStringLiteral("imagePathLabel"));
-        imagePathLabel->setGeometry(QRect(30, 60, 101, 16));
+        imagePathLabel->setGeometry(QRect(48, 130, 100, 36));
+        imagePathLabel->setMinimumSize(QSize(100, 36));
+        imagePathLabel->setMaximumSize(QSize(100, 36));
         imagePathLineEdit = new QLineEdit(WatermarkSettingWidget);
         imagePathLineEdit->setObjectName(QStringLiteral("imagePathLineEdit"));
-        imagePathLineEdit->setGeometry(QRect(30, 90, 271, 31));
+        imagePathLineEdit->setGeometry(QRect(47, 166, 360, 36));
+        imagePathLineEdit->setMinimumSize(QSize(360, 36));
+        imagePathLineEdit->setMaximumSize(QSize(360, 36));
         imagePathLineEdit->setReadOnly(true);
         openExplorerButton = new QPushButton(WatermarkSettingWidget);
         openExplorerButton->setObjectName(QStringLiteral("openExplorerButton"));
-        openExplorerButton->setGeometry(QRect(310, 90, 31, 28));
+        openExplorerButton->setGeometry(QRect(419, 166, 50, 36));
+        openExplorerButton->setMinimumSize(QSize(50, 36));
+        openExplorerButton->setMaximumSize(QSize(50, 36));
         opacityLabel = new QLabel(WatermarkSettingWidget);
         opacityLabel->setObjectName(QStringLiteral("opacityLabel"));
-        opacityLabel->setGeometry(QRect(30, 140, 64, 15));
+        opacityLabel->setGeometry(QRect(48, 214, 100, 36));
+        opacityLabel->setMinimumSize(QSize(100, 36));
+        opacityLabel->setMaximumSize(QSize(100, 36));
         opacitySpinBox = new QSpinBox(WatermarkSettingWidget);
         opacitySpinBox->setObjectName(QStringLiteral("opacitySpinBox"));
-        opacitySpinBox->setGeometry(QRect(310, 130, 43, 22));
+        opacitySpinBox->setGeometry(QRect(48, 250, 80, 36));
+        opacitySpinBox->setMinimumSize(QSize(80, 36));
+        opacitySpinBox->setMaximumSize(QSize(80, 36));
         opacitySpinBox->setMaximum(100);
         watermarkLayoutGroupBox = new QGroupBox(WatermarkSettingWidget);
         watermarkLayoutGroupBox->setObjectName(QStringLiteral("watermarkLayoutGroupBox"));
-        watermarkLayoutGroupBox->setGeometry(QRect(30, 170, 261, 111));
+        watermarkLayoutGroupBox->setGeometry(QRect(48, 298, 232, 160));
+        watermarkLayoutGroupBox->setMinimumSize(QSize(232, 160));
+        watermarkLayoutGroupBox->setMaximumSize(QSize(232, 160));
+        gridLayout = new QGridLayout(watermarkLayoutGroupBox);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         topLeftRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         topLeftRadioButton->setObjectName(QStringLiteral("topLeftRadioButton"));
-        topLeftRadioButton->setGeometry(QRect(10, 20, 108, 19));
+        topLeftRadioButton->setMinimumSize(QSize(20, 20));
+        topLeftRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(topLeftRadioButton, 0, 0, 1, 1);
+
         topCenterRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         topCenterRadioButton->setObjectName(QStringLiteral("topCenterRadioButton"));
-        topCenterRadioButton->setGeometry(QRect(130, 20, 108, 19));
+        topCenterRadioButton->setMinimumSize(QSize(20, 20));
+        topCenterRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(topCenterRadioButton, 0, 1, 1, 1);
+
         topRightRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         topRightRadioButton->setObjectName(QStringLiteral("topRightRadioButton"));
-        topRightRadioButton->setGeometry(QRect(230, 20, 108, 19));
+        topRightRadioButton->setMinimumSize(QSize(20, 20));
+        topRightRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(topRightRadioButton, 0, 2, 1, 1);
+
         centerLeftRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         centerLeftRadioButton->setObjectName(QStringLiteral("centerLeftRadioButton"));
-        centerLeftRadioButton->setGeometry(QRect(10, 50, 108, 19));
+        centerLeftRadioButton->setMinimumSize(QSize(20, 20));
+        centerLeftRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(centerLeftRadioButton, 1, 0, 1, 1);
+
         centerCenterRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         centerCenterRadioButton->setObjectName(QStringLiteral("centerCenterRadioButton"));
-        centerCenterRadioButton->setGeometry(QRect(130, 50, 108, 19));
+        centerCenterRadioButton->setMinimumSize(QSize(20, 20));
+        centerCenterRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(centerCenterRadioButton, 1, 1, 1, 1);
+
         centerRightRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         centerRightRadioButton->setObjectName(QStringLiteral("centerRightRadioButton"));
-        centerRightRadioButton->setGeometry(QRect(230, 50, 108, 19));
+        centerRightRadioButton->setMinimumSize(QSize(20, 20));
+        centerRightRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(centerRightRadioButton, 1, 2, 1, 1);
+
         bottomLeftRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         bottomLeftRadioButton->setObjectName(QStringLiteral("bottomLeftRadioButton"));
-        bottomLeftRadioButton->setGeometry(QRect(10, 80, 108, 19));
+        bottomLeftRadioButton->setMinimumSize(QSize(20, 20));
+        bottomLeftRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(bottomLeftRadioButton, 2, 0, 1, 1);
+
         bottomCenterRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         bottomCenterRadioButton->setObjectName(QStringLiteral("bottomCenterRadioButton"));
-        bottomCenterRadioButton->setGeometry(QRect(130, 80, 108, 19));
+        bottomCenterRadioButton->setMinimumSize(QSize(20, 20));
+        bottomCenterRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(bottomCenterRadioButton, 2, 1, 1, 1);
+
         bottomRightRadioButton = new QRadioButton(watermarkLayoutGroupBox);
         bottomRightRadioButton->setObjectName(QStringLiteral("bottomRightRadioButton"));
-        bottomRightRadioButton->setGeometry(QRect(230, 80, 108, 19));
+        bottomRightRadioButton->setMinimumSize(QSize(20, 20));
+        bottomRightRadioButton->setMaximumSize(QSize(20, 20));
+
+        gridLayout->addWidget(bottomRightRadioButton, 2, 2, 1, 1);
+
+        watermarkLabel = new QLabel(WatermarkSettingWidget);
+        watermarkLabel->setObjectName(QStringLiteral("watermarkLabel"));
+        watermarkLabel->setGeometry(QRect(48, 45, 176, 23));
+        watermarkLabel->setMinimumSize(QSize(176, 23));
+        watermarkLabel->setMaximumSize(QSize(176, 23));
 
         retranslateUi(WatermarkSettingWidget);
 
@@ -120,6 +190,7 @@ public:
         bottomLeftRadioButton->setText(QString());
         bottomCenterRadioButton->setText(QString());
         bottomRightRadioButton->setText(QString());
+        watermarkLabel->setText(QApplication::translate("WatermarkSettingWidget", "TextLabel", nullptr));
     } // retranslateUi
 
 };

@@ -6,21 +6,45 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>492</width>
-    <height>300</height>
+    <width>700</width>
+    <height>756</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton#openExplorerButton {
+    border-radius:5px;
+    background-color: #A0A0A0;
+    color: #FFFFFF;
+
+}
+
+QPushButton#openExplorerButton:hover{
+     background-color:#B5B5B5;
+}</string>
+  </property>
   <widget class="QCheckBox" name="useWatermarkCheckBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>20</y>
-     <width>131</width>
-     <height>19</height>
+     <x>48</x>
+     <y>84</y>
+     <width>150</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>150</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>useWatermark</string>
@@ -29,11 +53,23 @@
   <widget class="QLabel" name="imagePathLabel">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
-     <width>101</width>
-     <height>16</height>
+     <x>48</x>
+     <y>130</y>
+     <width>100</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>Image Path</string>
@@ -42,11 +78,23 @@
   <widget class="QLineEdit" name="imagePathLineEdit">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
-     <width>271</width>
-     <height>31</height>
+     <x>47</x>
+     <y>166</y>
+     <width>360</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>360</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>360</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -55,11 +103,23 @@
   <widget class="QPushButton" name="openExplorerButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>90</y>
-     <width>31</width>
-     <height>28</height>
+     <x>419</x>
+     <y>166</y>
+     <width>50</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>50</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>...</string>
@@ -68,11 +128,23 @@
   <widget class="QLabel" name="opacityLabel">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>140</y>
-     <width>64</width>
-     <height>15</height>
+     <x>48</x>
+     <y>214</y>
+     <width>100</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>opacity</string>
@@ -81,11 +153,23 @@
   <widget class="QSpinBox" name="opacitySpinBox">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>130</y>
-     <width>43</width>
-     <height>22</height>
+     <x>48</x>
+     <y>250</y>
+     <width>80</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="maximum">
     <number>100</number>
@@ -94,132 +178,225 @@
   <widget class="QGroupBox" name="watermarkLayoutGroupBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>170</y>
-     <width>261</width>
-     <height>111</height>
+     <x>48</x>
+     <y>298</y>
+     <width>232</width>
+     <height>160</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>232</width>
+     <height>160</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>232</width>
+     <height>160</height>
+    </size>
    </property>
    <property name="title">
     <string>layout</string>
    </property>
-   <widget class="QRadioButton" name="topLeftRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="topCenterRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>20</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="topRightRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>20</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="centerLeftRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="centerCenterRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>50</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="centerRightRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>50</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="bottomLeftRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="bottomCenterRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>80</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="bottomRightRadioButton">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>80</y>
-      <width>108</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QRadioButton" name="topLeftRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QRadioButton" name="topCenterRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QRadioButton" name="topRightRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QRadioButton" name="centerLeftRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QRadioButton" name="centerCenterRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QRadioButton" name="centerRightRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QRadioButton" name="bottomLeftRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QRadioButton" name="bottomCenterRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QRadioButton" name="bottomRightRadioButton">
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="watermarkLabel">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>176</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>176</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>176</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
   </widget>
  </widget>
  <resources/>

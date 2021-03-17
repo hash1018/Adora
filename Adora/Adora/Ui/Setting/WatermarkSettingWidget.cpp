@@ -4,6 +4,7 @@
 #include "Base/SettingManager.h"
 #include <qfiledialog.h>
 #include <qfile.h>
+#include "Base/LanguageManager.h"
 
 WatermarkSettingWidget::WatermarkSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
@@ -11,6 +12,7 @@ WatermarkSettingWidget::WatermarkSettingWidget(QWidget *parent)
 	ui.setupUi(this);
 
 	ui.useWatermarkCheckBox->setChecked(SettingManager::getInstance()->getWatermarkSetting()->getUseWatermark());
+	ui.imagePathLineEdit->setDisabled(!ui.useWatermarkCheckBox->isChecked());
 	
 
 	QString filePath = SettingManager::getInstance()->getWatermarkSetting()->getImagePath();
@@ -24,6 +26,15 @@ WatermarkSettingWidget::WatermarkSettingWidget(QWidget *parent)
 	}
 
 
+	QString str = "<b>" + getLanUiValue("MenuWatermark/Watermark") + "</b>";
+	ui.watermarkLabel->setTextFormat(Qt::RichText);
+	ui.watermarkLabel->setText(str);
+
+	ui.useWatermarkCheckBox->setText(getLanUiValue("MenuWatermark/Use Watermark"));
+	ui.imagePathLabel->setText(getLanUiValue("MenuWatermark/Image Path"));
+	ui.opacityLabel->setText(getLanUiValue("MenuWatermark/Opacity"));
+	
+	ui.watermarkLayoutGroupBox->setTitle(getLanUiValue("MenuWatermark/Position"));
 
 
 	ui.opacitySpinBox->setValue(SettingManager::getInstance()->getWatermarkSetting()->getOpacity());
@@ -84,12 +95,8 @@ WatermarkSettingWidget::~WatermarkSettingWidget() {
 
 void WatermarkSettingWidget::useWatermarkCheckBoxClicked() {
 
-	if (ui.useWatermarkCheckBox->isChecked() == true) {
-		SettingManager::getInstance()->getWatermarkSetting()->setUseWatermark(true);
-	}
-	else {
-		SettingManager::getInstance()->getWatermarkSetting()->setUseWatermark(false);
-	}
+	SettingManager::getInstance()->getWatermarkSetting()->setUseWatermark(ui.useWatermarkCheckBox->isChecked());
+	ui.imagePathLineEdit->setDisabled(!ui.useWatermarkCheckBox->isChecked());
 }
 
 
