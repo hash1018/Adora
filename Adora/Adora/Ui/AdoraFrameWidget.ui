@@ -69,10 +69,7 @@ QPushButton#closeButton:hover{
      background-color: transparent;
     background-image: url(:/Frame/close_hover);
 }
-
-QPushButton#closeButton:pressed{
-   background-color: #FFD477;
-}</string>
+</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0">
    <property name="spacing">
