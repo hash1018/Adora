@@ -141,6 +141,9 @@
     <ClCompile Include="Ui\Record\RecordVideoDialog.cpp">
       <Filter>Ui\Record</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Item\HotkeyLineEdit.cpp">
+      <Filter>Ui\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -264,6 +267,9 @@
     </ClInclude>
     <ClInclude Include="Ui\Record\RecordVideoDialog.h">
       <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Item\HotkeyLineEdit.h">
+      <Filter>Ui\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
