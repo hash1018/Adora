@@ -144,6 +144,12 @@
     <ClCompile Include="Ui\Item\HotkeyLineEdit.cpp">
       <Filter>Ui\Item</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_HotkeyLineEdit.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_HotkeyLineEdit.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -202,6 +208,9 @@
     </CustomBuild>
     <CustomBuild Include="Ui\AboutWidget.ui">
       <Filter>Ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Item\HotkeyLineEdit.h">
+      <Filter>Ui\Item</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -267,9 +276,6 @@
     </ClInclude>
     <ClInclude Include="Ui\Record\RecordVideoDialog.h">
       <Filter>Ui\Record</Filter>
-    </ClInclude>
-    <ClInclude Include="Ui\Item\HotkeyLineEdit.h">
-      <Filter>Ui\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

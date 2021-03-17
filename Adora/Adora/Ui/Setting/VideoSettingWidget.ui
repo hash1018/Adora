@@ -288,7 +288,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QLineEdit" name="startStopHotkeyLineEdit">
+  <widget class="HotkeyLineEdit" name="startStopHotkeyLineEdit">
    <property name="geometry">
     <rect>
      <x>299</x>
@@ -311,6 +311,13 @@
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HotkeyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">Ui/Item/HotkeyLineEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -7,10 +7,18 @@
 
 class HotkeyLineEdit : public QLineEdit {
 
+	Q_OBJECT
+
 public:
 	HotkeyLineEdit(QWidget *parent = nullptr);
 	~HotkeyLineEdit();
 
+signals:
+	void hotkeyEmitted(Qt::KeyboardModifiers modifiers, int key);
+	void hotkeyEmitted(Qt::KeyboardModifiers modifiers);
+
+protected:
+	virtual void keyPressEvent(QKeyEvent *event);
 
 };
 
