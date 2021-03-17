@@ -33,7 +33,7 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	connect(ui.videoBitrateSpinBox, SIGNAL(valueChanged(int)), this, SLOT(videoBitrateSpinBoxValueChanged(int)));
 
 
-	QString str = "<b>" + getLanUiValue("MenuVideo/RecordScreen") + "</b>";
+	QString str = "<b>" + getLanUiValue("MenuVideo/Record Screen") + "</b>";
 	ui.screenRecordLabel->setTextFormat(Qt::RichText);
 	ui.screenRecordLabel->setText(str);
 
