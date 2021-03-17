@@ -266,7 +266,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QLineEdit" name="pauseResumeHotkeyLineEdit">
+  <widget class="HotkeyLineEdit" name="pauseResumeHotkeyLineEdit">
    <property name="geometry">
     <rect>
      <x>299</x>
