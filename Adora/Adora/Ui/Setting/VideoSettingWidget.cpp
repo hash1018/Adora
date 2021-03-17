@@ -36,7 +36,13 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	QString str = "<b>" + getLanUiValue("MenuVideo/RecordScreen") + "</b>";
 	ui.screenRecordLabel->setTextFormat(Qt::RichText);
 	ui.screenRecordLabel->setText(str);
-	
+
+	ui.startStopHotkeyCheckBox->setText(getLanUiValue("MenuVideo/Start/Stop Hotkey"));
+	ui.pauseResumeHotkeyCheckBox->setText(getLanUiValue("MenuVideo/Pause/Resume Hotkey"));
+	ui.includeCursorCheckBox->setText(getLanUiValue("MenuVideo/Include Cursor"));
+	ui.useHwEncoderCheckBox->setText(getLanUiValue("MenuVideo/Hardware Accelerate"));
+	ui.fpsLabel->setText(getLanUiValue("MenuVideo/FPS"));
+	ui.videoBitrateLabel->setText(getLanUiValue("MenuVideo/Video Bitrate"));
 }
 
 VideoSettingWidget::~VideoSettingWidget() {
