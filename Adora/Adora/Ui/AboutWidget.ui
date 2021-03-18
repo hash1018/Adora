@@ -13,55 +13,251 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="developerLabel">
+  <property name="styleSheet">
+   <string notr="true">QWidget#groupWidget {
+   background-color:#F6F6F6;
+   border-radius:15px;
+   
+}
+
+QLabel#AdoraLabel {
+    background-image:url(:/Main/adora_black);
+}</string>
+  </property>
+  <widget class="QLabel" name="AdoraLabel">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>270</y>
-     <width>181</width>
-     <height>16</height>
+     <x>57</x>
+     <y>132</y>
+     <width>162</width>
+     <height>42</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>162</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>162</width>
+     <height>42</height>
+    </size>
+   </property>
    <property name="text">
-    <string>개발자   하승호</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="emailLabel">
+  <widget class="QWidget" name="groupWidget" native="true">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>300</y>
-     <width>231</width>
-     <height>16</height>
+     <x>48</x>
+     <y>232</y>
+     <width>475</width>
+     <height>140</height>
     </rect>
    </property>
-   <property name="text">
-    <string>e-mail  sh.ha1018@gmail.com</string>
+   <property name="minimumSize">
+    <size>
+     <width>475</width>
+     <height>140</height>
+    </size>
    </property>
+   <property name="maximumSize">
+    <size>
+     <width>475</width>
+     <height>140</height>
+    </size>
+   </property>
+   <widget class="QLabel" name="githubLabel">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>83</y>
+      <width>54</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>54</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>54</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="openExternalLinks">
+     <bool>true</bool>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::TextBrowserInteraction</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="developerLabel">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>21</y>
+      <width>45</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>45</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>45</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="emailLabel">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>52</y>
+      <width>44</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>44</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>44</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="developerLabel2">
+    <property name="geometry">
+     <rect>
+      <x>102</x>
+      <y>21</y>
+      <width>250</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>250</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>250</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="emailLabel2">
+    <property name="geometry">
+     <rect>
+      <x>102</x>
+      <y>52</y>
+      <width>250</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>250</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>250</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="githubLabel2">
+    <property name="geometry">
+     <rect>
+      <x>102</x>
+      <y>83</y>
+      <width>250</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>250</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>250</width>
+      <height>36</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
-  <widget class="QLabel" name="githubLabel">
+  <widget class="QLabel" name="versionLabel">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>330</y>
-     <width>261</width>
-     <height>16</height>
+     <x>232</x>
+     <y>162</y>
+     <width>100</width>
+     <height>12</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>12</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>12</height>
+    </size>
+   </property>
    <property name="text">
-    <string>github www.github.com/hash1018</string>
-   </property>
-   <property name="textFormat">
-    <enum>Qt::AutoText</enum>
-   </property>
-   <property name="openExternalLinks">
-    <bool>true</bool>
-   </property>
-   <property name="textInteractionFlags">
-    <set>Qt::TextBrowserInteraction</set>
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Adora.qrc"/>
+ </resources>
  <connections/>
 </ui>

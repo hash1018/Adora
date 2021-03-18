@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Base\AdoraInfo.cpp" />
     <ClCompile Include="Base\LanguageManager.cpp" />
     <ClCompile Include="Base\SettingManager.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_Adora.cpp">
@@ -291,6 +292,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base\AdoraInfo.h" />
     <ClInclude Include="Base\LanguageManager.h" />
     <ClInclude Include="Base\SettingManager.h" />
     <ClInclude Include="Base\Singleton.h" />

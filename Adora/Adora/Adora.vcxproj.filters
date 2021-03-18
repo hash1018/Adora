@@ -150,6 +150,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_HotkeyLineEdit.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Base\AdoraInfo.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -276,6 +279,9 @@
     </ClInclude>
     <ClInclude Include="Ui\Record\RecordVideoDialog.h">
       <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\AdoraInfo.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
