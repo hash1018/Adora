@@ -3,7 +3,7 @@
 #include "VideoSettingWidget.h"
 #include "Base/SettingManager.h"
 #include "Base/LanguageManager.h"
-
+#include <qdebug.h>
 VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
 
@@ -11,9 +11,11 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 
 	ui.startStopHotkeyCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey());
 	ui.startStopHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey());
+	ui.startStopHotkeyLineEdit->load(SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().toString());
 
 	ui.pauseResumeHotkeyCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey());
 	ui.pauseResumeHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey());
+	ui.pauseResumeHotkeyLineEdit->load(SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().toString());
 
 	ui.includeCursorCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getIncludeCursor());
 
@@ -26,7 +28,11 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 
 
 	connect(ui.startStopHotkeyCheckBox, &QCheckBox::toggled, this, &VideoSettingWidget::startStopCheckBoxToggled);
+	connect(ui.startStopHotkeyLineEdit, &HotkeyLineEdit::hotkeyEmitted, this, &VideoSettingWidget::startStopHotkeyEmitted);
+
 	connect(ui.pauseResumeHotkeyCheckBox, &QCheckBox::toggled, this, &VideoSettingWidget::pauseResumeCheckBoxToggled);
+	connect(ui.pauseResumeHotkeyLineEdit, &HotkeyLineEdit::hotkeyEmitted, this, &VideoSettingWidget::pauseResumeHotkeyEmitted);
+
 	connect(ui.includeCursorCheckBox, &QCheckBox::toggled, this, &VideoSettingWidget::includeCursorCheckBoxToggled);
 	connect(ui.useHwEncoderCheckBox, &QCheckBox::toggled, this, &VideoSettingWidget::useHwEncoderCheckBoxToggled);
 	connect(ui.fpsComboBox, &QComboBox::currentTextChanged, this, &VideoSettingWidget::fpsComboBoxCurrentTextChanged);
@@ -57,11 +63,23 @@ void VideoSettingWidget::startStopCheckBoxToggled(bool checked) {
 	ui.startStopHotkeyLineEdit->setDisabled(!checked);
 }
 
+
+void VideoSettingWidget::startStopHotkeyEmitted(const QKeySequence &keySequence) {
+
+	SettingManager::getInstance()->getVideoSetting()->setStartStopHotkey(keySequence);
+}
+
+
 void VideoSettingWidget::pauseResumeCheckBoxToggled(bool checked) {
 
 	SettingManager::getInstance()->getVideoSetting()->setUsePauseAndResumeHotkey(checked);
 
 	ui.pauseResumeHotkeyLineEdit->setDisabled(!checked);
+}
+
+void VideoSettingWidget::pauseResumeHotkeyEmitted(const QKeySequence &keySequence) {
+
+	SettingManager::getInstance()->getVideoSetting()->setPauseResumeHotkey(keySequence);
 }
 
 void VideoSettingWidget::includeCursorCheckBoxToggled(bool checked) {

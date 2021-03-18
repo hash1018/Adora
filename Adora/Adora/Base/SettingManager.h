@@ -6,6 +6,7 @@
 #include "Singleton.h"
 #include <qpoint.h>
 #include <qstring.h>
+#include <qkeysequence.h>
 
 class GeneralSetting {
 
@@ -38,7 +39,11 @@ class VideoSetting {
 
 private:
 	bool useStartAndStopHotkey;
+	QKeySequence startStopHotkey;
+
 	bool usePauseAndResumeHotkey;
+	QKeySequence pauseResumeHotkey;
+
 	bool includeCursor;
 	bool useHwEncoder;
 	int fps;
@@ -53,7 +58,11 @@ private:
 
 public:
 	void setUseStartAndStopHotkey(bool useStartAndStopHotkey) { this->useStartAndStopHotkey = useStartAndStopHotkey; }
+	void setStartStopHotkey(const QKeySequence &startStopHotkey) { this->startStopHotkey = startStopHotkey; }
+
 	void setUsePauseAndResumeHotkey(bool usePauseAndResumeHotkey) { this->usePauseAndResumeHotkey = usePauseAndResumeHotkey; }
+	void setPauseResumeHotkey(const QKeySequence &pauseResumeHotkey) { this->pauseResumeHotkey = pauseResumeHotkey; }
+
 	void setIncludeCursor(bool includeCursor) { this->includeCursor = includeCursor; }
 	void setUseHwEncoder(bool useHwEncoder) { this->useHwEncoder = useHwEncoder; }
 	void setFps(int fps) { this->fps = fps; }
@@ -61,7 +70,11 @@ public:
 
 public:
 	inline bool getUseStartAndStopHotkey() const { return this->useStartAndStopHotkey; }
+	inline const QKeySequence& getStartStopHotkey() const { return this->startStopHotkey; }
+
 	inline bool getUsePauseAndResumeHotkey() const { return this->usePauseAndResumeHotkey; }
+	inline const QKeySequence& getPauseResumeHotkey() const { return this->pauseResumeHotkey; }
+
 	inline bool getIncludeCursor() const { return this->includeCursor; }
 	inline bool getUseHwEncoder() const { return this->useHwEncoder; }
 	inline int getFps() const { return this->fps; }

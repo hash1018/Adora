@@ -12,8 +12,20 @@ HotkeyLineEdit::HotkeyLineEdit(QWidget *parent)
 }
 
 HotkeyLineEdit::~HotkeyLineEdit() {
+	
 
+}
 
+void HotkeyLineEdit::load(const QString &keySequence) {
+
+	QKeySequence temp = QKeySequence::fromString(keySequence);
+
+	if (HotkeyLineEdit::lists.indexOf(temp) == -1) {
+	
+		this->keySequence = temp;
+		HotkeyLineEdit::lists.append(temp);
+		this->setText(keySequence);
+	}
 }
 
 void HotkeyLineEdit::keyPressEvent(QKeyEvent *event) {
@@ -38,34 +50,6 @@ void HotkeyLineEdit::keyPressEvent(QKeyEvent *event) {
 
 		this->setText(QKeySequence(event->modifiers() + event->key()).toString());
 
-		emit this->hotkeyEmitted(event->modifiers(), event->key());
-
+		emit this->hotkeyEmitted(this->keySequence);
 	}
-	else {
-
-		int index = HotkeyLineEdit::lists.indexOf(QKeySequence(event->modifiers()));
-
-		if (index == -1) {
-
-			HotkeyLineEdit::lists.append(QKeySequence(event->modifiers()));
-
-			if (HotkeyLineEdit::lists.indexOf(this->keySequence) != -1)
-				HotkeyLineEdit::lists.removeAt(HotkeyLineEdit::lists.indexOf(this->keySequence));
-
-			this->keySequence = QKeySequence(event->modifiers());
-		}
-		else {
-
-			return;
-		}
-
-		QString str = QKeySequence(event->modifiers()).toString();
-		int pos = str.lastIndexOf('+');
-		str = str.left(pos);
-		
-		this->setText(str);
-
-		emit this->hotkeyEmitted(event->modifiers());
-	}
-	
 }

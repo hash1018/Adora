@@ -77,8 +77,14 @@ void VideoSetting::load() {
 	if (settings.contains("useStartAndStopHotkey") == true)
 		this->useStartAndStopHotkey = settings.value("useStartAndStopHotkey").toBool();
 
+	if (settings.contains("startStopHotkey") == true)
+		this->startStopHotkey = settings.value("startStopHotkey").toString();
+
 	if (settings.contains("usePauseAndResumeHotkey") == true)
 		this->usePauseAndResumeHotkey = settings.value("usePauseAndResumeHotkey").toBool();
+
+	if (settings.contains("pauseResumeHotkey") == true)
+		this->pauseResumeHotkey = settings.value("pauseResumeHotkey").toString();
 
 	if (settings.contains("includeCursor") == true)
 		this->includeCursor = settings.value("includeCursor").toBool();
@@ -104,7 +110,11 @@ void VideoSetting::save() {
 	settings.beginGroup("Video");
 
 	settings.setValue("useStartAndStopHotkey", this->useStartAndStopHotkey);
+	settings.setValue("startStopHotkey", this->startStopHotkey.toString());
+
 	settings.setValue("usePauseAndResumeHotkey", this->usePauseAndResumeHotkey);
+	settings.setValue("pauseResumeHotkey", this->pauseResumeHotkey.toString());
+
 	settings.setValue("includeCursor", this->includeCursor);
 	settings.setValue("useHwEncoder", this->useHwEncoder);
 	settings.setValue("fps", this->fps);

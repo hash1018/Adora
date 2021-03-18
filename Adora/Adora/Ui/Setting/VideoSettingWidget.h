@@ -21,7 +21,11 @@ protected:
 
 	private slots:
 	void startStopCheckBoxToggled(bool checked);
+	void startStopHotkeyEmitted(const QKeySequence &keySequence);
+
 	void pauseResumeCheckBoxToggled(bool checked);
+	void pauseResumeHotkeyEmitted(const QKeySequence &keySequence);
+
 	void includeCursorCheckBoxToggled(bool checked);
 	void useHwEncoderCheckBoxToggled(bool checked);
 	void fpsComboBoxCurrentTextChanged(const QString &text);

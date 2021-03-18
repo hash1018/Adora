@@ -20,9 +20,10 @@ public:
 	HotkeyLineEdit(QWidget *parent = nullptr);
 	~HotkeyLineEdit();
 
+	void load(const QString &keySequence);
+
 signals:
-	void hotkeyEmitted(Qt::KeyboardModifiers modifiers, int key);
-	void hotkeyEmitted(Qt::KeyboardModifiers modifiers);
+	void hotkeyEmitted(const QKeySequence &sequence);
 
 protected:
 	virtual void keyPressEvent(QKeyEvent *event);
