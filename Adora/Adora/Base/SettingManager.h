@@ -133,6 +133,7 @@ class ImageSetting {
 private:
 	bool includeCursor;
 	bool useImageCaptureHotkey;
+	QKeySequence imageCaptureHotkey;
 
 private:
 	ImageSetting();
@@ -145,10 +146,12 @@ private:
 public:
 	void setIncludeCursor(bool includeCursor) { this->includeCursor = includeCursor; }
 	void setUseImageCaptureHotkey(bool useImageCaptureHotkey) { this->useImageCaptureHotkey = useImageCaptureHotkey; }
+	void setImageCaptureHotkey(const QKeySequence &imageCaptureHotkey) { this->imageCaptureHotkey = imageCaptureHotkey; }
 
 public:
 	inline bool getIncludeCursor() const { return this->includeCursor; }
 	inline bool getUseImageCaptureHotkey() const { return this->useImageCaptureHotkey; }
+	inline const QKeySequence& getImageCaptureHotkey() const { return this->imageCaptureHotkey; }
 };
 
 

@@ -9,11 +9,16 @@ ImageSettingWidget::ImageSettingWidget(QWidget *parent)
 	ui.setupUi(this);
 
 	ui.includeCursorCheckBox->setChecked(SettingManager::getInstance()->getImageSetting()->getIncludeCursor());
+
 	ui.imageCaptureHotkeyCheckBox->setChecked(SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey());
+
 	ui.imageCaptureHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey());
+	ui.imageCaptureHotkeyLineEdit->load(SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().toString());
 
 	connect(ui.includeCursorCheckBox, &QCheckBox::toggled, this, &ImageSettingWidget::includeCursorCheckBoxToggled);
 	connect(ui.imageCaptureHotkeyCheckBox, &QCheckBox::toggled, this, &ImageSettingWidget::useImageCaptureHotkeyCheckBoxToggled);
+	connect(ui.imageCaptureHotkeyLineEdit, &HotkeyLineEdit::hotkeyEmitted, this, &ImageSettingWidget::imageCaptureHotkeyEmitted);
+
 	
 
 	QString str = "<b>" + getLanUiValue("MenuImage/Capture Image") + "</b>";
@@ -39,4 +44,9 @@ void ImageSettingWidget::useImageCaptureHotkeyCheckBoxToggled(bool checked) {
 	SettingManager::getInstance()->getImageSetting()->setUseImageCaptureHotkey(checked);
 
 	ui.imageCaptureHotkeyLineEdit->setDisabled(!checked);
+}
+
+void ImageSettingWidget::imageCaptureHotkeyEmitted(const QKeySequence &keySequence) {
+
+	SettingManager::getInstance()->getImageSetting()->setImageCaptureHotkey(keySequence);
 }

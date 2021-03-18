@@ -207,6 +207,9 @@ void ImageSetting::load() {
 	if (settings.contains("useImageCaptureHotkey") == true)
 		this->useImageCaptureHotkey = settings.value("useImageCaptureHotkey").toBool();
 
+	if (settings.contains("imageCaptureHotkey") == true)
+		this->imageCaptureHotkey = settings.value("imageCaptureHotkey").toString();
+
 	settings.endGroup();
 }
 
@@ -218,6 +221,7 @@ void ImageSetting::save() {
 
 	settings.setValue("includeCursor", this->includeCursor);
 	settings.setValue("useImageCaptureHotkey", this->useImageCaptureHotkey);
+	settings.setValue("imageCaptureHotkey", this->imageCaptureHotkey.toString());
 
 	settings.endGroup();
 }
