@@ -22,7 +22,8 @@
 
 QLabel#AdoraLabel {
     background-image:url(:/Main/adora_black);
-}</string>
+}
+</string>
   </property>
   <widget class="QLabel" name="AdoraLabel">
    <property name="geometry">

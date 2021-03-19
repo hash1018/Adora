@@ -30,7 +30,7 @@ AboutWidget::AboutWidget(QWidget *parent)
 	ui.emailLabel2->setText(str);
 
 	ui.githubLabel2->setTextFormat(Qt::RichText);
-	ui.githubLabel2->setText("<a href=\"http://www.github.com/hash1018\" style=\"color: blue;\">http://www.github.com/hash1018</a>");
+	ui.githubLabel2->setText("<a href=\"http://www.github.com/hash1018\" style=\"color: black;\"><b>http://www.github.com/hash1018<b></a>");
 	ui.githubLabel2->setOpenExternalLinks(true);
 	
 }
