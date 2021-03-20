@@ -116,10 +116,13 @@ void GeneralSettingWidget::deleteButtonClicked() {
 
 	auto item = ui.itemListWidget->item(ui.itemListWidget->currentRow());
 
-	QFile file(item->text());
+	QString path = ui.savePathLineEdit->text();
+	QString filePath = path + "/" + item->text();
+
+	QFile file(filePath);
 	if (file.exists() == true) {
 	
-		file.remove(item->text());
+		file.remove(filePath);
 		
 	}
 	else {
@@ -159,7 +162,7 @@ void GeneralSettingWidget::updateItemList() {
 	}
 	else {
 	
-		dir.setNameFilters(QStringList() << "*.png" << "*.jpg");
+		dir.setNameFilters(QStringList() << "*.png" << "*.jpg" << "*.jpeg" << "*.bmp" << "*.gif" << "*.tif" << "*.tiff");
 	}
 
 	if (this->orderBy == NameAsc || this->orderBy == NameDes) {
@@ -175,13 +178,13 @@ void GeneralSettingWidget::updateItemList() {
 
 			for (int i = 0; i < list.size(); i++) {
 
-				ui.itemListWidget->addItem(path + "/" + list.at(i));
+				ui.itemListWidget->addItem(list.at(i));
 			}
 		}
 		else {
 
 			for (int i = list.size() - 1; i >= 0; i--) {
-				ui.itemListWidget->addItem(path + "/" + list.at(i));
+				ui.itemListWidget->addItem(list.at(i));
 			}
 		}
 	}
@@ -193,13 +196,13 @@ void GeneralSettingWidget::updateItemList() {
 
 			for (int i = 0; i < list.size(); i++) {
 
-				ui.itemListWidget->addItem(list.at(i).filePath());
+				ui.itemListWidget->addItem(list.at(i).fileName());
 			}
 		}
 		else {
 
 			for (int i = list.size() - 1; i >= 0; i--) {
-				ui.itemListWidget->addItem(list.at(i).filePath());
+				ui.itemListWidget->addItem(list.at(i).fileName());
 			}
 		}
 	}

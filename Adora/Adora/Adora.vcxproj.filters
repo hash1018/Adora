@@ -225,6 +225,12 @@
     <ClCompile Include="lib\multimedia\GDIManager.cpp">
       <Filter>lib\multimedia</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\CaptureImageDelegate.cpp">
+      <Filter>RecordVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\DefaultNameByDateCreator.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -408,6 +414,12 @@
     </ClInclude>
     <ClInclude Include="lib\multimedia\GDIManager.h">
       <Filter>lib\multimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\CaptureImageDelegate.h">
+      <Filter>RecordVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\DefaultNameByDateCreator.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

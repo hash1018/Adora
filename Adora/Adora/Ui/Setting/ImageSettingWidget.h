@@ -21,6 +21,7 @@ protected:
 	void includeCursorCheckBoxToggled(bool checked);
 	void useImageCaptureHotkeyCheckBoxToggled(bool checked);
 	void imageCaptureHotkeyEmitted(const QKeySequence &keySequence);
+	void currentImageFormatComboBoxTextChanged(const QString &text);
 
 };
 

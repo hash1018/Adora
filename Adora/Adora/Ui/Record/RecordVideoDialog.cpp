@@ -9,7 +9,7 @@
 #include "RecordVideo/Mode/RecordStatusMode/RecordStatusModeFactory.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
 #include "RecordVideo/ResizeRecordRectDelegate.h"
-#include "Base/SettingManager.h"
+#include "RecordVideo/CaptureImageDelegate.h"
 
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
@@ -27,6 +27,7 @@ RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 
 	this->changeRecordStatusMode(RecordStatus::NotRecording);
 	this->resizeRecordRectDelegate = new ResizeRecordRectDelegate(this);
+	this->captureImageDelegate = new CaptureImageDelegate(this);
 }
 
 RecordVideoDialog::~RecordVideoDialog() {
@@ -39,6 +40,9 @@ RecordVideoDialog::~RecordVideoDialog() {
 
 	if (this->resizeRecordRectDelegate != nullptr)
 		delete this->resizeRecordRectDelegate;
+
+	if (this->captureImageDelegate != nullptr)
+		delete this->captureImageDelegate;
 }
 
 void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
@@ -93,20 +97,8 @@ void RecordVideoDialog::resume() {
 void RecordVideoDialog::capture() {
 
 	QRect rect = this->recordAreaRect;
-
-	unsigned char *bits = nullptr;
-	this->gidManager.init(&bits, rect.width(), rect.height());
-
 	QPoint point = this->mapToGlobal(rect.topLeft());
-	this->gidManager.capture(point.x(), point.y(), rect.width(), rect.height(), true);
-	
-	QImage image = QImage(bits, rect.width(), rect.height(), rect.width() * 4, QImage::Format::Format_RGB32);
-	QString path = SettingManager::getInstance()->getGeneralSetting()->getSavePath() + "/123.png";
-	qDebug() << path;
-
-	image.save(path, "png");
-	
-	this->gidManager.close();
+	this->captureImageDelegate->capture(point.x(), point.y(), rect.width(), rect.height());
 }
 
 void RecordVideoDialog::keyPressEvent(QKeyEvent *event) {

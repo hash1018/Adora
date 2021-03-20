@@ -186,7 +186,7 @@ void AudioSetting::save() {
 /////////////////////////////////////////////////////////////////////
 
 ImageSetting::ImageSetting()
-	:includeCursor(false), useImageCaptureHotkey(false) {
+	:includeCursor(false), useImageCaptureHotkey(false), imageFormat("png") {
 
 }
 
@@ -210,6 +210,9 @@ void ImageSetting::load() {
 	if (settings.contains("imageCaptureHotkey") == true)
 		this->imageCaptureHotkey = settings.value("imageCaptureHotkey").toString();
 
+	if (settings.contains("imageFormat") == true)
+		this->imageFormat = settings.value("imageFormat").toString();
+
 	settings.endGroup();
 }
 
@@ -222,6 +225,7 @@ void ImageSetting::save() {
 	settings.setValue("includeCursor", this->includeCursor);
 	settings.setValue("useImageCaptureHotkey", this->useImageCaptureHotkey);
 	settings.setValue("imageCaptureHotkey", this->imageCaptureHotkey.toString());
+	settings.setValue("imageFormat", this->imageFormat);
 
 	settings.endGroup();
 }

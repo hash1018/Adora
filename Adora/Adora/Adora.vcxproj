@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Base\AdoraInfo.cpp" />
+    <ClCompile Include="Base\DefaultNameByDateCreator.cpp" />
     <ClCompile Include="Base\LanguageManager.cpp" />
     <ClCompile Include="Base\SettingManager.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_AbstractButton.cpp">
@@ -232,6 +233,7 @@
     </ClCompile>
     <ClCompile Include="lib\multimedia\GDIManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RecordVideo\CaptureImageDelegate.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoChain.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequest.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategy.cpp" />
@@ -322,6 +324,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\AdoraInfo.h" />
+    <ClInclude Include="Base\DefaultNameByDateCreator.h" />
     <ClInclude Include="Base\LanguageManager.h" />
     <ClInclude Include="Base\Namespace.h" />
     <ClInclude Include="Base\SettingManager.h" />
@@ -340,6 +343,7 @@
     <ClInclude Include="GeneratedFiles\ui_VideoSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_WatermarkSettingWidget.h" />
     <ClInclude Include="lib\multimedia\GDIManager.h" />
+    <ClInclude Include="RecordVideo\CaptureImageDelegate.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoChain.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequest.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategy.h" />
