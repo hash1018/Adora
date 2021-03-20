@@ -46,6 +46,18 @@
     <Filter Include="RecordVideo">
       <UniqueIdentifier>{bc282d35-c299-45b5-bf6f-b4b6bc2408fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RecordVideo\Chain">
+      <UniqueIdentifier>{5c49eeb0-7e2f-4768-add4-a01e022e4846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecordVideo\Mode">
+      <UniqueIdentifier>{f16bd443-c532-415a-bec3-a03b5b2f3e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecordVideo\Mode\RecordStatusMode">
+      <UniqueIdentifier>{399944f5-f410-451b-8c45-9ed78659ac62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecordVideo\NotifyEvent">
+      <UniqueIdentifier>{5bae2b72-a0be-462e-a026-e0642b6cdad5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -176,6 +188,30 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_AbstractButton.cpp">
       <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Record\SoundPanel.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Chain\RecordVideoChain.cpp">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Chain\RecordVideoRequest.cpp">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.cpp">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategy.cpp">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp">
+      <Filter>RecordVideo\Mode\RecordStatusMode</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp">
+      <Filter>RecordVideo\NotifyEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp">
+      <Filter>RecordVideo\Mode\RecordStatusMode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -327,6 +363,33 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_RecordPanel.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\SoundPanel.h">
+      <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Chain\RecordVideoChain.h">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Chain\RecordVideoRequest.h">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.h">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategy.h">
+      <Filter>RecordVideo\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h">
+      <Filter>RecordVideo\Mode\RecordStatusMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Namespace.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h">
+      <Filter>RecordVideo\NotifyEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h">
+      <Filter>RecordVideo\Mode\RecordStatusMode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

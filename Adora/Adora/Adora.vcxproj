@@ -231,6 +231,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RecordVideo\Chain\RecordVideoChain.cpp" />
+    <ClCompile Include="RecordVideo\Chain\RecordVideoRequest.cpp" />
+    <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategy.cpp" />
+    <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.cpp" />
+    <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp" />
+    <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp" />
     <ClCompile Include="Ui\AboutWidget.cpp" />
     <ClCompile Include="Ui\AbstractStackWidget.cpp" />
     <ClCompile Include="Ui\Adora.cpp" />
@@ -242,6 +249,7 @@
     <ClCompile Include="Ui\Record\ControllerWidget.cpp" />
     <ClCompile Include="Ui\Record\RecordPanel.cpp" />
     <ClCompile Include="Ui\Record\RecordVideoDialog.cpp" />
+    <ClCompile Include="Ui\Record\SoundPanel.cpp" />
     <ClCompile Include="Ui\Setting\AudioSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\GeneralSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\ImageSettingWidget.cpp" />
@@ -313,6 +321,7 @@
   <ItemGroup>
     <ClInclude Include="Base\AdoraInfo.h" />
     <ClInclude Include="Base\LanguageManager.h" />
+    <ClInclude Include="Base\Namespace.h" />
     <ClInclude Include="Base\SettingManager.h" />
     <ClInclude Include="Base\Singleton.h" />
     <ClInclude Include="GeneratedFiles\ui_AboutWidget.h" />
@@ -328,6 +337,13 @@
     <ClInclude Include="GeneratedFiles\ui_TimeLimitSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_VideoSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_WatermarkSettingWidget.h" />
+    <ClInclude Include="RecordVideo\Chain\RecordVideoChain.h" />
+    <ClInclude Include="RecordVideo\Chain\RecordVideoRequest.h" />
+    <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategy.h" />
+    <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.h" />
+    <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h" />
+    <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h" />
+    <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h" />
     <ClInclude Include="Ui\AboutWidget.h" />
     <ClInclude Include="Ui\AbstractStackWidget.h" />
     <CustomBuild Include="Ui\Item\HotkeyLineEdit.h">
@@ -388,6 +404,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-IC:\Program Files (x86)\Visual Leak Detector\include"</Command>
     </CustomBuild>
     <ClInclude Include="Ui\Record\RecordPanel.h" />
+    <ClInclude Include="Ui\Record\SoundPanel.h" />
     <ClInclude Include="Ui\Setting\AudioSettingWidget.h" />
     <CustomBuild Include="Ui\Setting\GeneralSettingWidget.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

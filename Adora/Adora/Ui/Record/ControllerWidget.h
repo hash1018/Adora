@@ -5,7 +5,11 @@
 
 #include <qwidget.h>
 #include "ui_ControllerWidget.h"
-class ControllerWidget : public QWidget {
+#include "RecordVideo/Chain/RecordVideoChain.h"
+
+class RecordVideoNotifyEvent;
+
+class ControllerWidget : public QWidget , public RecordVideoChain {
 
 private:
 	Ui::ControllerWidget ui;
@@ -15,9 +19,11 @@ private:
 	bool mousePressed;
 
 public:
-	ControllerWidget();
+	ControllerWidget(RecordVideoChain *chain);
 	~ControllerWidget();
 	
+	void update(RecordVideoNotifyEvent *event);
+
 protected:
 	virtual void closeEvent(QCloseEvent *event);
 	virtual void mousePressEvent(QMouseEvent *event);

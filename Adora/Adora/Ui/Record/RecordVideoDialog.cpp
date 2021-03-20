@@ -3,24 +3,85 @@
 #include <qpainter.h>
 #include <QResizeEvent>
 #include "ControllerWidget.h"
+#include "RecordVideo/Chain/RecordVideoRequestStrategyFactory.h"
+#include "RecordVideo/Chain/RecordVideoRequestStrategy.h"
+#include "RecordVideo/Mode/RecordStatusMode/RecordStatusMode.h"
+#include "RecordVideo/Mode/RecordStatusMode/RecordStatusModeFactory.h"
+#include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
 
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
-	:QDialog(parent,Qt::FramelessWindowHint) {
+	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
 
 	this->setMouseTracking(true);
 	this->setAttribute(Qt::WA_TranslucentBackground);
 	this->setWindowFlag(Qt::WindowStaysOnTopHint);
 
 
-	this->controllerWidget = new ControllerWidget;
+	this->controllerWidget = new ControllerWidget(this);
 	this->controllerWidget->show();
 	this->controllerWidget->move(100, 100);
+
+
+
+	this->changeRecordStatusMode(RecordStatus::NotRecording);
 }
 
 RecordVideoDialog::~RecordVideoDialog() {
 
 	if (this->controllerWidget != nullptr)
 		delete this->controllerWidget;
+
+	if (this->recordStatusMode != nullptr)
+		delete this->recordStatusMode;
+}
+
+void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
+
+	if (this->recordStatusMode != nullptr)
+		delete this->recordStatusMode;
+
+	this->recordStatusMode = RecordStatusModeFactory::create(this, recordStatus);
+
+	RecordVideoStatusChangedEvent event(recordStatus);
+	this->controllerWidget->update(&event);
+}
+
+
+void RecordVideoDialog::request(RecordVideoRequest *request) {
+
+	RecordVideoRequestStrategy *strategy = RecordVideoRequestStrategyFactory::create(this, request);
+	
+	if (strategy != nullptr)
+		strategy->response();
+}
+
+void RecordVideoDialog::record() {
+
+	this->changeRecordStatusMode(RecordStatus::Recording);
+}
+
+void RecordVideoDialog::quit() {
+
+	this->close();
+}
+
+void RecordVideoDialog::pause() {
+
+	this->changeRecordStatusMode(RecordStatus::Paused);
+}
+
+void RecordVideoDialog::stop() {
+
+	this->close();
+}
+
+void RecordVideoDialog::resume() {
+
+	this->changeRecordStatusMode(RecordStatus::Recording);
+}
+
+void RecordVideoDialog::capture() {
+
 
 }
 

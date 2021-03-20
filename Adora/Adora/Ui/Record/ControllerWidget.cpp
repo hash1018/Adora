@@ -4,19 +4,26 @@
 #include <QCloseEvent>
 #include <qpainter.h>
 
-ControllerWidget::ControllerWidget()
-	:QWidget(nullptr), mousePressed(false) {
+ControllerWidget::ControllerWidget(RecordVideoChain *chain)
+	:QWidget(nullptr), RecordVideoChain(chain), mousePressed(false) {
 
 	ui.setupUi(this);
 
 	this->setMouseTracking(true);
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 	this->setAttribute(Qt::WA_TranslucentBackground);
+
+	ui.recordPanel->setChain(this);
 }
 
 ControllerWidget::~ControllerWidget() {
 
 
+}
+
+void ControllerWidget::update(RecordVideoNotifyEvent *event) {
+
+	ui.recordPanel->update(event);
 }
 
 void ControllerWidget::closeEvent(QCloseEvent *event) {
