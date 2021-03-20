@@ -84,7 +84,7 @@ void ResizeRecordRectDelegate::paintEvent(QPainter &painter) {
 		painter.setFont(font);
 		painter.setPen(QColor("#FFB513"));
 
-		QRect rect = this->recordVideoDialog->getRecordBorderRect();
+		QRect rect = this->recordVideoDialog->getRecordAreaRect();
 
 		painter.drawText(rect.topLeft().x() + 10, rect.y() + 10, 200, 40, Qt::AlignLeft, QString::number(rect.width()) + "x" +
 			QString::number(rect.height()));

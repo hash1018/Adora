@@ -58,6 +58,12 @@
     <Filter Include="RecordVideo\NotifyEvent">
       <UniqueIdentifier>{5bae2b72-a0be-462e-a026-e0642b6cdad5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{6f2f06dc-a748-485b-9948-fa6de41e8f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\multimedia">
+      <UniqueIdentifier>{6f253b53-607e-464d-9adf-be037f01660d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -215,6 +221,9 @@
     </ClCompile>
     <ClCompile Include="RecordVideo\ResizeRecordRectDelegate.cpp">
       <Filter>RecordVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\multimedia\GDIManager.cpp">
+      <Filter>lib\multimedia</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -396,6 +405,9 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\ResizeRecordRectDelegate.h">
       <Filter>RecordVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\multimedia\GDIManager.h">
+      <Filter>lib\multimedia</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

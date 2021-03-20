@@ -230,6 +230,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="lib\multimedia\GDIManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoChain.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequest.cpp" />
@@ -338,6 +339,7 @@
     <ClInclude Include="GeneratedFiles\ui_TimeLimitSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_VideoSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_WatermarkSettingWidget.h" />
+    <ClInclude Include="lib\multimedia\GDIManager.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoChain.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequest.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategy.h" />

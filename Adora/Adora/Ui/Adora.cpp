@@ -105,6 +105,8 @@ void Adora::recordVideoDialogFinished(){
 	this->recordVideoDialog->deleteLater();
 
 	this->show();
+
+	this->generalSettingWidget->updateItemList();
 }
 
 void Adora::generalButtonClicked() {
@@ -224,25 +226,6 @@ void Adora::initPosition() {
 		this->setGeometry(0, 0, this->minimumWidth(), this->minimumHeight());
 	}
 }
-
-/*
-void Adora::initMenuListWidget() {
-
-	
-	ui.menuListWidget->addItem(getLanUiValue("Menu/General"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/Video"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/Audio"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/Image"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/Timelimit"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/Watermark"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/Language"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/License"));
-	ui.menuListWidget->addItem(getLanUiValue("Menu/About"));
-
-	ui.menuListWidget->setCurrentRow(0);
-}
-
-*/
 
 void Adora::initMenuStackWidget() {
 

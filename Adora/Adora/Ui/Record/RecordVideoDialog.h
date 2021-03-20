@@ -11,6 +11,9 @@ class ControllerWidget;
 class RecordStatusMode;
 class ResizeRecordRectDelegate;
 
+
+#include "lib/multimedia/GDIManager.h"
+
 class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
 	Q_OBJECT
@@ -18,6 +21,9 @@ class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
 	friend class RecordVideoRequestStrategy;
 	friend class RecordVideoRequestChangeRecordStatusStrategy;
+
+private:
+	GDIManager gidManager;
 
 private:
 	QRect recordAreaRect;
@@ -63,6 +69,7 @@ protected:
 
 public:
 	QRect getRecordBorderRect();
+	inline const QRect& getRecordAreaRect() const { return this->recordAreaRect; }
 };
 
 

@@ -54,7 +54,7 @@ protected:
 	void orderByButtonClicked();
 	void orderByMenuActionClicked(OrderBy orderBy);
 
-private:
+public:
 	void updateItemList();
 };
 

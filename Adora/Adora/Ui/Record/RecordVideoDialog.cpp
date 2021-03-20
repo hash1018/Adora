@@ -9,6 +9,7 @@
 #include "RecordVideo/Mode/RecordStatusMode/RecordStatusModeFactory.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
 #include "RecordVideo/ResizeRecordRectDelegate.h"
+#include "Base/SettingManager.h"
 
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
@@ -69,7 +70,8 @@ void RecordVideoDialog::record() {
 
 void RecordVideoDialog::quit() {
 
-	this->close();
+	//this->close();
+	emit this->recordVideoDialogClosed();
 }
 
 void RecordVideoDialog::pause() {
@@ -79,7 +81,8 @@ void RecordVideoDialog::pause() {
 
 void RecordVideoDialog::stop() {
 
-	this->close();
+	//this->close();
+	emit this->recordVideoDialogClosed();
 }
 
 void RecordVideoDialog::resume() {
@@ -89,7 +92,21 @@ void RecordVideoDialog::resume() {
 
 void RecordVideoDialog::capture() {
 
+	QRect rect = this->recordAreaRect;
 
+	unsigned char *bits = nullptr;
+	this->gidManager.init(&bits, rect.width(), rect.height());
+
+	QPoint point = this->mapToGlobal(rect.topLeft());
+	this->gidManager.capture(point.x(), point.y(), rect.width(), rect.height(), true);
+	
+	QImage image = QImage(bits, rect.width(), rect.height(), rect.width() * 4, QImage::Format::Format_RGB32);
+	QString path = SettingManager::getInstance()->getGeneralSetting()->getSavePath() + "/123.png";
+	qDebug() << path;
+
+	image.save(path, "png");
+	
+	this->gidManager.close();
 }
 
 void RecordVideoDialog::keyPressEvent(QKeyEvent *event) {
@@ -102,7 +119,7 @@ void RecordVideoDialog::paintEvent(QPaintEvent *event) {
 	QPainter painter(this);
 
 	QPen pen(QColor("#FFB513"));
-	pen.setWidth(5);
+	pen.setWidth(4);
 
 	QPen oldPen = painter.pen();
 	painter.setPen(pen);
@@ -175,7 +192,7 @@ void RecordVideoDialog::closeEvent(QCloseEvent *event) {
 
 	event->ignore();
 
-	emit this->recordVideoDialogClosed();
+	//emit this->recordVideoDialogClosed();
 }
 
 
