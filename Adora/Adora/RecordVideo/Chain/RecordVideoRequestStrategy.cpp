@@ -104,6 +104,9 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 			else if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Recording) {
 				this->recordVideoDialog->stop();
 			}
+			else if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Paused) {
+				this->recordVideoDialog->stop();
+			}
 		}
 		else if (type == HotkeyType::VideoPauseAndResume) {
 

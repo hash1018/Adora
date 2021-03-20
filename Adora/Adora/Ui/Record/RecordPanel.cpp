@@ -3,6 +3,8 @@
 #include "RecordPanel.h"
 #include "RecordVideo/Chain/RecordVideoRequest.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
+#include "Base/LanguageManager.h"
+#include "Base/SettingManager.h"
 
 RecordPanel::RecordPanel(QWidget *parent)
 	:QWidget(parent) {
@@ -17,14 +19,41 @@ RecordPanel::RecordPanel(QWidget *parent)
 	this->items.append(ui.quitButton);
 	
 
-	
-	
 
+	QString str = getLanUiValue("RecordPanel/Record Video");
+	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false) {
+		str += " " + SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().toString();
+	}
+	ui.recordButton->setToolTip(str);
+
+
+	str = getLanUiValue("RecordPanel/Resume Video");
+	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false) {
+		str += " " + SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().toString();
+	}
+	ui.resumeButton->setToolTip(str);
+
+	str = getLanUiValue("RecordPanel/Pause Video");
+	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false) {
+		str += " " + SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().toString();
+	}
+	ui.pauseButton->setToolTip(str);
+
+	str = getLanUiValue("RecordPanel/Stop Video");
+	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false) {
+		str += " " + SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().toString();
+	}
+	ui.stopButton->setToolTip(str);
+
+
+	str = getLanUiValue("RecordPanel/Capture Screen");
+	if (SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().isEmpty() == false) {
+		str += " " + SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().toString();
+	}
+	ui.captureButton->setToolTip(str);
+
+	ui.quitButton->setToolTip(getLanUiValue("RecordPanel/Quit"));
 	
-
-
-	
-
 	connect(ui.recordButton, &QPushButton::clicked, this, &RecordPanel::recordButtonClicked);
 	connect(ui.quitButton, &QPushButton::clicked, this, &RecordPanel::quitButtonClicked);
 	connect(ui.captureButton, &QPushButton::clicked, this, &RecordPanel::captureButtonClicked);

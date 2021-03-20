@@ -151,7 +151,7 @@ QPushButton#stopButton:hover {
        <number>0</number>
       </property>
       <item>
-       <widget class="QPushButton" name="recordButton">
+       <widget class="AbstractButton" name="recordButton">
         <property name="minimumSize">
          <size>
           <width>100</width>
@@ -226,7 +226,7 @@ QPushButton#stopButton:hover {
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="captureButton">
+       <widget class="AbstractButton" name="captureButton">
         <property name="minimumSize">
          <size>
           <width>48</width>
@@ -245,7 +245,7 @@ QPushButton#stopButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="quitButton">
+       <widget class="AbstractButton" name="quitButton">
         <property name="minimumSize">
          <size>
           <width>48</width>
@@ -264,7 +264,7 @@ QPushButton#stopButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pauseButton">
+       <widget class="AbstractButton" name="pauseButton">
         <property name="minimumSize">
          <size>
           <width>36</width>
@@ -283,7 +283,7 @@ QPushButton#stopButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="resumeButton">
+       <widget class="AbstractButton" name="resumeButton">
         <property name="minimumSize">
          <size>
           <width>36</width>
@@ -302,7 +302,7 @@ QPushButton#stopButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="stopButton">
+       <widget class="AbstractButton" name="stopButton">
         <property name="minimumSize">
          <size>
           <width>36</width>
@@ -341,6 +341,13 @@ QPushButton#stopButton:hover {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">Ui/Item/AbstractButton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../Adora.qrc"/>
  </resources>
