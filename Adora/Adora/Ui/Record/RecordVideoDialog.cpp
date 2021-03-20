@@ -141,6 +141,7 @@ void RecordVideoDialog::paintEvent(QPaintEvent *event) {
 
 
 	this->resizeRecordRectDelegate->paintEvent(painter);
+	this->captureImageDelegate->paintEvent(painter);
 	
 }
 
