@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RecordPanel</class>
+ <widget class="QWidget" name="RecordPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>160</width>
+    <height>104</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>160</width>
+    <height>104</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>160</width>
+    <height>104</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton#recordButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Record/record);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#recordButton:hover {
+    background-color: #FFEDC5;
+}
+
+QLabel#timeLabel {
+    background-color: white;
+    border:0px;
+    border-radius:10px;
+}
+
+/**     **/
+
+QPushButton#captureButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Record/capture);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#captureButton:hover {
+    background-color: #FFEDC5;
+}
+
+
+/** **/
+
+
+QPushButton#quitButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Record/quit);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#quitButton:hover {
+    background-color: #FFEDC5;
+}
+
+
+/** **/
+
+
+QPushButton#pauseButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Record/pause);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#pauseButton:hover {
+    background-color: #FFEDC5;
+}
+
+
+/** **/
+
+
+QPushButton#resumeButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Record/resume);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#resumeButton:hover {
+    background-color: #FFEDC5;
+}
+
+
+/** **/
+
+
+QPushButton#stopButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Record/stop);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#stopButton:hover {
+    background-color: #FFEDC5;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="recordButton">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timeLabel">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>15</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="captureButton">
+        <property name="minimumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="quitButton">
+        <property name="minimumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pauseButton">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="resumeButton">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>15</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../Adora.qrc"/>
+ </resources>
+ <connections/>
+</ui>

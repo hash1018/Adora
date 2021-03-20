@@ -165,6 +165,18 @@
     <ClCompile Include="GeneratedFiles\Release\moc_RecordVideoDialog.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Record\RecordPanel.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AbstractButton.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Item\AbstractButton.cpp">
+      <Filter>Ui\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AbstractButton.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -229,6 +241,15 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Record\RecordVideoDialog.h">
       <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\ControllerWidget.ui">
+      <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\RecordPanel.ui">
+      <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Item\AbstractButton.h">
+      <Filter>Ui\Item</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +318,15 @@
     </ClInclude>
     <ClInclude Include="Ui\Record\ControllerWidget.h">
       <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ControllerWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\RecordPanel.h">
+      <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_RecordPanel.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

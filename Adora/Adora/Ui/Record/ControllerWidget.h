@@ -4,8 +4,11 @@
 #define _CONTROLLERWIDGET_H
 
 #include <qwidget.h>
-
+#include "ui_ControllerWidget.h"
 class ControllerWidget : public QWidget {
+
+private:
+	Ui::ControllerWidget ui;
 
 private:
 	QPoint prev;
@@ -20,7 +23,7 @@ protected:
 	virtual void mousePressEvent(QMouseEvent *event);
 	virtual void mouseMoveEvent(QMouseEvent *event);
 	virtual void mouseReleaseEvent(QMouseEvent *event);
-
+	virtual void paintEvent(QPaintEvent *event);
 
 };
 

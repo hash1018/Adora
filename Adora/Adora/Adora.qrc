@@ -35,4 +35,12 @@
         <file alias="upload">Resources/Images/Menu/General/upload.png</file>
         <file alias="delete">Resources/Images/Menu/General/delete.png</file>
     </qresource>
+    <qresource prefix="/RecordVideo_Record">
+        <file alias="record">Resources/Images/RecordVideo/Record/record.png</file>
+        <file alias="capture">Resources/Images/RecordVideo/Record/capture.png</file>
+        <file alias="pause">Resources/Images/RecordVideo/Record/pause.png</file>
+        <file alias="quit">Resources/Images/RecordVideo/Record/quit.png</file>
+        <file alias="resume">Resources/Images/RecordVideo/Record/resume.png</file>
+        <file alias="stop">Resources/Images/RecordVideo/Record/stop.png</file>
+    </qresource>
 </RCC>

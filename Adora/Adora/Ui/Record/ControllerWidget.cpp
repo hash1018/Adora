@@ -2,12 +2,16 @@
 
 #include "ControllerWidget.h"
 #include <QCloseEvent>
+#include <qpainter.h>
 
 ControllerWidget::ControllerWidget()
 	:QWidget(nullptr), mousePressed(false) {
 
+	ui.setupUi(this);
+
 	this->setMouseTracking(true);
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+	this->setAttribute(Qt::WA_TranslucentBackground);
 }
 
 ControllerWidget::~ControllerWidget() {
@@ -42,4 +46,20 @@ void ControllerWidget::mouseMoveEvent(QMouseEvent *event) {
 void ControllerWidget::mouseReleaseEvent(QMouseEvent *event) {
 
 	this->mousePressed = false;
+}
+
+void ControllerWidget::paintEvent(QPaintEvent *event) {
+
+	QPainter painter(this);
+
+	painter.setRenderHint(QPainter::Antialiasing);
+	QPainterPath path;
+
+	path.addRoundedRect(this->rect(), 15, 15);
+	painter.fillPath(path, QColor("#EAEAEA"));
+
+	QPainterPath path2;
+	path2.addRoundedRect(this->rect(), 15, 15);
+
+	painter.drawPath(path2);
 }
