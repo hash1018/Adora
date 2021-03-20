@@ -43,6 +43,9 @@
     <Filter Include="Ui\Record">
       <UniqueIdentifier>{d0e913f9-577e-477c-ad2a-a2ba59b63ca2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RecordVideo">
+      <UniqueIdentifier>{bc282d35-c299-45b5-bf6f-b4b6bc2408fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -153,6 +156,15 @@
     <ClCompile Include="Base\AdoraInfo.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Record\ControllerWidget.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_RecordVideoDialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_RecordVideoDialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -214,6 +226,9 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Item\HotkeyLineEdit.h">
       <Filter>Ui\Item</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\RecordVideoDialog.h">
+      <Filter>Ui\Record</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -277,11 +292,11 @@
     <ClInclude Include="Ui\Item\MenuButton.h">
       <Filter>Ui\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Ui\Record\RecordVideoDialog.h">
-      <Filter>Ui\Record</Filter>
-    </ClInclude>
     <ClInclude Include="Base\AdoraInfo.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\ControllerWidget.h">
+      <Filter>Ui\Record</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

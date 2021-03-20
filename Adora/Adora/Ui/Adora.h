@@ -15,6 +15,7 @@ class LanguageSettingWidget;
 class LicenseWidget;
 class AboutWidget;
 class MenuButton;
+class RecordVideoDialog;
 
 #include <qlist.h>
 
@@ -30,6 +31,9 @@ public:
 private:
 	bool mousePressed;
 	QPoint prev;
+
+private:
+	RecordVideoDialog *recordVideoDialog;
 
 private:
 	GeneralSettingWidget *generalSettingWidget;
@@ -61,6 +65,7 @@ protected:
 	void minimizeButtonClicked();
 	void recordButtonClicked();
 	void requestRestart();
+	void recordVideoDialogFinished();
 
 
 	void generalButtonClicked();

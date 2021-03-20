@@ -19,7 +19,7 @@
 #include "Ui/Record/RecordVideoDialog.h"
 
 Adora::Adora(QWidget *parent)
-	: QMainWindow(parent), mousePressed(false),restart(false) {
+	: QMainWindow(parent), mousePressed(false), restart(false) {
 
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::FramelessWindowHint);
@@ -34,12 +34,10 @@ Adora::Adora(QWidget *parent)
 	this->initMenuStackWidget();
 	this->initMenuButtons();
 
-	
+
 	ui.recordButton->setText("    " + getLanUiValue("Menu/Record"));
 	connect(ui.recordButton, &QPushButton::clicked, this, &Adora::recordButtonClicked);
 
-
-	
 }
 
 Adora::~Adora() {
@@ -94,13 +92,19 @@ void Adora::minimizeButtonClicked() {
 
 void Adora::recordButtonClicked() {
 
-
-	RecordVideoDialog dialog;
-
 	this->hide();
-	dialog.exec();
+
+	this->recordVideoDialog = new RecordVideoDialog;
+	connect(this->recordVideoDialog, &RecordVideoDialog::recordVideoDialogClosed, this, &Adora::recordVideoDialogFinished);
+	this->recordVideoDialog->show();
+}
+
+void Adora::recordVideoDialogFinished(){
 
 	this->show();
+
+	disconnect(this->recordVideoDialog, &RecordVideoDialog::recordVideoDialogClosed, this, &Adora::recordVideoDialogFinished);
+	this->recordVideoDialog->deleteLater();
 }
 
 void Adora::generalButtonClicked() {
