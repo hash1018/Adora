@@ -2,6 +2,7 @@
 #include "ImageSettingWidget.h"
 #include "Base/SettingManager.h"
 #include "Base/LanguageManager.h"
+#include "Base/Hotkey.h"
 
 ImageSettingWidget::ImageSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
@@ -13,7 +14,13 @@ ImageSettingWidget::ImageSettingWidget(QWidget *parent)
 	ui.imageCaptureHotkeyCheckBox->setChecked(SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey());
 
 	ui.imageCaptureHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey());
-	ui.imageCaptureHotkeyLineEdit->load(SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().toString());
+
+	if (SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().isEmpty() == false) {
+
+		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey());
+		hotkey->setType(HotkeyType::ImageCapture);
+		ui.imageCaptureHotkeyLineEdit->load(hotkey);
+	}
 
 	connect(ui.includeCursorCheckBox, &QCheckBox::toggled, this, &ImageSettingWidget::includeCursorCheckBoxToggled);
 	connect(ui.imageCaptureHotkeyCheckBox, &QCheckBox::toggled, this, &ImageSettingWidget::useImageCaptureHotkeyCheckBoxToggled);
@@ -63,6 +70,8 @@ void ImageSettingWidget::useImageCaptureHotkeyCheckBoxToggled(bool checked) {
 void ImageSettingWidget::imageCaptureHotkeyEmitted(const QKeySequence &keySequence) {
 
 	SettingManager::getInstance()->getImageSetting()->setImageCaptureHotkey(keySequence);
+	int index = HotkeyList::getInstance()->indexOf(keySequence);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::ImageCapture);
 }
 
 void ImageSettingWidget::currentImageFormatComboBoxTextChanged(const QString &text) {

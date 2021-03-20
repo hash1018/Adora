@@ -25,3 +25,15 @@ RecordVideoRequestChangeRecordStatus::~RecordVideoRequestChangeRecordStatus() {
 
 
 }
+
+
+///////////////////////////////////////////
+
+RecordVideoRequestKeyEvent::RecordVideoRequestKeyEvent(QKeyEvent *event)
+	:RecordVideoRequest(RequestType::RequestKeyEvent), event(event) {
+
+}
+
+RecordVideoRequestKeyEvent::~RecordVideoRequestKeyEvent() {
+
+}

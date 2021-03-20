@@ -3,6 +3,7 @@
 #include "ControllerWidget.h"
 #include <QCloseEvent>
 #include <qpainter.h>
+#include "RecordVideo/Chain/RecordVideoRequest.h"
 
 ControllerWidget::ControllerWidget(RecordVideoChain *chain)
 	:QWidget(nullptr), RecordVideoChain(chain), mousePressed(false) {
@@ -12,6 +13,7 @@ ControllerWidget::ControllerWidget(RecordVideoChain *chain)
 	this->setMouseTracking(true);
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 	this->setAttribute(Qt::WA_TranslucentBackground);
+	this->setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 
 	ui.recordPanel->setChain(this);
 }
@@ -69,4 +71,10 @@ void ControllerWidget::paintEvent(QPaintEvent *event) {
 	path2.addRoundedRect(this->rect(), 15, 15);
 
 	painter.drawPath(path2);
+}
+
+void ControllerWidget::keyPressEvent(QKeyEvent *event) {
+
+	RecordVideoRequestKeyEvent request(event);
+	this->request(&request);
 }

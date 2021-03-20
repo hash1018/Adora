@@ -2,8 +2,7 @@
 
 #include "HotkeyLineEdit.h"
 #include <QKeyEvent>
-
-QList<QKeySequence> HotkeyLineEdit::lists;
+#include "Base/Hotkey.h"
 
 HotkeyLineEdit::HotkeyLineEdit(QWidget *parent)
 	:QLineEdit(parent) {
@@ -16,15 +15,19 @@ HotkeyLineEdit::~HotkeyLineEdit() {
 
 }
 
-void HotkeyLineEdit::load(const QString &keySequence) {
+void HotkeyLineEdit::load(Hotkey *hotkey) {
 
-	QKeySequence temp = QKeySequence::fromString(keySequence);
+	QKeySequence temp = hotkey->getKeySequence();
 
-	if (HotkeyLineEdit::lists.indexOf(temp) == -1) {
+	if (HotkeyList::getInstance()->indexOf(temp) == -1) {
 	
 		this->keySequence = temp;
-		HotkeyLineEdit::lists.append(temp);
-		this->setText(keySequence);
+		HotkeyList::getInstance()->append(hotkey);
+		this->setText(keySequence.toString());
+	}
+	else {
+	
+		delete hotkey;
 	}
 }
 
@@ -32,24 +35,20 @@ void HotkeyLineEdit::keyPressEvent(QKeyEvent *event) {
 
 	if (event->key() >= Qt::Key_Space && event->key() <= Qt::Key_AsciiTilde) {
 
-		int index = HotkeyLineEdit::lists.indexOf(QKeySequence(event->modifiers() + event->key()));
+		int index = HotkeyList::getInstance()->indexOf(QKeySequence(event->modifiers() + event->key()));
 
 		if (index == -1) {
 		
-			HotkeyLineEdit::lists.append(QKeySequence(event->modifiers() + event->key()));
+			HotkeyList::getInstance()->append(new Hotkey(QKeySequence(event->modifiers() + event->key())));
 			
-			if (HotkeyLineEdit::lists.indexOf(this->keySequence) != -1)
-				HotkeyLineEdit::lists.removeAt(HotkeyLineEdit::lists.indexOf(this->keySequence));
+			if (HotkeyList::getInstance()->indexOf(this->keySequence) != -1)
+				HotkeyList::getInstance()->removeAt(HotkeyList::getInstance()->indexOf(this->keySequence));
 
 			this->keySequence = QKeySequence(event->modifiers() + event->key());
-		}
-		else {
-		
-			return;
-		}
 
-		this->setText(QKeySequence(event->modifiers() + event->key()).toString());
+			this->setText(QKeySequence(event->modifiers() + event->key()).toString());
 
-		emit this->hotkeyEmitted(this->keySequence);
+			emit this->hotkeyEmitted(this->keySequence);
+		}
 	}
 }

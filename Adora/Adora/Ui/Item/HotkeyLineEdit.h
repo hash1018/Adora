@@ -4,23 +4,20 @@
 #define _HOTKEYLINEEDIT_H
 
 #include <qlineedit.h>
-
-#include <qlist.h>
+class Hotkey;
 
 class HotkeyLineEdit : public QLineEdit {
 
 	Q_OBJECT
 
 private:
-	static QList<QKeySequence> lists;
-
 	QKeySequence keySequence;
 
 public:
 	HotkeyLineEdit(QWidget *parent = nullptr);
 	~HotkeyLineEdit();
 
-	void load(const QString &keySequence);
+	void load(Hotkey *hotkey);
 
 signals:
 	void hotkeyEmitted(const QKeySequence &sequence);

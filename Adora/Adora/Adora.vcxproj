@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClCompile Include="Base\AdoraInfo.cpp" />
     <ClCompile Include="Base\DefaultNameByDateCreator.cpp" />
+    <ClCompile Include="Base\Hotkey.cpp" />
     <ClCompile Include="Base\LanguageManager.cpp" />
     <ClCompile Include="Base\SettingManager.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_AbstractButton.cpp">
@@ -325,6 +326,7 @@
   <ItemGroup>
     <ClInclude Include="Base\AdoraInfo.h" />
     <ClInclude Include="Base\DefaultNameByDateCreator.h" />
+    <ClInclude Include="Base\Hotkey.h" />
     <ClInclude Include="Base\LanguageManager.h" />
     <ClInclude Include="Base\Namespace.h" />
     <ClInclude Include="Base\SettingManager.h" />

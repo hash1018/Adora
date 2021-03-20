@@ -19,6 +19,7 @@ class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
 	friend class RecordVideoRequestStrategy;
 	friend class RecordVideoRequestChangeRecordStatusStrategy;
+	friend class RecordVideoRequestKeyEventStrategy;
 
 private:
 	QRect recordAreaRect;
@@ -68,6 +69,7 @@ protected:
 public:
 	QRect getRecordBorderRect();
 	inline const QRect& getRecordAreaRect() const { return this->recordAreaRect; }
+	RecordStatus getRecordStatus();
 };
 
 

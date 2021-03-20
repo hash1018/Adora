@@ -4,12 +4,15 @@
 #define _RECORDVIDEOREQUEST_H
 
 
+class QKeyEvent;
+
 class RecordVideoRequest {
 
 public:
 	enum RequestType {
 
 		RequestChangeRecordStatus,
+		RequestKeyEvent,
 
 	};
 
@@ -47,6 +50,19 @@ public:
 	~RecordVideoRequestChangeRecordStatus();
 
 	inline RecordStatus getRecordStatus() const { return this->status; }
+};
+
+class RecordVideoRequestKeyEvent : public RecordVideoRequest {
+
+private:
+	QKeyEvent *event;
+
+public:
+	RecordVideoRequestKeyEvent(QKeyEvent *event);
+	~RecordVideoRequestKeyEvent();
+
+	inline QKeyEvent* getKeyEvent() const { return this->event; }
+
 };
 
 #endif //_RECORDVIDEOREQUEST_H

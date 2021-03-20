@@ -10,6 +10,7 @@
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
 #include "RecordVideo/ResizeRecordRectDelegate.h"
 #include "RecordVideo/CaptureImageDelegate.h"
+#include "RecordVideo/Chain/RecordVideoRequest.h"
 
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
@@ -103,7 +104,8 @@ void RecordVideoDialog::capture() {
 
 void RecordVideoDialog::keyPressEvent(QKeyEvent *event) {
 
-
+	RecordVideoRequestKeyEvent request(event);
+	this->request(&request);
 }
 
 void RecordVideoDialog::paintEvent(QPaintEvent *event) {
@@ -194,4 +196,10 @@ QRect RecordVideoDialog::getRecordBorderRect() {
 
 	return QRect(this->recordAreaRect.x() - 2, this->recordAreaRect.y() - 2,
 		this->recordAreaRect.width() + 5, this->recordAreaRect.height() + 5);
+}
+
+
+RecordStatus RecordVideoDialog::getRecordStatus() {
+
+	return this->recordStatusMode->getStatus();
 }

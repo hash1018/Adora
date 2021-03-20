@@ -32,6 +32,17 @@ public:
 	~RecordVideoRequestChangeRecordStatusStrategy();
 
 	virtual bool response();
+};
+
+////////////////////////////////////////////////////
+
+class RecordVideoRequestKeyEventStrategy : public RecordVideoRequestStrategy {
+
+public:
+	RecordVideoRequestKeyEventStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request);
+	~RecordVideoRequestKeyEventStrategy();
+
+	virtual bool response();
 
 };
 

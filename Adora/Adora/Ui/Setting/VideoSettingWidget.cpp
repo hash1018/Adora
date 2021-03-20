@@ -4,6 +4,8 @@
 #include "Base/SettingManager.h"
 #include "Base/LanguageManager.h"
 #include <qdebug.h>
+#include "Base/Hotkey.h"
+
 VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
 
@@ -11,11 +13,23 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 
 	ui.startStopHotkeyCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey());
 	ui.startStopHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey());
-	ui.startStopHotkeyLineEdit->load(SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().toString());
+
+	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false) {
+
+		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey());
+		hotkey->setType(HotkeyType::VideoStartAndStop);
+		ui.startStopHotkeyLineEdit->load(hotkey);
+	}
 
 	ui.pauseResumeHotkeyCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey());
 	ui.pauseResumeHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey());
-	ui.pauseResumeHotkeyLineEdit->load(SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().toString());
+
+	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false) {
+
+		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey());
+		hotkey->setType(HotkeyType::VideoPauseAndResume);
+		ui.pauseResumeHotkeyLineEdit->load(hotkey);
+	}
 
 	ui.includeCursorCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getIncludeCursor());
 
@@ -67,6 +81,8 @@ void VideoSettingWidget::startStopCheckBoxToggled(bool checked) {
 void VideoSettingWidget::startStopHotkeyEmitted(const QKeySequence &keySequence) {
 
 	SettingManager::getInstance()->getVideoSetting()->setStartStopHotkey(keySequence);
+	int index = HotkeyList::getInstance()->indexOf(keySequence);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::VideoStartAndStop);
 }
 
 
@@ -80,6 +96,8 @@ void VideoSettingWidget::pauseResumeCheckBoxToggled(bool checked) {
 void VideoSettingWidget::pauseResumeHotkeyEmitted(const QKeySequence &keySequence) {
 
 	SettingManager::getInstance()->getVideoSetting()->setPauseResumeHotkey(keySequence);
+	int index = HotkeyList::getInstance()->indexOf(keySequence);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::VideoPauseAndResume);
 }
 
 void VideoSettingWidget::includeCursorCheckBoxToggled(bool checked) {

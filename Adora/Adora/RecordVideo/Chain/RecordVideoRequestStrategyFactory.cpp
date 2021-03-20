@@ -19,6 +19,11 @@ RecordVideoRequestStrategy* RecordVideoRequestStrategyFactory::create(RecordVide
 
 	if (request->getType() == RecordVideoRequest::RequestChangeRecordStatus)
 		strategy = new RecordVideoRequestChangeRecordStatusStrategy(recordVideoDialog, request);
+
+	else if (request->getType() == RecordVideoRequest::RequestKeyEvent)
+		strategy = new RecordVideoRequestKeyEventStrategy(recordVideoDialog, request);
 	
+	
+
 	return strategy;
 }

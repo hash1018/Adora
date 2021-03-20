@@ -30,7 +30,7 @@ protected:
 	virtual void mouseMoveEvent(QMouseEvent *event);
 	virtual void mouseReleaseEvent(QMouseEvent *event);
 	virtual void paintEvent(QPaintEvent *event);
-
+	virtual void keyPressEvent(QKeyEvent *event);
 };
 
 #endif //_CONTROLLERWIDGET_H
