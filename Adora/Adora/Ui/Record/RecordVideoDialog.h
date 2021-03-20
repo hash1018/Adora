@@ -9,6 +9,7 @@
 
 class ControllerWidget;
 class RecordStatusMode;
+class ResizeRecordRectDelegate;
 
 class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
@@ -26,6 +27,8 @@ private:
 
 private:
 	RecordStatusMode *recordStatusMode;
+	ResizeRecordRectDelegate *resizeRecordRectDelegate;
+
 
 public:
 	RecordVideoDialog(QWidget *parent = nullptr);
@@ -58,7 +61,7 @@ protected:
 	virtual void closeEvent(QCloseEvent *event);
 
 
-private:
+public:
 	QRect getRecordBorderRect();
 };
 

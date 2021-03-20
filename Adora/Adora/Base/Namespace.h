@@ -10,4 +10,17 @@ enum RecordStatus {
 	Paused,
 };
 
+enum ResizeBehavior {
+	Nothing,
+	Move,
+	ResizeTopRight,
+	ResizeTopLeft,
+	ResizeBottomRight,
+	ResizeBottomLeft,
+	ResizeTop,
+	ResizeBottom,
+	ResizeLeft,
+	ResizeRight,
+};
+
 #endif //_NAMESPACE_H

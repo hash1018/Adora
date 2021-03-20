@@ -213,6 +213,9 @@
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp">
       <Filter>RecordVideo\Mode\RecordStatusMode</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\ResizeRecordRectDelegate.cpp">
+      <Filter>RecordVideo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -390,6 +393,9 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h">
       <Filter>RecordVideo\Mode\RecordStatusMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\ResizeRecordRectDelegate.h">
+      <Filter>RecordVideo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

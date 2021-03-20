@@ -8,6 +8,7 @@
 #include "RecordVideo/Mode/RecordStatusMode/RecordStatusMode.h"
 #include "RecordVideo/Mode/RecordStatusMode/RecordStatusModeFactory.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
+#include "RecordVideo/ResizeRecordRectDelegate.h"
 
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
@@ -24,6 +25,7 @@ RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 
 
 	this->changeRecordStatusMode(RecordStatus::NotRecording);
+	this->resizeRecordRectDelegate = new ResizeRecordRectDelegate(this);
 }
 
 RecordVideoDialog::~RecordVideoDialog() {
@@ -33,6 +35,9 @@ RecordVideoDialog::~RecordVideoDialog() {
 
 	if (this->recordStatusMode != nullptr)
 		delete this->recordStatusMode;
+
+	if (this->resizeRecordRectDelegate != nullptr)
+		delete this->resizeRecordRectDelegate;
 }
 
 void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
@@ -51,8 +56,10 @@ void RecordVideoDialog::request(RecordVideoRequest *request) {
 
 	RecordVideoRequestStrategy *strategy = RecordVideoRequestStrategyFactory::create(this, request);
 	
-	if (strategy != nullptr)
+	if (strategy != nullptr) {
 		strategy->response();
+		delete strategy;
+	}
 }
 
 void RecordVideoDialog::record() {
@@ -122,6 +129,9 @@ void RecordVideoDialog::paintEvent(QPaintEvent *event) {
 
 	painter.setPen(oldPen);
 
+
+
+	this->resizeRecordRectDelegate->paintEvent(painter);
 	
 }
 
@@ -135,14 +145,29 @@ void RecordVideoDialog::resizeEvent(QResizeEvent *event) {
 
 void RecordVideoDialog::mouseMoveEvent(QMouseEvent *event) {
 
+	if (this->recordStatusMode->getStatus() == RecordStatus::NotRecording ||
+		this->recordStatusMode->getStatus() == RecordStatus::Paused) {
+	
+		this->resizeRecordRectDelegate->mouseMoveEvent(event);
+	}
 }
 
 void RecordVideoDialog::mousePressEvent(QMouseEvent *event) {
 
+	if (this->recordStatusMode->getStatus() == RecordStatus::NotRecording ||
+		this->recordStatusMode->getStatus() == RecordStatus::Paused) {
+
+		this->resizeRecordRectDelegate->mousePressEvent(event);
+	}
 }
 
 void RecordVideoDialog::mouseReleaseEvent(QMouseEvent *event) {
 
+	if (this->recordStatusMode->getStatus() == RecordStatus::NotRecording ||
+		this->recordStatusMode->getStatus() == RecordStatus::Paused) {
+
+		this->resizeRecordRectDelegate->mouseReleaseEvent(event);
+	}
 
 }
 

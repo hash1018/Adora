@@ -238,6 +238,7 @@
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp" />
     <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp" />
+    <ClCompile Include="RecordVideo\ResizeRecordRectDelegate.cpp" />
     <ClCompile Include="Ui\AboutWidget.cpp" />
     <ClCompile Include="Ui\AbstractStackWidget.cpp" />
     <ClCompile Include="Ui\Adora.cpp" />
@@ -344,6 +345,7 @@
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h" />
     <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h" />
+    <ClInclude Include="RecordVideo\ResizeRecordRectDelegate.h" />
     <ClInclude Include="Ui\AboutWidget.h" />
     <ClInclude Include="Ui\AbstractStackWidget.h" />
     <CustomBuild Include="Ui\Item\HotkeyLineEdit.h">
