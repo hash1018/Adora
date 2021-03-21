@@ -9,6 +9,7 @@
 #include "Ui/Setting/ImageSettingWidget.h"
 #include "Ui/Setting/TimeLimitSettingWidget.h"
 #include "Ui/Setting/WatermarkSettingWidget.h"
+#include "Ui/Setting/WritingSettingWidget.h"
 #include "Ui/Setting/LanguageSettingWidget.h"
 #include "Ui/LicenseWidget.h"
 #include "Ui/AboutWidget.h"
@@ -170,6 +171,16 @@ void Adora::watermarkButtonClicked() {
 	ui.menuStackWidget->setCurrentWidget(this->watermarkSettingWidget);
 }
 
+void Adora::writingButtonClicked() {
+
+	for (int i = 0; i < this->menuButtons.size(); i++)
+		this->menuButtons.at(i)->setSelected(false);
+
+	ui.writingButton->setSelected(true);
+
+	ui.menuStackWidget->setCurrentWidget(this->writingSettingWidget);
+}
+
 void Adora::languageButtonClicked() {
 
 	for (int i = 0; i < this->menuButtons.size(); i++)
@@ -236,6 +247,7 @@ void Adora::initMenuStackWidget() {
 	this->imageSettingWidget = new ImageSettingWidget(ui.menuStackWidget);
 	this->timeLimitSettingWidget = new TimeLimitSettingWidget(ui.menuStackWidget);
 	this->watermarkSettingWidget = new WatermarkSettingWidget(ui.menuStackWidget);
+	this->writingSettingWidget = new WritingSettingWidget(ui.menuStackWidget);
 	this->languageSettingWidget = new LanguageSettingWidget(ui.menuStackWidget);
 	this->licenseWidget = new LicenseWidget(ui.menuStackWidget);
 	this->aboutWidget = new AboutWidget(ui.menuStackWidget);
@@ -247,6 +259,7 @@ void Adora::initMenuStackWidget() {
 	ui.menuStackWidget->addWidget(this->imageSettingWidget);
 	ui.menuStackWidget->addWidget(this->timeLimitSettingWidget);
 	ui.menuStackWidget->addWidget(this->watermarkSettingWidget);
+	ui.menuStackWidget->addWidget(this->writingSettingWidget);
 	ui.menuStackWidget->addWidget(this->languageSettingWidget);
 	ui.menuStackWidget->addWidget(this->licenseWidget);
 	ui.menuStackWidget->addWidget(this->aboutWidget);
@@ -264,6 +277,7 @@ void Adora::initMenuButtons() {
 	this->menuButtons.append(ui.imageButton);
 	this->menuButtons.append(ui.timeLimitButton);
 	this->menuButtons.append(ui.watermarkButton);
+	this->menuButtons.append(ui.writingButton);
 	this->menuButtons.append(ui.languageButton);
 	this->menuButtons.append(ui.licenseButton);
 	this->menuButtons.append(ui.aboutButton);
@@ -278,6 +292,7 @@ void Adora::initMenuButtons() {
 	ui.imageButton->setIcon(QIcon(":/Menu/image"));
 	ui.timeLimitButton->setIcon(QIcon(":/Menu/timeLimit"));
 	ui.watermarkButton->setIcon(QIcon(":/Menu/watermark"));
+	//ui.writingButton->setIcon(QIcon(":/Menu/writing"));
 	ui.languageButton->setIcon(QIcon(":/Menu/language"));
 	ui.licenseButton->setIcon(QIcon(":/Menu/license"));
 	ui.aboutButton->setIcon(QIcon(":/Menu/about"));
@@ -289,6 +304,7 @@ void Adora::initMenuButtons() {
 	ui.imageButton->setText(getLanUiValue("Menu/Image"));
 	ui.timeLimitButton->setText(getLanUiValue("Menu/Timelimit"));
 	ui.watermarkButton->setText(getLanUiValue("Menu/Watermark"));
+	ui.writingButton->setText(getLanUiValue("Menu/Writing"));
 	ui.languageButton->setText(getLanUiValue("Menu/Language"));
 	ui.licenseButton->setText(getLanUiValue("Menu/License"));
 	ui.aboutButton->setText(getLanUiValue("Menu/About"));
@@ -300,6 +316,7 @@ void Adora::initMenuButtons() {
 	connect(ui.imageButton, &QPushButton::clicked, this, &Adora::imageButtonClicked);
 	connect(ui.timeLimitButton, &QPushButton::clicked, this, &Adora::timeLimitButtonClicked);
 	connect(ui.watermarkButton, &QPushButton::clicked, this, &Adora::watermarkButtonClicked);
+	connect(ui.writingButton, &QPushButton::clicked, this, &Adora::writingButtonClicked);
 	connect(ui.languageButton, &QPushButton::clicked, this, &Adora::languageButtonClicked);
 	connect(ui.licenseButton, &QPushButton::clicked, this, &Adora::licenseButtonClicked);
 	connect(ui.aboutButton, &QPushButton::clicked, this, &Adora::aboutButtonClicked);

@@ -11,6 +11,7 @@ class AudioSettingWidget;
 class ImageSettingWidget;
 class TimeLimitSettingWidget;
 class WatermarkSettingWidget;
+class WritingSettingWidget;
 class LanguageSettingWidget;
 class LicenseWidget;
 class AboutWidget;
@@ -42,6 +43,7 @@ private:
 	ImageSettingWidget *imageSettingWidget;
 	TimeLimitSettingWidget *timeLimitSettingWidget;
 	WatermarkSettingWidget *watermarkSettingWidget;
+	WritingSettingWidget *writingSettingWidget;
 	LanguageSettingWidget *languageSettingWidget;
 	LicenseWidget *licenseWidget;
 	AboutWidget *aboutWidget;
@@ -74,6 +76,7 @@ protected:
 	void imageButtonClicked();
 	void timeLimitButtonClicked();
 	void watermarkButtonClicked();
+	void writingButtonClicked();
 	void languageButtonClicked();
 	void licenseButtonClicked();
 	void aboutButtonClicked();
