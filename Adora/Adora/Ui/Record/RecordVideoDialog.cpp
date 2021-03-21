@@ -14,8 +14,11 @@
 #include <qsettings.h>
 #include <qscreen.h>
 
+#include "RecordVideo/Mode/WritingMode/WritingModeFactory.h"
+#include "RecordVideo/Mode/WritingMode/WritingMode.h"
+
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
-	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
+	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr), writingMode(nullptr) {
 
 	this->setMouseTracking(true);
 	this->setAttribute(Qt::WA_TranslucentBackground);
@@ -30,6 +33,8 @@ RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 
 
 	this->changeRecordStatusMode(RecordStatus::NotRecording);
+	this->changeWritingMode(WritingStatus::Cursor);
+
 	this->resizeRecordRectDelegate = new ResizeRecordRectDelegate(this);
 	this->captureImageDelegate = new CaptureImageDelegate(this);
 }
@@ -65,6 +70,20 @@ void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
 	this->recordStatusMode = RecordStatusModeFactory::create(this, recordStatus);
 
 	RecordVideoStatusChangedEvent event(recordStatus);
+	this->controllerWidget->update(&event);
+
+	this->update();
+}
+#include <qdebug.h>
+void RecordVideoDialog::changeWritingMode(WritingStatus writingStatus) {
+
+	qDebug() << "343434";
+	if (this->writingMode != nullptr)
+		delete this->writingMode;
+
+	this->writingMode = WritingModeFactory::create(this, writingStatus);
+
+	RecordVideoWritingModeChangedEvent event(writingStatus);
 	this->controllerWidget->update(&event);
 
 	this->update();
@@ -200,14 +219,8 @@ void RecordVideoDialog::mouseReleaseEvent(QMouseEvent *event) {
 
 void RecordVideoDialog::closeEvent(QCloseEvent *event) {
 
-	
-
 	event->ignore();
-
-	//emit this->recordVideoDialogClosed();
 }
-
-
 
 QRect RecordVideoDialog::getRecordBorderRect() {
 

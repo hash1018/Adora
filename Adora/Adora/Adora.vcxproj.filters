@@ -64,6 +64,9 @@
     <Filter Include="lib\multimedia">
       <UniqueIdentifier>{6f253b53-607e-464d-9adf-be037f01660d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RecordVideo\Mode\WritingMode">
+      <UniqueIdentifier>{1fe1b5dd-050d-45f5-b64c-2475594ab2d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -234,6 +237,21 @@
     <ClCompile Include="Base\Hotkey.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Record\WritingPanel.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\WritingMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\CursorMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\PencilMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -307,6 +325,12 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Item\AbstractButton.h">
       <Filter>Ui\Item</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\SoundPanel.ui">
+      <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\WritingPanel.ui">
+      <Filter>Ui\Record</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -426,6 +450,27 @@
     </ClInclude>
     <ClInclude Include="Base\Hotkey.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\WritingPanel.h">
+      <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_SoundPanel.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_WritingPanel.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\WritingMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\CursorMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\PencilMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

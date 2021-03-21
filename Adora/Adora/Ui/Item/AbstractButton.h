@@ -14,15 +14,20 @@ protected:
 	QString tooltipText;
 	bool aboutToShowTooltip;
 
+protected:
+	bool selected;
+
 public:
 	AbstractButton(QWidget *parent = nullptr);
 	~AbstractButton();
 
 	virtual void setToolTip(const QString &toolTipText) { this->tooltipText = toolTipText; }
+	void updateSelected(bool selected) { this->selected = selected; this->update(); }
 
 protected:
 	virtual void enterEvent(QEvent *event);
 	virtual void leaveEvent(QEvent *event);
+	virtual void paintEvent(QPaintEvent *event);
 
 	private slots:
 	void showToolTip();

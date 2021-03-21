@@ -37,3 +37,16 @@ RecordVideoRequestKeyEvent::RecordVideoRequestKeyEvent(QKeyEvent *event)
 RecordVideoRequestKeyEvent::~RecordVideoRequestKeyEvent() {
 
 }
+
+
+//////////////////////////////////////////////
+
+RecordVideoRequestChangeWritingMode::RecordVideoRequestChangeWritingMode(Mode mode)
+	:RecordVideoRequest(RequestType::RequestChangeWritingMode), mode(mode) {
+
+}
+
+RecordVideoRequestChangeWritingMode::~RecordVideoRequestChangeWritingMode() {
+
+
+}

@@ -4,9 +4,10 @@
 #include <qtimer.h>
 
 AbstractButton::AbstractButton(QWidget *parent)
-	:QPushButton(parent), aboutToShowTooltip(false) {
+	:QPushButton(parent), aboutToShowTooltip(false), selected(false) {
 
 	this->setMouseTracking(true);
+	this->setCheckable(true);
 }
 
 AbstractButton::~AbstractButton() {
@@ -24,6 +25,18 @@ void AbstractButton::enterEvent(QEvent *event) {
 void AbstractButton::leaveEvent(QEvent *event) {
 
 	this->aboutToShowTooltip = false;
+}
+
+void AbstractButton::paintEvent(QPaintEvent *event) {
+
+	QPushButton::paintEvent(event);
+
+	if (this->selected == true) {
+		this->setChecked(true);
+	}
+	else {
+		this->setChecked(false);
+	}
 }
 
 void AbstractButton::showToolTip() {

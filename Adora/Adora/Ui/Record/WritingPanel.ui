@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WritingPanel</class>
+ <widget class="QWidget" name="WritingPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>160</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>160</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>160</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton#cursorButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Writing/cursor);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#cursorButton:hover {
+    background-color: #FFEDC5;
+}
+
+QPushButton#cursorButton:checked {
+    background-color: #E5E5E5;
+}
+
+
+/** **/
+
+QPushButton#pencilButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Writing/pencil);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#pencilButton:hover {
+    background-color: #FFEDC5;
+}
+
+QPushButton#pencilButton:checked {
+    background-color: #E5E5E5;
+}</string>
+  </property>
+  <widget class="AbstractButton" name="cursorButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>48</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="AbstractButton" name="pencilButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>48</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">Ui/Item/AbstractButton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../Adora.qrc"/>
+ </resources>
+ <connections/>
+</ui>

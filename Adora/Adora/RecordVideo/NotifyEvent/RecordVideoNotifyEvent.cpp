@@ -25,3 +25,14 @@ RecordVideoStatusChangedEvent::~RecordVideoStatusChangedEvent() {
 }
 
 ////////////////////////////////////////////////////////////
+
+
+RecordVideoWritingModeChangedEvent::RecordVideoWritingModeChangedEvent(WritingStatus writingStatus)
+	:RecordVideoNotifyEvent(EventType::WritingModeChanged), writingStatus(writingStatus) {
+
+}
+
+RecordVideoWritingModeChangedEvent::~RecordVideoWritingModeChangedEvent() {
+
+
+}

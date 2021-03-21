@@ -60,6 +60,68 @@
      </property>
     </widget>
    </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="SoundPanel" name="soundPanel" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>160</width>
+       <height>104</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>160</width>
+       <height>104</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="WritingPanel" name="writingPanel" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>160</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>160</width>
+       <height>200</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_3">
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <customwidgets>
@@ -67,6 +129,18 @@
    <class>RecordPanel</class>
    <extends>QWidget</extends>
    <header location="global">Ui/Record/RecordPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SoundPanel</class>
+   <extends>QWidget</extends>
+   <header location="global">Ui/Record/SoundPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WritingPanel</class>
+   <extends>QWidget</extends>
+   <header location="global">Ui/Record/WritingPanel.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

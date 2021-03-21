@@ -10,6 +10,7 @@ class RecordVideoNotifyEvent {
 public:
 	enum EventType {
 		RecordStatusChanged,
+		WritingModeChanged,
 	};
 
 protected:
@@ -36,5 +37,21 @@ public:
 	inline RecordStatus getStatus() { return this->recordStatus; }
 };
 
+
+
+//////////////////////////////////////////
+
+class RecordVideoWritingModeChangedEvent : public RecordVideoNotifyEvent {
+
+private:
+	WritingStatus writingStatus;
+
+public:
+	RecordVideoWritingModeChangedEvent(WritingStatus writingStatus);
+	~RecordVideoWritingModeChangedEvent();
+
+	inline WritingStatus getStatus() { return this->writingStatus; }
+
+};
 
 #endif //_RECORDVIDEONOTIFYEVENT_H

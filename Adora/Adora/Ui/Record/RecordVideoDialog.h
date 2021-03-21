@@ -11,15 +11,16 @@ class ControllerWidget;
 class RecordStatusMode;
 class ResizeRecordRectDelegate;
 class CaptureImageDelegate;
+class WritingMode;
 
 class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
 	Q_OBJECT
 
-
 	friend class RecordVideoRequestStrategy;
 	friend class RecordVideoRequestChangeRecordStatusStrategy;
 	friend class RecordVideoRequestKeyEventStrategy;
+	friend class RecordVideoRequestChangeWritingModeStrategy;
 
 private:
 	QRect recordAreaRect;
@@ -35,6 +36,9 @@ private:
 	ResizeRecordRectDelegate *resizeRecordRectDelegate;
 	CaptureImageDelegate *captureImageDelegate;
 
+private:
+	WritingMode *writingMode;
+
 public:
 	RecordVideoDialog(QWidget *parent = nullptr);
 	~RecordVideoDialog();
@@ -46,6 +50,7 @@ signals:
 
 private:
 	void changeRecordStatusMode(RecordStatus recordStatus);
+	void changeWritingMode(WritingStatus writingStatus);
 
 private:
 	virtual void request(RecordVideoRequest *request);

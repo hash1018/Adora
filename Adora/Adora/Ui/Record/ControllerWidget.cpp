@@ -18,6 +18,7 @@ ControllerWidget::ControllerWidget(RecordVideoChain *chain)
 	this->setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 
 	ui.recordPanel->setChain(this);
+	ui.writingPanel->setChain(this);
 
 	this->loadGeometry();
 }
@@ -30,6 +31,7 @@ ControllerWidget::~ControllerWidget() {
 void ControllerWidget::update(RecordVideoNotifyEvent *event) {
 
 	ui.recordPanel->update(event);
+	ui.writingPanel->update(event);
 }
 
 void ControllerWidget::loadGeometry() {

@@ -10,6 +10,12 @@ enum RecordStatus {
 	Paused,
 };
 
+enum WritingStatus {
+	Cursor,
+	Pencil,
+
+};
+
 enum ResizeBehavior {
 	Nothing,
 	Move,

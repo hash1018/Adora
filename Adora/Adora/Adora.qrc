@@ -43,4 +43,8 @@
         <file alias="resume">Resources/Images/RecordVideo/Record/resume.png</file>
         <file alias="stop">Resources/Images/RecordVideo/Record/stop.png</file>
     </qresource>
+    <qresource prefix="/RecordVideo_Writing">
+        <file alias="cursor">Resources/Images/RecordVideo/Writing/cursor.png</file>
+        <file alias="pencil">Resources/Images/RecordVideo/Writing/pencil.png</file>
+    </qresource>
 </RCC>

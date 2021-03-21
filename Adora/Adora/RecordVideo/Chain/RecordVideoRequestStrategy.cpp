@@ -122,3 +122,35 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 
 	return true;
 }
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+RecordVideoRequestChangeWritingModeStrategy::RecordVideoRequestChangeWritingModeStrategy(RecordVideoDialog *recordVideoDialog,
+	RecordVideoRequest *request)
+	:RecordVideoRequestStrategy(recordVideoDialog, request) {
+
+}
+
+RecordVideoRequestChangeWritingModeStrategy::~RecordVideoRequestChangeWritingModeStrategy() {
+
+
+}
+
+bool RecordVideoRequestChangeWritingModeStrategy::response() {
+
+	RecordVideoRequestChangeWritingMode::Mode mode = dynamic_cast<RecordVideoRequestChangeWritingMode*>(this->request)->getMode();
+
+	if (mode == RecordVideoRequestChangeWritingMode::Mode::Cursor) {
+	
+		this->recordVideoDialog->changeWritingMode(WritingStatus::Cursor);
+	}
+	else if (mode == RecordVideoRequestChangeWritingMode::Mode::Pencil) {
+	
+		this->recordVideoDialog->changeWritingMode(WritingStatus::Pencil);
+	}
+
+	return true;
+}

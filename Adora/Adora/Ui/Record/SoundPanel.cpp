@@ -5,6 +5,7 @@
 SoundPanel::SoundPanel(QWidget *parent)
 	:QWidget(parent) {
 
+	ui.setupUi(this);
 }
 
 SoundPanel::~SoundPanel() {

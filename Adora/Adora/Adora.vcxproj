@@ -241,6 +241,10 @@
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\CursorMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\PencilMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\WritingMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp" />
     <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp" />
     <ClCompile Include="RecordVideo\ResizeRecordRectDelegate.cpp" />
     <ClCompile Include="Ui\AboutWidget.cpp" />
@@ -255,6 +259,7 @@
     <ClCompile Include="Ui\Record\RecordPanel.cpp" />
     <ClCompile Include="Ui\Record\RecordVideoDialog.cpp" />
     <ClCompile Include="Ui\Record\SoundPanel.cpp" />
+    <ClCompile Include="Ui\Record\WritingPanel.cpp" />
     <ClCompile Include="Ui\Setting\AudioSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\GeneralSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\ImageSettingWidget.cpp" />
@@ -341,9 +346,11 @@
     <ClInclude Include="GeneratedFiles\ui_LanguageSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_LicenseWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_RecordPanel.h" />
+    <ClInclude Include="GeneratedFiles\ui_SoundPanel.h" />
     <ClInclude Include="GeneratedFiles\ui_TimeLimitSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_VideoSettingWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_WatermarkSettingWidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_WritingPanel.h" />
     <ClInclude Include="lib\multimedia\GDIManager.h" />
     <ClInclude Include="RecordVideo\CaptureImageDelegate.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoChain.h" />
@@ -352,6 +359,10 @@
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\CursorMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\PencilMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\WritingMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h" />
     <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h" />
     <ClInclude Include="RecordVideo\ResizeRecordRectDelegate.h" />
     <ClInclude Include="Ui\AboutWidget.h" />
@@ -415,6 +426,7 @@
     </CustomBuild>
     <ClInclude Include="Ui\Record\RecordPanel.h" />
     <ClInclude Include="Ui\Record\SoundPanel.h" />
+    <ClInclude Include="Ui\Record\WritingPanel.h" />
     <ClInclude Include="Ui\Setting\AudioSettingWidget.h" />
     <CustomBuild Include="Ui\Setting\GeneralSettingWidget.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
@@ -758,6 +770,42 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
     </CustomBuild>
     <CustomBuild Include="Ui\Record\RecordPanel.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\SoundPanel.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\WritingPanel.ui">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>

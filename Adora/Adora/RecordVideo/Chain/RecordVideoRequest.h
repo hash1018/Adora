@@ -13,6 +13,7 @@ public:
 
 		RequestChangeRecordStatus,
 		RequestKeyEvent,
+		RequestChangeWritingMode,
 
 	};
 
@@ -52,6 +53,9 @@ public:
 	inline RecordStatus getRecordStatus() const { return this->status; }
 };
 
+
+//////////////////////////////////////////////////////
+
 class RecordVideoRequestKeyEvent : public RecordVideoRequest {
 
 private:
@@ -62,6 +66,27 @@ public:
 	~RecordVideoRequestKeyEvent();
 
 	inline QKeyEvent* getKeyEvent() const { return this->event; }
+
+};
+
+////////////////////////////////////////////////////////
+
+class RecordVideoRequestChangeWritingMode : public RecordVideoRequest {
+
+public:
+	enum Mode {
+		Cursor,
+		Pencil,
+	};
+
+private:
+	Mode mode;
+
+public:
+	RecordVideoRequestChangeWritingMode(Mode mode);
+	~RecordVideoRequestChangeWritingMode();
+
+	inline Mode getMode() const { return this->mode; }
 
 };
 

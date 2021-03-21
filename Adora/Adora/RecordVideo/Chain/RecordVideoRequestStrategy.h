@@ -46,4 +46,16 @@ public:
 
 };
 
+/////////////////////////////////////////////////////
+
+class RecordVideoRequestChangeWritingModeStrategy : public RecordVideoRequestStrategy {
+
+public:
+	RecordVideoRequestChangeWritingModeStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request);
+	~RecordVideoRequestChangeWritingModeStrategy();
+
+	virtual bool response();
+
+};
+
 #endif //_RECORDVIDEOREQUESTSTRATEGY_H
