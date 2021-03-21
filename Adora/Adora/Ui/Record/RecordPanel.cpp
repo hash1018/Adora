@@ -21,33 +21,38 @@ RecordPanel::RecordPanel(QWidget *parent)
 
 
 	QString str = getLanUiValue("RecordPanel/Record Video");
-	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false) {
+	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey()==true) {
 		str += " " + SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().toString();
 	}
 	ui.recordButton->setToolTip(str);
 
 
 	str = getLanUiValue("RecordPanel/Resume Video");
-	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false) {
+	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey() == true) {
 		str += " " + SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().toString();
 	}
 	ui.resumeButton->setToolTip(str);
 
 	str = getLanUiValue("RecordPanel/Pause Video");
-	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false) {
+	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey() == true) {
 		str += " " + SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().toString();
 	}
 	ui.pauseButton->setToolTip(str);
 
 	str = getLanUiValue("RecordPanel/Stop Video");
-	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false) {
+	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey() == true) {
 		str += " " + SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().toString();
 	}
 	ui.stopButton->setToolTip(str);
 
 
 	str = getLanUiValue("RecordPanel/Capture Screen");
-	if (SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().isEmpty() == false) {
+	if (SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey()==true) {
 		str += " " + SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().toString();
 	}
 	ui.captureButton->setToolTip(str);

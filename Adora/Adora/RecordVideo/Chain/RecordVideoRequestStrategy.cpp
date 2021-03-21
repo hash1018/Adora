@@ -5,6 +5,7 @@
 #include "Ui/Record/RecordVideoDialog.h"
 #include "Base/Hotkey.h"
 #include <QKeyEvent>
+#include "Base/SettingManager.h"
 
 RecordVideoRequestStrategy::RecordVideoRequestStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request)
 	:recordVideoDialog(recordVideoDialog), request(request) {
@@ -94,27 +95,33 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 		HotkeyType type = HotkeyList::getInstance()->at(index)->getType();
 
 		if (type == HotkeyType::ImageCapture) {
-			this->recordVideoDialog->capture();
+			if (SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey() == true)
+				this->recordVideoDialog->capture();
 		}
 		else if (type == HotkeyType::VideoStartAndStop) {
 
 			if (this->recordVideoDialog->getRecordStatus() == RecordStatus::NotRecording) {
-				this->recordVideoDialog->record();
+				if (SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey() == true)
+					this->recordVideoDialog->record();
 			}
 			else if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Recording) {
-				this->recordVideoDialog->stop();
+				if (SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey() == true)
+					this->recordVideoDialog->stop();
 			}
 			else if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Paused) {
-				this->recordVideoDialog->stop();
+				if (SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey() == true)
+					this->recordVideoDialog->stop();
 			}
 		}
 		else if (type == HotkeyType::VideoPauseAndResume) {
 
 			if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Recording) {
-				this->recordVideoDialog->pause();
+				if (SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey() == true)
+					this->recordVideoDialog->pause();
 			}
 			else if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Paused) {
-				this->recordVideoDialog->resume();
+				if (SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey() == true)
+					this->recordVideoDialog->resume();
 			}
 		}
 	}
