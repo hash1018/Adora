@@ -134,6 +134,14 @@ void RecordVideoDialog::capture() {
 	this->captureImageDelegate->capture(point.x(), point.y(), rect.width(), rect.height());
 }
 
+void RecordVideoDialog::undo() {
+
+}
+
+void RecordVideoDialog::redo() {
+
+}
+
 void RecordVideoDialog::keyPressEvent(QKeyEvent *event) {
 
 	RecordVideoRequestKeyEvent request(event);

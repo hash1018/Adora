@@ -161,3 +161,29 @@ bool RecordVideoRequestChangeWritingModeStrategy::response() {
 
 	return true;
 }
+
+
+
+///////////////////////////////////////////////////////////////////
+
+
+RecordVideoRequestUnredoStrategy::RecordVideoRequestUnredoStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request)
+	:RecordVideoRequestStrategy(recordVideoDialog, request) {
+
+}
+
+RecordVideoRequestUnredoStrategy::~RecordVideoRequestUnredoStrategy() {
+
+}
+
+bool RecordVideoRequestUnredoStrategy::response() {
+
+	RecordVideoRequestUnredo::Type type = dynamic_cast<RecordVideoRequestUnredo*>(this->request)->getType();
+
+	if (type == RecordVideoRequestUnredo::Type::Undo)
+		this->recordVideoDialog->undo();
+	else if (type == RecordVideoRequestUnredo::Type::Redo)
+		this->recordVideoDialog->redo();
+
+	return true;
+}

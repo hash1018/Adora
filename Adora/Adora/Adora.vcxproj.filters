@@ -255,6 +255,9 @@
     <ClCompile Include="Ui\Record\WritingLayer.cpp">
       <Filter>Ui\Record</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Record\UnredoPanel.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -333,6 +336,9 @@
       <Filter>Ui\Record</Filter>
     </CustomBuild>
     <CustomBuild Include="Ui\Record\WritingPanel.ui">
+      <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\UnredoPanel.ui">
       <Filter>Ui\Record</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -477,6 +483,12 @@
     </ClInclude>
     <ClInclude Include="Ui\Record\WritingLayer.h">
       <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\UnredoPanel.h">
+      <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_UnredoPanel.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

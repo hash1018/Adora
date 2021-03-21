@@ -25,7 +25,9 @@ RecordVideoRequestStrategy* RecordVideoRequestStrategyFactory::create(RecordVide
 
 	else if (request->getType() == RecordVideoRequest::RequestChangeWritingMode)
 		strategy = new RecordVideoRequestChangeWritingModeStrategy(recordVideoDialog, request);
-	
+
+	else if (request->getType() == RecordVideoRequest::RequestUnredo)
+		strategy = new RecordVideoRequestUnredoStrategy(recordVideoDialog, request);
 
 	return strategy;
 }

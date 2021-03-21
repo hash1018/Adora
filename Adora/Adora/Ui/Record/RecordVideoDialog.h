@@ -21,6 +21,7 @@ class RecordVideoDialog : public QDialog, public RecordVideoChain {
 	friend class RecordVideoRequestChangeRecordStatusStrategy;
 	friend class RecordVideoRequestKeyEventStrategy;
 	friend class RecordVideoRequestChangeWritingModeStrategy;
+	friend class RecordVideoRequestUnredoStrategy;
 
 private:
 	QRect recordAreaRect;
@@ -62,6 +63,8 @@ private:
 	void stop();
 	void resume();
 	void capture();
+	void undo();
+	void redo();
 
 protected:
 	virtual void keyPressEvent(QKeyEvent *event);

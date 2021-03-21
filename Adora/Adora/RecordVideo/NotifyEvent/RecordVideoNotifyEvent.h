@@ -11,6 +11,7 @@ public:
 	enum EventType {
 		RecordStatusChanged,
 		WritingModeChanged,
+		UnredoStackCountChanged,
 	};
 
 protected:
@@ -52,6 +53,23 @@ public:
 
 	inline WritingStatus getStatus() { return this->writingStatus; }
 
+};
+
+
+/////////////////////////////////////////////
+
+class RecordVideoUnredoStackCountChangedEvent : public RecordVideoNotifyEvent {
+
+private:
+	int undoCount;
+	int redoCount;
+
+public:
+	RecordVideoUnredoStackCountChangedEvent(int undoCount, int redoCount);
+	~RecordVideoUnredoStackCountChangedEvent();
+
+	inline int getUndoCount() const { return this->undoCount; }
+	inline int getRedoCount() const { return this->redoCount; }
 };
 
 #endif //_RECORDVIDEONOTIFYEVENT_H

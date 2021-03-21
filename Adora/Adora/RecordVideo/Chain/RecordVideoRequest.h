@@ -14,7 +14,7 @@ public:
 		RequestChangeRecordStatus,
 		RequestKeyEvent,
 		RequestChangeWritingMode,
-
+		RequestUnredo,
 	};
 
 protected:
@@ -87,6 +87,28 @@ public:
 	~RecordVideoRequestChangeWritingMode();
 
 	inline Mode getMode() const { return this->mode; }
+
+};
+
+///////////////////////////////////////////////////////////////
+
+
+class RecordVideoRequestUnredo : public RecordVideoRequest {
+
+public:
+	enum Type {
+		Undo,
+		Redo,
+	};
+
+private:
+	Type type;
+
+public:
+	RecordVideoRequestUnredo(Type type);
+	~RecordVideoRequestUnredo();
+
+	inline Type getType() const { return this->type; }
 
 };
 

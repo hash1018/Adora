@@ -58,4 +58,17 @@ public:
 
 };
 
+
+///////////////////////////////////////////////////////
+
+class RecordVideoRequestUnredoStrategy : public RecordVideoRequestStrategy {
+
+public:
+	RecordVideoRequestUnredoStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request);
+	~RecordVideoRequestUnredoStrategy();
+
+	virtual bool response();
+
+};
+
 #endif //_RECORDVIDEOREQUESTSTRATEGY_H

@@ -36,3 +36,17 @@ RecordVideoWritingModeChangedEvent::~RecordVideoWritingModeChangedEvent() {
 
 
 }
+
+
+//////////////////////////////////////////////////////////////
+
+
+RecordVideoUnredoStackCountChangedEvent::RecordVideoUnredoStackCountChangedEvent(int undoCount, int redoCount)
+	:RecordVideoNotifyEvent(EventType::UnredoStackCountChanged), undoCount(undoCount), redoCount(redoCount) {
+
+}
+
+RecordVideoUnredoStackCountChangedEvent::~RecordVideoUnredoStackCountChangedEvent() {
+
+
+}

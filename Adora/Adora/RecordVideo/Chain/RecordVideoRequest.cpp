@@ -50,3 +50,18 @@ RecordVideoRequestChangeWritingMode::~RecordVideoRequestChangeWritingMode() {
 
 
 }
+
+
+
+//////////////////////////////////////////////////////////////////
+
+
+RecordVideoRequestUnredo::RecordVideoRequestUnredo(Type type)
+	:RecordVideoRequest(RequestType::RequestUnredo), type(type) {
+
+}
+
+RecordVideoRequestUnredo::~RecordVideoRequestUnredo() {
+
+
+}

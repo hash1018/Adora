@@ -47,4 +47,10 @@
         <file alias="cursor">Resources/Images/RecordVideo/Writing/cursor.png</file>
         <file alias="pencil">Resources/Images/RecordVideo/Writing/pencil.png</file>
     </qresource>
+    <qresource prefix="/RecordVideo_Unredo">
+        <file alias="redo">Resources/Images/RecordVideo/Unredo/redo.png</file>
+        <file alias="redo_disabled">Resources/Images/RecordVideo/Unredo/redo_disabled.png</file>
+        <file alias="undo">Resources/Images/RecordVideo/Unredo/undo.png</file>
+        <file alias="undo_disabled">Resources/Images/RecordVideo/Unredo/undo_disabled.png</file>
+    </qresource>
 </RCC>
