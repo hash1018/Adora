@@ -67,6 +67,15 @@
     <Filter Include="RecordVideo\Mode\WritingMode">
       <UniqueIdentifier>{1fe1b5dd-050d-45f5-b64c-2475594ab2d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RecordVideo\Entity">
+      <UniqueIdentifier>{7975d62c-d2b3-4e6d-8f3a-e111c7a1d2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecordVideo\Unredo">
+      <UniqueIdentifier>{33e6e235-a1c6-4a61-bbfd-6c20ca162a6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecordVideo\Entity\Visitor">
+      <UniqueIdentifier>{fd13b063-ff57-4a0f-aa96-0819e0aa047e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -257,6 +266,30 @@
     </ClCompile>
     <ClCompile Include="Ui\Record\UnredoPanel.cpp">
       <Filter>Ui\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Entity.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\EntityList.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\FreeCurve.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Unredo\WritingCommand.cpp">
+      <Filter>RecordVideo\Unredo</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Unredo\WritingUnredoStack.cpp">
+      <Filter>RecordVideo\Unredo</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Visitor\Visitor.cpp">
+      <Filter>RecordVideo\Entity\Visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Visitor\Drawer.cpp">
+      <Filter>RecordVideo\Entity\Visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Unredo\AddEntityCommand.cpp">
+      <Filter>RecordVideo\Unredo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -489,6 +522,30 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_UnredoPanel.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Entity.h">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\EntityList.h">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\FreeCurve.h">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Unredo\WritingCommand.h">
+      <Filter>RecordVideo\Unredo</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Unredo\WritingUnredoStack.h">
+      <Filter>RecordVideo\Unredo</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Visitor\Visitor.h">
+      <Filter>RecordVideo\Entity\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Visitor\Drawer.h">
+      <Filter>RecordVideo\Entity\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Unredo\AddEntityCommand.h">
+      <Filter>RecordVideo\Unredo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

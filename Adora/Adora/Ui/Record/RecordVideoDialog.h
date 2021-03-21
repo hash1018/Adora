@@ -6,12 +6,15 @@
 #include <qdialog.h>
 #include "RecordVideo/Chain/RecordVideoChain.h"
 #include "Base/Namespace.h"
+#include "RecordVideo/Entity/EntityList.h"
+#include "RecordVideo/Unredo/WritingUnredoStack.h"
 
 class ControllerWidget;
 class RecordStatusMode;
 class ResizeRecordRectDelegate;
 class CaptureImageDelegate;
 class WritingMode;
+class WritingCommand;
 
 class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
@@ -39,12 +42,15 @@ private:
 
 private:
 	WritingMode *writingMode;
+	EntityList entityList;
+	WritingUnredoStack unredoStack;
 
 public:
 	RecordVideoDialog(QWidget *parent = nullptr);
 	~RecordVideoDialog();
 
 	virtual void hide();
+	void addCommand(WritingCommand *command);
 
 signals:
 	void recordVideoDialogClosed();
@@ -80,7 +86,7 @@ public:
 	QRect getRecordBorderRect();
 	inline const QRect& getRecordAreaRect() const { return this->recordAreaRect; }
 	RecordStatus getRecordStatus();
-
+	inline EntityList* const getEntityList() { return &(this->entityList); }
 
 private:
 	void loadGeometry();

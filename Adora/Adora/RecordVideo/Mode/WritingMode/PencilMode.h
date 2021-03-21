@@ -5,7 +5,13 @@
 
 #include "WritingMode.h"
 
+class FreeCurve;
+
 class PencilMode : public WritingMode {
+
+private:
+	bool mousePressed;
+	FreeCurve *freeCurve;
 
 public:
 	PencilMode(RecordVideoDialog *recordVideoDialog);

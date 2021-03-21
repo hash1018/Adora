@@ -17,6 +17,8 @@
 #include "RecordVideo/Mode/WritingMode/WritingModeFactory.h"
 #include "RecordVideo/Mode/WritingMode/WritingMode.h"
 
+#include "RecordVideo/Entity/Visitor/Drawer.h"
+
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr), writingMode(nullptr) {
 
@@ -37,6 +39,11 @@ RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 
 	this->resizeRecordRectDelegate = new ResizeRecordRectDelegate(this);
 	this->captureImageDelegate = new CaptureImageDelegate(this);
+
+
+	RecordVideoUnredoStackCountChangedEvent event(this->unredoStack.getUndoStackSize(),
+		this->unredoStack.getRedoStackSize());
+	this->controllerWidget->update(&event);
 }
 
 RecordVideoDialog::~RecordVideoDialog() {
@@ -62,6 +69,15 @@ void RecordVideoDialog::hide() {
 	QDialog::hide();
 }
 
+void RecordVideoDialog::addCommand(WritingCommand *command) {
+
+	this->unredoStack.pushToUndoStack(command);
+	
+	RecordVideoUnredoStackCountChangedEvent event(this->unredoStack.getUndoStackSize(),
+		this->unredoStack.getRedoStackSize());
+	this->controllerWidget->update(&event);
+}
+
 void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
 
 	if (this->recordStatusMode != nullptr)
@@ -74,10 +90,9 @@ void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
 
 	this->update();
 }
-#include <qdebug.h>
+
 void RecordVideoDialog::changeWritingMode(WritingStatus writingStatus) {
 
-	qDebug() << "343434";
 	if (this->writingMode != nullptr)
 		delete this->writingMode;
 
@@ -136,10 +151,21 @@ void RecordVideoDialog::capture() {
 
 void RecordVideoDialog::undo() {
 
+	this->unredoStack.undo();
+
+	RecordVideoUnredoStackCountChangedEvent event(this->unredoStack.getUndoStackSize(),
+		this->unredoStack.getRedoStackSize());
+	this->controllerWidget->update(&event);
 }
 
 void RecordVideoDialog::redo() {
 
+
+	this->unredoStack.redo();
+
+	RecordVideoUnredoStackCountChangedEvent event(this->unredoStack.getUndoStackSize(),
+		this->unredoStack.getRedoStackSize());
+	this->controllerWidget->update(&event);
 }
 
 void RecordVideoDialog::keyPressEvent(QKeyEvent *event) {
@@ -179,6 +205,17 @@ void RecordVideoDialog::paintEvent(QPaintEvent *event) {
 	painter.drawLine(start, end);
 
 	painter.setPen(oldPen);
+
+
+
+	Drawer drawer(painter);
+	auto itr = this->entityList.begin();
+	for (itr; itr != this->entityList.end(); ++itr)
+		(*itr)->accept(&drawer);
+	
+
+
+
 
 
 	this->captureImageDelegate->paintEvent(painter);
