@@ -9,11 +9,15 @@
 class WritingMode;
 class RecordVideoDialog;
 class QMouseEvent;
+class WritingLayer;
 
 class WritingMode {
 
 protected:
 	RecordVideoDialog *recordVideoDialog;
+
+private:
+	WritingLayer *writingLayer;
 
 public:
 	WritingMode(RecordVideoDialog *recordVideoDialog);
@@ -27,6 +31,10 @@ public:
 	virtual WritingStatus getStatus() = 0;
 	virtual QCursor getCursor() { return QCursor(Qt::CursorShape::ArrowCursor); }
 
+
+protected:
+	void createWritingLayer();
+	void deleteWritingLayer();
 };
 
 

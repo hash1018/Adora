@@ -252,6 +252,9 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Record\WritingLayer.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -471,6 +474,9 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\WritingLayer.h">
+      <Filter>Ui\Record</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

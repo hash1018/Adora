@@ -259,6 +259,7 @@
     <ClCompile Include="Ui\Record\RecordPanel.cpp" />
     <ClCompile Include="Ui\Record\RecordVideoDialog.cpp" />
     <ClCompile Include="Ui\Record\SoundPanel.cpp" />
+    <ClCompile Include="Ui\Record\WritingLayer.cpp" />
     <ClCompile Include="Ui\Record\WritingPanel.cpp" />
     <ClCompile Include="Ui\Setting\AudioSettingWidget.cpp" />
     <ClCompile Include="Ui\Setting\GeneralSettingWidget.cpp" />
@@ -426,6 +427,7 @@
     </CustomBuild>
     <ClInclude Include="Ui\Record\RecordPanel.h" />
     <ClInclude Include="Ui\Record\SoundPanel.h" />
+    <ClInclude Include="Ui\Record\WritingLayer.h" />
     <ClInclude Include="Ui\Record\WritingPanel.h" />
     <ClInclude Include="Ui\Setting\AudioSettingWidget.h" />
     <CustomBuild Include="Ui\Setting\GeneralSettingWidget.h">

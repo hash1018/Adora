@@ -175,7 +175,8 @@ void RecordVideoDialog::paintEvent(QPaintEvent *event) {
 
 	this->captureImageDelegate->paintEvent(painter);
 
-	if (this->captureImageDelegate->isShowFlash() == false)
+	if (this->captureImageDelegate->isShowFlash() == false &&
+		this->writingMode->getStatus() == WritingStatus::Cursor)
 		this->recordStatusMode->paintEvent(painter);
 
 	this->resizeRecordRectDelegate->paintEvent(painter);
@@ -194,8 +195,11 @@ void RecordVideoDialog::mouseMoveEvent(QMouseEvent *event) {
 	if (this->recordStatusMode->getStatus() == RecordStatus::NotRecording ||
 		this->recordStatusMode->getStatus() == RecordStatus::Paused) {
 	
-		this->resizeRecordRectDelegate->mouseMoveEvent(event);
+		if (this->writingMode->getStatus() == WritingStatus::Cursor)
+			this->resizeRecordRectDelegate->mouseMoveEvent(event);
 	}
+
+	this->writingMode->mouseMoveEvent(event);
 }
 
 void RecordVideoDialog::mousePressEvent(QMouseEvent *event) {
@@ -203,8 +207,11 @@ void RecordVideoDialog::mousePressEvent(QMouseEvent *event) {
 	if (this->recordStatusMode->getStatus() == RecordStatus::NotRecording ||
 		this->recordStatusMode->getStatus() == RecordStatus::Paused) {
 
-		this->resizeRecordRectDelegate->mousePressEvent(event);
+		if (this->writingMode->getStatus() == WritingStatus::Cursor)
+			this->resizeRecordRectDelegate->mousePressEvent(event);
 	}
+
+	this->writingMode->mousePressEvent(event);
 }
 
 void RecordVideoDialog::mouseReleaseEvent(QMouseEvent *event) {
@@ -212,9 +219,11 @@ void RecordVideoDialog::mouseReleaseEvent(QMouseEvent *event) {
 	if (this->recordStatusMode->getStatus() == RecordStatus::NotRecording ||
 		this->recordStatusMode->getStatus() == RecordStatus::Paused) {
 
-		this->resizeRecordRectDelegate->mouseReleaseEvent(event);
+		if (this->writingMode->getStatus() == WritingStatus::Cursor)
+			this->resizeRecordRectDelegate->mouseReleaseEvent(event);
 	}
 
+	this->writingMode->mouseReleaseEvent(event);
 }
 
 void RecordVideoDialog::closeEvent(QCloseEvent *event) {
