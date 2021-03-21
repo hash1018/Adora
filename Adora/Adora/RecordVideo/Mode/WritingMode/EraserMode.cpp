@@ -95,5 +95,6 @@ void EraserMode::mouseReleaseEvent(QMouseEvent *event) {
 
 QCursor EraserMode::getCursor() {
 
-	return WritingMode::getCursor();
+	QPixmap pixmap(":/RecordVideo_Writing/eraser");
+	return QCursor(pixmap);
 }
