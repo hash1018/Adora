@@ -28,6 +28,8 @@ public:
 	private slots:
 	void cursorButtonClicked();
 	void pencilButtonClicked();
+	void eraserButtonClicked();
+	void deleteAllButtonClicked();
 
 
 };

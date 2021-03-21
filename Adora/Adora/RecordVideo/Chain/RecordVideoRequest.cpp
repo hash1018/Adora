@@ -65,3 +65,16 @@ RecordVideoRequestUnredo::~RecordVideoRequestUnredo() {
 
 
 }
+
+
+///////////////////////////////////////////////////////////////////
+
+RecordVideoRequestWritingDeleteAll::RecordVideoRequestWritingDeleteAll()
+	:RecordVideoRequest(RequestType::RequestWritingDeleteAll) {
+
+}
+
+RecordVideoRequestWritingDeleteAll::~RecordVideoRequestWritingDeleteAll() {
+
+
+}

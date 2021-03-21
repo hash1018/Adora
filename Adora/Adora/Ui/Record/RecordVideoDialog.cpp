@@ -101,6 +101,8 @@ void RecordVideoDialog::changeWritingMode(WritingStatus writingStatus) {
 
 	this->writingMode = WritingModeFactory::create(this, writingStatus);
 
+	this->setCursor(this->writingMode->getCursor());
+
 	RecordVideoWritingModeChangedEvent event(writingStatus);
 	this->controllerWidget->update(&event);
 

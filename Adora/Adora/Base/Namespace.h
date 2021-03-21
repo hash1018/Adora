@@ -13,6 +13,7 @@ enum RecordStatus {
 enum WritingStatus {
 	Cursor,
 	Pencil,
+	Eraser,
 
 };
 

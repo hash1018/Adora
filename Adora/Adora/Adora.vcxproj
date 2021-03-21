@@ -141,6 +141,7 @@
     <ClCompile Include="Base\DefaultNameByDateCreator.cpp" />
     <ClCompile Include="Base\Hotkey.cpp" />
     <ClCompile Include="Base\LanguageManager.cpp" />
+    <ClCompile Include="Base\Math.cpp" />
     <ClCompile Include="Base\SettingManager.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_AbstractButton.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -243,16 +244,19 @@
     <ClCompile Include="RecordVideo\Entity\EntityList.cpp" />
     <ClCompile Include="RecordVideo\Entity\FreeCurve.cpp" />
     <ClCompile Include="RecordVideo\Entity\Visitor\Drawer.cpp" />
+    <ClCompile Include="RecordVideo\Entity\Visitor\Finder.cpp" />
     <ClCompile Include="RecordVideo\Entity\Visitor\Visitor.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\CursorMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\EraserMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\PencilMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp" />
     <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp" />
     <ClCompile Include="RecordVideo\ResizeRecordRectDelegate.cpp" />
     <ClCompile Include="RecordVideo\Unredo\AddEntityCommand.cpp" />
+    <ClCompile Include="RecordVideo\Unredo\RemoveEntityCommand.cpp" />
     <ClCompile Include="RecordVideo\Unredo\WritingCommand.cpp" />
     <ClCompile Include="RecordVideo\Unredo\WritingUnredoStack.cpp" />
     <ClCompile Include="Ui\AboutWidget.cpp" />
@@ -343,6 +347,7 @@
     <ClInclude Include="Base\DefaultNameByDateCreator.h" />
     <ClInclude Include="Base\Hotkey.h" />
     <ClInclude Include="Base\LanguageManager.h" />
+    <ClInclude Include="Base\Math.h" />
     <ClInclude Include="Base\Namespace.h" />
     <ClInclude Include="Base\SettingManager.h" />
     <ClInclude Include="Base\Singleton.h" />
@@ -372,16 +377,19 @@
     <ClInclude Include="RecordVideo\Entity\EntityList.h" />
     <ClInclude Include="RecordVideo\Entity\FreeCurve.h" />
     <ClInclude Include="RecordVideo\Entity\Visitor\Drawer.h" />
+    <ClInclude Include="RecordVideo\Entity\Visitor\Finder.h" />
     <ClInclude Include="RecordVideo\Entity\Visitor\Visitor.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\CursorMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\EraserMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\PencilMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h" />
     <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h" />
     <ClInclude Include="RecordVideo\ResizeRecordRectDelegate.h" />
     <ClInclude Include="RecordVideo\Unredo\AddEntityCommand.h" />
+    <ClInclude Include="RecordVideo\Unredo\RemoveEntityCommand.h" />
     <ClInclude Include="RecordVideo\Unredo\WritingCommand.h" />
     <ClInclude Include="RecordVideo\Unredo\WritingUnredoStack.h" />
     <ClInclude Include="Ui\AboutWidget.h" />

@@ -25,6 +25,7 @@ class RecordVideoDialog : public QDialog, public RecordVideoChain {
 	friend class RecordVideoRequestKeyEventStrategy;
 	friend class RecordVideoRequestChangeWritingModeStrategy;
 	friend class RecordVideoRequestUnredoStrategy;
+	friend class RecordVideoRequestWritingDeleteAllStrategy;
 
 private:
 	QRect recordAreaRect;

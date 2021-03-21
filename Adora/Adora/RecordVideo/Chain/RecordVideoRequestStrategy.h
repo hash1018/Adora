@@ -71,4 +71,15 @@ public:
 
 };
 
+///////////////////////////////////////////////////////
+
+class RecordVideoRequestWritingDeleteAllStrategy : public RecordVideoRequestStrategy {
+
+public:
+	RecordVideoRequestWritingDeleteAllStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request);
+	~RecordVideoRequestWritingDeleteAllStrategy();
+
+	virtual bool response();
+};
+
 #endif //_RECORDVIDEOREQUESTSTRATEGY_H

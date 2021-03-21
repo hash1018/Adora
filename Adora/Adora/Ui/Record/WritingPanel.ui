@@ -57,13 +57,48 @@ QPushButton#pencilButton:hover {
 
 QPushButton#pencilButton:checked {
     background-color: #E5E5E5;
-}</string>
+}
+
+
+/** **/
+
+QPushButton#eraserButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Writing/eraser);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#eraserButton:hover {
+    background-color: #FFEDC5;
+}
+
+QPushButton#eraserButton:checked {
+    background-color: #E5E5E5;
+}
+
+
+/** **/
+
+
+QPushButton#deleteAllButton {
+    background-color: white;
+    background-image:url(:/RecordVideo_Writing/deleteAll);
+    border:0px;
+    border-radius:10px;
+}
+
+QPushButton#deleteAllButton:hover {
+    background-color: #FFEDC5;
+}
+
+</string>
   </property>
   <widget class="AbstractButton" name="cursorButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
+     <x>10</x>
+     <y>10</y>
      <width>48</width>
      <height>48</height>
     </rect>
@@ -93,8 +128,58 @@ QPushButton#pencilButton:checked {
   <widget class="AbstractButton" name="pencilButton">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>40</y>
+     <x>70</x>
+     <y>10</y>
+     <width>48</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="AbstractButton" name="eraserButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>48</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteAllButton">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>130</y>
      <width>48</width>
      <height>48</height>
     </rect>

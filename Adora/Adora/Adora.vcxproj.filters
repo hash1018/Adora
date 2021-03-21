@@ -291,6 +291,18 @@
     <ClCompile Include="RecordVideo\Unredo\AddEntityCommand.cpp">
       <Filter>RecordVideo\Unredo</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\EraserMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Visitor\Finder.cpp">
+      <Filter>RecordVideo\Entity\Visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Unredo\RemoveEntityCommand.cpp">
+      <Filter>RecordVideo\Unredo</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Math.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -546,6 +558,18 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\Unredo\AddEntityCommand.h">
       <Filter>RecordVideo\Unredo</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\EraserMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Visitor\Finder.h">
+      <Filter>RecordVideo\Entity\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Unredo\RemoveEntityCommand.h">
+      <Filter>RecordVideo\Unredo</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Math.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

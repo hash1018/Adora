@@ -15,6 +15,7 @@ public:
 		RequestKeyEvent,
 		RequestChangeWritingMode,
 		RequestUnredo,
+		RequestWritingDeleteAll,
 	};
 
 protected:
@@ -77,6 +78,7 @@ public:
 	enum Mode {
 		Cursor,
 		Pencil,
+		Eraser,
 	};
 
 private:
@@ -110,6 +112,16 @@ public:
 
 	inline Type getType() const { return this->type; }
 
+};
+
+///////////////////////////////////////////////////////////////
+
+
+class RecordVideoRequestWritingDeleteAll : public RecordVideoRequest {
+
+public:
+	RecordVideoRequestWritingDeleteAll();
+	~RecordVideoRequestWritingDeleteAll();
 };
 
 #endif //_RECORDVIDEOREQUEST_H

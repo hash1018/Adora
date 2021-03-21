@@ -6,6 +6,7 @@
 #include "Base/Hotkey.h"
 #include <QKeyEvent>
 #include "Base/SettingManager.h"
+#include "RecordVideo/Unredo/RemoveEntityCommand.h"
 
 RecordVideoRequestStrategy::RecordVideoRequestStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request)
 	:recordVideoDialog(recordVideoDialog), request(request) {
@@ -158,6 +159,10 @@ bool RecordVideoRequestChangeWritingModeStrategy::response() {
 	
 		this->recordVideoDialog->changeWritingMode(WritingStatus::Pencil);
 	}
+	else if (mode == RecordVideoRequestChangeWritingMode::Mode::Eraser) {
+	
+		this->recordVideoDialog->changeWritingMode(WritingStatus::Eraser);
+	}
 
 	return true;
 }
@@ -184,6 +189,42 @@ bool RecordVideoRequestUnredoStrategy::response() {
 		this->recordVideoDialog->undo();
 	else if (type == RecordVideoRequestUnredo::Type::Redo)
 		this->recordVideoDialog->redo();
+
+	return true;
+}
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+RecordVideoRequestWritingDeleteAllStrategy::RecordVideoRequestWritingDeleteAllStrategy(RecordVideoDialog *recordVideoDialog,
+	RecordVideoRequest *request)
+	:RecordVideoRequestStrategy(recordVideoDialog, request) {
+
+}
+
+RecordVideoRequestWritingDeleteAllStrategy::~RecordVideoRequestWritingDeleteAllStrategy() {
+
+}
+
+
+bool RecordVideoRequestWritingDeleteAllStrategy::response() {
+
+	QLinkedList<Entity*> list;
+
+	auto itr = this->recordVideoDialog->getEntityList()->begin();
+
+	for (itr; itr != this->recordVideoDialog->getEntityList()->end(); ++itr) {
+
+		list.append((*itr));
+	}
+
+	if (list.size() > 0) {
+	
+		this->recordVideoDialog->addCommand(new RemoveEntityCommand(this->recordVideoDialog, list));
+		this->recordVideoDialog->getEntityList()->clear();
+		this->recordVideoDialog->update();
+	}
 
 	return true;
 }
