@@ -5,6 +5,7 @@
 
 #include "Base/Namespace.h"
 class RecordVideoDialog;
+class QPainter;
 
 class RecordStatusMode {
 
@@ -14,6 +15,9 @@ protected:
 public:
 	RecordStatusMode(RecordVideoDialog *recordVideoDialog);
 	virtual ~RecordStatusMode() = 0;
+
+
+	virtual void paintEvent(QPainter &painter) {}
 
 	virtual RecordStatus getStatus() = 0;
 };
@@ -26,6 +30,8 @@ class RecordStatusNotRecordingMode : public RecordStatusMode {
 public:
 	RecordStatusNotRecordingMode(RecordVideoDialog *recordVideoDialog);
 	~RecordStatusNotRecordingMode();
+
+	virtual void paintEvent(QPainter &painter);
 
 	virtual RecordStatus getStatus() { return RecordStatus::NotRecording; }
 
@@ -51,6 +57,8 @@ class RecordStatusPausedMode : public RecordStatusMode {
 public:
 	RecordStatusPausedMode(RecordVideoDialog *recordVideoDialog);
 	~RecordStatusPausedMode();
+
+	virtual void paintEvent(QPainter &painter);
 
 	virtual RecordStatus getStatus() { return RecordStatus::Paused; }
 

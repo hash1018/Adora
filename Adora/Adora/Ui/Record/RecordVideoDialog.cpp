@@ -141,10 +141,12 @@ void RecordVideoDialog::paintEvent(QPaintEvent *event) {
 	painter.setPen(oldPen);
 
 
+	this->captureImageDelegate->paintEvent(painter);
+
+	if (this->captureImageDelegate->isShowFlash() == false)
+		this->recordStatusMode->paintEvent(painter);
 
 	this->resizeRecordRectDelegate->paintEvent(painter);
-	this->captureImageDelegate->paintEvent(painter);
-	
 }
 
 

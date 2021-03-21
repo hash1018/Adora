@@ -21,6 +21,13 @@ private:
 	bool showFlash;
 	QTimer *timer;
 
+private:
+	int x;
+	int y;
+	int width;
+	int height;
+	unsigned char *bits;
+
 public:
 	CaptureImageDelegate(RecordVideoDialog *recordVideoDialog);
 	~CaptureImageDelegate();
@@ -28,6 +35,8 @@ public:
 
 	void capture(int x, int y, int width, int height);
 	void paintEvent(QPainter &painter);
+
+	bool isShowFlash() const { return this->showFlash; }
 
 	private slots:
 	void timePassed();

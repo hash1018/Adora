@@ -19,21 +19,11 @@ CaptureImageDelegate::~CaptureImageDelegate() {
 }
 
 void CaptureImageDelegate::capture(int x, int y, int width, int height) {
-
-	unsigned char *bits = nullptr;
-	this->gdiManager.init(&bits, width, height);
-
-	this->gdiManager.capture(x, y, width, height, SettingManager::getInstance()->getImageSetting()->getIncludeCursor());
-
-
-	QImage image = QImage(bits, width, height, width * 4, QImage::Format::Format_RGB32);
-	QString format = SettingManager::getInstance()->getImageSetting()->getImageFormat();
-	QString path = SettingManager::getInstance()->getGeneralSetting()->getSavePath() +
-		"/" + "Adora " + DefaultNameByDateCreator::create() + "." + format;
-
-	image.save(path, format.toUtf8());
-
-	this->gdiManager.close();
+	
+	this->x = x;
+	this->y = y;
+	this->width = width;
+	this->height = height;
 
 	if (this->timer == nullptr) {
 
@@ -41,11 +31,13 @@ void CaptureImageDelegate::capture(int x, int y, int width, int height) {
 		connect(this->timer, &QTimer::timeout, this, &CaptureImageDelegate::timePassed);
 	}
 
-	this->showFlash = true;
-	this->timer->stop();
-	this->timer->setInterval(300);
-	this->timer->start();
-	this->recordVideoDialog->update();
+	if (this->timer->isActive() == false) {
+		this->showFlash = true;
+		this->timer->stop();
+		this->timer->setInterval(300);
+		this->timer->start();
+		this->recordVideoDialog->update();
+	}
 }
 
 
@@ -83,6 +75,22 @@ void CaptureImageDelegate::paintEvent(QPainter &painter) {
 }
 
 void CaptureImageDelegate::timePassed() {
+
+	this->gdiManager.init(&this->bits, this->width, this->height);
+
+	this->gdiManager.capture(this->x, this->y, this->width, this->height, 
+		SettingManager::getInstance()->getImageSetting()->getIncludeCursor());
+
+
+	QImage image = QImage(this->bits, this->width, this->height, this->width * 4, QImage::Format::Format_RGB32);
+	QString format = SettingManager::getInstance()->getImageSetting()->getImageFormat();
+	QString path = SettingManager::getInstance()->getGeneralSetting()->getSavePath() +
+		"/" + "Adora " + DefaultNameByDateCreator::create() + "." + format;
+
+	image.save(path, format.toUtf8());
+
+	this->gdiManager.close();
+
 
 	this->showFlash = false;
 	this->timer->stop();
