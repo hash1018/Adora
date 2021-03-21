@@ -3,15 +3,21 @@
 #include "UnredoPanel.h"
 #include "RecordVideo/Chain/RecordVideoRequest.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
+#include "Base/LanguageManager.h"
 
 UnredoPanel::UnredoPanel(QWidget *parent)
 	:QWidget(parent) {
 
 	ui.setupUi(this);
 
-
 	connect(ui.undoButton, &QPushButton::clicked, this, &UnredoPanel::undoButtonClicked);
 	connect(ui.redoButton, &QPushButton::clicked, this, &UnredoPanel::redoButtonClicked);
+
+	
+	ui.undoButton->setToolTip(getLanUiValue("UnredoPanel/Undo") + " Ctrl+Z");
+	ui.redoButton->setToolTip(getLanUiValue("UnredoPanel/Redo") + " Ctrl+Y");
+
+	
 }
 
 UnredoPanel::~UnredoPanel() {

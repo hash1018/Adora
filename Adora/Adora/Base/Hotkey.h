@@ -13,6 +13,8 @@ enum HotkeyType {
 	VideoStartAndStop,
 	VideoPauseAndResume,
 	ImageCapture,
+	Undo,
+	Redo,
 };
 
 

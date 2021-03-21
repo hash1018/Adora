@@ -90,7 +90,7 @@ QPushButton#redoButton:disabled {
     </spacer>
    </item>
    <item>
-    <widget class="QPushButton" name="undoButton">
+    <widget class="AbstractButton" name="undoButton">
      <property name="minimumSize">
       <size>
        <width>48</width>
@@ -109,7 +109,7 @@ QPushButton#redoButton:disabled {
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="redoButton">
+    <widget class="AbstractButton" name="redoButton">
      <property name="minimumSize">
       <size>
        <width>48</width>
@@ -142,6 +142,13 @@ QPushButton#redoButton:disabled {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">Ui/Item/AbstractButton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../Adora.qrc"/>
  </resources>

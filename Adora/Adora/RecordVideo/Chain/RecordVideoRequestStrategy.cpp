@@ -125,6 +125,12 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 					this->recordVideoDialog->resume();
 			}
 		}
+		else if (type == HotkeyType::Undo) {
+			this->recordVideoDialog->undo();
+		}
+		else if (type == HotkeyType::Redo) {
+			this->recordVideoDialog->redo();
+		}
 	}
 
 

@@ -18,6 +18,13 @@ Hotkey::~Hotkey() {
 
 HotkeyList::HotkeyList() {
 
+	Hotkey *hotkey = new Hotkey(QKeySequence("Ctrl+Z"));
+	hotkey->setType(HotkeyType::Undo);
+	this->list.append(hotkey);
+
+	hotkey = new Hotkey(QKeySequence("Ctrl+Y"));
+	hotkey->setType(HotkeyType::Redo);
+	this->list.append(hotkey);
 }
 
 HotkeyList::~HotkeyList() {
