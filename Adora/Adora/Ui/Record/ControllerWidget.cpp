@@ -4,6 +4,8 @@
 #include <QCloseEvent>
 #include <qpainter.h>
 #include "RecordVideo/Chain/RecordVideoRequest.h"
+#include <qsettings.h>
+#include <qscreen.h>
 
 ControllerWidget::ControllerWidget(RecordVideoChain *chain)
 	:QWidget(nullptr), RecordVideoChain(chain), mousePressed(false) {
@@ -16,6 +18,8 @@ ControllerWidget::ControllerWidget(RecordVideoChain *chain)
 	this->setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 
 	ui.recordPanel->setChain(this);
+
+	this->loadGeometry();
 }
 
 ControllerWidget::~ControllerWidget() {
@@ -26,6 +30,58 @@ ControllerWidget::~ControllerWidget() {
 void ControllerWidget::update(RecordVideoNotifyEvent *event) {
 
 	ui.recordPanel->update(event);
+}
+
+void ControllerWidget::loadGeometry() {
+
+	QSettings settings("Adora", "Adora");
+	settings.beginGroup("RecordVideo");
+
+	bool existGeometrySetting = settings.contains("controlloerGeometry");
+	bool isValidGeometrySetting = false;
+
+	if (existGeometrySetting == true) {
+
+		QRect rect = settings.value("controlloerGeometry").toRect();
+
+		this->setGeometry(settings.value("controlloerGeometry").toRect());
+
+		QList<QScreen*> screens = QGuiApplication::screens();
+		QRect screenRect;
+
+		for (int i = 0; i < screens.size(); i++) {
+
+			screenRect = screenRect.united(screens.at(i)->geometry());
+		}
+
+		if (screenRect.contains(rect) == true) {
+
+			isValidGeometrySetting = true;
+		}
+	}
+
+
+	if (isValidGeometrySetting == true) {
+
+		this->setGeometry(settings.value("controlloerGeometry").toRect());
+	}
+	else {
+
+		this->move(0, 0);
+	}
+
+
+	settings.endGroup();
+}
+
+void ControllerWidget::saveGeometry() {
+
+	QSettings settings("Adora", "Adora");
+	settings.beginGroup("RecordVideo");
+
+	settings.setValue("controlloerGeometry", this->geometry());
+
+	settings.endGroup();
 }
 
 void ControllerWidget::closeEvent(QCloseEvent *event) {

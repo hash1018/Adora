@@ -101,6 +101,7 @@ void Adora::recordButtonClicked() {
 
 void Adora::recordVideoDialogFinished(){
 
+	this->recordVideoDialog->hide();
 	disconnect(this->recordVideoDialog, &RecordVideoDialog::recordVideoDialogClosed, this, &Adora::recordVideoDialogFinished);
 	this->recordVideoDialog->deleteLater();
 

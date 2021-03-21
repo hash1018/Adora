@@ -11,6 +11,8 @@
 #include "RecordVideo/ResizeRecordRectDelegate.h"
 #include "RecordVideo/CaptureImageDelegate.h"
 #include "RecordVideo/Chain/RecordVideoRequest.h"
+#include <qsettings.h>
+#include <qscreen.h>
 
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr) {
@@ -19,10 +21,11 @@ RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	this->setAttribute(Qt::WA_TranslucentBackground);
 	this->setWindowFlag(Qt::WindowStaysOnTopHint);
 
+	this->loadGeometry();
 
 	this->controllerWidget = new ControllerWidget(this);
 	this->controllerWidget->show();
-	this->controllerWidget->move(100, 100);
+	this->controllerWidget->loadGeometry();
 
 
 
@@ -46,6 +49,14 @@ RecordVideoDialog::~RecordVideoDialog() {
 		delete this->captureImageDelegate;
 }
 
+void RecordVideoDialog::hide() {
+
+	this->saveGeometry();
+	this->controllerWidget->saveGeometry();
+
+	QDialog::hide();
+}
+
 void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
 
 	if (this->recordStatusMode != nullptr)
@@ -55,6 +66,8 @@ void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
 
 	RecordVideoStatusChangedEvent event(recordStatus);
 	this->controllerWidget->update(&event);
+
+	this->update();
 }
 
 
@@ -187,6 +200,8 @@ void RecordVideoDialog::mouseReleaseEvent(QMouseEvent *event) {
 
 void RecordVideoDialog::closeEvent(QCloseEvent *event) {
 
+	
+
 	event->ignore();
 
 	//emit this->recordVideoDialogClosed();
@@ -204,4 +219,82 @@ QRect RecordVideoDialog::getRecordBorderRect() {
 RecordStatus RecordVideoDialog::getRecordStatus() {
 
 	return this->recordStatusMode->getStatus();
+}
+
+
+void RecordVideoDialog::loadGeometry() {
+
+	QSettings settings("Adora", "Adora");
+	settings.beginGroup("RecordVideo");
+
+	bool existGeometrySetting = settings.contains("recordVideoDialogGeomeotry");
+	bool isValidGeometrySetting = false;
+
+	if (existGeometrySetting == true) {
+
+		QRect rect = settings.value("recordVideoDialogGeomeotry").toRect();
+
+		this->setGeometry(settings.value("recordVideoDialogGeomeotry").toRect());
+
+		QList<QScreen*> screens = QGuiApplication::screens();
+		QRect screenRect;
+
+		for (int i = 0; i < screens.size(); i++) {
+
+			screenRect = screenRect.united(screens.at(i)->geometry());
+		}
+
+		rect = QRect(rect.topLeft().x() + 4,
+			rect.topLeft().y() + 4,
+			rect.width() - 8,
+			rect.height() - 8);
+
+		if (screenRect.contains(rect) == true) {
+
+			isValidGeometrySetting = true;
+		}
+	}
+
+
+	if (isValidGeometrySetting == true) {
+
+		this->setGeometry(settings.value("recordVideoDialogGeomeotry").toRect());
+	}
+	else {
+
+
+		QList<QScreen*> screens = QGuiApplication::screens();
+
+		QScreen *screen = nullptr;
+
+		for (int i = 0; i < screens.size(); i++) {
+
+			if (screens.at(i)->geometry().contains(QCursor::pos(), true)) {
+
+				screen = screens.at(i);
+				break;
+			}
+		}
+
+		if (screen != nullptr) {
+
+			this->setGeometry(screen->availableGeometry());
+		}
+		else {
+
+			this->setGeometry(QGuiApplication::primaryScreen()->availableGeometry());
+		}
+	}
+
+	settings.endGroup();
+}
+
+void RecordVideoDialog::saveGeometry() {
+
+	QSettings settings("Adora", "Adora");
+	settings.beginGroup("RecordVideo");
+
+	settings.setValue("recordVideoDialogGeomeotry", this->geometry());
+
+	settings.endGroup();
 }

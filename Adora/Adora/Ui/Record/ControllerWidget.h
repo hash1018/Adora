@@ -24,6 +24,9 @@ public:
 	
 	void update(RecordVideoNotifyEvent *event);
 
+	void loadGeometry();
+	void saveGeometry();
+
 protected:
 	virtual void closeEvent(QCloseEvent *event);
 	virtual void mousePressEvent(QMouseEvent *event);

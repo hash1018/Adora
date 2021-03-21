@@ -39,6 +39,8 @@ public:
 	RecordVideoDialog(QWidget *parent = nullptr);
 	~RecordVideoDialog();
 
+	virtual void hide();
+
 signals:
 	void recordVideoDialogClosed();
 
@@ -70,6 +72,11 @@ public:
 	QRect getRecordBorderRect();
 	inline const QRect& getRecordAreaRect() const { return this->recordAreaRect; }
 	RecordStatus getRecordStatus();
+
+
+private:
+	void loadGeometry();
+	void saveGeometry();
 };
 
 
