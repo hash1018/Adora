@@ -303,6 +303,12 @@
     <ClCompile Include="Base\Math.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\HighlightedFreeCurve.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\HighlightMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -570,6 +576,12 @@
     </ClInclude>
     <ClInclude Include="Base\Math.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\HighlightedFreeCurve.h">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\HighlightMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

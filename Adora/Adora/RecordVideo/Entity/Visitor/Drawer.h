@@ -18,6 +18,7 @@ public:
 	~Drawer();
 
 	virtual void visit(FreeCurve *freeCurve);
+	virtual void visit(HighlightedFreeCurve *highlightedFreeCurve);
 
 };
 

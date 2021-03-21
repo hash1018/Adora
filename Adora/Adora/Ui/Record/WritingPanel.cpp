@@ -13,10 +13,12 @@ WritingPanel::WritingPanel(QWidget *parent)
 	connect(ui.pencilButton, &QPushButton::clicked, this, &WritingPanel::pencilButtonClicked);
 	connect(ui.eraserButton, &QPushButton::clicked, this, &WritingPanel::eraserButtonClicked);
 	connect(ui.deleteAllButton, &QPushButton::clicked, this, &WritingPanel::deleteAllButtonClicked);
+	connect(ui.highlightButton, &QPushButton::clicked, this, &WritingPanel::highlightButtonClicked);
 
 	this->items.append(ui.cursorButton);
 	this->items.append(ui.pencilButton);
 	this->items.append(ui.eraserButton);
+	this->items.append(ui.highlightButton);
 }
 
 WritingPanel::~WritingPanel() {
@@ -40,6 +42,8 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 			ui.pencilButton->updateSelected(true);
 		else if (status == WritingStatus::Eraser)
 			ui.eraserButton->updateSelected(true);
+		else if (status == WritingStatus::Highlight)
+			ui.highlightButton->updateSelected(true);
 	}
 }
 
@@ -65,5 +69,11 @@ void WritingPanel::eraserButtonClicked() {
 void WritingPanel::deleteAllButtonClicked() {
 
 	RecordVideoRequestWritingDeleteAll request;
+	this->request(&request);
+}
+
+void WritingPanel::highlightButtonClicked() {
+
+	RecordVideoRequestChangeWritingMode request(RecordVideoRequestChangeWritingMode::Mode::Highlight);
 	this->request(&request);
 }

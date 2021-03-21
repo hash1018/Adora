@@ -26,55 +26,41 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton#cursorButton {
+   <string notr="true">
+QPushButton {
     background-color: white;
-    background-image:url(:/RecordVideo_Writing/cursor);
     border:0px;
     border-radius:10px;
 }
 
-QPushButton#cursorButton:hover {
+
+QPushButton:hover {
     background-color: #FFEDC5;
 }
 
-QPushButton#cursorButton:checked {
+QPushButton:checked {
     background-color: #E5E5E5;
+}
+
+
+
+/** **/
+
+QPushButton#cursorButton {
+    background-image:url(:/RecordVideo_Writing/cursor);
 }
 
 
 /** **/
 
 QPushButton#pencilButton {
-    background-color: white;
     background-image:url(:/RecordVideo_Writing/pencil);
-    border:0px;
-    border-radius:10px;
 }
-
-QPushButton#pencilButton:hover {
-    background-color: #FFEDC5;
-}
-
-QPushButton#pencilButton:checked {
-    background-color: #E5E5E5;
-}
-
 
 /** **/
 
 QPushButton#eraserButton {
-    background-color: white;
     background-image:url(:/RecordVideo_Writing/eraser);
-    border:0px;
-    border-radius:10px;
-}
-
-QPushButton#eraserButton:hover {
-    background-color: #FFEDC5;
-}
-
-QPushButton#eraserButton:checked {
-    background-color: #E5E5E5;
 }
 
 
@@ -82,16 +68,14 @@ QPushButton#eraserButton:checked {
 
 
 QPushButton#deleteAllButton {
-    background-color: white;
     background-image:url(:/RecordVideo_Writing/deleteAll);
-    border:0px;
-    border-radius:10px;
 }
 
-QPushButton#deleteAllButton:hover {
-    background-color: #FFEDC5;
-}
+/** **/
 
+QPushButton#highlightButton {
+    background-image:url(:/RecordVideo_Writing/highlight);
+}
 </string>
   </property>
   <widget class="AbstractButton" name="cursorButton">
@@ -180,6 +164,31 @@ QPushButton#deleteAllButton:hover {
     <rect>
      <x>90</x>
      <y>130</y>
+     <width>48</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="AbstractButton" name="highlightButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
      <width>48</width>
      <height>48</height>
     </rect>

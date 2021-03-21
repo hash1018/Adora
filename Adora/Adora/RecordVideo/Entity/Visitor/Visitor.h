@@ -5,6 +5,7 @@
 
 class EntityList;
 class FreeCurve;
+class HighlightedFreeCurve;
 
 class Visitor {
 
@@ -14,6 +15,7 @@ public:
 
 	virtual void visit(EntityList *entityList) {}
 	virtual void visit(FreeCurve *freeCurve) = 0;
+	virtual void visit(HighlightedFreeCurve *highlightedFreeCurve) = 0;
 
 
 };

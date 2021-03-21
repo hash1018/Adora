@@ -3,6 +3,7 @@
 #include "Drawer.h"
 #include <qpainter.h>
 #include "RecordVideo/Entity/FreeCurve.h"
+#include "RecordVideo/Entity/HighlightedFreeCurve.h"
 
 Drawer::Drawer(QPainter &painter)
 	:painter(painter) {
@@ -39,6 +40,44 @@ void Drawer::visit(FreeCurve *freeCurve) {
 		for (int i = 1; i < freeCurve->getSize(); i++) {
 
 			path.lineTo(*freeCurve->getPoint(i));
+		}
+
+		painter.drawPath(path);
+	}
+
+	painter.setPen(oldPen);
+}
+
+
+void Drawer::visit(HighlightedFreeCurve *highlightedFreeCurve) {
+	
+	QColor color = highlightedFreeCurve->getColor();
+	color.setAlpha(highlightedFreeCurve->getAlpha());
+
+	QPen pen(color);
+	pen.setWidth(highlightedFreeCurve->getWidth());
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+
+	if (highlightedFreeCurve->getSize() == 0) {
+
+		painter.setPen(oldPen);
+		return;
+	}
+	else if (highlightedFreeCurve->getSize() == 1) {
+
+		painter.drawPoint(*highlightedFreeCurve->getPoint(0));
+	}
+	else {
+
+		QPainterPath path;
+		path.moveTo(*highlightedFreeCurve->getPoint(0));
+
+		for (int i = 1; i < highlightedFreeCurve->getSize(); i++) {
+
+			path.lineTo(*highlightedFreeCurve->getPoint(i));
 		}
 
 		painter.drawPath(path);

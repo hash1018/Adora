@@ -79,6 +79,7 @@ public:
 		Cursor,
 		Pencil,
 		Eraser,
+		Highlight,
 	};
 
 private:

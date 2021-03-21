@@ -48,6 +48,7 @@
         <file alias="pencil">Resources/Images/RecordVideo/Writing/pencil.png</file>
         <file alias="eraser">Resources/Images/RecordVideo/Writing/eraser.png</file>
         <file alias="deleteAll">Resources/Images/RecordVideo/Writing/deleteAll.png</file>
+        <file alias="highlight">Resources/Images/RecordVideo/Writing/highlight.png</file>
     </qresource>
     <qresource prefix="/RecordVideo_Unredo">
         <file alias="redo">Resources/Images/RecordVideo/Unredo/redo.png</file>

@@ -4,6 +4,7 @@
 #include "RecordVideo/Entity/FreeCurve.h"
 #include <qrect.h>
 #include "Base/Math.h"
+#include "RecordVideo/Entity/HighlightedFreeCurve.h"
 
 Finder::Finder(const QPoint &point, bool &foundEntity)
 	:point(point), foundEntity(foundEntity) {
@@ -50,4 +51,11 @@ void Finder::visit(FreeCurve *freeCurve) {
 	}
 
 	this->foundEntity = false;
+}
+
+
+
+void Finder::visit(HighlightedFreeCurve *highlightedFreeCurve) {
+
+	this->visit((FreeCurve*)highlightedFreeCurve);
 }

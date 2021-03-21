@@ -30,6 +30,7 @@ public:
 	void pencilButtonClicked();
 	void eraserButtonClicked();
 	void deleteAllButtonClicked();
+	void highlightButtonClicked();
 
 
 };
