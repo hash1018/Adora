@@ -1,7 +1,10 @@
+
 #include "Ui/Adora.h"
 #include <QtWidgets/QApplication>
 #include <qsharedmemory.h>
 #include <qfile.h>
+
+//#include <vld.h>
 
 void adora(QApplication &app) {
 
@@ -11,8 +14,9 @@ void adora(QApplication &app) {
 	app.exec();
 
 
-	if (w.restart == true)
+	if (w.restart == true) {
 		adora(app);
+	}
 
 }
 

@@ -54,6 +54,9 @@ RecordVideoDialog::~RecordVideoDialog() {
 	if (this->recordStatusMode != nullptr)
 		delete this->recordStatusMode;
 
+	if (this->writingMode != nullptr)
+		delete this->writingMode;
+
 	if (this->resizeRecordRectDelegate != nullptr)
 		delete this->resizeRecordRectDelegate;
 

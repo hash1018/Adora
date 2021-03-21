@@ -22,6 +22,10 @@ HotkeyList::HotkeyList() {
 
 HotkeyList::~HotkeyList() {
 
+	for (int i = 0; i < this->list.size(); i++) {
+	
+		delete this->list.at(i);
+	}
 }
 
 int HotkeyList::indexOf(const QKeySequence &keySequence) {
