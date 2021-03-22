@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>160</width>
-    <height>200</height>
+    <height>211</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>160</width>
-    <height>200</height>
+    <height>211</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>160</width>
-    <height>200</height>
+    <height>211</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -75,6 +75,12 @@ QPushButton#arrowLineButton {
     background-image:url(:/RecordVideo_Writing/arrowLine);
 }
 
+/***/
+
+QPushButton#numberingButton {
+    background-image:url(:/RecordVideo_Writing/numbering);
+}
+
 
 /** **/
 
@@ -92,22 +98,22 @@ QPushButton#highlightButton {
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
-    <number>2</number>
+    <number>5</number>
    </property>
    <property name="topMargin">
-    <number>2</number>
+    <number>5</number>
    </property>
    <property name="rightMargin">
-    <number>2</number>
+    <number>5</number>
    </property>
    <property name="bottomMargin">
-    <number>2</number>
+    <number>5</number>
    </property>
    <property name="spacing">
-    <number>0</number>
+    <number>3</number>
    </property>
-   <item row="0" column="4">
-    <widget class="AbstractButton" name="highlightButton">
+   <item row="3" column="1">
+    <widget class="AbstractButton" name="eraserButton">
      <property name="minimumSize">
       <size>
        <width>48</width>
@@ -150,46 +156,8 @@ QPushButton#highlightButton {
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="deleteAllButton">
-     <property name="minimumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="AbstractButton" name="eraserButton">
-     <property name="minimumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="AbstractButton" name="pencilButton">
+   <item row="1" column="2">
+    <widget class="AbstractButton" name="arrowLineButton">
      <property name="minimumSize">
       <size>
        <width>48</width>
@@ -226,8 +194,65 @@ QPushButton#highlightButton {
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
-    <widget class="AbstractButton" name="arrowLineButton">
+   <item row="0" column="2">
+    <widget class="AbstractButton" name="pencilButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="deleteAllButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="AbstractButton" name="highlightButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="AbstractButton" name="numberingButton">
      <property name="minimumSize">
       <size>
        <width>48</width>

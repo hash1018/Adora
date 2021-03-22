@@ -17,6 +17,7 @@ enum WritingStatus {
 	Highlight,
 	Line,
 	ArrowLine,
+	Numbering,
 
 };
 

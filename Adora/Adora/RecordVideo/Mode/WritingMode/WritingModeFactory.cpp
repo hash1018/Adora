@@ -7,6 +7,7 @@
 #include "RecordVideo/Mode/WritingMode/HighlightMode.h"
 #include "RecordVideo/Mode/WritingMode/LineMode.h"
 #include "RecordVideo/Mode/WritingMode/ArrowLineMode.h"
+#include "RecordVideo/Mode/WritingMode/NumberingMode.h"
 
 WritingModeFactory::WritingModeFactory() {
 
@@ -34,6 +35,9 @@ WritingMode* WritingModeFactory::create(RecordVideoDialog *recordVideoDialog, Wr
 
 	else if (writingStatus == WritingStatus::ArrowLine)
 		return new ArrowLineMode(recordVideoDialog);
+
+	else if (writingStatus == WritingStatus::Numbering)
+		return new NumberingMode(recordVideoDialog);
 
 
 	return new PencilMode(recordVideoDialog);

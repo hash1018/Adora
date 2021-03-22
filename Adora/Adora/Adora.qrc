@@ -51,6 +51,7 @@
         <file alias="highlight">Resources/Images/RecordVideo/Writing/highlight.png</file>
         <file alias="line">Resources/Images/RecordVideo/Writing/line.png</file>
         <file alias="arrowLine">Resources/Images/RecordVideo/Writing/arrowLine.png</file>
+        <file alias="numbering">Resources/Images/RecordVideo/Writing/numbering.png</file>
     </qresource>
     <qresource prefix="/RecordVideo_Unredo">
         <file alias="redo">Resources/Images/RecordVideo/Unredo/redo.png</file>

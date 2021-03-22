@@ -82,6 +82,7 @@ public:
 		Highlight,
 		Line,
 		ArrowLine,
+		Numbering,
 	};
 
 private:

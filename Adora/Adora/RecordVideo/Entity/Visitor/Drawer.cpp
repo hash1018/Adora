@@ -6,6 +6,7 @@
 #include "RecordVideo/Entity/HighlightedFreeCurve.h"
 #include "RecordVideo/Entity/LineSegment.h"
 #include "RecordVideo/Entity/ArrowLineSegment.h"
+#include "RecordVideo/Entity/Number.h"
 
 Drawer::Drawer(QPainter &painter)
 	:painter(painter) {
@@ -118,4 +119,20 @@ void Drawer::visit(ArrowLineSegment *arrowLineSegment) {
 	painter.drawLine(arrowLineSegment->getStart(), arrowLineSegment->getEnd());
 
 	painter.setPen(oldPen);
+}
+
+void Drawer::visit(Number *number) {
+
+	QColor color = number->getColor();
+	color.setAlpha(125);
+
+	QBrush brush(color);
+	QBrush oldBrush = painter.brush();
+
+	painter.setBrush(brush);
+
+	painter.drawEllipse(number->getPoint(), number->getWidth() / 2, number->getWidth() / 2);
+	
+
+	painter.setBrush(oldBrush);
 }

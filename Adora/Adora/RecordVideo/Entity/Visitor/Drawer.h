@@ -21,6 +21,7 @@ public:
 	virtual void visit(HighlightedFreeCurve *highlightedFreeCurve);
 	virtual void visit(LineSegment *lineSegment);
 	virtual void visit(ArrowLineSegment *arrowLineSegment);
+	virtual void visit(Number *number);
 
 };
 

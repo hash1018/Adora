@@ -246,6 +246,7 @@
     <ClCompile Include="RecordVideo\Entity\FreeCurve.cpp" />
     <ClCompile Include="RecordVideo\Entity\HighlightedFreeCurve.cpp" />
     <ClCompile Include="RecordVideo\Entity\LineSegment.cpp" />
+    <ClCompile Include="RecordVideo\Entity\Number.cpp" />
     <ClCompile Include="RecordVideo\Entity\Visitor\Drawer.cpp" />
     <ClCompile Include="RecordVideo\Entity\Visitor\Finder.cpp" />
     <ClCompile Include="RecordVideo\Entity\Visitor\Visitor.cpp" />
@@ -256,6 +257,7 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\EraserMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\HighlightMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\LineMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\NumberingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\PencilMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp" />
@@ -387,6 +389,7 @@
     <ClInclude Include="RecordVideo\Entity\FreeCurve.h" />
     <ClInclude Include="RecordVideo\Entity\HighlightedFreeCurve.h" />
     <ClInclude Include="RecordVideo\Entity\LineSegment.h" />
+    <ClInclude Include="RecordVideo\Entity\Number.h" />
     <ClInclude Include="RecordVideo\Entity\Visitor\Drawer.h" />
     <ClInclude Include="RecordVideo\Entity\Visitor\Finder.h" />
     <ClInclude Include="RecordVideo\Entity\Visitor\Visitor.h" />
@@ -397,6 +400,7 @@
     <ClInclude Include="RecordVideo\Mode\WritingMode\EraserMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\HighlightMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\LineMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\NumberingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\PencilMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h" />

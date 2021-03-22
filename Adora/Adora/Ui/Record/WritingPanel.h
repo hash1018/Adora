@@ -33,6 +33,7 @@ public:
 	void highlightButtonClicked();
 	void lineButtonClicked();
 	void arrowLineButtonClicked();
+	void numberingButtonClicked();
 
 
 };

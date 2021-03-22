@@ -7,6 +7,7 @@
 #include "RecordVideo/Entity/HighlightedFreeCurve.h"
 #include "RecordVideo/Entity/LineSegment.h"
 #include "RecordVideo/Entity/ArrowLineSegment.h"
+#include "RecordVideo/Entity/Number.h"
 
 
 Finder::Finder(const QPoint &point, bool &foundEntity)
@@ -85,4 +86,9 @@ void Finder::visit(ArrowLineSegment *arrowLineSegment) {
 	}
 
 	this->foundEntity = false;
+}
+
+void Finder::visit(Number *number) {
+
+
 }
