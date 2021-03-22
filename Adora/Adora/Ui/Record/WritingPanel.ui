@@ -69,6 +69,12 @@ QPushButton#lineButton {
     background-image:url(:/RecordVideo_Writing/line);
 }
 
+/***/
+
+QPushButton#arrowLineButton {
+    background-image:url(:/RecordVideo_Writing/arrowLine);
+}
+
 
 /** **/
 
@@ -203,6 +209,25 @@ QPushButton#highlightButton {
    </item>
    <item row="1" column="1">
     <widget class="AbstractButton" name="lineButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="AbstractButton" name="arrowLineButton">
      <property name="minimumSize">
       <size>
        <width>48</width>

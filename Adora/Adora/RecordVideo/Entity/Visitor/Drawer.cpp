@@ -5,6 +5,7 @@
 #include "RecordVideo/Entity/FreeCurve.h"
 #include "RecordVideo/Entity/HighlightedFreeCurve.h"
 #include "RecordVideo/Entity/LineSegment.h"
+#include "RecordVideo/Entity/ArrowLineSegment.h"
 
 Drawer::Drawer(QPainter &painter)
 	:painter(painter) {
@@ -99,6 +100,22 @@ void Drawer::visit(LineSegment *lineSegment) {
 
 
 	painter.drawLine(lineSegment->getStart(), lineSegment->getEnd());
+
+	painter.setPen(oldPen);
+}
+
+void Drawer::visit(ArrowLineSegment *arrowLineSegment) {
+
+
+	QPen pen(arrowLineSegment->getColor());
+	pen.setWidth(arrowLineSegment->getWidth());
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+
+
+	painter.drawLine(arrowLineSegment->getStart(), arrowLineSegment->getEnd());
 
 	painter.setPen(oldPen);
 }

@@ -32,6 +32,7 @@ public:
 	void deleteAllButtonClicked();
 	void highlightButtonClicked();
 	void lineButtonClicked();
+	void arrowLineButtonClicked();
 
 
 };

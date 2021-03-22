@@ -81,6 +81,7 @@ public:
 		Eraser,
 		Highlight,
 		Line,
+		ArrowLine,
 	};
 
 private:

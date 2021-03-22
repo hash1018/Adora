@@ -7,6 +7,7 @@ class EntityList;
 class FreeCurve;
 class HighlightedFreeCurve;
 class LineSegment;
+class ArrowLineSegment;
 
 class Visitor {
 
@@ -18,6 +19,7 @@ public:
 	virtual void visit(FreeCurve *freeCurve) = 0;
 	virtual void visit(HighlightedFreeCurve *highlightedFreeCurve) = 0;
 	virtual void visit(LineSegment *lineSegment) = 0;
+	virtual void visit(ArrowLineSegment *arrowLineSegment) = 0;
 
 
 };

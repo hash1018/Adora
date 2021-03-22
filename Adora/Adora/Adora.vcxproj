@@ -240,6 +240,7 @@
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequest.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategy.cpp" />
     <ClCompile Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.cpp" />
+    <ClCompile Include="RecordVideo\Entity\ArrowLineSegment.cpp" />
     <ClCompile Include="RecordVideo\Entity\Entity.cpp" />
     <ClCompile Include="RecordVideo\Entity\EntityList.cpp" />
     <ClCompile Include="RecordVideo\Entity\FreeCurve.cpp" />
@@ -250,6 +251,7 @@
     <ClCompile Include="RecordVideo\Entity\Visitor\Visitor.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\ArrowLineMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\CursorMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\EraserMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\HighlightMode.cpp" />
@@ -379,6 +381,7 @@
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequest.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategy.h" />
     <ClInclude Include="RecordVideo\Chain\RecordVideoRequestStrategyFactory.h" />
+    <ClInclude Include="RecordVideo\Entity\ArrowLineSegment.h" />
     <ClInclude Include="RecordVideo\Entity\Entity.h" />
     <ClInclude Include="RecordVideo\Entity\EntityList.h" />
     <ClInclude Include="RecordVideo\Entity\FreeCurve.h" />
@@ -389,6 +392,7 @@
     <ClInclude Include="RecordVideo\Entity\Visitor\Visitor.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\ArrowLineMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\CursorMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\EraserMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\HighlightMode.h" />

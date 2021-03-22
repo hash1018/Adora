@@ -177,6 +177,10 @@ bool RecordVideoRequestChangeWritingModeStrategy::response() {
 	
 		this->recordVideoDialog->changeWritingMode(WritingStatus::Line);
 	}
+	else if (mode == RecordVideoRequestChangeWritingMode::Mode::ArrowLine) {
+	
+		this->recordVideoDialog->changeWritingMode(WritingStatus::ArrowLine);
+	}
 
 	return true;
 }

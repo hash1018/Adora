@@ -6,6 +6,7 @@
 #include "Base/Math.h"
 #include "RecordVideo/Entity/HighlightedFreeCurve.h"
 #include "RecordVideo/Entity/LineSegment.h"
+#include "RecordVideo/Entity/ArrowLineSegment.h"
 
 
 Finder::Finder(const QPoint &point, bool &foundEntity)
@@ -65,6 +66,19 @@ void Finder::visit(HighlightedFreeCurve *highlightedFreeCurve) {
 void Finder::visit(LineSegment *lineSegment) {
 
 	if (math::checkPointLiesOnLine(point, lineSegment->getStart(), lineSegment->getEnd(), lineSegment->getWidth()) == true) {
+
+		this->foundEntity = true;
+		return;
+	}
+
+	this->foundEntity = false;
+}
+
+
+void Finder::visit(ArrowLineSegment *arrowLineSegment) {
+
+	if (math::checkPointLiesOnLine(point, arrowLineSegment->getStart(), arrowLineSegment->getEnd(), 
+		arrowLineSegment->getWidth()) == true) {
 
 		this->foundEntity = true;
 		return;
