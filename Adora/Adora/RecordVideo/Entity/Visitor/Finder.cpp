@@ -5,6 +5,8 @@
 #include <qrect.h>
 #include "Base/Math.h"
 #include "RecordVideo/Entity/HighlightedFreeCurve.h"
+#include "RecordVideo/Entity/LineSegment.h"
+
 
 Finder::Finder(const QPoint &point, bool &foundEntity)
 	:point(point), foundEntity(foundEntity) {
@@ -58,4 +60,15 @@ void Finder::visit(FreeCurve *freeCurve) {
 void Finder::visit(HighlightedFreeCurve *highlightedFreeCurve) {
 
 	this->visit((FreeCurve*)highlightedFreeCurve);
+}
+
+void Finder::visit(LineSegment *lineSegment) {
+
+	if (math::checkPointLiesOnLine(point, lineSegment->getStart(), lineSegment->getEnd(), lineSegment->getWidth()) == true) {
+
+		this->foundEntity = true;
+		return;
+	}
+
+	this->foundEntity = false;
 }

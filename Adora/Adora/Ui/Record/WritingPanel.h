@@ -31,6 +31,7 @@ public:
 	void eraserButtonClicked();
 	void deleteAllButtonClicked();
 	void highlightButtonClicked();
+	void lineButtonClicked();
 
 
 };

@@ -80,6 +80,7 @@ public:
 		Pencil,
 		Eraser,
 		Highlight,
+		Line,
 	};
 
 private:

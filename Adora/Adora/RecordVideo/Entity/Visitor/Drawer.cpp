@@ -4,6 +4,7 @@
 #include <qpainter.h>
 #include "RecordVideo/Entity/FreeCurve.h"
 #include "RecordVideo/Entity/HighlightedFreeCurve.h"
+#include "RecordVideo/Entity/LineSegment.h"
 
 Drawer::Drawer(QPainter &painter)
 	:painter(painter) {
@@ -82,6 +83,22 @@ void Drawer::visit(HighlightedFreeCurve *highlightedFreeCurve) {
 
 		painter.drawPath(path);
 	}
+
+	painter.setPen(oldPen);
+}
+
+
+void Drawer::visit(LineSegment *lineSegment) {
+
+	QPen pen(lineSegment->getColor());
+	pen.setWidth(lineSegment->getWidth());
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+
+
+	painter.drawLine(lineSegment->getStart(), lineSegment->getEnd());
 
 	painter.setPen(oldPen);
 }

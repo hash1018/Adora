@@ -15,6 +15,7 @@ enum WritingStatus {
 	Pencil,
 	Eraser,
 	Highlight,
+	Line,
 
 };
 

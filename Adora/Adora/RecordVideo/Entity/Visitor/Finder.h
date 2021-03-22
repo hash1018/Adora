@@ -18,6 +18,7 @@ public:
 
 	virtual void visit(FreeCurve *freeCurve);
 	virtual void visit(HighlightedFreeCurve *highlightedFreeCurve);
+	virtual void visit(LineSegment *lineSegment);
 
 };
 
