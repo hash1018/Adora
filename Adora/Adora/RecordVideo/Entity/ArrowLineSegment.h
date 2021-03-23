@@ -13,6 +13,8 @@ public:
 
 	virtual void accept(Visitor *visitor);
 
+	void getArrowPoints(QPoint &point1, QPoint &point2, QPoint &point3);
+
 };
 
 #endif //_ARROWLINESEGMENT_H

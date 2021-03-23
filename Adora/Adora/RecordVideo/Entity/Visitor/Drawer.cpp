@@ -8,6 +8,7 @@
 #include "RecordVideo/Entity/ArrowLineSegment.h"
 #include "RecordVideo/Entity/Number.h"
 
+
 Drawer::Drawer(QPainter &painter)
 	:painter(painter) {
 
@@ -115,8 +116,13 @@ void Drawer::visit(ArrowLineSegment *arrowLineSegment) {
 
 	painter.setPen(pen);
 
-
 	painter.drawLine(arrowLineSegment->getStart(), arrowLineSegment->getEnd());
+
+	QPoint p1, p2, p3;
+	arrowLineSegment->getArrowPoints(p1, p2, p3);
+
+	painter.drawLine(p1.x(), p1.y(), p2.x(), p2.y());
+	painter.drawLine(p1.x(), p1.y(), p3.x(), p3.y());
 
 	painter.setPen(oldPen);
 }

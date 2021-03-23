@@ -85,6 +85,23 @@ void Finder::visit(ArrowLineSegment *arrowLineSegment) {
 		return;
 	}
 
+	QPoint p1, p2, p3;
+	arrowLineSegment->getArrowPoints(p1, p2, p3);
+
+	if (math::checkPointLiesOnLine(point, p1, p2,
+		arrowLineSegment->getWidth()) == true) {
+
+		this->foundEntity = true;
+		return;
+	}
+
+	if (math::checkPointLiesOnLine(point, p1, p3,
+		arrowLineSegment->getWidth()) == true) {
+
+		this->foundEntity = true;
+		return;
+	}
+
 	this->foundEntity = false;
 }
 
