@@ -131,6 +131,34 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 		else if (type == HotkeyType::HotkeyType_Redo) {
 			this->recordVideoDialog->redo();
 		}
+		else if (type == HotkeyType::HotkeyType_Cursor) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::Cursor);
+		}
+		else if (type == HotkeyType::HotkeyType_Pencil) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::Pencil);
+		}
+		else if (type == HotkeyType::HotkeyType_Highlighter) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::Highlight);
+		}
+		else if (type == HotkeyType::HotkeyType_Line) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::Line);
+		}
+		else if (type == HotkeyType::HotkeyType_ArrowLine) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::ArrowLine);
+		}
+		else if (type == HotkeyType::HotkeyType_Numbering) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::Numbering);
+		}
+		else if (type == HotkeyType::HotkeyType_Eraser) {
+		
+			this->recordVideoDialog->changeWritingMode(WritingStatus::Eraser);
+		}
 	}
 
 

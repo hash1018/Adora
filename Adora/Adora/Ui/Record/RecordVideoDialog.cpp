@@ -96,8 +96,13 @@ void RecordVideoDialog::changeRecordStatusMode(RecordStatus recordStatus) {
 
 void RecordVideoDialog::changeWritingMode(WritingStatus writingStatus) {
 
-	if (this->writingMode != nullptr)
+	if (this->writingMode != nullptr) {
+
+		if (writingStatus == this->writingMode->getStatus())
+			return;
+
 		delete this->writingMode;
+	}
 
 	this->writingMode = WritingModeFactory::create(this, writingStatus);
 
