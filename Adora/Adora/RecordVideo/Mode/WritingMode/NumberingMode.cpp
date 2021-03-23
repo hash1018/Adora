@@ -19,7 +19,24 @@ NumberingMode::~NumberingMode() {
 
 void NumberingMode::mousePressEvent(QMouseEvent *event) {
 
-	Number *number = new Number(QColor(0, 0, 0), 10, event->pos());
+	int num = 0;
+
+	auto itr = this->recordVideoDialog->getEntityList()->begin();
+	for (itr; itr != this->recordVideoDialog->getEntityList()->end(); ++itr) {
+	
+		if (dynamic_cast<Number*>(*itr)) {
+			
+			if (dynamic_cast<Number*>(*itr)->getNumber() >= num) {
+				num = dynamic_cast<Number*>(*itr)->getNumber() + 1;
+			}
+		}
+	}
+
+	if (num == 0)
+		num++;
+
+
+	Number *number = new Number(QColor(0, 0, 0), 20, event->pos(), num);
 	this->recordVideoDialog->getEntityList()->add(number);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, number));
 	this->recordVideoDialog->update();

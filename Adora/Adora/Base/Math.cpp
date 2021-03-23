@@ -85,6 +85,16 @@ bool math::checkPointLiesInsideRect(const QPoint &point, const QPoint &topLeft, 
 	return false;
 }
 
+bool math::checkPointLiesInsideCircle(const QPoint &point, const QPoint &center, double radius) {
+
+	double dis = getDistance(point.x(), point.y(), center.x(), center.y());
+
+	if (compare(dis, radius) == 1)
+		return false;
+
+	return true;
+}
+
 double math::getDistance(double x, double y, double x2, double y2) {
 
 	double disX = fabs(x2 - x);

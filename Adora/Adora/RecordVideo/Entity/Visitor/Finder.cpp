@@ -90,5 +90,11 @@ void Finder::visit(ArrowLineSegment *arrowLineSegment) {
 
 void Finder::visit(Number *number) {
 
+	if (math::checkPointLiesInsideCircle(this->point, number->getPoint(), number->getWidth() / 2) == true) {
+	
+		this->foundEntity = true;
+		return;
+	}
 
+	this->foundEntity = false;
 }

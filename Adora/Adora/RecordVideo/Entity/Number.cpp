@@ -3,8 +3,8 @@
 #include "Number.h"
 #include "Visitor/Visitor.h"
 
-Number::Number(const QColor &color, int width, const QPoint &point)
-	:Entity(color, width), point(point) {
+Number::Number(const QColor &color, int width, const QPoint &point, int number)
+	:Entity(color, width), point(point), number(number) {
 
 }
 

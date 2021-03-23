@@ -128,11 +128,19 @@ void Drawer::visit(Number *number) {
 
 	QBrush brush(color);
 	QBrush oldBrush = painter.brush();
-
 	painter.setBrush(brush);
 
-	painter.drawEllipse(number->getPoint(), number->getWidth() / 2, number->getWidth() / 2);
+	QPen pen(color);
+	QPen oldPen = painter.pen();
+	painter.setPen(pen);
 	
 
+	painter.drawEllipse(number->getPoint(), number->getWidth() / 2, number->getWidth() / 2);
 	painter.setBrush(oldBrush);
+	painter.setPen(oldPen);
+
+
+	painter.setPen(QColor(255, 255, 255));
+	painter.drawText(number->getPoint().x() - number->getWidth() / 2, number->getPoint().y() - number->getWidth() / 2,
+		number->getWidth(), number->getWidth(), Qt::AlignVCenter | Qt::AlignHCenter, QString::number(number->getNumber()));
 }

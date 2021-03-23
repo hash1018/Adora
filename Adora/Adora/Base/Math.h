@@ -11,7 +11,7 @@ namespace math {
 	bool isBetween(double v, double bound1, double bound2, double tolerance);
 	bool checkPointLiesOnLine(const QPoint &point, const QPoint &start, const QPoint &end, double tolerance);
 	bool checkPointLiesInsideRect(const QPoint &point, const QPoint &topLeft, const QPoint &bottomRight, double tolerance);
-
+	bool checkPointLiesInsideCircle(const QPoint &point, const QPoint &center, double radius);
 	double getDistance(double x, double y, double x2, double y2);
 	double getAbsAngle(double centerX, double centerY, double anotherX, double anotherY);
 	void rotate(double angle, double centerX, double centerY, double anotherX, double anotherY, double &appliedX, double &appliedY);
