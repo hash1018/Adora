@@ -3,6 +3,8 @@
 #include "WritingPanel.h"
 #include "RecordVideo/Chain/RecordVideoRequest.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
+#include "Base/SettingManager.h"
+#include "Base/LanguageManager.h"
 
 WritingPanel::WritingPanel(QWidget *parent)
 	:QWidget(parent) {
@@ -25,6 +27,73 @@ WritingPanel::WritingPanel(QWidget *parent)
 	this->items.append(ui.lineButton);
 	this->items.append(ui.arrowLineButton);
 	this->items.append(ui.numberingButton);
+
+
+	//////////
+	QString str = getLanUiValue("WritingPanel/Cursor");
+	if (SettingManager::getInstance()->getWritingSetting()->getCursorHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseCursorHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getCursorHotkey().toString();
+	}
+	ui.cursorButton->setToolTip(str);
+
+	///////////
+
+	str = getLanUiValue("WritingPanel/Pencil");
+	if (SettingManager::getInstance()->getWritingSetting()->getPencilHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUsePencilHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getPencilHotkey().toString();
+	}
+	ui.pencilButton->setToolTip(str);
+
+	//////////
+
+	str = getLanUiValue("WritingPanel/Highlighter");
+	if (SettingManager::getInstance()->getWritingSetting()->getHighlightHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseHighlightHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getHighlightHotkey().toString();
+	}
+	ui.highlightButton->setToolTip(str);
+
+	/////////
+
+	str = getLanUiValue("WritingPanel/Line");
+	if (SettingManager::getInstance()->getWritingSetting()->getLineHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseLineHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getLineHotkey().toString();
+	}
+	ui.lineButton->setToolTip(str);
+
+	//////////
+
+	str = getLanUiValue("WritingPanel/ArrowLine");
+	if (SettingManager::getInstance()->getWritingSetting()->getArrowLineHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseArrowLineHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getArrowLineHotkey().toString();
+	}
+	ui.arrowLineButton->setToolTip(str);
+
+
+	///////////
+
+	str = getLanUiValue("WritingPanel/Numbering");
+	if (SettingManager::getInstance()->getWritingSetting()->getNumberingHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseNumberingHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getNumberingHotkey().toString();
+	}
+	ui.numberingButton->setToolTip(str);
+
+	///////////
+
+	str = getLanUiValue("WritingPanel/Eraser");
+	if (SettingManager::getInstance()->getWritingSetting()->getEraserHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseEraserHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getEraserHotkey().toString();
+	}
+	ui.eraserButton->setToolTip(str);
+
+
+
 }
 
 WritingPanel::~WritingPanel() {

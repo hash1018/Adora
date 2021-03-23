@@ -39,7 +39,8 @@ QPushButton:hover {
 }
 
 QPushButton:checked {
-    background-color: #E5E5E5;
+    /*background-color: #E5E5E5;*/
+    background-color: #FFD983;
 }
 
 

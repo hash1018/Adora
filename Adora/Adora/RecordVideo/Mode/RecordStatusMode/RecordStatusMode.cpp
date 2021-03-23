@@ -36,7 +36,20 @@ void RecordStatusNotRecordingMode::paintEvent(QPainter &painter) {
 	int width = 40;
 	int height = 40;
 
-	painter.fillRect(x, y, width, height, QColor(123, 123, 123));
+	//painter.fillRect(x, y, width, height, QColor(123, 123, 123));
+
+	QPen pen;
+	pen.setWidth(7);
+	pen.setColor("#FFB513");
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+	painter.drawLine(x + width / 2, y, x + width / 2, y + height);
+	painter.drawLine(x, y + height / 2, x + width, y + height / 2);
+
+	painter.setPen(oldPen);
+
 }
 
 ////////////////////////////////////////////////
@@ -73,5 +86,17 @@ void RecordStatusPausedMode::paintEvent(QPainter &painter) {
 	int width = 40;
 	int height = 40;
 
-	painter.fillRect(x, y, width, height, QColor(123, 123, 123));
+	//painter.fillRect(x, y, width, height, QColor(123, 123, 123));
+
+	QPen pen;
+	pen.setWidth(7);
+	pen.setColor("#FFB513");
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+	painter.drawLine(x + width / 2, y, x + width / 2, y + height);
+	painter.drawLine(x, y + height / 2, x + width, y + height / 2);
+
+	painter.setPen(oldPen);
 }
