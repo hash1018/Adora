@@ -92,6 +92,15 @@ WritingPanel::WritingPanel(QWidget *parent)
 	}
 	ui.eraserButton->setToolTip(str);
 
+	///////////
+
+	str = getLanUiValue("WritingPanel/DeleteAll");
+	if (SettingManager::getInstance()->getWritingSetting()->getDeleteAllHotkey().isEmpty() == false &&
+		SettingManager::getInstance()->getWritingSetting()->getUseDeleteAllHotkey() == true) {
+		str += " " + SettingManager::getInstance()->getWritingSetting()->getDeleteAllHotkey().toString();
+	}
+	ui.deleteAllButton->setToolTip(str);
+
 
 
 }

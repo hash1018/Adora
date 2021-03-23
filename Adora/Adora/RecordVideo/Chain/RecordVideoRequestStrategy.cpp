@@ -159,6 +159,12 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 		
 			this->recordVideoDialog->changeWritingMode(WritingStatus::Eraser);
 		}
+		else if (type == HotkeyType::HotkeyType_DeleteAll) {
+		
+			RecordVideoRequestWritingDeleteAll request;
+			RecordVideoRequestWritingDeleteAllStrategy strategy(this->recordVideoDialog, &request);
+			strategy.response();
+		}
 	}
 
 

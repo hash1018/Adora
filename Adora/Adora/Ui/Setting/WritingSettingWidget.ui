@@ -367,6 +367,53 @@
     </size>
    </property>
   </widget>
+  <widget class="QCheckBox" name="useDeleteAllHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>407</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="deleteAllHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>407</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>

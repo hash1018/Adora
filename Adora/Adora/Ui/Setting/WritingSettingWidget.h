@@ -36,6 +36,9 @@ public:
 
 	void eraserHotkeyCheckBoxToggled(bool checked);
 	void eraserHotkeyEmitted(const QKeySequence &keySequence);
+
+	void deleteAllHotkeyCheckBoxToggled(bool checked);
+	void deleteAllHotkeyEmitted(const QKeySequence &keySequence);
 };
 
 

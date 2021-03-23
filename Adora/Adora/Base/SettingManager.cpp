@@ -331,7 +331,7 @@ void WatermarkSetting::save() {
 
 WritingSetting::WritingSetting()
 	:useCursorHotkey(false), usePencilHotkey(false), useHighlightHotkey(false), useLineHotkey(false),
-	useArrowLineHotkey(false), useNumberingHotkey(false), useEraserHotkey(false) {
+	useArrowLineHotkey(false), useNumberingHotkey(false), useEraserHotkey(false), useDeleteAllHotkey(false) {
 
 }
 
@@ -381,6 +381,11 @@ void WritingSetting::load() {
 	if (settings.contains("eraserHotkey") == true)
 		this->eraserHotkey = settings.value("eraserHotkey").toString();
 
+	if (settings.contains("useDeleteAllHotkey") == true)
+		this->useDeleteAllHotkey = settings.value("useDeleteAllHotkey").toBool();
+	if (settings.contains("deleteAllHotkey") == true)
+		this->deleteAllHotkey = settings.value("deleteAllHotkey").toString();
+
 	settings.endGroup();
 }
 
@@ -411,6 +416,9 @@ void WritingSetting::save() {
 
 	settings.setValue("useEraserHotkey", this->useEraserHotkey);
 	settings.setValue("eraserHotkey", this->eraserHotkey.toString());
+
+	settings.setValue("useDeleteAllHotkey", this->useDeleteAllHotkey);
+	settings.setValue("deleteAllHotkey", this->deleteAllHotkey.toString());
 
 	settings.endGroup();
 }

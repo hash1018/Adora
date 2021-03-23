@@ -22,6 +22,7 @@ enum HotkeyType {
 	HotkeyType_ArrowLine,
 	HotkeyType_Numbering,
 	HotkeyType_Eraser,
+	HotkeyType_DeleteAll,
 };
 
 

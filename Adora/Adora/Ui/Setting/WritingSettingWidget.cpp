@@ -24,6 +24,7 @@ WritingSettingWidget::WritingSettingWidget(QWidget *parent)
 	ui.useArrowLineHotkeyCheckBox->setText(getLanUiValue("MenuWriting/ArrowLine Hotkey"));
 	ui.useNumberingHotkeyCheckBox->setText(getLanUiValue("MenuWriting/Numbering Hotkey"));
 	ui.useEraserHotkeyCheckBox->setText(getLanUiValue("MenuWriting/Eraser Hotkey"));
+	ui.useDeleteAllHotkeyCheckBox->setText(getLanUiValue("MenuWriting/DeleteAll Hotkey"));
 
 
 
@@ -110,6 +111,19 @@ WritingSettingWidget::WritingSettingWidget(QWidget *parent)
 		hotkey->setType(HotkeyType::HotkeyType_Eraser);
 		ui.eraserHotkeyLineEdit->load(hotkey);
 	}
+	
+
+	//////////
+
+	ui.useDeleteAllHotkeyCheckBox->setChecked(SettingManager::getInstance()->getWritingSetting()->getUseDeleteAllHotkey());
+	ui.deleteAllHotkeyLineEdit->setDisabled(!SettingManager::getInstance()->getWritingSetting()->getUseDeleteAllHotkey());
+
+	if (SettingManager::getInstance()->getWritingSetting()->getDeleteAllHotkey().isEmpty() == false) {
+
+		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getWritingSetting()->getDeleteAllHotkey());
+		hotkey->setType(HotkeyType::HotkeyType_DeleteAll);
+		ui.deleteAllHotkeyLineEdit->load(hotkey);
+	}
 
 
 
@@ -133,6 +147,9 @@ WritingSettingWidget::WritingSettingWidget(QWidget *parent)
 
 	connect(ui.useEraserHotkeyCheckBox, &QCheckBox::toggled, this, &WritingSettingWidget::eraserHotkeyCheckBoxToggled);
 	connect(ui.eraserHotkeyLineEdit, &HotkeyLineEdit::hotkeyEmitted, this, &WritingSettingWidget::eraserHotkeyEmitted);
+
+	connect(ui.useDeleteAllHotkeyCheckBox, &QCheckBox::toggled, this, &WritingSettingWidget::deleteAllHotkeyCheckBoxToggled);
+	connect(ui.deleteAllHotkeyLineEdit, &HotkeyLineEdit::hotkeyEmitted, this, &WritingSettingWidget::deleteAllHotkeyEmitted);
 
 }
 
@@ -237,4 +254,18 @@ void WritingSettingWidget::eraserHotkeyEmitted(const QKeySequence &keySequence) 
 	SettingManager::getInstance()->getWritingSetting()->setEraserHotkey(keySequence);
 	int index = HotkeyList::getInstance()->indexOf(keySequence);
 	HotkeyList::getInstance()->at(index)->setType(HotkeyType::HotkeyType_Eraser);
+}
+
+
+void WritingSettingWidget::deleteAllHotkeyCheckBoxToggled(bool checked) {
+
+	SettingManager::getInstance()->getWritingSetting()->setUseDeleteAllHotkey(checked);
+	ui.deleteAllHotkeyLineEdit->setDisabled(!checked);
+}
+
+void WritingSettingWidget::deleteAllHotkeyEmitted(const QKeySequence &keySequence) {
+
+	SettingManager::getInstance()->getWritingSetting()->setDeleteAllHotkey(keySequence);
+	int index = HotkeyList::getInstance()->indexOf(keySequence);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::HotkeyType_DeleteAll);
 }

@@ -267,6 +267,9 @@ private:
 	bool useEraserHotkey;
 	QKeySequence eraserHotkey;
 
+	bool useDeleteAllHotkey;
+	QKeySequence deleteAllHotkey;
+
 private:
 	WritingSetting();
 	~WritingSetting();
@@ -297,6 +300,9 @@ public:
 	void setUseEraserHotkey(bool useEraserHotkey) { this->useEraserHotkey = useEraserHotkey; }
 	void setEraserHotkey(const QKeySequence &eraserHotkey) { this->eraserHotkey = eraserHotkey; }
 
+	void setUseDeleteAllHotkey(bool useDeleteAllHotkey) { this->useDeleteAllHotkey = useDeleteAllHotkey; }
+	void setDeleteAllHotkey(const QKeySequence &deleteAllHotkey) { this->deleteAllHotkey = deleteAllHotkey; }
+
 public:
 	inline bool getUseCursorHotkey() const { return this->useCursorHotkey; }
 	inline const QKeySequence& getCursorHotkey() const { return this->cursorHotkey; }
@@ -318,6 +324,9 @@ public:
 
 	inline bool getUseEraserHotkey() const { return this->useEraserHotkey; }
 	inline const QKeySequence& getEraserHotkey() const { return this->eraserHotkey; }
+
+	inline bool getUseDeleteAllHotkey() const { return this->useDeleteAllHotkey; }
+	inline const QKeySequence& getDeleteAllHotkey() const { return this->deleteAllHotkey; }
 };
 
 //////////////////////////////////////////////////////////
