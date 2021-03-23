@@ -13,7 +13,368 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="writingLabel">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>150</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>150</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="useCursorHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>84</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="usePencilHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>130</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="useHighlightHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>176</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="useLineHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>223</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="useArrowLineHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>269</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="useNumberingHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>315</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="useEraserHotkeyCheckBox">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>361</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="cursorHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>84</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="pencilHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>130</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="highlightHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>176</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="lineHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>223</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="arrowLineHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>269</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="numberingHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>315</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="HotkeyLineEdit" name="eraserHotkeyLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>361</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HotkeyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">Ui/Item/HotkeyLineEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

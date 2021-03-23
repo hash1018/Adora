@@ -4,7 +4,7 @@
 
 
 Hotkey::Hotkey(QKeySequence keySequence)
-	:keySequence(keySequence), type(None) {
+	:keySequence(keySequence), type(HotkeyType_None) {
 
 }
 
@@ -19,11 +19,11 @@ Hotkey::~Hotkey() {
 HotkeyList::HotkeyList() {
 
 	Hotkey *hotkey = new Hotkey(QKeySequence("Ctrl+Z"));
-	hotkey->setType(HotkeyType::Undo);
+	hotkey->setType(HotkeyType::HotkeyType_Undo);
 	this->list.append(hotkey);
 
 	hotkey = new Hotkey(QKeySequence("Ctrl+Y"));
-	hotkey->setType(HotkeyType::Redo);
+	hotkey->setType(HotkeyType::HotkeyType_Redo);
 	this->list.append(hotkey);
 }
 

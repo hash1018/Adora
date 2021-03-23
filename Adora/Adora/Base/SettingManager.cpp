@@ -329,6 +329,94 @@ void WatermarkSetting::save() {
 
 /////////////////////////////////////////////////////////////////////
 
+WritingSetting::WritingSetting()
+	:useCursorHotkey(false), usePencilHotkey(false), useHighlightHotkey(false), useLineHotkey(false),
+	useArrowLineHotkey(false), useNumberingHotkey(false), useEraserHotkey(false) {
+
+}
+
+WritingSetting::~WritingSetting() {
+
+}
+
+
+void WritingSetting::load() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Writing");
+
+	if (settings.contains("useCursorHotkey") == true)
+		this->useCursorHotkey = settings.value("useCursorHotkey").toBool();
+	if (settings.contains("cursorHotkey") == true)
+		this->cursorHotkey = settings.value("cursorHotkey").toString();
+
+	if (settings.contains("usePencilHotkey") == true)
+		this->usePencilHotkey = settings.value("usePencilHotkey").toBool();
+	if (settings.contains("pencilHotkey") == true)
+		this->pencilHotkey = settings.value("pencilHotkey").toString();
+
+	if (settings.contains("useHighlightHotkey") == true)
+		this->useHighlightHotkey = settings.value("useHighlightHotkey").toBool();
+	if (settings.contains("highlightHotkey") == true)
+		this->highlightHotkey = settings.value("highlightHotkey").toString();
+
+	if (settings.contains("useLineHotkey") == true)
+		this->useLineHotkey = settings.value("useLineHotkey").toBool();
+	if (settings.contains("lineHotkey") == true)
+		this->lineHotkey = settings.value("lineHotkey").toString();
+
+	if (settings.contains("useArrowLineHotkey") == true)
+		this->useArrowLineHotkey = settings.value("useArrowLineHotkey").toBool();
+	if (settings.contains("arrowLineHotkey") == true)
+		this->arrowLineHotkey = settings.value("arrowLineHotkey").toString();
+
+	if (settings.contains("useNumberingHotkey") == true)
+		this->useNumberingHotkey = settings.value("useNumberingHotkey").toBool();
+	if (settings.contains("numberingHotkey") == true)
+		this->numberingHotkey = settings.value("numberingHotkey").toString();
+
+	if (settings.contains("useEraserHotkey") == true)
+		this->useEraserHotkey = settings.value("useEraserHotkey").toBool();
+	if (settings.contains("eraserHotkey") == true)
+		this->eraserHotkey = settings.value("eraserHotkey").toString();
+
+	settings.endGroup();
+}
+
+void WritingSetting::save() {
+
+	QSettings settings("Adora", "Adora");
+
+	settings.beginGroup("Writing");
+
+
+	settings.setValue("useCursorHotkey", this->useCursorHotkey);
+	settings.setValue("cursorHotkey", this->cursorHotkey.toString());
+
+	settings.setValue("usePencilHotkey", this->usePencilHotkey);
+	settings.setValue("pencilHotkey", this->pencilHotkey.toString());
+
+	settings.setValue("useHighlightHotkey", this->useHighlightHotkey);
+	settings.setValue("highlightHotkey", this->highlightHotkey.toString());
+
+	settings.setValue("useLineHotkey", this->useLineHotkey);
+	settings.setValue("lineHotkey", this->lineHotkey.toString());
+
+	settings.setValue("useArrowLineHotkey", this->useArrowLineHotkey);
+	settings.setValue("arrowLineHotkey", this->arrowLineHotkey.toString());
+
+	settings.setValue("useNumberingHotkey", this->useNumberingHotkey);
+	settings.setValue("numberingHotkey", this->numberingHotkey.toString());
+
+	settings.setValue("useEraserHotkey", this->useEraserHotkey);
+	settings.setValue("eraserHotkey", this->eraserHotkey.toString());
+
+	settings.endGroup();
+}
+
+/////////////////////////////////////////////////////////////////////
+
 LanguageSetting::LanguageSetting()
 	:language(Language::English) {
 
@@ -389,6 +477,7 @@ void SettingManager::load() {
 	this->imageSetting.load();
 	this->timeLimitSetting.load();
 	this->watermarkSetting.load();
+	this->writingSetting.load();
 	this->languageSetting.load();
 }
 
@@ -404,5 +493,6 @@ void SettingManager::save() {
 	this->imageSetting.save();
 	this->timeLimitSetting.save();
 	this->watermarkSetting.save();
+	this->writingSetting.save();
 	this->languageSetting.save();
 }

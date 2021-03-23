@@ -17,7 +17,7 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	if (SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey().isEmpty() == false) {
 
 		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getVideoSetting()->getStartStopHotkey());
-		hotkey->setType(HotkeyType::VideoStartAndStop);
+		hotkey->setType(HotkeyType::HotkeyType_VideoStartAndStop);
 		ui.startStopHotkeyLineEdit->load(hotkey);
 	}
 
@@ -27,7 +27,7 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	if (SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey().isEmpty() == false) {
 
 		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getVideoSetting()->getPauseResumeHotkey());
-		hotkey->setType(HotkeyType::VideoPauseAndResume);
+		hotkey->setType(HotkeyType::HotkeyType_VideoPauseAndResume);
 		ui.pauseResumeHotkeyLineEdit->load(hotkey);
 	}
 
@@ -82,7 +82,7 @@ void VideoSettingWidget::startStopHotkeyEmitted(const QKeySequence &keySequence)
 
 	SettingManager::getInstance()->getVideoSetting()->setStartStopHotkey(keySequence);
 	int index = HotkeyList::getInstance()->indexOf(keySequence);
-	HotkeyList::getInstance()->at(index)->setType(HotkeyType::VideoStartAndStop);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::HotkeyType_VideoStartAndStop);
 }
 
 
@@ -97,7 +97,7 @@ void VideoSettingWidget::pauseResumeHotkeyEmitted(const QKeySequence &keySequenc
 
 	SettingManager::getInstance()->getVideoSetting()->setPauseResumeHotkey(keySequence);
 	int index = HotkeyList::getInstance()->indexOf(keySequence);
-	HotkeyList::getInstance()->at(index)->setType(HotkeyType::VideoPauseAndResume);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::HotkeyType_VideoPauseAndResume);
 }
 
 void VideoSettingWidget::includeCursorCheckBoxToggled(bool checked) {

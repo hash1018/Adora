@@ -241,6 +241,87 @@ public:
 
 //////////////////////////////////////////////////////////
 
+class WritingSetting {
+
+	friend class SettingManager;
+
+private:
+	bool useCursorHotkey;
+	QKeySequence cursorHotkey;
+
+	bool usePencilHotkey;
+	QKeySequence pencilHotkey;
+
+	bool useHighlightHotkey;
+	QKeySequence highlightHotkey;
+
+	bool useLineHotkey;
+	QKeySequence lineHotkey;
+
+	bool useArrowLineHotkey;
+	QKeySequence arrowLineHotkey;
+
+	bool useNumberingHotkey;
+	QKeySequence numberingHotkey;
+
+	bool useEraserHotkey;
+	QKeySequence eraserHotkey;
+
+private:
+	WritingSetting();
+	~WritingSetting();
+
+	void load();
+	void save();
+
+public:
+
+	void setUseCursorHotkey(bool useCursorHotkey) { this->useCursorHotkey = useCursorHotkey; }
+	void setCursorHotkey(const QKeySequence &cursorHotkey) { this->cursorHotkey = cursorHotkey; }
+
+	void setUsePencilHotkey(bool usePencilHotkey) { this->usePencilHotkey = usePencilHotkey; }
+	void setPencilHotkey(const QKeySequence &pencilHotkey) { this->pencilHotkey = pencilHotkey; }
+
+	void setUseHighlightHotkey(bool useHighlightHotkey) { this->useHighlightHotkey = useHighlightHotkey; }
+	void setHighlightHotkey(const QKeySequence &highlightHotkey) { this->highlightHotkey = highlightHotkey; }
+
+	void setUseLineHotkey(bool useLineHotkey) { this->useLineHotkey = useLineHotkey; }
+	void setLineHotkey(const QKeySequence &lineHotkey) { this->lineHotkey = lineHotkey; }
+
+	void setUseArrowLineHotkey(bool useArrowLineHotkey) { this->useArrowLineHotkey = useArrowLineHotkey; }
+	void setArrowLineHotkey(const QKeySequence &arrowLineHotkey) { this->arrowLineHotkey = arrowLineHotkey; }
+
+	void setUseNumberingHotkey(bool useNumberingHotkey) { this->useNumberingHotkey = useNumberingHotkey; }
+	void setNumberingHotkey(const QKeySequence &numberingHotkey) { this->numberingHotkey = numberingHotkey; }
+
+	void setUseEraserHotkey(bool useEraserHotkey) { this->useEraserHotkey = useEraserHotkey; }
+	void setEraserHotkey(const QKeySequence &eraserHotkey) { this->eraserHotkey = eraserHotkey; }
+
+public:
+	inline bool getUseCursorHotkey() const { return this->useCursorHotkey; }
+	inline const QKeySequence& getCursorHotkey() const { return this->cursorHotkey; }
+
+	inline bool getUsePencilHotkey() const { return this->usePencilHotkey; }
+	inline const QKeySequence& getPencilHotkey() const { return this->pencilHotkey; }
+
+	inline bool getUseHighlightHotkey() const { return this->useHighlightHotkey; }
+	inline const QKeySequence& getHighlightHotkey() const { return this->highlightHotkey; }
+
+	inline bool getUseLineHotkey() const { return this->useLineHotkey; }
+	inline const QKeySequence& getLineHotkey() const { return this->lineHotkey; }
+
+	inline bool getUseArrowLineHotkey() const { return this->useArrowLineHotkey; }
+	inline const QKeySequence& getArrowLineHotkey() const { return this->arrowLineHotkey; }
+
+	inline bool getUseNumberingHotkey() const { return this->useNumberingHotkey; }
+	inline const QKeySequence& getNumberingHotkey() const { return this->numberingHotkey; }
+
+	inline bool getUseEraserHotkey() const { return this->useEraserHotkey; }
+	inline const QKeySequence& getEraserHotkey() const { return this->eraserHotkey; }
+};
+
+//////////////////////////////////////////////////////////
+
 class LanguageSetting {
 
 	friend class SettingManager;
@@ -287,6 +368,7 @@ private:
 	ImageSetting imageSetting;
 	TimeLimitSetting timeLimitSetting;
 	WatermarkSetting watermarkSetting;
+	WritingSetting writingSetting;
 	LanguageSetting languageSetting;
 	
 
@@ -307,6 +389,7 @@ public:
 	inline ImageSetting* getImageSetting() { return &(this->imageSetting); }
 	inline TimeLimitSetting* getTimeLimitSetting() { return &(this->timeLimitSetting); }
 	inline WatermarkSetting* getWatermarkSetting() { return &(this->watermarkSetting); }
+	inline WritingSetting* getWritingSetting() { return &(this->writingSetting); }
 	inline LanguageSetting* getLanguageSetting() { return &(this->languageSetting); }
 
 	

@@ -9,12 +9,19 @@
 
 enum HotkeyType {
 
-	None,
-	VideoStartAndStop,
-	VideoPauseAndResume,
-	ImageCapture,
-	Undo,
-	Redo,
+	HotkeyType_None,
+	HotkeyType_VideoStartAndStop,
+	HotkeyType_VideoPauseAndResume,
+	HotkeyType_ImageCapture,
+	HotkeyType_Undo,
+	HotkeyType_Redo,
+	HotkeyType_Cursor,
+	HotkeyType_Pencil,
+	HotkeyType_Highlighter,
+	HotkeyType_Line,
+	HotkeyType_ArrowLine,
+	HotkeyType_Numbering,
+	HotkeyType_Eraser,
 };
 
 

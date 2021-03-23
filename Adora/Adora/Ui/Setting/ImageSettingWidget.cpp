@@ -18,7 +18,7 @@ ImageSettingWidget::ImageSettingWidget(QWidget *parent)
 	if (SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey().isEmpty() == false) {
 
 		Hotkey *hotkey = new Hotkey(SettingManager::getInstance()->getImageSetting()->getImageCaptureHotkey());
-		hotkey->setType(HotkeyType::ImageCapture);
+		hotkey->setType(HotkeyType::HotkeyType_ImageCapture);
 		ui.imageCaptureHotkeyLineEdit->load(hotkey);
 	}
 
@@ -71,7 +71,7 @@ void ImageSettingWidget::imageCaptureHotkeyEmitted(const QKeySequence &keySequen
 
 	SettingManager::getInstance()->getImageSetting()->setImageCaptureHotkey(keySequence);
 	int index = HotkeyList::getInstance()->indexOf(keySequence);
-	HotkeyList::getInstance()->at(index)->setType(HotkeyType::ImageCapture);
+	HotkeyList::getInstance()->at(index)->setType(HotkeyType::HotkeyType_ImageCapture);
 }
 
 void ImageSettingWidget::currentImageFormatComboBoxTextChanged(const QString &text) {

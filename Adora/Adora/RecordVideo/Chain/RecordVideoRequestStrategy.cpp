@@ -95,11 +95,11 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 
 		HotkeyType type = HotkeyList::getInstance()->at(index)->getType();
 
-		if (type == HotkeyType::ImageCapture) {
+		if (type == HotkeyType::HotkeyType_ImageCapture) {
 			if (SettingManager::getInstance()->getImageSetting()->getUseImageCaptureHotkey() == true)
 				this->recordVideoDialog->capture();
 		}
-		else if (type == HotkeyType::VideoStartAndStop) {
+		else if (type == HotkeyType::HotkeyType_VideoStartAndStop) {
 
 			if (this->recordVideoDialog->getRecordStatus() == RecordStatus::NotRecording) {
 				if (SettingManager::getInstance()->getVideoSetting()->getUseStartAndStopHotkey() == true)
@@ -114,7 +114,7 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 					this->recordVideoDialog->stop();
 			}
 		}
-		else if (type == HotkeyType::VideoPauseAndResume) {
+		else if (type == HotkeyType::HotkeyType_VideoPauseAndResume) {
 
 			if (this->recordVideoDialog->getRecordStatus() == RecordStatus::Recording) {
 				if (SettingManager::getInstance()->getVideoSetting()->getUsePauseAndResumeHotkey() == true)
@@ -125,10 +125,10 @@ bool RecordVideoRequestKeyEventStrategy::response() {
 					this->recordVideoDialog->resume();
 			}
 		}
-		else if (type == HotkeyType::Undo) {
+		else if (type == HotkeyType::HotkeyType_Undo) {
 			this->recordVideoDialog->undo();
 		}
-		else if (type == HotkeyType::Redo) {
+		else if (type == HotkeyType::HotkeyType_Redo) {
 			this->recordVideoDialog->redo();
 		}
 	}
