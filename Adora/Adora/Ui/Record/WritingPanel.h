@@ -34,6 +34,7 @@ public:
 	void lineButtonClicked();
 	void arrowLineButtonClicked();
 	void numberingButtonClicked();
+	void colorButtonClicked();
 
 
 

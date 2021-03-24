@@ -19,6 +19,7 @@ WritingPanel::WritingPanel(QWidget *parent)
 	connect(ui.lineButton, &QPushButton::clicked, this, &WritingPanel::lineButtonClicked);
 	connect(ui.arrowLineButton, &QPushButton::clicked, this, &WritingPanel::arrowLineButtonClicked);
 	connect(ui.numberingButton, &QPushButton::clicked, this, &WritingPanel::numberingButtonClicked);
+	connect(ui.colorButton, &QPushButton::clicked, this, &WritingPanel::colorButtonClicked);
 
 	this->items.append(ui.cursorButton);
 	this->items.append(ui.pencilButton);
@@ -198,10 +199,19 @@ void WritingPanel::numberingButtonClicked() {
 	this->request(&request);
 }
 
+void WritingPanel::colorButtonClicked() {
+
+
+}
 
 
 void WritingPanel::setColorButtonStyleSheets(const QColor &color) {
+	
 
+	QString rgba = "rgba(" + QString::number(color.red()) + "," +
+		QString::number(color.green()) + "," +
+		QString::number(color.blue()) + ",0.6)";
+	
 
 	ui.colorButton->setStyleSheet((QString("\n"
 		"QPushButton {\n"
@@ -212,8 +222,12 @@ void WritingPanel::setColorButtonStyleSheets(const QColor &color) {
 		"}\n"
 		"\n"
 		"\n"
+		"QPushButton:hover {\n"
+		"    background-color:%2;\n"
+		"}\n"
 		"QPushButton:disabled {\n"
 		"    background-color:white;\n"
 		"    background-image:url(:/RecordVideo_Writing/color_disabled);\n"
-		"}\n").arg(color.name())));
+		"}\n").arg(color.name()).arg(rgba)));
+
 }

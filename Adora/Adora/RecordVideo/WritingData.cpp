@@ -127,6 +127,28 @@ int WritingData::getWidth(WritingStatus status) {
 	return 1;
 }
 
+void WritingData::setColor(WritingStatus status, const QColor &color) {
+
+	for (int i = 0; i < this->list.size(); i++) {
+
+		if (this->list.at(i)->status == status) {
+
+			this->list.at(i)->color = color;
+		}
+	}
+}
+
+void WritingData::setWidth(WritingStatus status, int width) {
+
+	for (int i = 0; i < this->list.size(); i++) {
+
+		if (this->list.at(i)->status == status) {
+
+			this->list.at(i)->width = width;
+		}
+	}
+}
+
 
 int WritingData::getIndex(WritingStatus status) {
 

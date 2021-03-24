@@ -44,6 +44,8 @@ public:
 public:
 	QColor getColor(WritingStatus status);
 	int getWidth(WritingStatus status);
+	void setColor(WritingStatus status, const QColor &color);
+	void setWidth(WritingStatus status, int width);
 
 
 private:

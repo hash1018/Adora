@@ -92,6 +92,8 @@ public:
 	inline EntityList* const getEntityList() { return &(this->entityList); }
 	inline QColor getColor(WritingStatus status) { return this->writingData.getColor(status); }
 	inline int getWidth(WritingStatus status) { return this->writingData.getWidth(status); }
+	void setColor(WritingStatus status, const QColor &color) { this->writingData.setColor(status, color); }
+	void setWidth(WritingStatus status, int width) { this->writingData.setWidth(status, width); }
 
 private:
 	void loadGeometry();
