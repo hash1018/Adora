@@ -22,7 +22,7 @@ HighlightMode::~HighlightMode() {
 void HighlightMode::mousePressEvent(QMouseEvent *event) {
 
 	this->mousePressed = true;
-	this->highlightedFreeCurve = new HighlightedFreeCurve(QColor(0, 0, 0), 2, 125);
+	this->highlightedFreeCurve = new HighlightedFreeCurve(this->recordVideoDialog->getColor(this->getStatus()), 2, 125);
 	this->recordVideoDialog->getEntityList()->add(this->highlightedFreeCurve);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->highlightedFreeCurve));
 	this->recordVideoDialog->update();

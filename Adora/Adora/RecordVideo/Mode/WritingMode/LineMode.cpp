@@ -21,7 +21,7 @@ LineMode::~LineMode() {
 void LineMode::mousePressEvent(QMouseEvent *event) {
 
 	this->mousePressed = true;
-	this->lineSegment = new LineSegment(QColor(0, 0, 0), 2, event->pos(), event->pos());
+	this->lineSegment = new LineSegment(this->recordVideoDialog->getColor(this->getStatus()), 2, event->pos(), event->pos());
 	this->recordVideoDialog->getEntityList()->add(this->lineSegment);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->lineSegment));
 	this->recordVideoDialog->update();
