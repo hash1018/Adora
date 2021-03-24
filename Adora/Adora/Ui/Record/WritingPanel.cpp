@@ -5,6 +5,7 @@
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
 #include "Base/SettingManager.h"
 #include "Base/LanguageManager.h"
+#include <qcolordialog.h>
 
 WritingPanel::WritingPanel(QWidget *parent)
 	:QWidget(parent) {
@@ -110,7 +111,7 @@ WritingPanel::~WritingPanel() {
 
 
 }
-
+#include <qdebug.h>
 void WritingPanel::update(RecordVideoNotifyEvent *event) {
 
 	if (event->getType() == RecordVideoNotifyEvent::EventType::WritingModeChanged) {
@@ -125,8 +126,10 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 		QColor color = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getColor();
 		int width = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getWidth();
 		
+		this->color = color;
+		this->width = width;
 		this->setColorButtonStyleSheets(color);
-
+		qDebug() << this->color;
 
 		if (status == WritingStatus::Cursor) {
 			ui.cursorButton->updateSelected(true);
@@ -147,6 +150,21 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 			ui.arrowLineButton->updateSelected(true);
 		else if (status == WritingStatus::Numbering)
 			ui.numberingButton->updateSelected(true);
+	}
+	else if (event->getType() == RecordVideoNotifyEvent::EventType::WritingDataChanged) {
+		qDebug() << "asdasdasdsad";
+		RecordVideoWritingDataChangedEvent *event2 = dynamic_cast<RecordVideoWritingDataChangedEvent*>(event);
+
+		if (event2->getChangedType() == RecordVideoWritingDataChangedEvent::ChangedType::ChangedType_Color) {
+			this->color = event2->getColor();
+			qDebug() << this->color;
+	
+			this->setColorButtonStyleSheets(this->color);
+			
+		}
+		else {
+		
+		}
 	}
 }
 
@@ -201,7 +219,14 @@ void WritingPanel::numberingButtonClicked() {
 
 void WritingPanel::colorButtonClicked() {
 
-
+	QColorDialog dialog;
+	dialog.setCurrentColor(this->color);
+	dialog.setWindowFlag(Qt::WindowStaysOnTopHint);
+	if (dialog.exec() == QDialog::Accepted) {
+	
+		RecordVideoRequestChangeWritingData request(dialog.currentColor());
+		this->request(&request);
+	}
 }
 
 

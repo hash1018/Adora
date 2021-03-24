@@ -82,4 +82,17 @@ public:
 	virtual bool response();
 };
 
+////////////////////////////////////////////////////////
+
+class RecordVideoRequestChangeWritingDataStrategy : public RecordVideoRequestStrategy {
+
+
+public:
+	RecordVideoRequestChangeWritingDataStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request);
+	~RecordVideoRequestChangeWritingDataStrategy();
+
+	virtual bool response();
+
+};
+
 #endif //_RECORDVIDEOREQUESTSTRATEGY_H

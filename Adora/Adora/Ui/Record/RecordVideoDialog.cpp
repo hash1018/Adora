@@ -301,6 +301,26 @@ RecordStatus RecordVideoDialog::getRecordStatus() {
 	return this->recordStatusMode->getStatus();
 }
 
+WritingStatus RecordVideoDialog::getCurrentWritingMode() {
+
+	return this->writingMode->getStatus();
+}
+
+void RecordVideoDialog::setColor(WritingStatus status, const QColor &color) {
+
+	this->writingData.setColor(status, color);
+
+	RecordVideoWritingDataChangedEvent event(color);
+	this->controllerWidget->update(&event);
+}
+
+void RecordVideoDialog::setWidth(WritingStatus status, int width) {
+
+	this->writingData.setWidth(status, width);
+
+	RecordVideoWritingDataChangedEvent event(width);
+	this->controllerWidget->update(&event);
+}
 
 void RecordVideoDialog::loadGeometry() {
 

@@ -285,3 +285,30 @@ bool RecordVideoRequestWritingDeleteAllStrategy::response() {
 
 	return true;
 }
+
+////////////////////////////////////////////////////////////////////////////
+
+RecordVideoRequestChangeWritingDataStrategy::RecordVideoRequestChangeWritingDataStrategy(RecordVideoDialog *recordVideoDialog, 
+	RecordVideoRequest *request)
+	:RecordVideoRequestStrategy(recordVideoDialog, request) {
+
+}
+
+RecordVideoRequestChangeWritingDataStrategy::~RecordVideoRequestChangeWritingDataStrategy() {
+
+}
+
+bool RecordVideoRequestChangeWritingDataStrategy::response() {
+
+	RecordVideoRequestChangeWritingData *request = dynamic_cast<RecordVideoRequestChangeWritingData*>(this->request);
+
+	if (request->getType() == RecordVideoRequestChangeWritingData::Type::ChangeColor) {
+		this->recordVideoDialog->setColor(this->recordVideoDialog->getCurrentWritingMode(), request->getColor());
+	}
+	else if (request->getType() == RecordVideoRequestChangeWritingData::Type::ChangeWidth) {
+		this->recordVideoDialog->setWidth(this->recordVideoDialog->getCurrentWritingMode(), request->getWidth());
+	}
+
+
+	return true;
+}

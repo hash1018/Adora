@@ -32,5 +32,8 @@ RecordVideoRequestStrategy* RecordVideoRequestStrategyFactory::create(RecordVide
 	else if (request->getType() == RecordVideoRequest::RequestWritingDeleteAll)
 		strategy = new RecordVideoRequestWritingDeleteAllStrategy(recordVideoDialog, request);
 
+	else if (request->getType() == RecordVideoRequest::RequestChangeWritingData)
+		strategy = new RecordVideoRequestChangeWritingDataStrategy(recordVideoDialog, request);
+
 	return strategy;
 }

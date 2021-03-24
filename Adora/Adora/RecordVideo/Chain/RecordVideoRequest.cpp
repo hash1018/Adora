@@ -78,3 +78,21 @@ RecordVideoRequestWritingDeleteAll::~RecordVideoRequestWritingDeleteAll() {
 
 
 }
+
+
+/////////////////////////////////////////////////////////////////////
+
+RecordVideoRequestChangeWritingData::RecordVideoRequestChangeWritingData(const QColor &color)
+	:RecordVideoRequest(RequestType::RequestChangeWritingData), color(color), type(Type::ChangeColor) {
+
+}
+
+RecordVideoRequestChangeWritingData::RecordVideoRequestChangeWritingData(int width)
+	: RecordVideoRequest(RequestType::RequestChangeWritingData), width(width), type(Type::ChangeWidth) {
+
+}
+
+RecordVideoRequestChangeWritingData::~RecordVideoRequestChangeWritingData() {
+
+
+}

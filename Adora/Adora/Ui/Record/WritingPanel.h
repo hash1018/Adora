@@ -7,6 +7,7 @@
 #include "RecordVideo/Chain/RecordVideoChain.h"
 #include "ui_WritingPanel.h"
 #include <qlist.h>
+#include <qcolor.h>
 
 class RecordVideoNotifyEvent;
 class AbstractButton;
@@ -19,11 +20,14 @@ private:
 private:
 	QList<AbstractButton*> items;
 
+	QColor color;
+	int width;
+
 public:
 	WritingPanel(QWidget *parent = nullptr);
 	~WritingPanel();
 
-	void update(RecordVideoNotifyEvent *event);
+	virtual void update(RecordVideoNotifyEvent *event);
 
 	private slots:
 	void cursorButtonClicked();

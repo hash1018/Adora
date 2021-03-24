@@ -5,6 +5,7 @@
 
 
 class QKeyEvent;
+#include <qcolor.h>
 
 class RecordVideoRequest {
 
@@ -16,6 +17,7 @@ public:
 		RequestChangeWritingMode,
 		RequestUnredo,
 		RequestWritingDeleteAll,
+		RequestChangeWritingData,
 	};
 
 protected:
@@ -126,6 +128,32 @@ class RecordVideoRequestWritingDeleteAll : public RecordVideoRequest {
 public:
 	RecordVideoRequestWritingDeleteAll();
 	~RecordVideoRequestWritingDeleteAll();
+};
+
+///////////////////////////////////////////////////////////////
+
+class RecordVideoRequestChangeWritingData : public RecordVideoRequest {
+
+public:
+	enum Type {
+		ChangeColor,
+		ChangeWidth,
+	};
+
+private:
+	Type type;
+	QColor color;
+	int width;
+
+public:
+	RecordVideoRequestChangeWritingData(const QColor &color);
+	RecordVideoRequestChangeWritingData(int width);
+	~RecordVideoRequestChangeWritingData();
+
+public:
+	inline Type getType() const { return this->type; }
+	inline const QColor& getColor() const { return this->color; }
+	inline int getWidth() const { return this->width; }
 };
 
 #endif //_RECORDVIDEOREQUEST_H

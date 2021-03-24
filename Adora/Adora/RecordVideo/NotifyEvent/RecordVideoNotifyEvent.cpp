@@ -50,3 +50,24 @@ RecordVideoUnredoStackCountChangedEvent::~RecordVideoUnredoStackCountChangedEven
 
 
 }
+
+
+/////////////////////////////////////////////////////////////
+
+
+RecordVideoWritingDataChangedEvent::RecordVideoWritingDataChangedEvent(const QColor &color)
+	:RecordVideoNotifyEvent(EventType::WritingDataChanged), changedType(ChangedType::ChangedType_Color),
+	color(color) {
+
+}
+
+RecordVideoWritingDataChangedEvent::RecordVideoWritingDataChangedEvent(int width)
+	: RecordVideoNotifyEvent(EventType::WritingDataChanged), changedType(ChangedType::ChangedType_Width),
+	width(width) {
+
+}
+
+RecordVideoWritingDataChangedEvent::~RecordVideoWritingDataChangedEvent() {
+
+
+}

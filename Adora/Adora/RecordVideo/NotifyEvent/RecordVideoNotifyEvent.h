@@ -13,6 +13,7 @@ public:
 		RecordStatusChanged,
 		WritingModeChanged,
 		UnredoStackCountChanged,
+		WritingDataChanged,
 	};
 
 protected:
@@ -75,6 +76,33 @@ public:
 
 	inline int getUndoCount() const { return this->undoCount; }
 	inline int getRedoCount() const { return this->redoCount; }
+};
+
+////////////////////////////////////////////////
+
+class RecordVideoWritingDataChangedEvent : public RecordVideoNotifyEvent {
+
+public:
+	enum ChangedType {
+
+		ChangedType_Color,
+		ChangedType_Width,
+	};
+
+private:
+	ChangedType changedType;
+	QColor color;
+	int width;
+
+public:
+	RecordVideoWritingDataChangedEvent(const QColor &color);
+	RecordVideoWritingDataChangedEvent(int width);
+	~RecordVideoWritingDataChangedEvent();
+
+	inline ChangedType getChangedType() const { return this->changedType; }
+	inline const QColor& getColor() const { return this->color; }
+	inline int getWidth() const { return this->width; }
+	
 };
 
 #endif //_RECORDVIDEONOTIFYEVENT_H
