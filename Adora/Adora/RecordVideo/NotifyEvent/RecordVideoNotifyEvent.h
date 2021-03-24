@@ -4,6 +4,7 @@
 #define _RECORDVIDEONOTIFYEVENT_H
 
 #include "Base/Namespace.h"
+#include <qcolor.h>
 
 class RecordVideoNotifyEvent {
 
@@ -46,12 +47,16 @@ class RecordVideoWritingModeChangedEvent : public RecordVideoNotifyEvent {
 
 private:
 	WritingStatus writingStatus;
+	QColor color;
+	int width;
 
 public:
-	RecordVideoWritingModeChangedEvent(WritingStatus writingStatus);
+	RecordVideoWritingModeChangedEvent(WritingStatus writingStatus, const QColor &color, int width);
 	~RecordVideoWritingModeChangedEvent();
 
 	inline WritingStatus getStatus() { return this->writingStatus; }
+	inline const QColor& getColor() const { return this->color; }
+	inline int getWidth() const { return this->width; }
 
 };
 

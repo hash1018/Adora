@@ -95,6 +95,17 @@ QPushButton#deleteAllButton {
 QPushButton#highlightButton {
     background-image:url(:/RecordVideo_Writing/highlight);
 }
+
+
+/****/
+
+QPushButton#colorButton {
+    background-image:url(:/RecordVideo_Writing/color);
+}
+
+QPushButton#colorButton:disabled {
+    background-image:url(:/RecordVideo_Writing/color_disabled);
+}
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -113,25 +124,6 @@ QPushButton#highlightButton {
    <property name="spacing">
     <number>3</number>
    </property>
-   <item row="3" column="1">
-    <widget class="AbstractButton" name="eraserButton">
-     <property name="minimumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="1">
     <widget class="AbstractButton" name="cursorButton">
      <property name="minimumSize">
@@ -214,25 +206,6 @@ QPushButton#highlightButton {
      </property>
     </widget>
    </item>
-   <item row="3" column="2">
-    <widget class="QPushButton" name="deleteAllButton">
-     <property name="minimumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="4">
     <widget class="AbstractButton" name="highlightButton">
      <property name="minimumSize">
@@ -254,6 +227,63 @@ QPushButton#highlightButton {
    </item>
    <item row="2" column="1">
     <widget class="AbstractButton" name="numberingButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="AbstractButton" name="eraserButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="AbstractButton" name="deleteAllButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="colorButton">
      <property name="minimumSize">
       <size>
        <width>48</width>

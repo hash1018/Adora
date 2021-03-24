@@ -8,6 +8,7 @@
 #include "Base/Namespace.h"
 #include "RecordVideo/Entity/EntityList.h"
 #include "RecordVideo/Unredo/WritingUnredoStack.h"
+#include "RecordVideo/WritingData.h"
 
 class ControllerWidget;
 class RecordStatusMode;
@@ -45,6 +46,7 @@ private:
 	WritingMode *writingMode;
 	EntityList entityList;
 	WritingUnredoStack unredoStack;
+	WritingData writingData;
 
 public:
 	RecordVideoDialog(QWidget *parent = nullptr);
@@ -88,6 +90,8 @@ public:
 	inline const QRect& getRecordAreaRect() const { return this->recordAreaRect; }
 	RecordStatus getRecordStatus();
 	inline EntityList* const getEntityList() { return &(this->entityList); }
+	inline QColor getColor(WritingStatus status) { return this->writingData.getColor(status); }
+	inline int getWidth(WritingStatus status) { return this->writingData.getWidth(status); }
 
 private:
 	void loadGeometry();

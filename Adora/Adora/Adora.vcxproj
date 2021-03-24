@@ -267,6 +267,7 @@
     <ClCompile Include="RecordVideo\Unredo\RemoveEntityCommand.cpp" />
     <ClCompile Include="RecordVideo\Unredo\WritingCommand.cpp" />
     <ClCompile Include="RecordVideo\Unredo\WritingUnredoStack.cpp" />
+    <ClCompile Include="RecordVideo\WritingData.cpp" />
     <ClCompile Include="Ui\AboutWidget.cpp" />
     <ClCompile Include="Ui\AbstractStackWidget.cpp" />
     <ClCompile Include="Ui\Adora.cpp" />
@@ -410,6 +411,7 @@
     <ClInclude Include="RecordVideo\Unredo\RemoveEntityCommand.h" />
     <ClInclude Include="RecordVideo\Unredo\WritingCommand.h" />
     <ClInclude Include="RecordVideo\Unredo\WritingUnredoStack.h" />
+    <ClInclude Include="RecordVideo\WritingData.h" />
     <ClInclude Include="Ui\AboutWidget.h" />
     <ClInclude Include="Ui\AbstractStackWidget.h" />
     <ClInclude Include="Ui\Setting\WritingSettingWidget.h" />

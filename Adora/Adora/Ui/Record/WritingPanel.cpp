@@ -118,14 +118,23 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 			this->items.at(i)->updateSelected(false);
 		}
 
-		WritingStatus status = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getStatus();
+		ui.colorButton->setDisabled(false);
 
-		if (status == WritingStatus::Cursor)
+		WritingStatus status = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getStatus();
+		QColor color = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getColor();
+		int width = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getWidth();
+
+		if (status == WritingStatus::Cursor) {
 			ui.cursorButton->updateSelected(true);
-		else if (status == WritingStatus::Pencil)
+			ui.colorButton->setDisabled(true);
+		}
+		else if (status == WritingStatus::Pencil) {
 			ui.pencilButton->updateSelected(true);
-		else if (status == WritingStatus::Eraser)
+		}
+		else if (status == WritingStatus::Eraser) {
 			ui.eraserButton->updateSelected(true);
+			ui.colorButton->setDisabled(true);
+		}
 		else if (status == WritingStatus::Highlight)
 			ui.highlightButton->updateSelected(true);
 		else if (status == WritingStatus::Line)

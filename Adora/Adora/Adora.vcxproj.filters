@@ -330,6 +330,9 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\NumberingMode.cpp">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\WritingData.cpp">
+      <Filter>RecordVideo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -630,6 +633,9 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\Mode\WritingMode\NumberingMode.h">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\WritingData.h">
+      <Filter>RecordVideo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

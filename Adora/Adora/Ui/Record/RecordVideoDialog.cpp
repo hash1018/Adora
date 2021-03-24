@@ -32,7 +32,7 @@ RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	this->controllerWidget->show();
 	this->controllerWidget->loadGeometry();
 
-
+	this->writingData.load();
 
 	this->changeRecordStatusMode(RecordStatus::NotRecording);
 	this->changeWritingMode(WritingStatus::Cursor);
@@ -68,6 +68,8 @@ void RecordVideoDialog::hide() {
 
 	this->saveGeometry();
 	this->controllerWidget->saveGeometry();
+
+	this->writingData.save();
 
 	QDialog::hide();
 }
@@ -108,7 +110,8 @@ void RecordVideoDialog::changeWritingMode(WritingStatus writingStatus) {
 
 	this->setCursor(this->writingMode->getCursor());
 
-	RecordVideoWritingModeChangedEvent event(writingStatus);
+	RecordVideoWritingModeChangedEvent event(writingStatus,
+		this->writingData.getColor(writingStatus), this->writingData.getWidth(writingStatus));
 	this->controllerWidget->update(&event);
 
 	this->update();

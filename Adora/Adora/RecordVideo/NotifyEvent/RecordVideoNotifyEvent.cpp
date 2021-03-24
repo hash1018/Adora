@@ -27,8 +27,8 @@ RecordVideoStatusChangedEvent::~RecordVideoStatusChangedEvent() {
 ////////////////////////////////////////////////////////////
 
 
-RecordVideoWritingModeChangedEvent::RecordVideoWritingModeChangedEvent(WritingStatus writingStatus)
-	:RecordVideoNotifyEvent(EventType::WritingModeChanged), writingStatus(writingStatus) {
+RecordVideoWritingModeChangedEvent::RecordVideoWritingModeChangedEvent(WritingStatus writingStatus, const QColor &color, int width)
+	:RecordVideoNotifyEvent(EventType::WritingModeChanged), writingStatus(writingStatus), color(color), width(width) {
 
 }
 
