@@ -67,14 +67,12 @@ QPushButton {
 
 /*   /////////////////////////////////                 */
 
+
 QComboBox {
 
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #DEDEDE;
-    box-sizing: border-box;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
-
 }
 
 QComboBox:hover {
@@ -98,6 +96,16 @@ QComboBox::down-arrow {
 	height: 20px;
 
 }
+
+ QComboBox QAbstractItemView {
+     outline: none;
+     padding-top: 3px;
+	 padding-bottom: 3px;
+     border: 1px solid #DEDEDE;
+	 border-radius: 5px;
+     selection-background-color: #FFD477;
+ }
+
 
 /*/////////////////////////////  */
 
