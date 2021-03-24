@@ -98,7 +98,7 @@ QPushButton#highlightButton {
 
 
 /****/
-
+/*
 QPushButton#colorButton {
     background-image:url(:/RecordVideo_Writing/color);
 }
@@ -106,6 +106,8 @@ QPushButton#colorButton {
 QPushButton#colorButton:disabled {
     background-image:url(:/RecordVideo_Writing/color_disabled);
 }
+
+*/
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">

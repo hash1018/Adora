@@ -36,6 +36,9 @@ public:
 	void numberingButtonClicked();
 
 
+
+private:
+	void setColorButtonStyleSheets(const QColor &color);
 };
 
 #endif //_WRITINGPANEL_H

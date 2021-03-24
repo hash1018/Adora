@@ -123,6 +123,9 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 		WritingStatus status = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getStatus();
 		QColor color = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getColor();
 		int width = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getWidth();
+		
+		this->setColorButtonStyleSheets(color);
+
 
 		if (status == WritingStatus::Cursor) {
 			ui.cursorButton->updateSelected(true);
@@ -193,4 +196,24 @@ void WritingPanel::numberingButtonClicked() {
 
 	RecordVideoRequestChangeWritingMode request(RecordVideoRequestChangeWritingMode::Mode::Numbering);
 	this->request(&request);
+}
+
+
+
+void WritingPanel::setColorButtonStyleSheets(const QColor &color) {
+
+
+	ui.colorButton->setStyleSheet((QString("\n"
+		"QPushButton {\n"
+		"    background-color: %1;\n"
+		"    border:0px;\n"
+		"    border-radius:10px;\n"
+		"    background-image:url(:/RecordVideo_Writing/color);\n"
+		"}\n"
+		"\n"
+		"\n"
+		"QPushButton:disabled {\n"
+		"    background-color:white;\n"
+		"    background-image:url(:/RecordVideo_Writing/color_disabled);\n"
+		"}\n").arg(color.name())));
 }
