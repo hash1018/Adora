@@ -104,6 +104,11 @@ WritingPanel::WritingPanel(QWidget *parent)
 	ui.deleteAllButton->setToolTip(str);
 
 
+	//////////
+
+
+	ui.colorButton->setToolTip(getLanUiValue("WritingPanel/Change Color"));
+
 
 }
 
