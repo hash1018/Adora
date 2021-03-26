@@ -190,3 +190,82 @@ QSpinBox::down-arrow:off {
     border-image: url(":/Main/spinBox_down_arrow_disabled");
 	
 }
+
+
+QScrollBar:vertical {
+  background-color: #D2D2D2;
+  width: 13px;
+  margin: 0px;
+  border: 1px solid transparent;
+  /*border-left: 1px solid #D8D8D8;*/
+
+  padding: 1px 1px 1px 2px;
+}
+
+QScrollBar::handle:vertical {
+  background-color: #FFC23D;
+  min-height: 8px;
+  border-radius: 2px;
+}
+
+QScrollBar::handle:vertical:hover {
+  background-color: #FFD477;
+  border-radius: 2px;
+  min-height: 8px;
+}
+
+QScrollBar::add-line:vertical {
+  height: 0px;
+}
+
+
+QScrollBar::sub-line:vertical {
+  height: 0px;
+}
+
+QScrollBar:horizontal {
+  background-color: #D2D2D2;
+  height: 13px;
+  margin: 0px;
+  border: 1px solid transparent;
+  /*border-left: 1px solid #D8D8D8;*/
+
+  padding: 1px 1px 1px 2px;
+}
+
+QScrollBar::handle:horizontal {
+  background-color: #FFC23D;
+  min-width: 8px;
+  border-radius: 2px;
+}
+
+QScrollBar::handle:horizontal:hover {
+  background-color: #FFD477;
+  border-radius: 2px;
+  min-width: 8px;
+}
+
+QScrollBar::add-line:horizontal {
+  height: 0px;
+}
+
+
+QScrollBar::sub-line:horizontal {
+  height: 0px;
+}
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {
+  background: none;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+  background: none;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+  background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+  background: none;
+}

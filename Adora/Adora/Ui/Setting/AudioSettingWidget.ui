@@ -65,7 +65,7 @@
     <string>volume2</string>
    </property>
   </widget>
-  <widget class="QSlider" name="audioVolumeSlider">
+  <widget class="AbstractSlider" name="audioVolumeSlider">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -81,7 +81,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QSlider" name="audioVolume2Slider">
+  <widget class="AbstractSlider" name="audioVolume2Slider">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -98,6 +98,13 @@
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">Ui/Item/AbstractSlider.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

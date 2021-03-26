@@ -11,6 +11,7 @@
         <file alias="adora_black">Resources/Images/Main/adora_black.png</file>
         <file alias="spinBox_down_arrow_disabled">Resources/Images/Main/spinBox_down_arrow_disabled.png</file>
         <file alias="spinBox_up_arrow_disabled">Resources/Images/Main/spinBox_up_arrow_disabled.png</file>
+        <file alias="slider_indicator">Resources/Images/Main/slider_indicator.png</file>
     </qresource>
     <qresource prefix="/Qss">
         <file alias="main">Resources/main.qss</file>

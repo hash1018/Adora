@@ -414,6 +414,15 @@
     <ClCompile Include="Base\Time.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Item\AbstractSlider.cpp">
+      <Filter>Ui\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AbstractSlider.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AbstractSlider.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -511,6 +520,9 @@
     </CustomBuild>
     <CustomBuild Include="lib\ffmpeg\VideoRecorder.h">
       <Filter>lib\ffmpeg</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Item\AbstractSlider.h">
+      <Filter>Ui\Item</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
