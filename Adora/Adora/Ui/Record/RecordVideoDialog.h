@@ -16,6 +16,8 @@ class ResizeRecordRectDelegate;
 class CaptureImageDelegate;
 class WritingMode;
 class WritingCommand;
+class VideoRecorder;
+class Time;
 
 class RecordVideoDialog : public QDialog, public RecordVideoChain {
 
@@ -27,6 +29,10 @@ class RecordVideoDialog : public QDialog, public RecordVideoChain {
 	friend class RecordVideoRequestChangeWritingModeStrategy;
 	friend class RecordVideoRequestUnredoStrategy;
 	friend class RecordVideoRequestWritingDeleteAllStrategy;
+
+
+private:
+	VideoRecorder *videoRecorder;
 
 private:
 	QRect recordAreaRect;
@@ -75,10 +81,18 @@ private:
 	void undo();
 	void redo();
 
+	private slots:
+	void started();
+	void paused();
+	void stopped();
+	void resumed();
+	void timePassed(Time &time);
+
 protected:
 	virtual void keyPressEvent(QKeyEvent *event);
 	virtual void paintEvent(QPaintEvent *event);
 	virtual void resizeEvent(QResizeEvent *event);
+	virtual void moveEvent(QMoveEvent *event);
 	virtual void mouseMoveEvent(QMouseEvent *event);
 	virtual void mousePressEvent(QMouseEvent *event);
 	virtual void mouseReleaseEvent(QMouseEvent *event);

@@ -71,3 +71,17 @@ RecordVideoWritingDataChangedEvent::~RecordVideoWritingDataChangedEvent() {
 
 
 }
+
+
+///////////////////////////////////////////////////////////
+
+
+RecordTimePassedEvent::RecordTimePassedEvent(const Time &time)
+	:RecordVideoNotifyEvent(EventType::RecordTimePassed), time(time) {
+
+}
+
+RecordTimePassedEvent::~RecordTimePassedEvent() {
+
+
+}

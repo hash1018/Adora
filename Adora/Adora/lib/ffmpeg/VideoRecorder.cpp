@@ -40,6 +40,16 @@ void VideoRecorder::setVideoParameter(const VideoParameter &videoParameter) {
 	this->videoParameter = videoParameter;
 }
 
+void VideoRecorder::changeVideoParameter(const VideoParameter &videoParameter) {
+
+	if (this->status == Status::Pausing) {
+	
+		this->videoParameter = videoParameter;
+		this->videoCaptureSource->setVideoParameter(videoParameter);
+	}
+
+}
+
 void VideoRecorder::setAudioCodecInfo(const AudioCodecInfo &audioCodecInfo) {
 
 	if (this->status != Status::NotRecording)

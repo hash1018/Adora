@@ -19,8 +19,13 @@
 
 #include "RecordVideo/Entity/Visitor/Drawer.h"
 
+#include "lib/ffmpeg/VideoRecorder.h"
+#include "Base/Time.h"
+#include "Base/SettingManager.h"
+#include "Base/DefaultNameByDateCreator.h"
+
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
-	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr), writingMode(nullptr) {
+	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr), writingMode(nullptr), videoRecorder(nullptr) {
 
 	this->setMouseTracking(true);
 	this->setAttribute(Qt::WA_TranslucentBackground);
@@ -130,29 +135,68 @@ void RecordVideoDialog::request(RecordVideoRequest *request) {
 
 void RecordVideoDialog::record() {
 
-	this->changeRecordStatusMode(RecordStatus::Recording);
+	if (this->videoRecorder != nullptr)
+		delete this->videoRecorder;
+
+	this->videoRecorder = new VideoRecorder;
+	connect(this->videoRecorder, SIGNAL(timePassed(Time&)), this, SLOT(timePassed(Time&)));
+	connect(this->videoRecorder, &VideoRecorder::started, this, &RecordVideoDialog::started);
+	connect(this->videoRecorder, &VideoRecorder::stopped, this, &RecordVideoDialog::stopped);
+	connect(this->videoRecorder, &VideoRecorder::paused, this, &RecordVideoDialog::paused);
+	connect(this->videoRecorder, &VideoRecorder::resumed, this, &RecordVideoDialog::resumed);
+
+	VideoCodecInfo videoCodecInfo;
+	videoCodecInfo.bitrate = SettingManager::getInstance()->getVideoSetting()->getVideoBitrate();
+	videoCodecInfo.fps = SettingManager::getInstance()->getVideoSetting()->getFps();
+
+	QRect rect = this->getRecordAreaRect();
+	
+	if (rect.width() % 2 != 0)
+		rect.setWidth(rect.width() - 1);
+	
+	if (rect.height() % 2 != 0)
+		rect.setHeight(rect.height() - 1);
+
+	videoCodecInfo.width = rect.width();
+	videoCodecInfo.height = rect.height();
+
+	VideoParameter videoParameter;
+	videoParameter.drawCursor = SettingManager::getInstance()->getVideoSetting()->getIncludeCursor();
+	QPoint point = this->mapToGlobal(rect.topLeft());
+	videoParameter.x = point.x();
+	videoParameter.y = point.y();
+	videoParameter.width = rect.width();
+	videoParameter.height = rect.height();
+
+	this->videoRecorder->setVideoCodecInfo(videoCodecInfo);
+	this->videoRecorder->setVideoParameter(videoParameter);
+
+	
+	this->videoRecorder->setFilePath(SettingManager::getInstance()->getGeneralSetting()->getSavePath() +
+		"/" + DefaultNameByDateCreator::create() + ".mp4");
+
+	this->videoRecorder->start();
 }
 
 void RecordVideoDialog::quit() {
 
-	//this->close();
 	emit this->recordVideoDialogClosed();
 }
 
 void RecordVideoDialog::pause() {
 
-	this->changeRecordStatusMode(RecordStatus::Paused);
+	this->videoRecorder->pause();
 }
 
 void RecordVideoDialog::stop() {
 
-	//this->close();
-	emit this->recordVideoDialogClosed();
+	this->videoRecorder->stop();
+	
 }
 
 void RecordVideoDialog::resume() {
 
-	this->changeRecordStatusMode(RecordStatus::Recording);
+	this->videoRecorder->resume();
 }
 
 void RecordVideoDialog::capture() {
@@ -178,6 +222,36 @@ void RecordVideoDialog::redo() {
 
 	RecordVideoUnredoStackCountChangedEvent event(this->unredoStack.getUndoStackSize(),
 		this->unredoStack.getRedoStackSize());
+	this->controllerWidget->update(&event);
+}
+
+void RecordVideoDialog::started() {
+
+	this->changeRecordStatusMode(RecordStatus::Recording);
+}
+
+void RecordVideoDialog::paused() {
+
+	this->changeRecordStatusMode(RecordStatus::Paused);
+}
+
+void RecordVideoDialog::stopped() {
+
+	delete this->videoRecorder;
+	this->videoRecorder = nullptr;
+
+	emit this->recordVideoDialogClosed();
+}
+
+void RecordVideoDialog::resumed() {
+
+	this->changeRecordStatusMode(RecordStatus::Recording);
+}
+
+void RecordVideoDialog::timePassed(Time &time) {
+
+	RecordTimePassedEvent event(time);
+
 	this->controllerWidget->update(&event);
 }
 
@@ -246,6 +320,53 @@ void RecordVideoDialog::resizeEvent(QResizeEvent *event) {
 	QDialog::resizeEvent(event);
 
 	this->recordAreaRect.setRect(4, 4, event->size().width() - 8, event->size().height() - 8);
+
+	if (this->recordStatusMode->getStatus() == RecordStatus::Paused) {
+
+		QRect rect = this->getRecordAreaRect();
+
+		if (rect.width() % 2 != 0)
+			rect.setWidth(rect.width() - 1);
+
+		if (rect.height() % 2 != 0)
+			rect.setHeight(rect.height() - 1);
+
+		VideoParameter videoParameter;
+		videoParameter.drawCursor = SettingManager::getInstance()->getVideoSetting()->getIncludeCursor();
+		QPoint point = this->mapToGlobal(rect.topLeft());
+		videoParameter.x = point.x();
+		videoParameter.y = point.y();
+		videoParameter.width = rect.width();
+		videoParameter.height = rect.height();
+
+		this->videoRecorder->changeVideoParameter(videoParameter);
+
+	}
+}
+
+void RecordVideoDialog::moveEvent(QMoveEvent *event) {
+
+	if (this->recordStatusMode->getStatus() == RecordStatus::Paused) {
+
+		QRect rect = this->getRecordAreaRect();
+
+		if (rect.width() % 2 != 0)
+			rect.setWidth(rect.width() - 1);
+
+		if (rect.height() % 2 != 0)
+			rect.setHeight(rect.height() - 1);
+
+		VideoParameter videoParameter;
+		videoParameter.drawCursor = SettingManager::getInstance()->getVideoSetting()->getIncludeCursor();
+		QPoint point = this->mapToGlobal(rect.topLeft());
+		videoParameter.x = point.x();
+		videoParameter.y = point.y();
+		videoParameter.width = rect.width();
+		videoParameter.height = rect.height();
+
+		this->videoRecorder->changeVideoParameter(videoParameter);
+
+	}
 }
 
 void RecordVideoDialog::mouseMoveEvent(QMouseEvent *event) {

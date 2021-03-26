@@ -5,6 +5,7 @@
 
 #include "Base/Namespace.h"
 #include <qcolor.h>
+#include "Base\Time.h"
 
 class RecordVideoNotifyEvent {
 
@@ -14,6 +15,7 @@ public:
 		WritingModeChanged,
 		UnredoStackCountChanged,
 		WritingDataChanged,
+		RecordTimePassed,
 	};
 
 protected:
@@ -103,6 +105,21 @@ public:
 	inline const QColor& getColor() const { return this->color; }
 	inline int getWidth() const { return this->width; }
 	
+};
+
+/////////////////////////////////////////////////////////////////////////
+
+class RecordTimePassedEvent : public RecordVideoNotifyEvent {
+
+private:
+	Time time;
+
+public:
+	RecordTimePassedEvent(const Time &time);
+	~RecordTimePassedEvent();
+
+	inline const Time& getTime() const { return this->time; }
+
 };
 
 #endif //_RECORDVIDEONOTIFYEVENT_H

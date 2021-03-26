@@ -75,6 +75,7 @@ public:
 public:
 	void setVideoCodecInfo(const VideoCodecInfo &videoCodecInfo);
 	void setVideoParameter(const VideoParameter &videoParameter);
+	void changeVideoParameter(const VideoParameter &videoParameter);
 
 public:
 	void setAudioCodecInfo(const AudioCodecInfo &audioCodecInfo);
