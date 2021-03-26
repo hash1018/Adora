@@ -30,6 +30,8 @@ protected:
 	void useHwEncoderCheckBoxToggled(bool checked);
 	void fpsComboBoxCurrentTextChanged(const QString &text);
 	void videoBitrateSpinBoxValueChanged(int value);
+
+	void HwEncoderComboBoxCurrentTextChanged(const QString &text);
 	
 
 

@@ -46,6 +46,8 @@ private:
 
 	bool includeCursor;
 	bool useHwEncoder;
+	QString hwEncoder;
+
 	int fps;
 	int videoBitrate;
 
@@ -65,6 +67,7 @@ public:
 
 	void setIncludeCursor(bool includeCursor) { this->includeCursor = includeCursor; }
 	void setUseHwEncoder(bool useHwEncoder) { this->useHwEncoder = useHwEncoder; }
+	void setHwEncoder(const QString &hwEncoder) { this->hwEncoder = hwEncoder; }
 	void setFps(int fps) { this->fps = fps; }
 	void setVideoBitrate(int videoBitrate) { this->videoBitrate = videoBitrate; }
 
@@ -77,6 +80,7 @@ public:
 
 	inline bool getIncludeCursor() const { return this->includeCursor; }
 	inline bool getUseHwEncoder() const { return this->useHwEncoder; }
+	inline const QString& getHwEncoder() const { return this->hwEncoder; }
 	inline int getFps() const { return this->fps; }
 	inline int getVideoBitrate() const { return this->videoBitrate; }
 };

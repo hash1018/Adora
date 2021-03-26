@@ -5,6 +5,7 @@
 #include "Base/LanguageManager.h"
 #include <qdebug.h>
 #include "Base/Hotkey.h"
+#include "lib/ffmpeg/HwEncoderFinder.h"
 
 VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
@@ -33,8 +34,8 @@ VideoSettingWidget::VideoSettingWidget(QWidget *parent)
 
 	ui.includeCursorCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getIncludeCursor());
 
-	ui.useHwEncoderCheckBox->setChecked(SettingManager::getInstance()->getVideoSetting()->getUseHwEncoder());
-	ui.hwEncoderComboBox->setDisabled(!SettingManager::getInstance()->getVideoSetting()->getUseHwEncoder());
+	ui.useHwEncoderCheckBox->setChecked(false);
+	ui.hwEncoderComboBox->setDisabled(true);
 
 	ui.fpsComboBox->addItems(QStringList() << "10" << "15" << "20" << "25" << "30");
 	ui.fpsComboBox->setCurrentText(QString::number(SettingManager::getInstance()->getVideoSetting()->getFps()));
@@ -110,6 +111,24 @@ void VideoSettingWidget::useHwEncoderCheckBoxToggled(bool checked) {
 	SettingManager::getInstance()->getVideoSetting()->setUseHwEncoder(checked);
 
 	ui.hwEncoderComboBox->setDisabled(!checked);
+
+
+	if (checked == true) {
+		ui.hwEncoderComboBox->clear();
+		auto list = HwEncoderFinder::getAvailableHwEncoderList();
+		ui.hwEncoderComboBox->addItems(list);
+
+		if (list.size() > 0) {
+			SettingManager::getInstance()->getVideoSetting()->setHwEncoder(list.at(0));
+		}
+
+		connect(ui.hwEncoderComboBox, &QComboBox::currentTextChanged, this, &VideoSettingWidget::HwEncoderComboBoxCurrentTextChanged);
+	}
+	else {
+		disconnect(ui.hwEncoderComboBox, &QComboBox::currentTextChanged, this, &VideoSettingWidget::HwEncoderComboBoxCurrentTextChanged);
+		ui.hwEncoderComboBox->clear();
+	}
+
 }
 
 void VideoSettingWidget::fpsComboBoxCurrentTextChanged(const QString &text) {
@@ -120,4 +139,10 @@ void VideoSettingWidget::fpsComboBoxCurrentTextChanged(const QString &text) {
 void VideoSettingWidget::videoBitrateSpinBoxValueChanged(int value) {
 
 	SettingManager::getInstance()->getVideoSetting()->setVideoBitrate(value * 1000);
+}
+
+
+void VideoSettingWidget::HwEncoderComboBoxCurrentTextChanged(const QString &text) {
+
+	SettingManager::getInstance()->getVideoSetting()->setHwEncoder(text);
 }

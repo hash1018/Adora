@@ -132,7 +132,7 @@ void RecordVideoDialog::request(RecordVideoRequest *request) {
 		delete strategy;
 	}
 }
-
+#include <qdebug.h>
 void RecordVideoDialog::record() {
 
 	if (this->videoRecorder != nullptr)
@@ -148,6 +148,15 @@ void RecordVideoDialog::record() {
 	VideoCodecInfo videoCodecInfo;
 	videoCodecInfo.bitrate = SettingManager::getInstance()->getVideoSetting()->getVideoBitrate();
 	videoCodecInfo.fps = SettingManager::getInstance()->getVideoSetting()->getFps();
+	if (SettingManager::getInstance()->getVideoSetting()->getUseHwEncoder() == true) {
+
+		auto str = SettingManager::getInstance()->getVideoSetting()->getHwEncoder();
+
+		if (str != "") {
+			videoCodecInfo.useHwAccels = true;
+			videoCodecInfo.hwAccelsName = str;
+		}
+	}
 
 	QRect rect = this->getRecordAreaRect();
 	

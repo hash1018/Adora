@@ -89,8 +89,8 @@ void VideoSetting::load() {
 	if (settings.contains("includeCursor") == true)
 		this->includeCursor = settings.value("includeCursor").toBool();
 
-	if (settings.contains("useHwEncoder") == true)
-		this->useHwEncoder = settings.value("useHwEncoder").toBool();
+	//if (settings.contains("useHwEncoder") == true)
+	//	this->useHwEncoder = settings.value("useHwEncoder").toBool();
 
 	if (settings.contains("fps") == true)
 		this->fps = settings.value("fps").toInt();
@@ -116,7 +116,9 @@ void VideoSetting::save() {
 	settings.setValue("pauseResumeHotkey", this->pauseResumeHotkey.toString());
 
 	settings.setValue("includeCursor", this->includeCursor);
-	settings.setValue("useHwEncoder", this->useHwEncoder);
+
+	//settings.setValue("useHwEncoder", this->useHwEncoder);
+
 	settings.setValue("fps", this->fps);
 	settings.setValue("videoBitrate", this->videoBitrate);
 

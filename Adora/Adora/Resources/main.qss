@@ -75,6 +75,13 @@ QComboBox {
 	border-radius: 5px;
 }
 
+QComboBox:disabled {
+
+    background:#DEDEDE;
+    border: 1px solid #DEDEDE;
+	border-radius: 5px;
+}
+
 QComboBox:hover {
 	background-color: #EAEDEF;
 }
