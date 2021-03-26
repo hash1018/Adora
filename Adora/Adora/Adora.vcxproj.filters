@@ -432,6 +432,9 @@
     <ClCompile Include="RecordVideo\Entity\Triangle.cpp">
       <Filter>RecordVideo\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="Ui\Record\FigurePopupWidget.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -532,6 +535,9 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Item\AbstractSlider.h">
       <Filter>Ui\Item</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\FigurePopupWidget.ui">
+      <Filter>Ui\Record</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -801,6 +807,12 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\Entity\Triangle.h">
       <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\FigurePopupWidget.h">
+      <Filter>Ui\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_FigurePopupWidget.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

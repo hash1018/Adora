@@ -82,6 +82,12 @@ QPushButton#numberingButton {
     background-image:url(:/RecordVideo_Writing/numbering);
 }
 
+/****/
+
+QPushButton#figureButton {
+    background-image:url(:/RecordVideo_Writing/figure);
+}
+
 
 /** **/
 
@@ -96,18 +102,6 @@ QPushButton#highlightButton {
     background-image:url(:/RecordVideo_Writing/highlight);
 }
 
-
-/****/
-/*
-QPushButton#colorButton {
-    background-image:url(:/RecordVideo_Writing/color);
-}
-
-QPushButton#colorButton:disabled {
-    background-image:url(:/RecordVideo_Writing/color_disabled);
-}
-
-*/
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -286,6 +280,25 @@ QPushButton#colorButton:disabled {
    </item>
    <item row="3" column="2">
     <widget class="AbstractButton" name="colorButton">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="AbstractButton" name="figureButton">
      <property name="minimumSize">
       <size>
        <width>48</width>

@@ -6,6 +6,7 @@
 #include "Base/SettingManager.h"
 #include "Base/LanguageManager.h"
 #include <qcolordialog.h>
+#include "FigurePopupWidget.h"
 
 WritingPanel::WritingPanel(QWidget *parent)
 	:QWidget(parent) {
@@ -21,6 +22,7 @@ WritingPanel::WritingPanel(QWidget *parent)
 	connect(ui.arrowLineButton, &QPushButton::clicked, this, &WritingPanel::arrowLineButtonClicked);
 	connect(ui.numberingButton, &QPushButton::clicked, this, &WritingPanel::numberingButtonClicked);
 	connect(ui.colorButton, &QPushButton::clicked, this, &WritingPanel::colorButtonClicked);
+	connect(ui.figureButton, &QPushButton::clicked, this, &WritingPanel::figureButtonClicked);
 
 	this->items.append(ui.cursorButton);
 	this->items.append(ui.pencilButton);
@@ -29,7 +31,7 @@ WritingPanel::WritingPanel(QWidget *parent)
 	this->items.append(ui.lineButton);
 	this->items.append(ui.arrowLineButton);
 	this->items.append(ui.numberingButton);
-
+	this->items.append(ui.figureButton);
 
 	//////////
 	QString str = getLanUiValue("WritingPanel/Cursor");
@@ -110,10 +112,18 @@ WritingPanel::WritingPanel(QWidget *parent)
 	ui.colorButton->setToolTip(getLanUiValue("WritingPanel/Change Color"));
 
 
+
+	/////////
+
+
+	this->figurePopupWidget = new FigurePopupWidget;
+
 }
 
 WritingPanel::~WritingPanel() {
 
+	if (this->figurePopupWidget != nullptr)
+		delete this->figurePopupWidget;
 
 }
 #include <qdebug.h>
@@ -232,6 +242,15 @@ void WritingPanel::colorButtonClicked() {
 		RecordVideoRequestChangeWritingData request(dialog.currentColor());
 		this->request(&request);
 	}
+}
+
+void WritingPanel::figureButtonClicked() {
+
+	QPoint point = QPoint(0, -5);
+	this->figurePopupWidget->setGeometry(this->mapToGlobal(point).x(), this->mapToGlobal(point).y(),
+		this->figurePopupWidget->width(), this->figurePopupWidget->height());
+
+	this->figurePopupWidget->show();
 }
 
 

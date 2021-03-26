@@ -11,6 +11,7 @@
 
 class RecordVideoNotifyEvent;
 class AbstractButton;
+class FigurePopupWidget;
 
 class WritingPanel : public QWidget, public RecordVideoChain {
 
@@ -22,6 +23,10 @@ private:
 
 	QColor color;
 	int width;
+
+private:
+	FigurePopupWidget *figurePopupWidget;
+
 
 public:
 	WritingPanel(QWidget *parent = nullptr);
@@ -39,6 +44,7 @@ public:
 	void arrowLineButtonClicked();
 	void numberingButtonClicked();
 	void colorButtonClicked();
+	void figureButtonClicked();
 
 
 

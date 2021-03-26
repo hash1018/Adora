@@ -57,6 +57,10 @@
         <file alias="numbering">Resources/Images/RecordVideo/Writing/numbering.png</file>
         <file alias="color">Resources/Images/RecordVideo/Writing/color.png</file>
         <file alias="color_disabled">Resources/Images/RecordVideo/Writing/color_disabled.png</file>
+        <file alias="figure">Resources/Images/RecordVideo/Writing/figure.png</file>
+        <file alias="circle">Resources/Images/RecordVideo/Writing/circle.png</file>
+        <file alias="rectangle">Resources/Images/RecordVideo/Writing/rectangle.png</file>
+        <file alias="triangle">Resources/Images/RecordVideo/Writing/triangle.png</file>
     </qresource>
     <qresource prefix="/RecordVideo_Unredo">
         <file alias="redo">Resources/Images/RecordVideo/Unredo/redo.png</file>
