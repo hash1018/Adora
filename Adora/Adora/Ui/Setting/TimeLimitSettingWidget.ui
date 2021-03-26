@@ -16,8 +16,8 @@
   <widget class="QCheckBox" name="useTimeLimitCheckBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
+     <x>48</x>
+     <y>84</y>
      <width>191</width>
      <height>19</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QSpinBox" name="hourSpinBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>70</y>
+     <x>78</x>
+     <y>130</y>
      <width>80</width>
      <height>36</height>
     </rect>
@@ -54,8 +54,8 @@
   <widget class="QSpinBox" name="minuteSpinBox">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>70</y>
+     <x>190</x>
+     <y>130</y>
      <width>80</width>
      <height>36</height>
     </rect>
@@ -79,8 +79,8 @@
   <widget class="QSpinBox" name="secondSpinBox">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>70</y>
+     <x>310</x>
+     <y>130</y>
      <width>80</width>
      <height>36</height>
     </rect>
@@ -99,6 +99,31 @@
    </property>
    <property name="maximum">
     <number>59</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="timeLimitLabel">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>74</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>74</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>74</width>
+     <height>23</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

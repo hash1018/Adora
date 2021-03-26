@@ -126,6 +126,13 @@ QSpinBox {
 	selection-background-color: #FFD477;
 }
 
+QSpinBox:disabled {
+    padding-right: 20px;
+    background:#DEDEDE;
+    border: 1px solid #DEDEDE;
+	border-radius: 5px;
+}
+
 
 QSpinBox::up-button{
     margin-right:3px;
@@ -150,6 +157,7 @@ QSpinBox::up-arrow {
 
 QSpinBox::up-arrow:disabled,
 QSpinBox::up-arrow:off {
+    background:#DEDEDE;
     border-image: url(":/Main/spinBox_up_arrow_disabled");
 	
 }
@@ -178,6 +186,7 @@ QSpinBox::down-arrow {
 
 QSpinBox::down-arrow:disabled,
 QSpinBox::down-arrow:off {
+    background:#DEDEDE;
     border-image: url(":/Main/spinBox_down_arrow_disabled");
 	
 }
