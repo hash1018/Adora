@@ -93,19 +93,19 @@
     <rect>
      <x>48</x>
      <y>223</y>
-     <width>143</width>
+     <width>180</width>
      <height>36</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>143</width>
+     <width>180</width>
      <height>36</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>143</width>
+     <width>180</width>
      <height>36</height>
     </size>
    </property>

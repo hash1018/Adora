@@ -29,6 +29,18 @@ TimeLimitSettingWidget::TimeLimitSettingWidget(QWidget *parent)
 	QString str = "<b>" + getLanUiValue("MenuTimeLimit/TimeLimit") + "</b>";
 	ui.timeLimitLabel->setTextFormat(Qt::RichText);
 	ui.timeLimitLabel->setText(str);
+
+	str = "<b>" + getLanUiValue("MenuTimeLimit/hour") + "</b>";
+	ui.hourLabel->setTextFormat(Qt::RichText);
+	ui.hourLabel->setText(str);
+
+	str = "<b>" + getLanUiValue("MenuTimeLimit/minute") + "</b>";
+	ui.minuteLabel->setTextFormat(Qt::RichText);
+	ui.minuteLabel->setText(str);
+
+	str = "<b>" + getLanUiValue("MenuTimeLimit/second") + "</b>";
+	ui.secondLabel->setTextFormat(Qt::RichText);
+	ui.secondLabel->setText(str);
 }
 
 TimeLimitSettingWidget::~TimeLimitSettingWidget() {

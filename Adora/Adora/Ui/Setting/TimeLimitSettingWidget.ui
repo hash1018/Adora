@@ -29,7 +29,7 @@
   <widget class="QSpinBox" name="hourSpinBox">
    <property name="geometry">
     <rect>
-     <x>78</x>
+     <x>60</x>
      <y>130</y>
      <width>80</width>
      <height>36</height>
@@ -79,7 +79,7 @@
   <widget class="QSpinBox" name="secondSpinBox">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>320</x>
      <y>130</y>
      <width>80</width>
      <height>36</height>
@@ -120,6 +120,81 @@
     <size>
      <width>74</width>
      <height>23</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hourLabel">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>130</y>
+     <width>15</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>15</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>15</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="minuteLabel">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>130</y>
+     <width>15</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>15</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>15</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="secondLabel">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>130</y>
+     <width>15</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>15</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>15</width>
+     <height>36</height>
     </size>
    </property>
    <property name="text">
