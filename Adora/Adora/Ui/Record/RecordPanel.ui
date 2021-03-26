@@ -41,6 +41,8 @@ QLabel#timeLabel {
     background-color: white;
     border:0px;
     border-radius:10px;
+    font-weight:bold;
+    font-size:18px;
 }
 
 /**     **/
@@ -184,7 +186,10 @@ QPushButton#stopButton:hover {
          </size>
         </property>
         <property name="text">
-         <string/>
+         <string>sd</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>

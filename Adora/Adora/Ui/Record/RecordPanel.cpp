@@ -65,6 +65,8 @@ RecordPanel::RecordPanel(QWidget *parent)
 	connect(ui.pauseButton, &QPushButton::clicked, this, &RecordPanel::pauseButtonClicked);
 	connect(ui.resumeButton, &QPushButton::clicked, this, &RecordPanel::resumeButtonClicked);
 	connect(ui.stopButton, &QPushButton::clicked, this, &RecordPanel::stopButtonClicked);
+
+	ui.timeLabel->setText("00:00");
 	
 }
 
@@ -104,6 +106,39 @@ void RecordPanel::update(RecordVideoNotifyEvent *event) {
 			ui.quitButton->hide();
 			ui.resumeButton->hide();
 		}
+	}
+	else if (event->getType() == RecordVideoNotifyEvent::EventType::RecordTimePassed) {
+	
+		RecordTimePassedEvent *event2 = dynamic_cast<RecordTimePassedEvent*>(event);
+
+		Time time = event2->getTime();
+
+		QString timeText;
+		int hours = time.getHours();
+		int minutes = time.getMinutes();
+		int seconds = time.getSeconds();
+
+		if (hours >= 1)
+			timeText = QString::number(hours) + ":";
+
+
+		if (minutes >= 10) {
+
+			timeText += QString::number(minutes) + ":";
+		}
+		else {
+			timeText += "0" + QString::number(minutes) + ":";
+		}
+
+		if (seconds >= 10) {
+
+			timeText += QString::number(seconds);
+		}
+		else {
+			timeText += "0" + QString::number(seconds);
+		}
+
+		ui.timeLabel->setText(timeText);
 	}
 
 
