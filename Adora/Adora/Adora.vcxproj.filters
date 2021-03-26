@@ -76,6 +76,9 @@
     <Filter Include="RecordVideo\Entity\Visitor">
       <UniqueIdentifier>{fd13b063-ff57-4a0f-aa96-0819e0aa047e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib\ffmpeg">
+      <UniqueIdentifier>{8a553c74-74f8-488e-bd68-8eee6583a816}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -333,6 +336,84 @@
     <ClCompile Include="RecordVideo\WritingData.cpp">
       <Filter>RecordVideo</Filter>
     </ClCompile>
+    <ClCompile Include="lib\multimedia\AudioCaptureSource.cpp">
+      <Filter>lib\multimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AudioCaptureSource.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AudioCaptureSource.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\multimedia\AudioDeviceList.cpp">
+      <Filter>lib\multimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\multimedia\Parameter.cpp">
+      <Filter>lib\multimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\multimedia\VideoCaptureSource.cpp">
+      <Filter>lib\multimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_VideoCaptureSource.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_VideoCaptureSource.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\AudioFormatConverter.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\AudioResampler.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\CodecInfo.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\Encoder.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\EncodeThread.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\Frame.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\HwEncoder.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\HwEncoderFinder.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\OutputContext.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\Packet.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\TimeCounter.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TimeCounter.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TimeCounter.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\VideoRecorder.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_VideoRecorder.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_VideoRecorder.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\ffmpeg\VideoScaler.cpp">
+      <Filter>lib\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Time.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -418,6 +499,18 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Setting\WritingSettingWidget.ui">
       <Filter>Ui\Setting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lib\multimedia\AudioCaptureSource.h">
+      <Filter>lib\multimedia</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lib\multimedia\VideoCaptureSource.h">
+      <Filter>lib\multimedia</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lib\ffmpeg\TimeCounter.h">
+      <Filter>lib\ffmpeg</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lib\ffmpeg\VideoRecorder.h">
+      <Filter>lib\ffmpeg</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -636,6 +729,48 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\WritingData.h">
       <Filter>RecordVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\multimedia\AudioDeviceList.h">
+      <Filter>lib\multimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\multimedia\Parameter.h">
+      <Filter>lib\multimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\AudioFormatConverter.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\AudioResampler.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\CodecInfo.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\Encoder.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\EncodeThread.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\Frame.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\HwEncoder.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\HwEncoderFinder.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\OutputContext.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\Packet.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ffmpeg\VideoScaler.h">
+      <Filter>lib\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Time.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
