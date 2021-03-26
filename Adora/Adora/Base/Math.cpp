@@ -95,6 +95,23 @@ bool math::checkPointLiesInsideCircle(const QPoint &point, const QPoint &center,
 	return true;
 }
 
+bool math::checkPointLiesOnCircleBoundary(const QPoint &point, const QPoint &center, double radius, double tolerance) {
+
+	double angle = getAbsAngle(center.x(), center.y(), point.x(), point.y());
+
+	double x, y;
+	rotate(360 - angle, center.x(), center.y(), point.x(), point.y(), x, y);
+
+	if (x - tolerance <= center.x() + radius &&
+		x + tolerance >= center.x() + radius &&
+		y - tolerance <= center.y() &&
+		y + tolerance >= center.y()) {
+		return true;
+	}
+
+	return false;
+}
+
 double math::getDistance(double x, double y, double x2, double y2) {
 
 	double disX = fabs(x2 - x);

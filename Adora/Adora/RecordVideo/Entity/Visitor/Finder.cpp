@@ -8,6 +8,9 @@
 #include "RecordVideo/Entity/LineSegment.h"
 #include "RecordVideo/Entity/ArrowLineSegment.h"
 #include "RecordVideo/Entity/Number.h"
+#include "RecordVideo/Entity/Rectangle.h"
+#include "RecordVideo/Entity/Circle.h"
+#include "RecordVideo/Entity/Triangle.h"
 
 
 Finder::Finder(const QPoint &point, bool &foundEntity)
@@ -109,6 +112,67 @@ void Finder::visit(Number *number) {
 
 	if (math::checkPointLiesInsideCircle(this->point, number->getPoint(), number->getWidth() / 2) == true) {
 	
+		this->foundEntity = true;
+		return;
+	}
+
+	this->foundEntity = false;
+}
+
+
+void Finder::visit(Rect *rectangle) {
+
+	QRect rect = rectangle->getRect();
+	int tolerance = rectangle->getWidth() / 2;
+
+	if (math::checkPointLiesOnLine(this->point, rect.topLeft(), rect.topRight(), tolerance) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	if (math::checkPointLiesOnLine(this->point, rect.topRight(), rect.bottomRight(), tolerance) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	if (math::checkPointLiesOnLine(this->point, rect.bottomRight(), rect.bottomLeft(), tolerance) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	if (math::checkPointLiesOnLine(this->point, rect.bottomLeft(), rect.topLeft(), tolerance) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	this->foundEntity = false;
+}
+
+void Finder::visit(Circle *circle) {
+
+	if (math::checkPointLiesOnCircleBoundary(this->point, circle->getCenter(), circle->getRadius(), circle->getWidth() / 2) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	this->foundEntity = false;
+}
+
+void Finder::visit(Triangle *triangle) {
+
+	int tolerance = triangle->getWidth() / 2;
+
+	if (math::checkPointLiesOnLine(this->point, triangle->getVertex1(), triangle->getVertex2(), tolerance) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	if (math::checkPointLiesOnLine(this->point, triangle->getVertex2(), triangle->getVertex3(), tolerance) == true) {
+		this->foundEntity = true;
+		return;
+	}
+
+	if (math::checkPointLiesOnLine(this->point, triangle->getVertex3(), triangle->getVertex1(), tolerance) == true) {
 		this->foundEntity = true;
 		return;
 	}

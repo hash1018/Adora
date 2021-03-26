@@ -22,7 +22,9 @@ public:
 	virtual void visit(LineSegment *lineSegment);
 	virtual void visit(ArrowLineSegment *arrowLineSegment);
 	virtual void visit(Number *number);
-
+	virtual void visit(Rect *rectangle);
+	virtual void visit(Circle *circle);
+	virtual void visit(Triangle *triangle);
 };
 
 #endif //_DRAWER_H

@@ -7,6 +7,9 @@
 #include "RecordVideo/Entity/LineSegment.h"
 #include "RecordVideo/Entity/ArrowLineSegment.h"
 #include "RecordVideo/Entity/Number.h"
+#include "RecordVideo/Entity/Rectangle.h"
+#include "RecordVideo/Entity/Circle.h"
+#include "RecordVideo/Entity/Triangle.h"
 
 
 Drawer::Drawer(QPainter &painter)
@@ -149,4 +152,52 @@ void Drawer::visit(Number *number) {
 	painter.setPen(QColor(255, 255, 255));
 	painter.drawText(number->getPoint().x() - number->getWidth() / 2, number->getPoint().y() - number->getWidth() / 2,
 		number->getWidth(), number->getWidth(), Qt::AlignVCenter | Qt::AlignHCenter, QString::number(number->getNumber()));
+}
+
+
+void Drawer::visit(Rect *rectangle) {
+
+	QPen pen(rectangle->getColor());
+	pen.setWidth(rectangle->getWidth());
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+
+
+	painter.drawRect(rectangle->getRect());
+
+	painter.setPen(oldPen);
+}
+
+void Drawer::visit(Circle *circle) {
+
+	QPen pen(circle->getColor());
+	pen.setWidth(circle->getWidth());
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+
+
+	painter.drawEllipse(circle->getCenter(), circle->getWidth() / 2, circle->getWidth() / 2);
+
+	painter.setPen(oldPen);
+}
+
+void Drawer::visit(Triangle *triangle) {
+
+	QPen pen(triangle->getColor());
+	pen.setWidth(triangle->getWidth());
+
+	QPen oldPen = painter.pen();
+
+	painter.setPen(pen);
+
+
+	painter.drawLine(triangle->getVertex1(), triangle->getVertex2());
+	painter.drawLine(triangle->getVertex2(), triangle->getVertex3());
+	painter.drawLine(triangle->getVertex3(), triangle->getVertex1());
+
+	painter.setPen(oldPen);
 }

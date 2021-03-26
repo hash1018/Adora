@@ -423,6 +423,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_AbstractSlider.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Rectangle.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Circle.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Entity\Triangle.cpp">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -783,6 +792,15 @@
     </ClInclude>
     <ClInclude Include="Base\Time.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Rectangle.h">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Circle.h">
+      <Filter>RecordVideo\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Entity\Triangle.h">
+      <Filter>RecordVideo\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
