@@ -274,11 +274,16 @@ void RecordVideoDialog::timePassed(Time &time) {
 		Time temp = Time::convertTime(millisecond);
 		if (time >= temp) {
 		
+			disconnect(this->videoRecorder, SIGNAL(timePassed(Time&)), this, SLOT(timePassed(Time&)));
+
+			RecordTimePassedEvent event(time);
+			this->controllerWidget->update(&event);
+
 			this->stop();
 			return;
 		}
 	}
-
+	
 	RecordTimePassedEvent event(time);
 	this->controllerWidget->update(&event);
 }
