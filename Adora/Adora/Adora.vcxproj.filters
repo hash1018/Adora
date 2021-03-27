@@ -838,6 +838,9 @@
     <ClInclude Include="RecordVideo\Mode\WritingMode\TriangleMode.h">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Ui\Design\layout 1.jpg">
@@ -867,10 +870,14 @@
     <Image Include="Ui\Design\layout 9.jpg">
       <Filter>Ui\Design</Filter>
     </Image>
+    <Image Include="logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\main.qss">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Adora.rc" />
   </ItemGroup>
 </Project>

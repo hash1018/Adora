@@ -43,6 +43,9 @@ int main(int argc, char *argv[])
 	font.setPointSize(9);
 	a.setFont(font);
 	
+	
+	a.setWindowIcon(QIcon(":/Main/logo"));
+	
 	adora(a);
 
 	return 0;

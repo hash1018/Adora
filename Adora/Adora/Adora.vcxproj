@@ -579,6 +579,7 @@
     <ClInclude Include="RecordVideo\Unredo\WritingCommand.h" />
     <ClInclude Include="RecordVideo\Unredo\WritingUnredoStack.h" />
     <ClInclude Include="RecordVideo\WritingData.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Ui\AboutWidget.h" />
     <ClInclude Include="Ui\AbstractStackWidget.h" />
     <CustomBuild Include="Ui\Item\AbstractSlider.h">
@@ -792,6 +793,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="logo.ico" />
     <Image Include="Ui\Design\layout 1.jpg" />
     <Image Include="Ui\Design\layout 2.jpg" />
     <Image Include="Ui\Design\layout 3.jpg" />
@@ -1130,6 +1132,9 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Adora.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
