@@ -22,6 +22,8 @@ public:
 	virtual void mouseReleaseEvent(QMouseEvent *event);
 
 	virtual WritingStatus getStatus() { return WritingStatus::ArrowLine; }
+
+	virtual QCursor getCursor();
 };
 
 

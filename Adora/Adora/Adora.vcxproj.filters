@@ -441,6 +441,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_FigurePopupWidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\RectangleMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -819,6 +822,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_FigurePopupWidget.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\RectangleMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

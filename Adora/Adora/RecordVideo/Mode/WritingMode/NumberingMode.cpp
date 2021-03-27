@@ -41,3 +41,10 @@ void NumberingMode::mousePressEvent(QMouseEvent *event) {
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, number));
 	this->recordVideoDialog->update();
 }
+
+
+
+QCursor NumberingMode::getCursor() {
+
+	return QCursor(Qt::CursorShape::CrossCursor);
+}

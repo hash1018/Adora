@@ -328,6 +328,7 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\LineMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\NumberingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\PencilMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\RectangleMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp" />
     <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp" />
@@ -564,6 +565,7 @@
     <ClInclude Include="RecordVideo\Mode\WritingMode\LineMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\NumberingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\PencilMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\RectangleMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h" />
     <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h" />

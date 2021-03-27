@@ -41,3 +41,8 @@ void ArrowLineMode::mouseReleaseEvent(QMouseEvent *event) {
 	this->mousePressed = false;
 	this->arrowLineSegment = nullptr;
 }
+
+QCursor ArrowLineMode::getCursor() {
+
+	return QCursor(Qt::CursorShape::CrossCursor);
+}

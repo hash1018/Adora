@@ -14,6 +14,9 @@ public:
 	virtual void mousePressEvent(QMouseEvent *event);
 
 	virtual WritingStatus getStatus() { return WritingStatus::Numbering; }
+
+
+	virtual QCursor getCursor();
 };
 
 

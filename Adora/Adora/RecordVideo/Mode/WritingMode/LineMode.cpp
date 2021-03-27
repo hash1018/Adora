@@ -41,3 +41,9 @@ void LineMode::mouseReleaseEvent(QMouseEvent *event) {
 	this->mousePressed = false;
 	this->lineSegment = nullptr;
 }
+
+
+QCursor LineMode::getCursor() {
+
+	return QCursor(Qt::CursorShape::CrossCursor);
+}
