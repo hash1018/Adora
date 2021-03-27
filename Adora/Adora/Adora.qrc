@@ -32,6 +32,7 @@
         <file alias="timeLimit">Resources/Images/Menu/timeLimit.png</file>
         <file alias="watermark">Resources/Images/Menu/watermark.png</file>
         <file alias="record">Resources/Images/Menu/record.png</file>
+        <file alias="writing">Resources/Images/Menu/writing.png</file>
     </qresource>
     <qresource prefix="/General_Menu">
         <file alias="play">Resources/Images/Menu/General/play.png</file>

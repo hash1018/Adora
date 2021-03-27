@@ -292,7 +292,7 @@ void Adora::initMenuButtons() {
 	ui.imageButton->setIcon(QIcon(":/Menu/image"));
 	ui.timeLimitButton->setIcon(QIcon(":/Menu/timeLimit"));
 	ui.watermarkButton->setIcon(QIcon(":/Menu/watermark"));
-	//ui.writingButton->setIcon(QIcon(":/Menu/writing"));
+	ui.writingButton->setIcon(QIcon(":/Menu/writing"));
 	ui.languageButton->setIcon(QIcon(":/Menu/language"));
 	ui.licenseButton->setIcon(QIcon(":/Menu/license"));
 	ui.aboutButton->setIcon(QIcon(":/Menu/about"));
