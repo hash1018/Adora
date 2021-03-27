@@ -116,6 +116,8 @@ WritingPanel::WritingPanel(QWidget *parent)
 
 	/////////
 
+	ui.figureButton->setToolTip(getLanUiValue("WritingPanel/Select Figures"));
+
 
 	this->figurePopupWidget = new FigurePopupWidget;
 

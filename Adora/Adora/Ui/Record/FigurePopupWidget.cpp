@@ -2,6 +2,7 @@
 
 #include "FigurePopupWidget.h"
 #include <qpainter.h>
+#include "Base/LanguageManager.h"
 
 FigurePopupWidget::FigurePopupWidget()
 	:QWidget(nullptr,Qt::Popup) {
@@ -11,6 +12,10 @@ FigurePopupWidget::FigurePopupWidget()
 	connect(ui.circleButton, &QPushButton::clicked, this, &FigurePopupWidget::circleButtonClicked);
 	connect(ui.rectangleButton, &QPushButton::clicked, this, &FigurePopupWidget::rectangleButtonClicked);
 	connect(ui.triangleButton, &QPushButton::clicked, this, &FigurePopupWidget::triangleButtonClicked);
+
+	ui.circleButton->setToolTip(getLanUiValue("WritingPanel/Circle"));
+	ui.rectangleButton->setToolTip(getLanUiValue("WritingPanel/Rectangle"));
+	ui.triangleButton->setToolTip(getLanUiValue("WritingPanel/Triangle"));
 }
 
 FigurePopupWidget::~FigurePopupWidget() {
