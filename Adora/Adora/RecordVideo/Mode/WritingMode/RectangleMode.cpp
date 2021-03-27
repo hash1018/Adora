@@ -5,7 +5,6 @@
 #include "RecordVideo/Entity/Rectangle.h"
 #include "RecordVideo/Unredo/AddEntityCommand.h"
 #include <QMouseEvent>
-#include <qpainter.h>
 
 RectangleMode::RectangleMode(RecordVideoDialog *recordVideoDialog)
 	:WritingMode(recordVideoDialog), rect(nullptr), mousePressed(false) {
@@ -48,28 +47,28 @@ void RectangleMode::mouseReleaseEvent(QMouseEvent *event) {
 
 void RectangleMode::getTopLeftAndBottomRight(const QPoint &first, const QPoint &second, QPoint &topLeft, QPoint &bottomRight) {
 
-	if (first.x() > second.x() && first.y() > second.y()) {
+	if (first.x() <= second.x() && first.y() <= second.y()) {
 		
 		topLeft.setX(second.x());
 		topLeft.setY(first.y());
 		bottomRight.setX(first.x());
 		bottomRight.setY(second.y());
 	}
-	else if (first.x() <= second.x() && first.y() > second.y()) {
+	else if (first.x() > second.x() && first.y() <= second.y()) {
 		
 		topLeft.setX(first.x());
 		topLeft.setY(first.y());
 		bottomRight.setX(second.x());
 		bottomRight.setY(second.y());
 	}
-	else if (first.x() > second.x() && first.y() <= second.y()) {
+	else if (first.x() <= second.x() && first.y() > second.y()) {
 		
 		topLeft.setX(second.x());
 		topLeft.setY(second.y());
 		bottomRight.setX(first.x());
 		bottomRight.setY(first.y());
 	}
-	else if (first.x() <= second.x() && first.y() <= second.y()) {
+	else if (first.x() > second.x() && first.y() > second.y()) {
 		
 		topLeft.setX(first.x());
 		topLeft.setY(second.y());

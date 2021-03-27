@@ -9,6 +9,8 @@
 #include "RecordVideo/Mode/WritingMode/ArrowLineMode.h"
 #include "RecordVideo/Mode/WritingMode/NumberingMode.h"
 #include "RecordVideo/Mode/WritingMode/RectangleMode.h"
+#include "RecordVideo/Mode/WritingMode/CircleMode.h"
+#include "RecordVideo/Mode/WritingMode/TriangleMode.h"
 
 WritingModeFactory::WritingModeFactory() {
 
@@ -42,6 +44,12 @@ WritingMode* WritingModeFactory::create(RecordVideoDialog *recordVideoDialog, Wr
 
 	else if (writingStatus == WritingStatus::WritingStatus_Rectangle)
 		return new RectangleMode(recordVideoDialog);
+
+	else if (writingStatus == WritingStatus::WritingStatus_Circle)
+		return new CircleMode(recordVideoDialog);
+
+	else if (writingStatus == WritingStatus::WritingStatus_Triangle)
+		return new TriangleMode(recordVideoDialog);
 
 	return new PencilMode(recordVideoDialog);
 }

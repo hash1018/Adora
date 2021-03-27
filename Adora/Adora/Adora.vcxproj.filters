@@ -444,6 +444,12 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\RectangleMode.cpp">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\CircleMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordVideo\Mode\WritingMode\TriangleMode.cpp">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -824,6 +830,12 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="RecordVideo\Mode\WritingMode\RectangleMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\CircleMode.h">
+      <Filter>RecordVideo\Mode\WritingMode</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordVideo\Mode\WritingMode\TriangleMode.h">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClInclude>
   </ItemGroup>

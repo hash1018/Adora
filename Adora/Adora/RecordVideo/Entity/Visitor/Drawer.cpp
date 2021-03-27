@@ -180,7 +180,7 @@ void Drawer::visit(Circle *circle) {
 	painter.setPen(pen);
 
 
-	painter.drawEllipse(circle->getCenter(), circle->getWidth() / 2, circle->getWidth() / 2);
+	painter.drawEllipse(circle->getCenter(), circle->getRadius(), circle->getRadius());
 
 	painter.setPen(oldPen);
 }

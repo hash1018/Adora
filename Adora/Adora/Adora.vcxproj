@@ -322,6 +322,7 @@
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\ArrowLineMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\CircleMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\CursorMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\EraserMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\HighlightMode.cpp" />
@@ -329,6 +330,7 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\NumberingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\PencilMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\RectangleMode.cpp" />
+    <ClCompile Include="RecordVideo\Mode\WritingMode\TriangleMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingMode.cpp" />
     <ClCompile Include="RecordVideo\Mode\WritingMode\WritingModeFactory.cpp" />
     <ClCompile Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.cpp" />
@@ -559,6 +561,7 @@
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusMode.h" />
     <ClInclude Include="RecordVideo\Mode\RecordStatusMode\RecordStatusModeFactory.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\ArrowLineMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\CircleMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\CursorMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\EraserMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\HighlightMode.h" />
@@ -566,6 +569,7 @@
     <ClInclude Include="RecordVideo\Mode\WritingMode\NumberingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\PencilMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\RectangleMode.h" />
+    <ClInclude Include="RecordVideo\Mode\WritingMode\TriangleMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingMode.h" />
     <ClInclude Include="RecordVideo\Mode\WritingMode\WritingModeFactory.h" />
     <ClInclude Include="RecordVideo\NotifyEvent\RecordVideoNotifyEvent.h" />
