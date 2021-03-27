@@ -3,7 +3,7 @@
 #include <QtWidgets/QApplication>
 #include <qsharedmemory.h>
 #include <qfile.h>
-
+#include "Base/Hotkey.h"
 //#include <vld.h>
 
 void adora(QApplication &app) {
@@ -15,6 +15,7 @@ void adora(QApplication &app) {
 
 
 	if (w.restart == true) {
+		HotkeyList::getInstance()->deleteAll();
 		adora(app);
 	}
 

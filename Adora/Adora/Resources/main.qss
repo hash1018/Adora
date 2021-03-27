@@ -1,11 +1,11 @@
 
 /* /////////////////////////////////               */
+
+
 QLineEdit {
 
     background: #FFFFFF;
-    border: 1px solid #DEDEDE;
-    box-sizing: border-box;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #DEDEDE;	
 	border-radius: 5px;
 
 }
@@ -13,12 +13,12 @@ QLineEdit {
 QLineEdit:disabled {
     background:#DEDEDE;
     border: 1px solid #DEDEDE;
-    box-sizing: border-box;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 }
 
 /*      ///////////////////////////////////////           */ 
+
+
 QCheckBox::indicator {
     height: 24px;
 	width: 24px;
@@ -32,6 +32,7 @@ QCheckBox::indicator::unchecked {
 QCheckBox::indicator::checked {
     image: url(":/Main/checkBox_checked");
 }
+
 
 
 /*    ///////////////////////////////////////////               */ 
@@ -49,20 +50,6 @@ QRadioButton::indicator::checked {
     image: url(":/Main/radioButton_checked");
 }
 
-
-
-/* /////////////////////////////////// */
-/*
-QPushButton {
-
-    border: 1px solid #DEDEDE;
-    box-sizing: border-box;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
-
-}
-
-*/
 
 
 /*   /////////////////////////////////                 */
@@ -112,7 +99,7 @@ QComboBox::down-arrow {
 	 border-radius: 5px;
      selection-background-color: #FFD477;
  }
-
+ 
 
 /*/////////////////////////////  */
 
@@ -192,12 +179,15 @@ QSpinBox::down-arrow:off {
 }
 
 
+
+
+
 QScrollBar:vertical {
   background-color: #D2D2D2;
   width: 13px;
   margin: 0px;
   border: 1px solid transparent;
-  /*border-left: 1px solid #D8D8D8;*/
+  
 
   padding: 1px 1px 1px 2px;
 }
@@ -228,7 +218,7 @@ QScrollBar:horizontal {
   height: 13px;
   margin: 0px;
   border: 1px solid transparent;
-  /*border-left: 1px solid #D8D8D8;*/
+  
 
   padding: 1px 1px 1px 2px;
 }

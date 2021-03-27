@@ -59,3 +59,12 @@ QKeySequence HotkeyList::getKeySequence(HotkeyType type) {
 
 	return QKeySequence();
 }
+
+void HotkeyList::deleteAll() {
+
+	for (int i = 0; i < this->list.size(); i++) {
+		delete this->list.at(i);
+	}
+
+	this->list.clear();
+}

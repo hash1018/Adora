@@ -8,9 +8,7 @@
 WritingSettingWidget::WritingSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
 
-
 	ui.setupUi(this);
-
 
 	QString str = "<b>" + getLanUiValue("MenuWriting/Writing") + "</b>";
 	ui.writingLabel->setTextFormat(Qt::RichText);
@@ -154,7 +152,6 @@ WritingSettingWidget::WritingSettingWidget(QWidget *parent)
 }
 
 WritingSettingWidget::~WritingSettingWidget() {
-
 
 }
 

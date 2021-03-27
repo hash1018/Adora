@@ -55,6 +55,7 @@ public:
 	void removeAt(int index) { this->list.removeAt(index); }
 	Hotkey* at(int index) { return this->list.at(index); }
 	int size() const { return this->list.size(); }
+	void deleteAll();
 
 	QKeySequence getKeySequence(HotkeyType type);
 
