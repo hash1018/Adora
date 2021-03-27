@@ -257,10 +257,29 @@ void RecordVideoDialog::resumed() {
 	this->changeRecordStatusMode(RecordStatus::Recording);
 }
 
+
 void RecordVideoDialog::timePassed(Time &time) {
 
-	RecordTimePassedEvent event(time);
+	if (SettingManager::getInstance()->getTimeLimitSetting()->getUseTimeLimit() == true) {
 
+		int hour = SettingManager::getInstance()->getTimeLimitSetting()->getHour();
+		int minute = SettingManager::getInstance()->getTimeLimitSetting()->getMinute();
+		int second = SettingManager::getInstance()->getTimeLimitSetting()->getSecond();
+		uint64_t millisecond = 0;
+
+		minute += hour * 60;
+		second += minute * 60;
+		millisecond += (second * 1000);
+
+		Time temp = Time::convertTime(millisecond);
+		if (time >= temp) {
+		
+			this->stop();
+			return;
+		}
+	}
+
+	RecordTimePassedEvent event(time);
 	this->controllerWidget->update(&event);
 }
 
