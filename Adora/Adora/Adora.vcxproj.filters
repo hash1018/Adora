@@ -435,6 +435,12 @@
     <ClCompile Include="Ui\Record\FigurePopupWidget.cpp">
       <Filter>Ui\Record</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_FigurePopupWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_FigurePopupWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -537,6 +543,9 @@
       <Filter>Ui\Item</Filter>
     </CustomBuild>
     <CustomBuild Include="Ui\Record\FigurePopupWidget.ui">
+      <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\FigurePopupWidget.h">
       <Filter>Ui\Record</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -807,9 +816,6 @@
     </ClInclude>
     <ClInclude Include="RecordVideo\Entity\Triangle.h">
       <Filter>RecordVideo\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="Ui\Record\FigurePopupWidget.h">
-      <Filter>Ui\Record</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_FigurePopupWidget.h">
       <Filter>Generated Files</Filter>

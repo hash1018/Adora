@@ -85,6 +85,9 @@ public:
 		Line,
 		ArrowLine,
 		Numbering,
+		Mode_Rectangle,
+		Mode_Triangle,
+		Mode_Circle,
 	};
 
 private:

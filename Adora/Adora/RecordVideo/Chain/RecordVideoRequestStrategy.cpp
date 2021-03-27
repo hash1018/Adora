@@ -219,6 +219,18 @@ bool RecordVideoRequestChangeWritingModeStrategy::response() {
 	
 		this->recordVideoDialog->changeWritingMode(WritingStatus::Numbering);
 	}
+	else if (mode == RecordVideoRequestChangeWritingMode::Mode::Mode_Circle) {
+	
+		this->recordVideoDialog->changeWritingMode(WritingStatus::WritingStatus_Circle);
+	}
+	else if (mode == RecordVideoRequestChangeWritingMode::Mode::Mode_Rectangle) {
+
+		this->recordVideoDialog->changeWritingMode(WritingStatus::WritingStatus_Rectangle);
+	}
+	else if (mode == RecordVideoRequestChangeWritingMode::Mode::Mode_Triangle) {
+
+		this->recordVideoDialog->changeWritingMode(WritingStatus::WritingStatus_Triangle);
+	}
 
 
 	return true;

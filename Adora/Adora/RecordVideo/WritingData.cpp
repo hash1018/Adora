@@ -19,6 +19,15 @@ WritingData::WritingData() {
 
 	data = new WritingData::Data(WritingStatus::Numbering);
 	this->list.append(data);
+
+	data = new WritingData::Data(WritingStatus::WritingStatus_Circle);
+	this->list.append(data);
+
+	data = new WritingData::Data(WritingStatus::WritingStatus_Rectangle);
+	this->list.append(data);
+
+	data = new WritingData::Data(WritingStatus::WritingStatus_Triangle);
+	this->list.append(data);
 }
 
 WritingData::~WritingData() {
@@ -66,6 +75,24 @@ void WritingData::load() {
 	if (settings.contains("NumberingWidth") == true)
 		data->width = settings.value("NumberingWidth").toInt();
 
+	data = this->list.at(this->getIndex(WritingStatus::WritingStatus_Rectangle));
+	if (settings.contains("RectangleColor") == true)
+		data->color.setNamedColor(settings.value("RectangleColor").toString());
+	if (settings.contains("RectangleWidth") == true)
+		data->width = settings.value("RectangleWidth").toInt();
+
+	data = this->list.at(this->getIndex(WritingStatus::WritingStatus_Circle));
+	if (settings.contains("CircleColor") == true)
+		data->color.setNamedColor(settings.value("CircleColor").toString());
+	if (settings.contains("CircleWidth") == true)
+		data->width = settings.value("CircleWidth").toInt();
+
+	data = this->list.at(this->getIndex(WritingStatus::WritingStatus_Triangle));
+	if (settings.contains("TriangleColor") == true)
+		data->color.setNamedColor(settings.value("TriangleColor").toString());
+	if (settings.contains("TriangleWidth") == true)
+		data->width = settings.value("TriangleWidth").toInt();
+
 	
 
 	settings.endGroup();
@@ -96,6 +123,18 @@ void WritingData::save() {
 	data = this->list.at(this->getIndex(WritingStatus::Numbering));
 	settings.setValue("NumberingColor", data->color.name());
 	settings.setValue("NumberingWidth", data->width);
+
+	data = this->list.at(this->getIndex(WritingStatus::WritingStatus_Triangle));
+	settings.setValue("TriangleColor", data->color.name());
+	settings.setValue("TriangleWidth", data->width);
+
+	data = this->list.at(this->getIndex(WritingStatus::WritingStatus_Circle));
+	settings.setValue("CircleColor", data->color.name());
+	settings.setValue("CircleWidth", data->width);
+
+	data = this->list.at(this->getIndex(WritingStatus::WritingStatus_Rectangle));
+	settings.setValue("RectangleColor", data->color.name());
+	settings.setValue("RectangleWidth", data->width);
 
 	settings.endGroup();
 }

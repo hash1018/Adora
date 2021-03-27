@@ -6,10 +6,11 @@
 FigurePopupWidget::FigurePopupWidget()
 	:QWidget(nullptr,Qt::Popup) {
 
-
 	ui.setupUi(this);
 
-	//this->setAttribute(Qt::WA_TranslucentBackground);
+	connect(ui.circleButton, &QPushButton::clicked, this, &FigurePopupWidget::circleButtonClicked);
+	connect(ui.rectangleButton, &QPushButton::clicked, this, &FigurePopupWidget::rectangleButtonClicked);
+	connect(ui.triangleButton, &QPushButton::clicked, this, &FigurePopupWidget::triangleButtonClicked);
 }
 
 FigurePopupWidget::~FigurePopupWidget() {
@@ -17,15 +18,19 @@ FigurePopupWidget::~FigurePopupWidget() {
 }
 
 
-void FigurePopupWidget::paintEvent(QPaintEvent *event) {
+void FigurePopupWidget::setWritingStatus(WritingStatus status) {
 
-	QPainter painter(this);
+	ui.circleButton->updateSelected(false);
+	ui.rectangleButton->updateSelected(false);
+	ui.triangleButton->updateSelected(false);
 
-	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
-	painter.setBrush(QBrush(QColor("#FFFFFF")));
-	painter.setPen(Qt::transparent);
-	QRect rect = this->rect();
-	rect.setWidth(rect.width());
-	rect.setHeight(rect.height());
-	painter.drawRoundedRect(rect, 10, 10);
+	if (status == WritingStatus::WritingStatus_Circle) {
+		ui.circleButton->updateSelected(true);
+	}
+	else if (status == WritingStatus::WritingStatus_Rectangle) {
+		ui.rectangleButton->updateSelected(true);
+	}
+	else if (status == WritingStatus::WritingStatus_Triangle) {
+		ui.triangleButton->updateSelected(true);
+	}
 }

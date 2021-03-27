@@ -23,6 +23,7 @@ WritingPanel::WritingPanel(QWidget *parent)
 	connect(ui.numberingButton, &QPushButton::clicked, this, &WritingPanel::numberingButtonClicked);
 	connect(ui.colorButton, &QPushButton::clicked, this, &WritingPanel::colorButtonClicked);
 	connect(ui.figureButton, &QPushButton::clicked, this, &WritingPanel::figureButtonClicked);
+	
 
 	this->items.append(ui.cursorButton);
 	this->items.append(ui.pencilButton);
@@ -118,6 +119,10 @@ WritingPanel::WritingPanel(QWidget *parent)
 
 	this->figurePopupWidget = new FigurePopupWidget;
 
+	connect(this->figurePopupWidget, &FigurePopupWidget::circleButtonClicked, this, &WritingPanel::circleButtonClicked);
+	connect(this->figurePopupWidget, &FigurePopupWidget::rectangleButtonClicked, this, &WritingPanel::rectangleButtonClicked);
+	connect(this->figurePopupWidget, &FigurePopupWidget::triangleButtonClicked, this, &WritingPanel::triangleButtonClicked);
+
 }
 
 WritingPanel::~WritingPanel() {
@@ -165,6 +170,14 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 			ui.arrowLineButton->updateSelected(true);
 		else if (status == WritingStatus::Numbering)
 			ui.numberingButton->updateSelected(true);
+
+		else if (status == WritingStatus::WritingStatus_Circle ||
+			status == WritingStatus::WritingStatus_Rectangle ||
+			status == WritingStatus::WritingStatus_Triangle) {
+
+			ui.figureButton->updateSelected(true);
+			this->figurePopupWidget->setWritingStatus(status);
+		}
 	}
 	else if (event->getType() == RecordVideoNotifyEvent::EventType::WritingDataChanged) {
 		qDebug() << "asdasdasdsad";
@@ -251,6 +264,27 @@ void WritingPanel::figureButtonClicked() {
 		this->figurePopupWidget->width(), this->figurePopupWidget->height());
 
 	this->figurePopupWidget->show();
+}
+
+void WritingPanel::circleButtonClicked() {
+
+	this->figurePopupWidget->hide();
+	RecordVideoRequestChangeWritingMode request(RecordVideoRequestChangeWritingMode::Mode::Mode_Circle);
+	this->request(&request);
+}
+
+void WritingPanel::rectangleButtonClicked() {
+
+	this->figurePopupWidget->hide();
+	RecordVideoRequestChangeWritingMode request(RecordVideoRequestChangeWritingMode::Mode::Mode_Rectangle);
+	this->request(&request);
+}
+
+void WritingPanel::triangleButtonClicked() {
+
+	this->figurePopupWidget->hide();
+	RecordVideoRequestChangeWritingMode request(RecordVideoRequestChangeWritingMode::Mode::Mode_Triangle);
+	this->request(&request);
 }
 
 

@@ -45,6 +45,9 @@ public:
 	void numberingButtonClicked();
 	void colorButtonClicked();
 	void figureButtonClicked();
+	void circleButtonClicked();
+	void rectangleButtonClicked();
+	void triangleButtonClicked();
 
 
 

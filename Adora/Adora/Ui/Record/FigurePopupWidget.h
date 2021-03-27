@@ -5,8 +5,11 @@
 
 #include <qwidget.h>
 #include "ui_FigurePopupWidget.h"
+#include "Base/Namespace.h"
 
 class FigurePopupWidget : public QWidget {
+
+	Q_OBJECT
 
 private:
 	Ui::FigurePopupWidget ui;
@@ -14,15 +17,14 @@ private:
 public:
 	FigurePopupWidget();
 	~FigurePopupWidget();
-	
 
-protected:
-	virtual void paintEvent(QPaintEvent *event);
+	void setWritingStatus(WritingStatus status);
 
-
+signals:
+	void circleButtonClicked();
+	void rectangleButtonClicked();
+	void triangleButtonClicked();
 
 };
-
-
 
 #endif //_FIGUREPOPUPWIDGET_H

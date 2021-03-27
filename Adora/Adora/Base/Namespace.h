@@ -18,6 +18,9 @@ enum WritingStatus {
 	Line,
 	ArrowLine,
 	Numbering,
+	WritingStatus_Rectangle,
+	WritingStatus_Triangle,
+	WritingStatus_Circle,
 
 };
 
