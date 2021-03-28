@@ -281,3 +281,22 @@ QListView::item:hover {
     border:0px;
 	background: #FFD477;
 }
+
+
+/*********************************************************************/
+
+QMenu {
+    background-color: #FFFFFF;
+    border: 1px solid #DEDEDE;
+	border-radius: 5px;
+}
+
+QMenu::item {
+    /* sets background of menu item. set this to something non-transparent
+        if you want menu color and menu item color to be different */
+    background-color: transparent;
+}
+
+QMenu::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: #FFCE64;
+}
