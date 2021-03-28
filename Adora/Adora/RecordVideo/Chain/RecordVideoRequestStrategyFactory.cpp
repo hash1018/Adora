@@ -35,5 +35,8 @@ RecordVideoRequestStrategy* RecordVideoRequestStrategyFactory::create(RecordVide
 	else if (request->getType() == RecordVideoRequest::RequestChangeWritingData)
 		strategy = new RecordVideoRequestChangeWritingDataStrategy(recordVideoDialog, request);
 
+	else if (request->getType() == RecordVideoRequest::RequestMuteAudio)
+		strategy = new RecordVideoRequestMuteAudioStrategy(recordVideoDialog, request);
+
 	return strategy;
 }

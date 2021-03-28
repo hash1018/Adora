@@ -3,7 +3,8 @@
 #include "SoundPanel.h"
 #include "Base/LanguageManager.h"
 #include "Base/SettingManager.h"
-
+#include "RecordVideo/Chain/RecordVideoRequest.h"
+#include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
 
 SoundPanel::SoundPanel(QWidget *parent)
 	:QWidget(parent) {
@@ -41,17 +42,30 @@ SoundPanel::~SoundPanel() {
 }
 
 
-void SoundPanel::speakerButtonClicked() {
-	
-	bool checked = ui.speakerButton->isChecked();
+void SoundPanel::update(RecordVideoNotifyEvent *event) {
 
-	ui.speakerButton->updateSelected(!checked);
-	SettingManager::getInstance()->getAudioSetting()->setSpeakerMuted(!checked);
+	if (event->getType() == RecordVideoNotifyEvent::EventType::AudioMutedChanged) {
+	
+		QString deviceName = dynamic_cast<AudioMutedChangedEvent*>(event)->getDeviceName();
+		bool muted = dynamic_cast<AudioMutedChangedEvent*>(event)->getMuted();
+
+		if (SettingManager::getInstance()->getAudioSetting()->getMicDevice() == deviceName)
+			ui.micButton->updateSelected(muted);
+		else if (SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice() == deviceName)
+			ui.speakerButton->updateSelected(muted);
+	}
+}
+
+void SoundPanel::speakerButtonClicked() {
+
+	RecordVideoRequestMuteAudio request(SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice(),
+		!SettingManager::getInstance()->getAudioSetting()->getSpeakerMuted());
+	this->request(&request);
 }
 
 void SoundPanel::micButtonClicked() {
 
-	bool checked = ui.micButton->isChecked();
-	ui.micButton->updateSelected(!checked);
-	SettingManager::getInstance()->getAudioSetting()->setMicMuted(!checked);
+	RecordVideoRequestMuteAudio request(SettingManager::getInstance()->getAudioSetting()->getMicDevice(),
+		!SettingManager::getInstance()->getAudioSetting()->getMicMuted());
+	this->request(&request);
 }

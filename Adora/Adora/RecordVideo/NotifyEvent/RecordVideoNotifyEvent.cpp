@@ -85,3 +85,16 @@ RecordTimePassedEvent::~RecordTimePassedEvent() {
 
 
 }
+
+
+////////////////////////////////////////////////////////////
+
+AudioMutedChangedEvent::AudioMutedChangedEvent(const QString &deviceName, bool muted)
+	:RecordVideoNotifyEvent(EventType::AudioMutedChanged), deviceName(deviceName), muted(muted) {
+
+}
+
+AudioMutedChangedEvent::~AudioMutedChangedEvent() {
+
+
+}

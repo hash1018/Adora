@@ -20,6 +20,7 @@ ControllerWidget::ControllerWidget(RecordVideoChain *chain)
 	ui.recordPanel->setChain(this);
 	ui.writingPanel->setChain(this);
 	ui.unredoPanel->setChain(this);
+	ui.soundPanel->setChain(this);
 
 	this->loadGeometry();
 }
@@ -34,6 +35,7 @@ void ControllerWidget::update(RecordVideoNotifyEvent *event) {
 	ui.recordPanel->update(event);
 	ui.writingPanel->update(event);
 	ui.unredoPanel->update(event);
+	ui.soundPanel->update(event);
 }
 
 void ControllerWidget::loadGeometry() {

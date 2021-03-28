@@ -95,4 +95,16 @@ public:
 
 };
 
+/////////////////////////////////////////////////////////
+
+class RecordVideoRequestMuteAudioStrategy : public RecordVideoRequestStrategy {
+
+public:
+	RecordVideoRequestMuteAudioStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request);
+	~RecordVideoRequestMuteAudioStrategy();
+
+	virtual bool response();
+
+};
+
 #endif //_RECORDVIDEOREQUESTSTRATEGY_H

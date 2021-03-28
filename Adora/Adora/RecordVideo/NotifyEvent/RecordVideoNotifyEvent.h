@@ -16,6 +16,7 @@ public:
 		UnredoStackCountChanged,
 		WritingDataChanged,
 		RecordTimePassed,
+		AudioMutedChanged,
 	};
 
 protected:
@@ -119,6 +120,23 @@ public:
 	~RecordTimePassedEvent();
 
 	inline const Time& getTime() const { return this->time; }
+
+};
+
+///////////////////////////////////////////////////////////////////////
+
+class AudioMutedChangedEvent : public RecordVideoNotifyEvent {
+
+private:
+	QString deviceName;
+	bool muted;
+
+public:
+	AudioMutedChangedEvent(const QString &deviceName, bool muted);
+	~AudioMutedChangedEvent();
+
+	inline const QString& getDeviceName() const { return this->deviceName; }
+	inline bool getMuted() const { return this->muted; }
 
 };
 

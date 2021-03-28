@@ -66,6 +66,23 @@ void VideoRecorder::setAudioParameter(const QList<AudioParameter> &audioParamete
 	this->audioParameterList = audioParameterList;
 }
 
+bool VideoRecorder::setAudioMuted(const QString deviceName, bool muted) {
+
+	if (this->audioCaptureSourceList.size() == 0)
+		return false;
+
+	for (int i = 0; i < this->audioCaptureSourceList.size(); i++) {
+
+		if (this->audioCaptureSourceList.at(i)->getDeviceName() == deviceName) {
+
+			this->audioCaptureSourceList.at(i)->setMuted(muted);
+			break;
+		}
+	}
+
+	return true;
+}
+
 void VideoRecorder::setFilePath(const QString &filePath) {
 
 	if (this->status != Status::NotRecording)

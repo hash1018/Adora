@@ -6,6 +6,8 @@
 #include "ui_SoundPanel.h"
 #include "RecordVideo/Chain/RecordVideoChain.h"
 
+class RecordVideoNotifyEvent;
+
 class SoundPanel : public QWidget , public RecordVideoChain {
 
 private:
@@ -14,6 +16,8 @@ private:
 public:
 	SoundPanel(QWidget *parent = nullptr);
 	~SoundPanel();
+
+	void update(RecordVideoNotifyEvent *event);
 
 
 	private slots:

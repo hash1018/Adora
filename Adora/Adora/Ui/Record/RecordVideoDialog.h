@@ -29,6 +29,7 @@ class RecordVideoDialog : public QDialog, public RecordVideoChain {
 	friend class RecordVideoRequestChangeWritingModeStrategy;
 	friend class RecordVideoRequestUnredoStrategy;
 	friend class RecordVideoRequestWritingDeleteAllStrategy;
+	friend class RecordVideoRequestMuteAudioStrategy;
 
 
 private:
@@ -80,6 +81,7 @@ private:
 	void capture();
 	void undo();
 	void redo();
+	void muteAudio(const QString &deviceName, bool muted);
 
 	private slots:
 	void started();

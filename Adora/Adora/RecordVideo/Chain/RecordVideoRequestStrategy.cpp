@@ -324,3 +324,25 @@ bool RecordVideoRequestChangeWritingDataStrategy::response() {
 
 	return true;
 }
+
+
+
+//////////////////////////////////////////////////////////////
+
+RecordVideoRequestMuteAudioStrategy::RecordVideoRequestMuteAudioStrategy(RecordVideoDialog *recordVideoDialog, RecordVideoRequest *request)
+	:RecordVideoRequestStrategy(recordVideoDialog, request) {
+
+}
+
+RecordVideoRequestMuteAudioStrategy::~RecordVideoRequestMuteAudioStrategy() {
+
+}
+
+bool RecordVideoRequestMuteAudioStrategy::response() {
+
+	RecordVideoRequestMuteAudio *request = dynamic_cast<RecordVideoRequestMuteAudio*>(this->request);
+
+	this->recordVideoDialog->muteAudio(request->getDeviceName(), request->getMuted());
+
+	return true;
+}

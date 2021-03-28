@@ -96,3 +96,17 @@ RecordVideoRequestChangeWritingData::~RecordVideoRequestChangeWritingData() {
 
 
 }
+
+
+//////////////////////////////////////////////////////
+
+
+RecordVideoRequestMuteAudio::RecordVideoRequestMuteAudio(const QString &deviceName, bool muted)
+	:RecordVideoRequest(RequestType::RequestMuteAudio), deviceName(deviceName), muted(muted) {
+
+}
+
+RecordVideoRequestMuteAudio::~RecordVideoRequestMuteAudio() {
+
+
+}

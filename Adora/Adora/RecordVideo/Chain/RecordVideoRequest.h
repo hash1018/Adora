@@ -6,6 +6,7 @@
 
 class QKeyEvent;
 #include <qcolor.h>
+#include <qstring.h>
 
 class RecordVideoRequest {
 
@@ -18,6 +19,7 @@ public:
 		RequestUnredo,
 		RequestWritingDeleteAll,
 		RequestChangeWritingData,
+		RequestMuteAudio,
 	};
 
 protected:
@@ -157,6 +159,23 @@ public:
 	inline Type getType() const { return this->type; }
 	inline const QColor& getColor() const { return this->color; }
 	inline int getWidth() const { return this->width; }
+};
+
+//////////////////////////////////////////////////////
+
+class RecordVideoRequestMuteAudio : public RecordVideoRequest {
+
+private:
+	QString deviceName;
+	bool muted;
+
+public:
+	RecordVideoRequestMuteAudio(const QString &deviceName, bool muted);
+	~RecordVideoRequestMuteAudio();
+
+	inline const QString& getDeviceName() const { return this->deviceName; }
+	inline bool getMuted() const { return this->muted; }
+
 };
 
 #endif //_RECORDVIDEOREQUEST_H

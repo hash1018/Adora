@@ -80,6 +80,7 @@ public:
 public:
 	void setAudioCodecInfo(const AudioCodecInfo &audioCodecInfo);
 	void setAudioParameter(const QList<AudioParameter> &audioParameterList);
+	bool setAudioMuted(const QString deviceName, bool muted);
 	
 	
 public:

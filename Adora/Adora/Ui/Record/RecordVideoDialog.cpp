@@ -191,6 +191,7 @@ void RecordVideoDialog::record() {
 		getLanUiValue("MenuAudio/Not used")) {
 	
 		AudioParameter param;
+		param.muted = SettingManager::getInstance()->getAudioSetting()->getSpeakerMuted();
 		param.deviceName = SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice();
 		param.type = eRender;
 		list.append(param);
@@ -200,6 +201,7 @@ void RecordVideoDialog::record() {
 		getLanUiValue("MenuAudio/Not used")) {
 
 		AudioParameter param;
+		param.muted = SettingManager::getInstance()->getAudioSetting()->getMicMuted();
 		param.deviceName = SettingManager::getInstance()->getAudioSetting()->getMicDevice();
 		param.type = eCapture;
 		list.append(param);
@@ -254,6 +256,23 @@ void RecordVideoDialog::redo() {
 
 	RecordVideoUnredoStackCountChangedEvent event(this->unredoStack.getUndoStackSize(),
 		this->unredoStack.getRedoStackSize());
+	this->controllerWidget->update(&event);
+}
+
+void RecordVideoDialog::muteAudio(const QString &deviceName, bool muted) {
+
+	if (SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice() == deviceName)
+		SettingManager::getInstance()->getAudioSetting()->setSpeakerMuted(muted);
+
+	else if (SettingManager::getInstance()->getAudioSetting()->getMicDevice() == deviceName)
+		SettingManager::getInstance()->getAudioSetting()->setMicMuted(muted);
+
+
+	if (this->recordStatusMode->getStatus() != RecordStatus::NotRecording) {
+		this->videoRecorder->setAudioMuted(deviceName, muted);
+	}
+	
+	AudioMutedChangedEvent event(deviceName, muted);
 	this->controllerWidget->update(&event);
 }
 
