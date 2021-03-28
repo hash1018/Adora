@@ -30,6 +30,8 @@ TimeLimitSettingWidget::TimeLimitSettingWidget(QWidget *parent)
 	ui.timeLimitLabel->setTextFormat(Qt::RichText);
 	ui.timeLimitLabel->setText(str);
 
+	ui.useTimeLimitCheckBox->setText(getLanUiValue("MenuTimeLimit/Use TimeLimit"));
+
 	str = "<b>" + getLanUiValue("MenuTimeLimit/hour") + "</b>";
 	ui.hourLabel->setTextFormat(Qt::RichText);
 	ui.hourLabel->setText(str);
