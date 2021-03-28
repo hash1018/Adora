@@ -70,4 +70,12 @@
         <file alias="undo">Resources/Images/RecordVideo/Unredo/undo.png</file>
         <file alias="undo_disabled">Resources/Images/RecordVideo/Unredo/undo_disabled.png</file>
     </qresource>
+    <qresource prefix="/RecordVideo_Sound">
+        <file alias="mic">Resources/Images/RecordVideo/Sound/mic.png</file>
+        <file alias="mic_mute">Resources/Images/RecordVideo/Sound/mic_mute.png</file>
+        <file alias="speaker">Resources/Images/RecordVideo/Sound/speaker.png</file>
+        <file alias="speaker_mute">Resources/Images/RecordVideo/Sound/speaker_mute.png</file>
+        <file alias="mic_disabled">Resources/Images/RecordVideo/Sound/mic_disabled.png</file>
+        <file alias="speaker_disabled">Resources/Images/RecordVideo/Sound/speaker_disabled.png</file>
+    </qresource>
 </RCC>

@@ -14,6 +14,11 @@ private:
 public:
 	SoundPanel(QWidget *parent = nullptr);
 	~SoundPanel();
+
+
+	private slots:
+	void speakerButtonClicked();
+	void micButtonClicked();
 };
 
 #endif //_SOUNDPANEL_H

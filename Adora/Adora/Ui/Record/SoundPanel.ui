@@ -7,25 +7,108 @@
     <x>0</x>
     <y>0</y>
     <width>160</width>
-    <height>104</height>
+    <height>80</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>160</width>
-    <height>104</height>
+    <height>80</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>160</width>
-    <height>104</height>
+    <height>80</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton#micButton {
+    border:0px;
+    background-image:url(:/RecordVideo_Sound/mic);
+}
+
+QPushButton#micButton:checked {
+    border:0px;
+    background-image:url(:/RecordVideo_Sound/mic_mute);
+}
+
+QPushButton#micButton:disabled {
+    border:0px;
+    background-image:url(:/RecordVideo_Sound/mic_disabled);
+}
+
+QPushButton#speakerButton {
+    border:0px;
+    background-image:url(:/RecordVideo_Sound/speaker);
+}
+
+QPushButton#speakerButton:checked {
+    border:0px;
+    background-image:url(:/RecordVideo_Sound/speaker_mute);
+}
+
+
+QPushButton#speakerButton:disabled {
+    border:0px;
+    background-image:url(:/RecordVideo_Sound/speaker_disabled);
+}
+
+</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="AbstractButton" name="speakerButton">
+     <property name="minimumSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="AbstractButton" name="micButton">
+     <property name="minimumSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">Ui/Item/AbstractButton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../Adora.qrc"/>
+ </resources>
  <connections/>
 </ui>
