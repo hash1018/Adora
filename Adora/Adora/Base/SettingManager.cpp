@@ -129,7 +129,7 @@ void VideoSetting::save() {
 
 
 AudioSetting::AudioSetting()
-	:audioDevice(""), audioMuted(false), audioVolume(100), audioDevice2(""), audioMuted2(false), audioVolume2(100) {
+	:speakerDevice(""), speakerMuted(false), micDevice(""), micMuted(false) {
 
 }
 
@@ -143,23 +143,17 @@ void AudioSetting::load() {
 
 	settings.beginGroup("Audio");
 
-	if (settings.contains("audioDevice") == true)
-		this->audioDevice = settings.value("audioDevice").toString();
+	if (settings.contains("speakerDevice") == true)
+		this->speakerDevice = settings.value("speakerDevice").toString();
 
-	if (settings.contains("audioMuted") == true)
-		this->audioMuted = settings.value("audioMuted").toBool();
+	if (settings.contains("speakerMuted") == true)
+		this->speakerMuted = settings.value("speakerMuted").toBool();
 
-	if (settings.contains("audioVolume") == true)
-		this->audioVolume = settings.value("audioVolume").toInt();
+	if (settings.contains("micDevice") == true)
+		this->micDevice = settings.value("micDevice").toString();
 
-	if (settings.contains("audioDevice2") == true)
-		this->audioDevice2 = settings.value("audioDevice2").toString();
-
-	if (settings.contains("audioMuted2") == true)
-		this->audioMuted2 = settings.value("audioMuted2").toBool();
-
-	if (settings.contains("audioVolume2") == true)
-		this->audioVolume2 = settings.value("audioVolume2").toInt();
+	if (settings.contains("micMuted") == true)
+		this->micMuted = settings.value("micMuted").toBool();
 
 	settings.endGroup();
 }
@@ -170,13 +164,11 @@ void AudioSetting::save() {
 
 	settings.beginGroup("Audio");
 
-	settings.setValue("audioDevice", this->audioDevice);
-	settings.setValue("audioMuted", this->audioMuted);
-	settings.setValue("audioVolume", this->audioVolume);
+	settings.setValue("speakerDevice", this->speakerDevice);
+	settings.setValue("speakerMuted", this->speakerMuted);
 	
-	settings.setValue("audioDevice2", this->audioDevice2);
-	settings.setValue("audioMuted2", this->audioMuted2);
-	settings.setValue("audioVolume2", this->audioVolume2);
+	settings.setValue("micDevice", this->micDevice);
+	settings.setValue("micMuted", this->micMuted);
 
 	settings.endGroup();
 }

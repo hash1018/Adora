@@ -450,6 +450,12 @@
     <ClCompile Include="RecordVideo\Mode\WritingMode\TriangleMode.cpp">
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_AudioSettingWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_AudioSettingWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -557,6 +563,9 @@
     <CustomBuild Include="Ui\Record\FigurePopupWidget.h">
       <Filter>Ui\Record</Filter>
     </CustomBuild>
+    <CustomBuild Include="Ui\Setting\AudioSettingWidget.h">
+      <Filter>Ui\Setting</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Adora.h">
@@ -570,9 +579,6 @@
     </ClInclude>
     <ClInclude Include="Base\SettingManager.h">
       <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Ui\Setting\AudioSettingWidget.h">
-      <Filter>Ui\Setting</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Setting\ImageSettingWidget.h">
       <Filter>Ui\Setting</Filter>

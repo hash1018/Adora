@@ -92,13 +92,11 @@ class AudioSetting {
 	friend class SettingManager;
 
 private:
-	QString audioDevice;
-	bool audioMuted;
-	int audioVolume;
+	QString speakerDevice;
+	bool speakerMuted;
 
-	QString audioDevice2;
-	bool audioMuted2;
-	int audioVolume2;
+	QString micDevice;
+	bool micMuted;
 
 private:
 	AudioSetting();
@@ -108,22 +106,18 @@ private:
 	void save();
 
 public:
-	void setAudioDevice(const QString &audioDevice) { this->audioDevice = audioDevice; }
-	void setAudioMuted(bool audioMuted) { this->audioMuted = audioMuted; }
-	void setAudioVolume(int audioVolume) { this->audioVolume = audioVolume; }
+	void setSpeakerDevice(const QString &speakerDevice) { this->speakerDevice = speakerDevice; }
+	void setSpeakerMuted(bool speakerMuted) { this->speakerMuted = speakerMuted; }
 
-	void setAudioDevice2(const QString &audioDevice2) { this->audioDevice2 = audioDevice2; }
-	void setAudioMuted2(bool audioMuted2) { this->audioMuted2 = audioMuted2; }
-	void setAudioVolume2(int audioVolume2) { this->audioVolume2 = audioVolume2; }
+	void setMicDevice(const QString &micDevice) { this->micDevice = micDevice; }
+	void setMicMuted(bool micMuted) { this->micMuted = micMuted; }
 
 public:
-	inline const QString& getAudioDevice() const { return this->audioDevice; }
-	inline bool getAudioMuted() const { return this->audioMuted; }
-	inline int getAudioVolume() const { return this->audioVolume; }
+	inline const QString& getSpeakerDevice() const { return this->speakerDevice; }
+	inline bool getSpeakerMuted() const { return this->speakerMuted; }
 
-	inline const QString& getAudioDevice2() const { return this->audioDevice2; }
-	inline bool getAudioMuted2() const { return this->audioMuted2; }
-	inline int getAudioVolume2() const { return this->audioVolume2; }
+	inline const QString& getMicDevice() const { return this->micDevice; }
+	inline bool getMicMuted() const { return this->micMuted; }
 
 };
 

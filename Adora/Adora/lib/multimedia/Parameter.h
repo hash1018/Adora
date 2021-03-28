@@ -5,6 +5,10 @@
 
 #include <qstring.h>
 
+#ifdef Q_OS_WIN
+#include <mmdeviceapi.h>
+#endif 
+
 class VideoParameter {
 
 public:
@@ -27,6 +31,7 @@ public:
 class AudioParameter {
 
 public:
+	__MIDL___MIDL_itf_mmdeviceapi_0000_0000_0001 type;
 	QString deviceName;
 	bool muted;
 

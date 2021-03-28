@@ -13,98 +13,120 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="audioDeviceLabel">
+  <widget class="QLabel" name="speakerLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>40</y>
-     <width>64</width>
-     <height>15</height>
+     <x>48</x>
+     <y>84</y>
+     <width>91</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>91</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>91</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>audio</string>
    </property>
   </widget>
-  <widget class="QLabel" name="audioVolumeLabel">
+  <widget class="QLabel" name="micLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>70</y>
-     <width>64</width>
-     <height>15</height>
+     <x>48</x>
+     <y>130</y>
+     <width>91</width>
+     <height>36</height>
     </rect>
    </property>
-   <property name="text">
-    <string>volume</string>
+   <property name="minimumSize">
+    <size>
+     <width>91</width>
+     <height>36</height>
+    </size>
    </property>
-  </widget>
-  <widget class="QLabel" name="audioDevice2Label">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>120</y>
-     <width>64</width>
-     <height>15</height>
-    </rect>
+   <property name="maximumSize">
+    <size>
+     <width>91</width>
+     <height>36</height>
+    </size>
    </property>
    <property name="text">
     <string>audio2</string>
    </property>
   </widget>
-  <widget class="QLabel" name="audioVolume2Label">
+  <widget class="QComboBox" name="speakerComboBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>160</y>
-     <width>64</width>
-     <height>15</height>
+     <x>299</x>
+     <y>84</y>
+     <width>240</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="micComboBox">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>130</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>240</width>
+     <height>36</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="audioDeviceSettingLabel">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>200</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>23</height>
+    </size>
    </property>
    <property name="text">
-    <string>volume2</string>
-   </property>
-  </widget>
-  <widget class="AbstractSlider" name="audioVolumeSlider">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>70</y>
-     <width>160</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>100</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="AbstractSlider" name="audioVolume2Slider">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>160</y>
-     <width>160</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>100</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>AbstractSlider</class>
-   <extends>QSlider</extends>
-   <header location="global">Ui/Item/AbstractSlider.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

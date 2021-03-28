@@ -8,6 +8,8 @@
 
 class AudioSettingWidget : public AbstractStackWidget {
 
+	Q_OBJECT
+
 private:
 	Ui::AudioSettingWidget ui;
 
@@ -15,12 +17,12 @@ public:
 	AudioSettingWidget(QWidget *parent = nullptr);
 	~AudioSettingWidget();
 
-protected:
+
 	
 
-	private slots:
-	void audioVolumeSliderValueChanged(int value);
-	void audioVolume2SliderValueChanged(int value);
+	private slots :
+	void speakerComboBoxCurrentTextChanged(const QString &text);
+	void micComboBoxCurrentTextChanged(const QString &text);
 
 
 };

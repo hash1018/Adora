@@ -36,7 +36,7 @@ AudioParameter::AudioParameter()
 }
 
 AudioParameter::AudioParameter(const AudioParameter &other)
-	: deviceName(other.deviceName), muted(other.muted) {
+	: deviceName(other.deviceName), muted(other.muted), type(other.type) {
 
 
 }
@@ -47,6 +47,7 @@ AudioParameter::~AudioParameter() {
 
 AudioParameter& AudioParameter::operator=(const AudioParameter &other) {
 
+	this->type = other.type;
 	this->deviceName = other.deviceName;
 	this->muted = other.muted;
 
