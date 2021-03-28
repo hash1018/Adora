@@ -504,13 +504,14 @@ int AudioCaptureSource::getFrameSize() {
 }
 
 
-void AudioCaptureSource::getDevice(IMMDeviceEnumerator *deviceEnumerator, const QString &deviceName, IMMDevice **device) {
+void AudioCaptureSource::getDevice(IMMDeviceEnumerator *deviceEnumerator, __MIDL___MIDL_itf_mmdeviceapi_0000_0000_0001 eType,
+	const QString &deviceName, IMMDevice **device) {
 
 	if (deviceEnumerator == NULL)
 		return;
 
 	IMMDeviceCollection *deviceCollection;
-	deviceEnumerator->EnumAudioEndpoints(eCapture, DEVICE_STATE_ACTIVE, &deviceCollection);
+	deviceEnumerator->EnumAudioEndpoints(eType, DEVICE_STATE_ACTIVE, &deviceCollection);
 
 	qDebug() << "selected device Name" << deviceName;
 
@@ -531,16 +532,6 @@ void AudioCaptureSource::getDevice(IMMDeviceEnumerator *deviceEnumerator, const 
 			deviceCollection->Item(i, device);
 			break;
 		}
-
-
-		/*
-		if (name == deviceName) {
-
-		qDebug() << "AudioCapture2::getDeviceIndex  mathched device Name " << name;
-		deviceCollection->Item(i, device);
-		break;
-		}
-		*/
 	}
 
 	deviceCollection->Release();
@@ -622,7 +613,7 @@ bool AudioCaptureSource::initWinOS() {
 		return false;
 	}
 
-	AudioCaptureSource::getDevice(this->deviceEnumerator, this->parameter.deviceName, &this->device);
+	AudioCaptureSource::getDevice(this->deviceEnumerator, this->parameter.type, this->parameter.deviceName, &this->device);
 
 	if (this->device == NULL) {
 
@@ -720,13 +711,27 @@ bool AudioCaptureSource::initWinOS() {
 	}
 
 	qDebug() << "audioClient -> Initialize";
-	result = this->audioClient->Initialize(
-		AUDCLNT_SHAREMODE_SHARED,
-		AUDCLNT_STREAMFLAGS_NOPERSIST,
-		hnsRequestedDuration,
-		0,
-		waveFormat,
-		NULL);
+
+	if (this->parameter.type == eCapture) {
+
+		result = this->audioClient->Initialize(
+			AUDCLNT_SHAREMODE_SHARED,
+			AUDCLNT_STREAMFLAGS_NOPERSIST,
+			hnsRequestedDuration,
+			0,
+			waveFormat,
+			NULL);
+	}
+	else {
+
+		result = this->audioClient->Initialize(
+			AUDCLNT_SHAREMODE_SHARED,
+			AUDCLNT_STREAMFLAGS_LOOPBACK,
+			hnsRequestedDuration,
+			0,
+			waveFormat,
+			NULL);
+	}
 
 	if (FAILED(result) == true) {
 

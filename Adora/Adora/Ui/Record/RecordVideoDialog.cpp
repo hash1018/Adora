@@ -24,6 +24,8 @@
 #include "Base/SettingManager.h"
 #include "Base/DefaultNameByDateCreator.h"
 
+#include "Base/LanguageManager.h"
+
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr), writingMode(nullptr), videoRecorder(nullptr) {
 
@@ -183,6 +185,27 @@ void RecordVideoDialog::record() {
 	
 	this->videoRecorder->setFilePath(SettingManager::getInstance()->getGeneralSetting()->getSavePath() +
 		"/" + DefaultNameByDateCreator::create() + ".mp4");
+
+	QList<AudioParameter> list;
+	if (SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice() != 
+		getLanUiValue("MenuAudio/Not used")) {
+	
+		AudioParameter param;
+		param.deviceName = SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice();
+		param.type = eRender;
+		list.append(param);
+	}
+
+	if (SettingManager::getInstance()->getAudioSetting()->getMicDevice() !=
+		getLanUiValue("MenuAudio/Not used")) {
+
+		AudioParameter param;
+		param.deviceName = SettingManager::getInstance()->getAudioSetting()->getMicDevice();
+		param.type = eCapture;
+		list.append(param);
+	}
+	
+	this->videoRecorder->setAudioParameter(list);
 
 	this->videoRecorder->start();
 }

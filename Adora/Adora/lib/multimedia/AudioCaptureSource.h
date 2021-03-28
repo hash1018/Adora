@@ -107,7 +107,7 @@ protected:
 
 
 private:
-	static void getDevice(IMMDeviceEnumerator *deviceEnumerator, const QString &deviceName, IMMDevice **device);
+	static void getDevice(IMMDeviceEnumerator *deviceEnumerator, __MIDL___MIDL_itf_mmdeviceapi_0000_0000_0001 eType, const QString &deviceName, IMMDevice **device);
 	static QString getDeviceName(IMMDeviceCollection *deviceCollection, UINT deviceIndex);
 
 	void clear();
