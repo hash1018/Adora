@@ -259,3 +259,25 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
   background: none;
 }
+
+
+
+/*******************************************************************/
+
+QListView {
+    background-color: #FFFFFF;
+    border: 1px solid #DEDEDE;
+	border-radius: 5px;
+    /*show-decoration-selected: 1;*/ /* make the selection span the entire width of the view */
+}
+
+QListView::item:selected:active {
+    outline: none;
+    border:0px;
+    background: #FFCE64;
+}
+
+QListView::item:hover {
+    border:0px;
+	background: #FFD477;
+}
