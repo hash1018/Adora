@@ -45,6 +45,10 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	ui.deleteButton->setText("   " + getLanUiValue("MenuGeneral/Delete"));
 	ui.uploadButton->setText("   " + getLanUiValue("MenuGeneral/Upload"));
 	ui.playButton->setText("   " + getLanUiValue("MenuGeneral/Play"));
+
+	ui.videoButton->setText("   " + getLanUiValue("MenuGeneral/Video"));
+	ui.imageButton->setText("   " + getLanUiValue("MenuGeneral/Image"));
+	ui.orderByButton->setText("   " + getLanUiValue("MenuGeneral/Sort"));
 }
 
 GeneralSettingWidget::~GeneralSettingWidget() {
@@ -150,6 +154,14 @@ void GeneralSettingWidget::orderByMenuActionClicked(GeneralSettingWidget::OrderB
 }
 
 void GeneralSettingWidget::updateItemList() {
+
+	ui.videoButton->updateSelected(false);
+	ui.imageButton->updateSelected(false);
+
+	if (this->listType == ListType::Video)
+		ui.videoButton->updateSelected(true);
+	else if (this->listType == ListType::Image)
+		ui.imageButton->updateSelected(true);
 
 	ui.itemListWidget->clear();
 

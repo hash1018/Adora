@@ -39,6 +39,9 @@
         <file alias="play">Resources/Images/Menu/General/play.png</file>
         <file alias="upload">Resources/Images/Menu/General/upload.png</file>
         <file alias="delete">Resources/Images/Menu/General/delete.png</file>
+        <file alias="image">Resources/Images/Menu/General/image.png</file>
+        <file alias="sort">Resources/Images/Menu/General/sort.png</file>
+        <file alias="video">Resources/Images/Menu/General/video.png</file>
     </qresource>
     <qresource prefix="/RecordVideo_Record">
         <file alias="record">Resources/Images/RecordVideo/Record/record.png</file>

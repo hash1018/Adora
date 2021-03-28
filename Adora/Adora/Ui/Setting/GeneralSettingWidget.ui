@@ -37,6 +37,7 @@ QPushButton#searchPathButton:hover{
      background-color:#B5B5B5;
 }
 
+/****/
 QPushButton#openDirectoryButton{
     border-radius:5px;
     background-color: #2E2E2E;
@@ -47,7 +48,54 @@ QPushButton#openDirectoryButton:hover{
     background-color: #656565;
 }
 
+/****/
+QPushButton#videoButton {
+    border:0px;
+    background-image: url(:/General_Menu/video);
+    background-color: #transparent;
+}
 
+QPushButton#videoButton:hover {
+    background-color:#D2D2D2;
+    
+}
+
+QPushButton#videoButton:checked {
+    background-color:#FFD577;
+    
+}
+
+/***/
+QPushButton#imageButton {
+    border:0px;
+    background-image: url(:/General_Menu/image);
+    background-color: #transparent;
+}
+
+QPushButton#imageButton:hover {
+    background-color:#D2D2D2;
+    
+}
+
+QPushButton#imageButton:checked {
+    background-color:#FFD577;
+    
+}
+
+/****/
+
+QPushButton#orderByButton {
+    border:0px;
+    background-image: url(:/General_Menu/sort);
+    background-color: #transparent;
+}
+
+QPushButton#orderByButton:hover {
+    background-color:#D2D2D2;
+    
+}
+
+/****/
 QPushButton#playButton{
     border-radius:5px;
     background-image: url(:/General_Menu/play);
@@ -59,6 +107,7 @@ QPushButton#playButton:hover {
     background-color: #FFCE64;
 }
 
+/****/
 
 QPushButton#uploadButton{
     border-radius:5px;
@@ -71,7 +120,7 @@ QPushButton#uploadButton:hover {
     background-color: #FFCE64;
 }
 
-
+/****/
 QPushButton#deleteButton{
     border-radius:5px;
     background-image: url(:/General_Menu/delete);
@@ -158,19 +207,19 @@ QPushButton#deleteButton:hover {
     <string>Open</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="videoButton">
+  <widget class="AbstractButton" name="videoButton">
    <property name="geometry">
     <rect>
-     <x>57</x>
+     <x>50</x>
      <y>167</y>
-     <width>59</width>
-     <height>20</height>
+     <width>70</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>59</width>
-     <height>20</height>
+     <width>70</width>
+     <height>25</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -180,57 +229,57 @@ QPushButton#deleteButton:hover {
     </size>
    </property>
    <property name="text">
-    <string>video</string>
+    <string>    video</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="imageButton">
+  <widget class="AbstractButton" name="imageButton">
    <property name="geometry">
     <rect>
-     <x>126</x>
+     <x>120</x>
      <y>167</y>
-     <width>59</width>
-     <height>20</height>
+     <width>70</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>59</width>
-     <height>20</height>
+     <width>70</width>
+     <height>25</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>59</width>
-     <height>20</height>
+     <width>70</width>
+     <height>25</height>
     </size>
    </property>
    <property name="text">
-    <string>image</string>
+    <string>    image</string>
    </property>
   </widget>
   <widget class="QPushButton" name="orderByButton">
    <property name="geometry">
     <rect>
-     <x>195</x>
+     <x>190</x>
      <y>167</y>
      <width>59</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>59</width>
-     <height>20</height>
+     <height>25</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>59</width>
-     <height>20</height>
+     <height>25</height>
     </size>
    </property>
    <property name="text">
-    <string>정렬</string>
+    <string>    정렬</string>
    </property>
   </widget>
   <widget class="QListWidget" name="itemListWidget">
@@ -359,6 +408,13 @@ QPushButton#deleteButton:hover {
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">Ui/Item/AbstractButton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../Adora.qrc"/>
  </resources>
