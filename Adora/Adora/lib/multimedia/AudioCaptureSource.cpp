@@ -73,8 +73,8 @@ void AudioCaptureSource::run() {
 
 	uint8_t *totalBuffer = new uint8_t[this->waveFormat->nSamplesPerSec * this->waveFormat->nBlockAlign];
 	int totalBufferIndex = 0;
-	uint8_t *muteBuffer = new uint8_t[(this->waveFormat->nSamplesPerSec / 2) * this->waveFormat->nBlockAlign];
-	memset(muteBuffer, 0, (this->waveFormat->nSamplesPerSec / 2) * this->waveFormat->nBlockAlign);
+	uint8_t muteBuffer[OneFrameBufferSize];
+	
 	
 	
 	while (1) {
@@ -145,7 +145,7 @@ void AudioCaptureSource::run() {
 	this->audioClient->Stop();
 
 	delete[] totalBuffer;
-	delete[] muteBuffer;
+	
 
 #endif 
 }
