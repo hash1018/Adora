@@ -64,7 +64,7 @@ void AudioCaptureSource::run() {
 	HANDLE handle = CreateEventEx(NULL, NULL, 0, EVENT_MODIFY_STATE | SYNCHRONIZE);
 
 	HRESULT result2 = this->audioClient->Start();
-
+	
 	if (FAILED(result2) == true) {
 
 		qDebug() << "Start Failed";
@@ -73,19 +73,22 @@ void AudioCaptureSource::run() {
 
 	uint8_t *totalBuffer = new uint8_t[this->waveFormat->nSamplesPerSec * this->waveFormat->nBlockAlign];
 	int totalBufferIndex = 0;
-
+	uint8_t *muteBuffer = new uint8_t[(this->waveFormat->nSamplesPerSec / 2) * this->waveFormat->nBlockAlign];
+	memset(muteBuffer, 0, (this->waveFormat->nSamplesPerSec / 2) * this->waveFormat->nBlockAlign);
+	
+	
 	while (1) {
 
 		WaitForSingleObject(handle, this->hnsActualDuration / REFTIMES_PER_MILLISEC / 2);
-
+		
 		this->captureClient->GetNextPacketSize(&packetLength);
-
+		
 		if (packetLength != 0) {
 
 			while (packetLength != 0) {
-
+				
 				this->captureClient->GetBuffer(&this->data, &numFramesAvailable, &flags, NULL, NULL);
-
+				
 				totalPacketLength += numFramesAvailable;
 
 				if (totalPacketLength >= this->waveFormat->nSamplesPerSec) {
@@ -109,11 +112,32 @@ void AudioCaptureSource::run() {
 		}
 		else {
 
-			//qDebug() << "rererer";
+			this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
+			int diff = this->totalCountToBePushedQueue - this->totalPushedtoQueueCount;
+
+			for (int i = 0; i < diff; i++) {
+				
+				totalPacketLength += 1024;
+
+				if (totalPacketLength >= this->waveFormat->nSamplesPerSec) {
+
+					second++;
+					totalPacketLength -= this->waveFormat->nSamplesPerSec;
+				}
+
+				if (this->requestToFinish == false) {
+					this->append(totalBuffer, totalBufferIndex, muteBuffer, 1024);
+				}
+				else {
+
+					this->appendLast(totalBuffer, totalBufferIndex, muteBuffer, 1024);
+				}
+			}
 		}
 
 		if (this->noNeedToPushQueueMore == true)
 			break;
+			
 	}
 
 
@@ -121,12 +145,13 @@ void AudioCaptureSource::run() {
 	this->audioClient->Stop();
 
 	delete[] totalBuffer;
+	delete[] muteBuffer;
 
 #endif 
 }
 
 void AudioCaptureSource::quit() {
-
+	qDebug() << "asdasd";
 	this->requestToFinish = true;
 	this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
 }

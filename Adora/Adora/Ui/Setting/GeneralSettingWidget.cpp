@@ -49,6 +49,11 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	ui.videoButton->setText("   " + getLanUiValue("MenuGeneral/Video"));
 	ui.imageButton->setText("   " + getLanUiValue("MenuGeneral/Image"));
 	ui.orderByButton->setText("   " + getLanUiValue("MenuGeneral/Sort"));
+
+
+
+	ui.uploadButton->hide();
+	ui.playButton->hide();
 }
 
 GeneralSettingWidget::~GeneralSettingWidget() {
