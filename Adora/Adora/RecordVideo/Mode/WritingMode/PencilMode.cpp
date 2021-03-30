@@ -20,7 +20,8 @@ PencilMode::~PencilMode() {
 void PencilMode::mousePressEvent(QMouseEvent *event) {
 	
 	this->mousePressed = true;
-	this->freeCurve = new FreeCurve(this->recordVideoDialog->getColor(this->getStatus()), 2);
+	this->freeCurve = new FreeCurve(this->recordVideoDialog->getColor(this->getStatus()), 
+		this->recordVideoDialog->getWidth(this->getStatus()));
 	this->recordVideoDialog->getEntityList()->add(this->freeCurve);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->freeCurve));
 	this->recordVideoDialog->update();

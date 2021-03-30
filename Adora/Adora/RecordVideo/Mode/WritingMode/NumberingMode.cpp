@@ -36,7 +36,8 @@ void NumberingMode::mousePressEvent(QMouseEvent *event) {
 		num++;
 
 
-	Number *number = new Number(this->recordVideoDialog->getColor(this->getStatus()), 20, event->pos(), num);
+	Number *number = new Number(this->recordVideoDialog->getColor(this->getStatus()), 
+		this->recordVideoDialog->getWidth(this->getStatus()), event->pos(), num);
 	this->recordVideoDialog->getEntityList()->add(number);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, number));
 	this->recordVideoDialog->update();

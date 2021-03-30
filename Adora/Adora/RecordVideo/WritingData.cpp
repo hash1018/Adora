@@ -18,6 +18,7 @@ WritingData::WritingData() {
 	this->list.append(data);
 
 	data = new WritingData::Data(WritingStatus::Numbering);
+	data->width = 20;
 	this->list.append(data);
 
 	data = new WritingData::Data(WritingStatus::WritingStatus_Circle);

@@ -21,7 +21,7 @@ private:
 
 	private:
 		Data(WritingStatus status)
-			:width(1), status(status) {
+			:width(2), status(status) {
 
 		}
 

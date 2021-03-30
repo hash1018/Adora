@@ -21,7 +21,8 @@ void TriangleMode::mousePressEvent(QMouseEvent *event) {
 
 	this->mousePressed = true;
 	this->first = event->pos();
-	this->triangle = new Triangle(this->recordVideoDialog->getColor(this->getStatus()), 2, event->pos(), event->pos(), event->pos());
+	this->triangle = new Triangle(this->recordVideoDialog->getColor(this->getStatus()), 
+		this->recordVideoDialog->getWidth(this->getStatus()), event->pos(), event->pos(), event->pos());
 	this->recordVideoDialog->getEntityList()->add(this->triangle);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->triangle));
 	this->recordVideoDialog->update();

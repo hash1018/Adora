@@ -23,7 +23,8 @@ void CircleMode::mousePressEvent(QMouseEvent *event) {
 
 	this->mousePressed = true;
 	this->center = event->pos();
-	this->circle = new Circle(this->recordVideoDialog->getColor(this->getStatus()), 2, event->pos(), 0);
+	this->circle = new Circle(this->recordVideoDialog->getColor(this->getStatus()),
+		this->recordVideoDialog->getWidth(this->getStatus()), event->pos(), 0);
 	this->recordVideoDialog->getEntityList()->add(this->circle);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->circle));
 	this->recordVideoDialog->update();

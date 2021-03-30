@@ -21,7 +21,8 @@ void RectangleMode::mousePressEvent(QMouseEvent *event) {
 
 	this->mousePressed = true;
 	this->first = event->pos();
-	this->rect = new Rect(this->recordVideoDialog->getColor(this->getStatus()), 2, QRect(event->pos(), event->pos()));
+	this->rect = new Rect(this->recordVideoDialog->getColor(this->getStatus()), 
+		this->recordVideoDialog->getWidth(this->getStatus()), QRect(event->pos(), event->pos()));
 	this->recordVideoDialog->getEntityList()->add(this->rect);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->rect));
 	this->recordVideoDialog->update();

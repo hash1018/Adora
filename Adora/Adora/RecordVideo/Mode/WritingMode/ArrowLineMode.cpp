@@ -21,7 +21,8 @@ ArrowLineMode::~ArrowLineMode() {
 void ArrowLineMode::mousePressEvent(QMouseEvent *event) {
 
 	this->mousePressed = true;
-	this->arrowLineSegment = new ArrowLineSegment(this->recordVideoDialog->getColor(this->getStatus()), 2, event->pos(), event->pos());
+	this->arrowLineSegment = new ArrowLineSegment(this->recordVideoDialog->getColor(this->getStatus()),
+		this->recordVideoDialog->getWidth(this->getStatus()), event->pos(), event->pos());
 	this->recordVideoDialog->getEntityList()->add(this->arrowLineSegment);
 	this->recordVideoDialog->addCommand(new AddEntityCommand(this->recordVideoDialog, this->arrowLineSegment));
 	this->recordVideoDialog->update();
