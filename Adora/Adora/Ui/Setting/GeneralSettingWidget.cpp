@@ -46,9 +46,9 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	ui.uploadButton->setText("   " + getLanUiValue("MenuGeneral/Upload"));
 	ui.playButton->setText("   " + getLanUiValue("MenuGeneral/Play"));
 
-	ui.videoButton->setText("   " + getLanUiValue("MenuGeneral/Video"));
-	ui.imageButton->setText("   " + getLanUiValue("MenuGeneral/Image"));
-	ui.orderByButton->setText("   " + getLanUiValue("MenuGeneral/Sort"));
+	ui.videoButton->setText("    " + getLanUiValue("MenuGeneral/Video"));
+	ui.imageButton->setText("    " + getLanUiValue("MenuGeneral/Image"));
+	ui.orderByButton->setText("    " + getLanUiValue("MenuGeneral/Sort"));
 
 
 

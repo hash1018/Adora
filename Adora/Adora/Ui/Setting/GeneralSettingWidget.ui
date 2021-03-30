@@ -53,6 +53,7 @@ QPushButton#videoButton {
     border:0px;
     background-image: url(:/General_Menu/video);
     background-color: #transparent;
+    font-size:13px;
 }
 
 QPushButton#videoButton:hover {
@@ -70,6 +71,7 @@ QPushButton#imageButton {
     border:0px;
     background-image: url(:/General_Menu/image);
     background-color: #transparent;
+    font-size:13px;
 }
 
 QPushButton#imageButton:hover {
@@ -88,6 +90,7 @@ QPushButton#orderByButton {
     border:0px;
     background-image: url(:/General_Menu/sort);
     background-color: #transparent;
+    font-size:13px;
 }
 
 QPushButton#orderByButton:hover {
