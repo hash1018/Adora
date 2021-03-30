@@ -235,7 +235,7 @@ QPushButton#deleteButton:hover {
   <widget class="AbstractButton" name="imageButton">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>130</x>
      <y>167</y>
      <width>70</width>
      <height>25</height>
@@ -260,7 +260,7 @@ QPushButton#deleteButton:hover {
   <widget class="QPushButton" name="orderByButton">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>210</x>
      <y>167</y>
      <width>59</width>
      <height>25</height>
@@ -387,19 +387,19 @@ QPushButton#deleteButton:hover {
     <rect>
      <x>48</x>
      <y>45</y>
-     <width>67</width>
+     <width>200</width>
      <height>21</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>67</width>
+     <width>200</width>
      <height>21</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>67</width>
+     <width>200</width>
      <height>21</height>
     </size>
    </property>
