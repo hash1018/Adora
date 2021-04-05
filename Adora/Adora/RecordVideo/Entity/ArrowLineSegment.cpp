@@ -21,10 +21,9 @@ void ArrowLineSegment::accept(Visitor *visitor) {
 void ArrowLineSegment::getArrowPoints(QPoint &point1, QPoint &point2, QPoint &point3) {
 
 	double x1, x2, x3, y1, y2, y3;
-	double distance = math::getDistance(start.x(), start.y(), end.x(), end.y());
 	double angle = math::getAbsAngle(start.x(), start.y(), end.x(), end.y());
-	double arrowHeight = 30;
-	double arrowBaseSize = 25;
+	double arrowHeight = 3*this->width;
+	double arrowBaseSize = 3 * this->width;
 
 
 	math::rotate(angle, end.x(), end.y(), end.x(), end.y(), x1, y1);

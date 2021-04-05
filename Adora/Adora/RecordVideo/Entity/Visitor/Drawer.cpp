@@ -10,7 +10,7 @@
 #include "RecordVideo/Entity/Rectangle.h"
 #include "RecordVideo/Entity/Circle.h"
 #include "RecordVideo/Entity/Triangle.h"
-
+#include "Base/Math.h"
 
 Drawer::Drawer(QPainter &painter)
 	:painter(painter) {
@@ -119,13 +119,27 @@ void Drawer::visit(ArrowLineSegment *arrowLineSegment) {
 
 	painter.setPen(pen);
 
-	painter.drawLine(arrowLineSegment->getStart(), arrowLineSegment->getEnd());
+	double angle = math::getAbsAngle(arrowLineSegment->getStart().x(), arrowLineSegment->getStart().y(),
+		arrowLineSegment->getEnd().x(), arrowLineSegment->getEnd().y());
+	double dis = math::getDistance(arrowLineSegment->getStart().x(), arrowLineSegment->getStart().y(),
+		arrowLineSegment->getEnd().x(), arrowLineSegment->getEnd().y()) - (3 * arrowLineSegment->getWidth());
+
+	double newEndX, newEndY;
+	math::rotate(angle, arrowLineSegment->getStart().x(), arrowLineSegment->getStart().y(),
+		arrowLineSegment->getStart().x() + dis, arrowLineSegment->getStart().y(), newEndX, newEndY);
+
+	painter.drawLine(arrowLineSegment->getStart(), QPoint(newEndX, newEndY));
 
 	QPoint p1, p2, p3;
 	arrowLineSegment->getArrowPoints(p1, p2, p3);
 
-	painter.drawLine(p1.x(), p1.y(), p2.x(), p2.y());
-	painter.drawLine(p1.x(), p1.y(), p3.x(), p3.y());
+	QPainterPath path;
+	path.moveTo(p1);
+	path.lineTo(p2);
+	path.lineTo(p3);
+
+	painter.fillPath(path, QBrush(arrowLineSegment->getColor()));
+	
 
 	painter.setPen(oldPen);
 }
