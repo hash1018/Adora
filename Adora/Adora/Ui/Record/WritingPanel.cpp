@@ -114,6 +114,8 @@ WritingPanel::WritingPanel(QWidget *parent)
 
 	ui.colorButton->setToolTip(getLanUiValue("WritingPanel/Change Color"));
 
+	ui.widthButton->setToolTip(getLanUiValue("WritingPanel/Change Width"));
+
 
 
 	/////////
