@@ -148,7 +148,9 @@ void Drawer::visit(Number *number) {
 	painter.setBrush(oldBrush);
 	painter.setPen(oldPen);
 
-
+	QFont font = painter.font();
+	font.setPointSize(number->getWidth() / 2);
+	painter.setFont(font);
 	painter.setPen(QColor(255, 255, 255));
 	painter.drawText(number->getPoint().x() - number->getWidth() / 2, number->getPoint().y() - number->getWidth() / 2,
 		number->getWidth(), number->getWidth(), Qt::AlignVCenter | Qt::AlignHCenter, QString::number(number->getNumber()));

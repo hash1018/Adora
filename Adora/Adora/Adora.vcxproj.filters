@@ -456,6 +456,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_AudioSettingWidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_WidthPopupWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_WidthPopupWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Record\WidthPopupWidget.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -565,6 +574,12 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Setting\AudioSettingWidget.h">
       <Filter>Ui\Setting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\WidthPopupWidget.h">
+      <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Ui\Record\WidthPopupWidget.ui">
+      <Filter>Ui\Record</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -845,6 +860,9 @@
       <Filter>RecordVideo\Mode\WritingMode</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_WidthPopupWidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

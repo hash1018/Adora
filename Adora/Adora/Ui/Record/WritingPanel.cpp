@@ -7,6 +7,7 @@
 #include "Base/LanguageManager.h"
 #include <qcolordialog.h>
 #include "FigurePopupWidget.h"
+#include "WidthPopupWidget.h"
 
 WritingPanel::WritingPanel(QWidget *parent)
 	:QWidget(parent) {
@@ -23,6 +24,7 @@ WritingPanel::WritingPanel(QWidget *parent)
 	connect(ui.numberingButton, &QPushButton::clicked, this, &WritingPanel::numberingButtonClicked);
 	connect(ui.colorButton, &QPushButton::clicked, this, &WritingPanel::colorButtonClicked);
 	connect(ui.figureButton, &QPushButton::clicked, this, &WritingPanel::figureButtonClicked);
+	connect(ui.widthButton, &QPushButton::clicked, this, &WritingPanel::widthButtonClicked);
 	
 
 	this->items.append(ui.cursorButton);
@@ -125,6 +127,10 @@ WritingPanel::WritingPanel(QWidget *parent)
 	connect(this->figurePopupWidget, &FigurePopupWidget::rectangleButtonClicked, this, &WritingPanel::rectangleButtonClicked);
 	connect(this->figurePopupWidget, &FigurePopupWidget::triangleButtonClicked, this, &WritingPanel::triangleButtonClicked);
 
+
+	this->widthPopupWidget = new WidthPopupWidget;
+	connect(this->widthPopupWidget, &WidthPopupWidget::currentWidthChanged, this, &WritingPanel::currentWidthChanged);
+
 }
 
 WritingPanel::~WritingPanel() {
@@ -143,6 +149,7 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 		}
 
 		ui.colorButton->setDisabled(false);
+		ui.widthButton->setDisabled(false);
 
 		WritingStatus status = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getStatus();
 		QColor color = dynamic_cast<RecordVideoWritingModeChangedEvent*>(event)->getColor();
@@ -150,12 +157,18 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 		
 		this->color = color;
 		this->width = width;
+
 		this->setColorButtonStyleSheets(color);
-		qDebug() << this->color;
+
+		ui.widthButton->setText(QString::number(this->width));
+		this->widthPopupWidget->setWidth(this->width);
+		this->widthPopupWidget->setWritingStatus(status);
 
 		if (status == WritingStatus::Cursor) {
 			ui.cursorButton->updateSelected(true);
 			ui.colorButton->setDisabled(true);
+			ui.widthButton->setDisabled(true);
+			ui.widthButton->setText("");
 		}
 		else if (status == WritingStatus::Pencil) {
 			ui.pencilButton->updateSelected(true);
@@ -163,6 +176,8 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 		else if (status == WritingStatus::Eraser) {
 			ui.eraserButton->updateSelected(true);
 			ui.colorButton->setDisabled(true);
+			ui.widthButton->setDisabled(true);
+			ui.widthButton->setText("");
 		}
 		else if (status == WritingStatus::Highlight)
 			ui.highlightButton->updateSelected(true);
@@ -182,18 +197,23 @@ void WritingPanel::update(RecordVideoNotifyEvent *event) {
 		}
 	}
 	else if (event->getType() == RecordVideoNotifyEvent::EventType::WritingDataChanged) {
-		qDebug() << "asdasdasdsad";
+		
 		RecordVideoWritingDataChangedEvent *event2 = dynamic_cast<RecordVideoWritingDataChangedEvent*>(event);
 
 		if (event2->getChangedType() == RecordVideoWritingDataChangedEvent::ChangedType::ChangedType_Color) {
+
 			this->color = event2->getColor();
-			qDebug() << this->color;
-	
+
 			this->setColorButtonStyleSheets(this->color);
 			
 		}
-		else {
-		
+		else if (event2->getChangedType() == RecordVideoWritingDataChangedEvent::ChangedType::ChangedType_Width) {
+
+			this->width = event2->getWidth();
+
+			ui.widthButton->setText(QString::number(event2->getWidth()));
+
+			this->widthPopupWidget->setWidth(event2->getWidth());
 		}
 	}
 }
@@ -259,6 +279,15 @@ void WritingPanel::colorButtonClicked() {
 	}
 }
 
+void WritingPanel::widthButtonClicked() {
+
+	QPoint point = QPoint(0, -5);
+	this->widthPopupWidget->setGeometry(this->mapToGlobal(point).x(), this->mapToGlobal(point).y(),
+		this->widthPopupWidget->minimumWidth(), this->widthPopupWidget->height());
+
+	this->widthPopupWidget->show();
+}
+
 void WritingPanel::figureButtonClicked() {
 
 	QPoint point = QPoint(0, -5);
@@ -286,6 +315,14 @@ void WritingPanel::triangleButtonClicked() {
 
 	this->figurePopupWidget->hide();
 	RecordVideoRequestChangeWritingMode request(RecordVideoRequestChangeWritingMode::Mode::Mode_Triangle);
+	this->request(&request);
+}
+
+void WritingPanel::currentWidthChanged(int width) {
+
+	this->widthPopupWidget->hide();
+
+	RecordVideoRequestChangeWritingData request(width);
 	this->request(&request);
 }
 

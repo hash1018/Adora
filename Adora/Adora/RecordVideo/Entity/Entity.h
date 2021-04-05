@@ -19,7 +19,7 @@ public:
 
 public:
 	void setColor(const QColor &color) { this->color = color; }
-	void serWidth(int width) { this->width = width; }
+	void setWidth(int width) { this->width = width; }
 
 public:
 	inline const QColor& getColor() const { return this->color; }

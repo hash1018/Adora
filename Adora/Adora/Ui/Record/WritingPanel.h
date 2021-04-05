@@ -12,6 +12,7 @@
 class RecordVideoNotifyEvent;
 class AbstractButton;
 class FigurePopupWidget;
+class WidthPopupWidget;
 
 class WritingPanel : public QWidget, public RecordVideoChain {
 
@@ -26,6 +27,7 @@ private:
 
 private:
 	FigurePopupWidget *figurePopupWidget;
+	WidthPopupWidget *widthPopupWidget;
 
 
 public:
@@ -44,15 +46,18 @@ public:
 	void arrowLineButtonClicked();
 	void numberingButtonClicked();
 	void colorButtonClicked();
+	void widthButtonClicked();
 	void figureButtonClicked();
 	void circleButtonClicked();
 	void rectangleButtonClicked();
 	void triangleButtonClicked();
+	void currentWidthChanged(int width);
 
 
 
 private:
 	void setColorButtonStyleSheets(const QColor &color);
+
 };
 
 #endif //_WRITINGPANEL_H
