@@ -80,7 +80,9 @@ void AudioCaptureSource::run() {
 	
 	while (1) {
 
-		WaitForSingleObject(handle, this->hnsActualDuration / REFTIMES_PER_MILLISEC / 2);
+		WaitForSingleObject(handle, /*this->hnsActualDuration / REFTIMES_PER_MILLISEC / 2*/ 100);
+		
+		this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
 		
 		this->captureClient->GetNextPacketSize(&packetLength);
 		
@@ -113,7 +115,7 @@ void AudioCaptureSource::run() {
 		}
 		else {
 
-			this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
+			//this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
 			int diff = this->totalCountToBePushedQueue - this->totalPushedtoQueueCount;
 
 			for (int i = 0; i < diff; i++) {
@@ -194,7 +196,7 @@ void AudioCaptureSource::resampleAndPush(uint8_t *buffer, int length) {
 	const uint8_t *out = NULL;
 	int outBufferIndex = 0;
 
-	this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
+	//this->totalCountToBePushedQueue = this->convertTotalPushedToQueueCount(*this->mainTime);
 
 
 	int bufferSize;
