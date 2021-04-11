@@ -172,6 +172,18 @@ QPushButton#recordButton:hover {
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="minimumSize">
+    <size>
+     <width>745</width>
+     <height>645</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>745</width>
+     <height>645</height>
+    </size>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -183,22 +195,22 @@ QPushButton#recordButton:hover {
      <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>0</number>
+     <number>5</number>
     </property>
     <property name="bottomMargin">
-     <number>0</number>
+     <number>5</number>
     </property>
     <item alignment="Qt::AlignHCenter">
      <widget class="AdoraFrameWidget" name="adoraFrameWidget" native="true">
       <property name="minimumSize">
        <size>
-        <width>750</width>
+        <width>745</width>
         <height>66</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>750</width>
+        <width>745</width>
         <height>66</height>
        </size>
       </property>
@@ -206,6 +218,18 @@ QPushButton#recordButton:hover {
     </item>
     <item>
      <widget class="QWidget" name="backgroundWidget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>745</width>
+        <height>579</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>745</width>
+        <height>579</height>
+       </size>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <property name="spacing">
         <number>0</number>

@@ -19,6 +19,9 @@
 
 #include "Ui/Record/RecordVideoDialog.h"
 
+#include <QGraphicsDropShadowEffect>
+#include <qpainter.h>
+
 Adora::Adora(QWidget *parent)
 	: QMainWindow(parent), mousePressed(false), restart(false) {
 
@@ -39,6 +42,12 @@ Adora::Adora(QWidget *parent)
 	ui.recordButton->setText("    " + getLanUiValue("Menu/Record"));
 	connect(ui.recordButton, &QPushButton::clicked, this, &Adora::recordButtonClicked);
 
+	this->setContentsMargins(0, 0, 5, 5);
+	QGraphicsDropShadowEffect *wndShadow = new QGraphicsDropShadowEffect(this);
+	wndShadow->setBlurRadius(5.0);
+	wndShadow->setColor(QColor(0, 0, 0, 100));
+	wndShadow->setOffset(2.0);
+	this->setGraphicsEffect(wndShadow);
 }
 
 Adora::~Adora() {
@@ -77,6 +86,23 @@ void Adora::mouseMoveEvent(QMouseEvent *event) {
 void Adora::mouseReleaseEvent(QMouseEvent *event) {
 
 	this->mousePressed = false;
+}
+
+void Adora::paintEvent(QPaintEvent *event) {
+
+	QPainter painter(this);
+
+	painter.setRenderHint(QPainter::Antialiasing); // Anti-aliasing;
+	painter.setBrush(QBrush(QColor("#FFFFFF")));
+	painter.setPen(Qt::transparent);
+	QRect rect(QPoint(157, 66), QSize(745 - 157, 645 - 66));
+	rect.setWidth(rect.width());
+	rect.setHeight(rect.height());
+	painter.drawRoundedRect(rect, 14, 14);
+
+
+	//painter.fillRect(QRect(20, 0, this->width() - 20, 20), QColor("#FFFFFF"));
+	//painter.fillRect(QRect(0, this->height() - 20, 20, 20), QColor("#FFFFFF"));
 }
 
 
