@@ -17,6 +17,7 @@ public:
 		WritingDataChanged,
 		RecordTimePassed,
 		AudioMutedChanged,
+		AboutToFinished,
 	};
 
 protected:
@@ -137,6 +138,16 @@ public:
 
 	inline const QString& getDeviceName() const { return this->deviceName; }
 	inline bool getMuted() const { return this->muted; }
+
+};
+
+/////////////////////////////////////////////////////////////////////////
+
+class RecordVideoDialogAboutToFinishEvent : public RecordVideoNotifyEvent {
+
+public:
+	RecordVideoDialogAboutToFinishEvent();
+	~RecordVideoDialogAboutToFinishEvent();
 
 };
 

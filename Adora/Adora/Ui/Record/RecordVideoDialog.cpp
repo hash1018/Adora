@@ -214,6 +214,9 @@ void RecordVideoDialog::record() {
 
 void RecordVideoDialog::quit() {
 
+	RecordVideoDialogAboutToFinishEvent event;
+	this->controllerWidget->update(&event);
+
 	emit this->recordVideoDialogClosed();
 }
 
@@ -291,7 +294,7 @@ void RecordVideoDialog::stopped() {
 	delete this->videoRecorder;
 	this->videoRecorder = nullptr;
 
-	emit this->recordVideoDialogClosed();
+	this->quit();
 }
 
 void RecordVideoDialog::resumed() {

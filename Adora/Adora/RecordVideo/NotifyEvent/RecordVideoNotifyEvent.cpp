@@ -98,3 +98,15 @@ AudioMutedChangedEvent::~AudioMutedChangedEvent() {
 
 
 }
+
+
+///////////////////////////////////////////////////////////////
+
+RecordVideoDialogAboutToFinishEvent::RecordVideoDialogAboutToFinishEvent()
+	:RecordVideoNotifyEvent(EventType::AboutToFinished) {
+
+}
+
+RecordVideoDialogAboutToFinishEvent::~RecordVideoDialogAboutToFinishEvent() {
+
+}
