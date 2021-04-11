@@ -465,6 +465,18 @@
     <ClCompile Include="Ui\Record\WidthPopupWidget.cpp">
       <Filter>Ui\Record</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_VolumeLevelGetter.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_VolumeLevelGetter.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\multimedia\VolumeLevelGetter.cpp">
+      <Filter>lib\multimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Record\SoundAmplitudeRenderWidget.cpp">
+      <Filter>Ui\Record</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Adora.qrc">
@@ -580,6 +592,9 @@
     </CustomBuild>
     <CustomBuild Include="Ui\Record\WidthPopupWidget.ui">
       <Filter>Ui\Record</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lib\multimedia\VolumeLevelGetter.h">
+      <Filter>lib\multimedia</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -864,6 +879,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_WidthPopupWidget.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Record\SoundAmplitudeRenderWidget.h">
+      <Filter>Ui\Record</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

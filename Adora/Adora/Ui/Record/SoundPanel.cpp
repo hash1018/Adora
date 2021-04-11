@@ -5,9 +5,10 @@
 #include "Base/SettingManager.h"
 #include "RecordVideo/Chain/RecordVideoRequest.h"
 #include "RecordVideo/NotifyEvent/RecordVideoNotifyEvent.h"
+#include "lib/multimedia/VolumeLevelGetter.h"
 
 SoundPanel::SoundPanel(QWidget *parent)
-	:QWidget(parent) {
+	:QWidget(parent), speakerVolumeGetter(nullptr), micVolumeGetter(nullptr) {
 
 	ui.setupUi(this);
 
@@ -17,28 +18,51 @@ SoundPanel::SoundPanel(QWidget *parent)
 
 	if (SettingManager::getInstance()->getAudioSetting()->getMicDevice() == getLanUiValue("MenuAudio/Not used")) {
 		ui.micButton->setDisabled(true);
+		ui.micAmplitudeRenderWidget->setDisabled(true);
 	}
 	else {
 		ui.micButton->setDisabled(false);
+
+		this->micVolumeGetter = new VolumeLevelGetter(this);
+		this->micVolumeGetter->init(eCapture, SettingManager::getInstance()->getAudioSetting()->getMicDevice());
+
+		connect(this->micVolumeGetter, &VolumeLevelGetter::amplitudeChanged, this, &SoundPanel::micAmplitudeChanged);
+		this->micVolumeGetter->start();
+
+		ui.micButton->updateSelected(SettingManager::getInstance()->getAudioSetting()->getMicMuted());
+		ui.micButton->setToolTip(SettingManager::getInstance()->getAudioSetting()->getMicDevice());
+
+		ui.micAmplitudeRenderWidget->setDisabled(SettingManager::getInstance()->getAudioSetting()->getMicMuted());
 	}
 
-	ui.micButton->updateSelected(SettingManager::getInstance()->getAudioSetting()->getMicMuted());
-	ui.micButton->setToolTip(SettingManager::getInstance()->getAudioSetting()->getMicDevice());
+	
 
 	if (SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice() == getLanUiValue("MenuAudio/Not used")) {
 		ui.speakerButton->setDisabled(true);
+		ui.speakerAmplitudeRenderWidget->setDisabled(true);
 	}
 	else {
 		ui.speakerButton->setDisabled(false);
+
+		this->speakerVolumeGetter = new VolumeLevelGetter(this);
+		connect(this->speakerVolumeGetter, &VolumeLevelGetter::amplitudeChanged, this, &SoundPanel::speakerAmplitudeChanged);
+
+		this->speakerVolumeGetter->init(eRender, SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice());
+		this->speakerVolumeGetter->start();
+
+		ui.speakerButton->updateSelected(SettingManager::getInstance()->getAudioSetting()->getSpeakerMuted());
+		ui.speakerButton->setToolTip(SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice());
+
+		ui.speakerAmplitudeRenderWidget->setDisabled(SettingManager::getInstance()->getAudioSetting()->getSpeakerMuted());
 	}
 
-	ui.speakerButton->updateSelected(SettingManager::getInstance()->getAudioSetting()->getSpeakerMuted());
-	ui.speakerButton->setToolTip(SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice());
+	
 
 }
 
 SoundPanel::~SoundPanel() {
 
+	
 }
 
 
@@ -49,10 +73,29 @@ void SoundPanel::update(RecordVideoNotifyEvent *event) {
 		QString deviceName = dynamic_cast<AudioMutedChangedEvent*>(event)->getDeviceName();
 		bool muted = dynamic_cast<AudioMutedChangedEvent*>(event)->getMuted();
 
-		if (SettingManager::getInstance()->getAudioSetting()->getMicDevice() == deviceName)
+		if (SettingManager::getInstance()->getAudioSetting()->getMicDevice() == deviceName) {
 			ui.micButton->updateSelected(muted);
-		else if (SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice() == deviceName)
+			ui.micAmplitudeRenderWidget->setDisabled(muted);
+		}
+		else if (SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice() == deviceName) {
 			ui.speakerButton->updateSelected(muted);
+			ui.speakerAmplitudeRenderWidget->setDisabled(muted);
+		}
+	}
+	else if (event->getType() == RecordVideoNotifyEvent::EventType::AboutToFinished) {
+
+		
+		if (this->speakerVolumeGetter != nullptr) {
+		
+			this->speakerVolumeGetter->quit();
+			this->speakerVolumeGetter->wait();
+		}
+
+		if (this->micVolumeGetter != nullptr) {
+		
+			this->micVolumeGetter->quit();
+			this->micVolumeGetter->wait();
+		}
 	}
 }
 
@@ -68,4 +111,15 @@ void SoundPanel::micButtonClicked() {
 	RecordVideoRequestMuteAudio request(SettingManager::getInstance()->getAudioSetting()->getMicDevice(),
 		!SettingManager::getInstance()->getAudioSetting()->getMicMuted());
 	this->request(&request);
+}
+
+
+void SoundPanel::speakerAmplitudeChanged(float level) {
+
+	ui.speakerAmplitudeRenderWidget->setAmplitude(level);
+}
+
+void SoundPanel::micAmplitudeChanged(float level) {
+
+	ui.micAmplitudeRenderWidget->setAmplitude(level);
 }

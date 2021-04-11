@@ -7,11 +7,16 @@
 #include "RecordVideo/Chain/RecordVideoChain.h"
 
 class RecordVideoNotifyEvent;
+class VolumeLevelGetter;
 
 class SoundPanel : public QWidget , public RecordVideoChain {
 
 private:
 	Ui::SoundPanel ui;
+
+private:
+	VolumeLevelGetter *speakerVolumeGetter;
+	VolumeLevelGetter *micVolumeGetter;
 
 public:
 	SoundPanel(QWidget *parent = nullptr);
@@ -23,6 +28,9 @@ public:
 	private slots:
 	void speakerButtonClicked();
 	void micButtonClicked();
+	
+	void speakerAmplitudeChanged(float level);
+	void micAmplitudeChanged(float level);
 };
 
 #endif //_SOUNDPANEL_H
