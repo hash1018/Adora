@@ -10,12 +10,14 @@ LanguageSettingWidget::LanguageSettingWidget(QWidget *parent)
 	ui.setupUi(this);
 
 	ui.languageComboBox->addItem("English");
-	ui.languageComboBox->addItem("Korean");
+	ui.languageComboBox->addItem(QString::fromLocal8Bit("ÇÑ±¹¾î"));
 	ui.languageComboBox->setCurrentIndex(SettingManager::getInstance()->getLanguageSetting()->getLanguage());
 
 	QString str = "<b>" + getLanUiValue("MenuLanguage/Language") + "</b>";
 	ui.languageLabel->setTextFormat(Qt::RichText);
 	ui.languageLabel->setText(str);
+
+	ui.changeButton->setText(getLanUiValue("MenuLanguage/Change"));
 
 	connect(ui.changeButton, &QPushButton::clicked, this, &LanguageSettingWidget::changeButtonClicked);
 }

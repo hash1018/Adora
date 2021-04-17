@@ -13,23 +13,42 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton#changeButton{
+    border-radius:5px;
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}</string>
+  </property>
   <widget class="QComboBox" name="languageComboBox">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>140</y>
-     <width>141</width>
-     <height>31</height>
+     <x>47</x>
+     <y>84</y>
+     <width>100</width>
+     <height>36</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>36</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="changeButton">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>210</y>
+     <y>84</y>
      <width>93</width>
-     <height>28</height>
+     <height>36</height>
     </rect>
    </property>
    <property name="text">
