@@ -44,7 +44,7 @@ void SoundAmplitudeRenderWidget::paintEvent(QPaintEvent *event) {
 		return;
 	
 
-	int pos = (this->width() - 2)*this->amplitude * 3;
+	int pos = (this->width() - 2)*this->amplitude /** 3*/;
 	if (pos > this->width() - 1) pos = this->width() - 2;
 
 	QPainterPath path2;
