@@ -4,7 +4,7 @@
 #include "Base/SettingManager.h"
 #include "lib/multimedia/AudioDeviceList.h"
 #include "Base/LanguageManager.h"
-
+#include <qdebug.h>
 AudioSettingWidget::AudioSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent) {
 
@@ -20,20 +20,28 @@ AudioSettingWidget::AudioSettingWidget(QWidget *parent)
 
 	ui.speakerComboBox->addItem(getLanUiValue("MenuAudio/Not used"));
 	ui.speakerComboBox->addItems(AudioDeviceList::getDeviceList(eRender));
-
-	ui.speakerComboBox->setCurrentText(SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice());
-	if (ui.speakerComboBox->currentIndex() == -1) {
+	
+	if (ui.speakerComboBox->findText(SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice()) == -1) {
+	
 		ui.speakerComboBox->setCurrentIndex(0);
 		SettingManager::getInstance()->getAudioSetting()->setSpeakerDevice(getLanUiValue("MenuAudio/Not used"));
+	}
+	else {
+	
+		ui.speakerComboBox->setCurrentText(SettingManager::getInstance()->getAudioSetting()->getSpeakerDevice());
 	}
 
 	ui.micComboBox->addItem(getLanUiValue("MenuAudio/Not used"));
 	ui.micComboBox->addItems(AudioDeviceList::getDeviceList(eCapture));
 
-	ui.micComboBox->setCurrentText(SettingManager::getInstance()->getAudioSetting()->getMicDevice());
-	if (ui.micComboBox->currentIndex() == -1) {
+	if (ui.micComboBox->findText(SettingManager::getInstance()->getAudioSetting()->getMicDevice()) == -1) {
+
 		ui.micComboBox->setCurrentIndex(0);
 		SettingManager::getInstance()->getAudioSetting()->setMicDevice(getLanUiValue("MenuAudio/Not used"));
+	}
+	else {
+
+		ui.micComboBox->setCurrentText(SettingManager::getInstance()->getAudioSetting()->getMicDevice());
 	}
 
 	connect(ui.speakerComboBox, SIGNAL(currentTextChanged(const QString&)), this, SLOT(speakerComboBoxCurrentTextChanged(const QString&)));
