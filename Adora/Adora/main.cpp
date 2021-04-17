@@ -20,7 +20,7 @@ void adora(QApplication &app) {
 	}
 
 }
-
+#include <qdebug.h>
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -40,7 +40,9 @@ int main(int argc, char *argv[])
 	QString family = "Malgun Gothic";
 	QFont font;
 	font.setFamily(family);
-	font.setPointSize(9);
+	//font.setPointSize(9);
+	//font.setPixelSize(14);
+	
 	a.setFont(font);
 	
 	

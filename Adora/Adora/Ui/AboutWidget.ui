@@ -110,19 +110,19 @@ QLabel#AdoraLabel {
      <rect>
       <x>29</x>
       <y>21</y>
-      <width>45</width>
+      <width>90</width>
       <height>36</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>45</width>
+      <width>90</width>
       <height>36</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>45</width>
+      <width>90</width>
       <height>36</height>
      </size>
     </property>
@@ -158,7 +158,7 @@ QLabel#AdoraLabel {
    <widget class="QLabel" name="developerLabel2">
     <property name="geometry">
      <rect>
-      <x>102</x>
+      <x>112</x>
       <y>21</y>
       <width>250</width>
       <height>36</height>
@@ -183,7 +183,7 @@ QLabel#AdoraLabel {
    <widget class="QLabel" name="emailLabel2">
     <property name="geometry">
      <rect>
-      <x>102</x>
+      <x>112</x>
       <y>52</y>
       <width>250</width>
       <height>36</height>
@@ -208,21 +208,21 @@ QLabel#AdoraLabel {
    <widget class="QLabel" name="githubLabel2">
     <property name="geometry">
      <rect>
-      <x>102</x>
+      <x>112</x>
       <y>83</y>
-      <width>250</width>
+      <width>320</width>
       <height>36</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>250</width>
+      <width>320</width>
       <height>36</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>250</width>
+      <width>320</width>
       <height>36</height>
      </size>
     </property>
@@ -234,22 +234,22 @@ QLabel#AdoraLabel {
   <widget class="QLabel" name="versionLabel">
    <property name="geometry">
     <rect>
-     <x>232</x>
-     <y>162</y>
+     <x>237</x>
+     <y>155</y>
      <width>100</width>
-     <height>12</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>100</width>
-     <height>12</height>
+     <height>25</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>100</width>
-     <height>12</height>
+     <height>25</height>
     </size>
    </property>
    <property name="text">
