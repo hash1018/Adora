@@ -167,7 +167,7 @@ void Drawer::visit(Number *number) {
 	painter.setFont(font);
 	painter.setPen(QColor(255, 255, 255));
 	painter.drawText(number->getPoint().x() - number->getWidth() / 2, number->getPoint().y() - number->getWidth() / 2,
-		number->getWidth(), number->getWidth(), Qt::AlignVCenter | Qt::AlignHCenter, QString::number(number->getNumber()));
+		number->getWidth(), number->getWidth(), Qt::AlignCenter, QString::number(number->getNumber()));
 }
 
 

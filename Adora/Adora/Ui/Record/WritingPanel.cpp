@@ -284,9 +284,10 @@ void WritingPanel::colorButtonClicked() {
 void WritingPanel::widthButtonClicked() {
 
 	QPoint point = ui.widthButton->geometry().topLeft();
+	point.setX(point.x() - 10);
 	point.setY(point.y() - this->widthPopupWidget->height());
 	this->widthPopupWidget->setGeometry(this->mapToGlobal(point).x(), this->mapToGlobal(point).y(),
-		this->widthPopupWidget->minimumWidth(), this->widthPopupWidget->height());
+		this->widthPopupWidget->minimumWidth() + 10, this->widthPopupWidget->height());
 
 	this->widthPopupWidget->show();
 }
