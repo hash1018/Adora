@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Adora</Name>
+    <Version>1.0.0</Version>
+    <Title>Adora Installer</Title>
+    <Publisher>Adora</Publisher>
+    <StartMenuDir>Adora</StartMenuDir>
+    <TargetDir>@ApplicationsDirX64@/Adora</TargetDir>
+</Installer>
