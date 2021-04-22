@@ -41,11 +41,15 @@ bool GDIManager::capture(int x, int y, int width, int height, bool drawCursor) {
 
 	this->desktopDC = GetDC(this->desktopHwnd);
 	this->old = SelectObject(this->captureDC, this->captureBitmap);
-
+	/*
 	BitBlt(this->captureDC, -x, -y,
 		width + x, height + y,
 		this->desktopDC, 0, 0, SRCCOPY);
+		*/
 
+	BitBlt(this->captureDC, 0, 0,
+		width, height,
+		this->desktopDC, x, y, SRCCOPY);
 
 	if (drawCursor == true) {
 
