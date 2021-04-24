@@ -297,6 +297,9 @@ void Adora::initMenuStackWidget() {
 
 void Adora::initMenuButtons() {
 
+
+	ui.watermarkButton->hide();
+
 	this->menuButtons.append(ui.generalButton);
 	this->menuButtons.append(ui.videoButton);
 	this->menuButtons.append(ui.audioButton);
