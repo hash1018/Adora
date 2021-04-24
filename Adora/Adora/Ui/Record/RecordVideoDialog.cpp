@@ -29,6 +29,8 @@
 RecordVideoDialog::RecordVideoDialog(QWidget *parent)
 	:QDialog(parent, Qt::FramelessWindowHint), recordStatusMode(nullptr), writingMode(nullptr), videoRecorder(nullptr) {
 
+	this->setMinimumSize(600, 400);
+
 	this->setMouseTracking(true);
 	this->setAttribute(Qt::WA_TranslucentBackground);
 	this->setWindowFlag(Qt::WindowStaysOnTopHint);
