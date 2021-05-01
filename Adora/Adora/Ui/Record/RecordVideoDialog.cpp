@@ -483,6 +483,8 @@ void RecordVideoDialog::mouseReleaseEvent(QMouseEvent *event) {
 	}
 
 	this->writingMode->mouseReleaseEvent(event);
+
+	this->controllerWidget->activateWindow();
 }
 
 void RecordVideoDialog::closeEvent(QCloseEvent *event) {
