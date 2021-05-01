@@ -8,6 +8,7 @@
 #include <qfile.h>
 #include <qmessagebox.h>
 #include "Base/LanguageManager.h"
+#include <qfilesystemwatcher.h>
 
 GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 	:AbstractStackWidget(parent), listType(Video), orderBy(NameAsc) {
@@ -54,6 +55,10 @@ GeneralSettingWidget::GeneralSettingWidget(QWidget *parent)
 
 	ui.uploadButton->hide();
 	ui.playButton->hide();
+
+	this->fileSystemWatcher = new QFileSystemWatcher(this);
+	this->fileSystemWatcher->addPath(SettingManager::getInstance()->getGeneralSetting()->getSavePath());
+	connect(this->fileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, &GeneralSettingWidget::directoryChanged);
 }
 
 GeneralSettingWidget::~GeneralSettingWidget() {
@@ -70,8 +75,13 @@ void GeneralSettingWidget::searchPathButtonClicked() {
 	dialog.setDirectory(ui.savePathLineEdit->text());
 
 	if (dialog.exec() == QDialog::Accepted) {
+
+		this->fileSystemWatcher->removePath(SettingManager::getInstance()->getGeneralSetting()->getSavePath());
+
 		ui.savePathLineEdit->setText(dialog.selectedFiles().first());
 		SettingManager::getInstance()->getGeneralSetting()->setSavePath(ui.savePathLineEdit->text());
+
+		this->fileSystemWatcher->addPath(SettingManager::getInstance()->getGeneralSetting()->getSavePath());
 
 		this->updateItemList();
 	}
@@ -131,7 +141,11 @@ void GeneralSettingWidget::deleteButtonClicked() {
 	QFile file(filePath);
 	if (file.exists() == true) {
 	
+		disconnect(this->fileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, &GeneralSettingWidget::directoryChanged);
+
 		file.remove(filePath);
+
+		connect(this->fileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, &GeneralSettingWidget::directoryChanged);
 		
 	}
 	else {
@@ -225,6 +239,20 @@ void GeneralSettingWidget::updateItemList() {
 	}
 }
 
+void GeneralSettingWidget::directoryChanged(const QString &path) {
+
+	this->updateItemList();
+}
+
+void GeneralSettingWidget::connectFileSystemWatcher(bool connect1) {
+
+	if (connect1 == true) {
+		connect(this->fileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, &GeneralSettingWidget::directoryChanged);
+	}
+	else {
+		disconnect(this->fileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, &GeneralSettingWidget::directoryChanged);
+	}
+}
 
 
 

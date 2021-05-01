@@ -7,6 +7,7 @@
 #include "ui_GeneralSettingWidget.h"
 #include <qmenu.h>
 
+class QFileSystemWatcher;
 
 class QAction;
 class OrderByMenu;
@@ -38,6 +39,9 @@ private:
 private:
 	OrderByMenu *orderByMenu;
 
+private:
+	QFileSystemWatcher *fileSystemWatcher;
+
 public:
 	GeneralSettingWidget(QWidget *parent = nullptr);
 	~GeneralSettingWidget();
@@ -53,9 +57,11 @@ protected:
 	void deleteButtonClicked();
 	void orderByButtonClicked();
 	void orderByMenuActionClicked(OrderBy orderBy);
+	void directoryChanged(const QString &path);
 
 public:
 	void updateItemList();
+	void connectFileSystemWatcher(bool connect1);
 };
 
 

@@ -121,6 +121,8 @@ void Adora::recordButtonClicked() {
 
 	this->hide();
 
+	this->generalSettingWidget->connectFileSystemWatcher(false);
+
 	this->recordVideoDialog = new RecordVideoDialog;
 	connect(this->recordVideoDialog, &RecordVideoDialog::recordVideoDialogClosed, this, &Adora::recordVideoDialogFinished);
 	this->recordVideoDialog->show();
@@ -133,6 +135,8 @@ void Adora::recordVideoDialogFinished(){
 	this->recordVideoDialog->deleteLater();
 
 	this->show();
+
+	this->generalSettingWidget->connectFileSystemWatcher(true);
 
 	this->generalSettingWidget->updateItemList();
 }
