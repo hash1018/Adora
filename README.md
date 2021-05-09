@@ -10,7 +10,7 @@ Adora is a video-recorder software written C++ using Qt framework and ffmpeg lib
 
 # Main Features
 * Recording screen ( Of course, this is basic feature.)
-* restricted hardware acceleration supported ( I am going to post it on a issue board)
+* Restricted hardware acceleration supported ( I am going to post it on a issue board)
 * Draw Writing functions ( such as pencil, highlighter, line, arrowLine, triangle, rectangle, numbering, etc)
 * Undo, Redo function
 * Screenshot 
